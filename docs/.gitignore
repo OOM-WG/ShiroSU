@@ -1,0 +1,10 @@
+# End of https://www.gitignore.io/api/visualstudiocode
+.DS_Store
+node_modules/
+package-lock.json
+dist/
+/.vitepress/cache
+/.vitepress/cache
+/.vitepress/cache
+/.vitepress/cache
+/.idea
