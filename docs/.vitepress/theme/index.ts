@@ -19,6 +19,10 @@ import {
     NolebaseEnhancedReadabilitiesMenu,
     NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import {InjectionKey} from '@nolebase/vitepress-plugin-inline-link-preview/client'
+import {NolebaseHighlightTargetedHeading} from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
+import {NolebaseInlineLinkPreviewPlugin} from "@nolebase/vitepress-plugin-inline-link-preview/client";
+
 
 // ===== 本地组件 =====
 import Card from "../theme/components/Card";
@@ -42,7 +46,8 @@ import "@nolebase/vitepress-plugin-enhanced-mark/client/style.css";
 import "@nolebase/vitepress-plugin-thumbnail-hash/client/style.css";
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
-
+import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css"; //*
+import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
 let homePageStyle: HTMLStyleElement | undefined;
 
 export default {
@@ -50,13 +55,12 @@ export default {
 
     Layout: () => {
         return h(DefaultTheme.Layout, null, {
+            "layout-top": () => [h(NolebaseHighlightTargetedHeading)],
             // 为较宽的屏幕的导航栏添加阅读增强菜单
             "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
             // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
             "nav-screen-content-after": () =>
                 h(NolebaseEnhancedReadabilitiesScreenMenu),
-            // 将面包屑导航组件添加到文档上方
-            // 'doc-before': () => h(NolebaseBreadcrumbs),
         });
     }, enhanceApp({app, router}) {
         app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
@@ -66,6 +70,7 @@ export default {
         app.component("NolebaseGitContributors", NolebaseGitContributors);
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.use(NolebaseGitChangelogPlugin);
+        app.use(NolebaseInlineLinkPreviewPlugin);
 
         if (typeof window !== "undefined") {
             watch(

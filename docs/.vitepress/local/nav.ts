@@ -3,7 +3,7 @@ import type {DefaultTheme} from "vitepress";
 export const nav: DefaultTheme.Config["nav"] = [
     {
         text: "快速了解",
-        link: "/Know",
+        link: "/guide/what-is-sakitinsu.md",
     },
     {
         text: "关于咲苏",
@@ -11,6 +11,6 @@ export const nav: DefaultTheme.Config["nav"] = [
     },
     {
         text: "更新日志",
-        link: "/changeLog/clangelog",
+        link: "/changeLog/changelog.md",
     },
 ];

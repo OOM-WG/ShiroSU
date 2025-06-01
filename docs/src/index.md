@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 快速了解
-      link: ./Know
+      link: ./guide/what-is-sakitinsu
     - theme: alt
       text: QQ频道
       link: https://pd.qq.com/s/cq98l9kk7

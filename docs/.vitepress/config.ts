@@ -36,62 +36,78 @@ if (typeof window !== 'undefined') {
 `;
 
 export default defineConfig({
-    title: "SakitinSU",
-    description: "",
+  title: "SakitinSU",
+  description: "",
 
-    // base: "/",
-    lastUpdated: true,
-    ignoreDeadLinks: true,
+  // base: "/",
+  lastUpdated: true,
+  ignoreDeadLinks: true,
 
-    srcDir: "src",
-    outDir: "./dist",
-    srcExclude: [],
-    scrollOffset: "header",
-    cleanUrls: true,
-    sitemap: {
-        hostname: "https://ssu.yumeyuka.plus",
-    },
-    head: [...head, ["script", {}, fixNavigationScript]], // <head>内标签配置
-    markdown: markdown, // Markdown配置
-    themeConfig,
+  srcDir: "src",
+  outDir: "./dist",
+  srcExclude: [],
+  scrollOffset: "header",
+  cleanUrls: true,
+  sitemap: {
+    hostname: "https://ssu.yumeyuka.plus",
+  },
+  head: [...head, ["script", {}, fixNavigationScript]], // <head>内标签配置
+  markdown: markdown, // Markdown配置
+  themeConfig,
 
-    transformPageData(pageData, context) {
-        generateBreadcrumbsData(pageData, context);
-    },
+  transformPageData(pageData, context) {
+    generateBreadcrumbsData(pageData, context);
+  },
 
-    vite: {
-        resolve: {
-            alias: [
-                {
-                    find: /^.*\/VPFooter\.vue$/,
-                    replacement: fileURLToPath(
-                        new URL("./theme/components/Footer.vue", import.meta.url)
-                    ),
-                },
-            ],
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPFooter\.vue$/,
+          replacement: fileURLToPath(
+              new URL("./theme/components/Footer.vue", import.meta.url)
+          ),
         },
-        plugins: [
-            ThumbnailHashImages(),
-            GitChangelog({
-                // 填写在此处填写您的仓库链接
-                repoURL: () => "https://github.com/YumeYuka/SSU_Docs",
-            }),
-            GitChangelogMarkdownSection(),
+      ],
+    },
+    plugins: [
+      ThumbnailHashImages(),
+      GitChangelog({
+        // 填写在此处填写您的仓库链接
+        repoURL: () => "https://github.com/YumeYuka/SSU_Docs",
+        mapAuthors: [
+          {
+            name: "YumeYuka",
+            username: "YumeYuka",
+            mapByEmailAliases: ["Miao@YumeYuka.plus"],
+          },
         ],
-        optimizeDeps: {
-            exclude: [
-                "@nolebase/vitepress-plugin-enhanced-readabilities/client",
-                "@nolebase/vitepress-plugin-breadcrumbs/client",
-                "@nolebase/vitepress-plugin-git-changelog/client",
-                "vitepress",
-                "@nolebase/ui",
-            ],
-        },
-        ssr: {
-            noExternal: [
-                // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
-                "@nolebase/*",
-            ],
-        },
+      }),
+      GitChangelogMarkdownSection({
+        excludes: ["index.md", "about.md"],
+      }),
+    ],
+    optimizeDeps: {
+      exclude: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "@nolebase/vitepress-plugin-inline-link-preview/client",
+        "@nolebase/vitepress-plugin-breadcrumbs/client",
+        "@nolebase/vitepress-plugin-git-changelog/client",
+        "vitepress",
+        "@nolebase/ui",
+      ],
     },
+    ssr: {
+      noExternal: [
+        // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "@nolebase/vitepress-plugin-breadcrumbs/client",
+        "@nolebase/vitepress-plugin-inline-link-preview",
+        "@nolebase/vitepress-plugin-highlight-targeted-heading",
+        "@nolebase/vitepress-plugin-git-changelog/client",
+        "vitepress",
+        "@nolebase/ui",
+      ],
+    },
+  },
 });

@@ -1,7 +1,13 @@
 ---
 layout: doc
-title: FAQ
-description: Frequently Asked Questions about the project.
+title: 常见问题
+description: SakitinSU 项目的常见问题解答
+outline: deep
+prev:
+  text: '安装指南'
+  link: '/guide/installation'
 ---
 
-尚未开始编写
+# 常见问题 (FAQ)
+
+<mark>尚未开始编写</mark>
