@@ -6,7 +6,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = [
         text: "快速了解",
         items: [
             {text: "快速了解", link: "/Know"},
-            {text: "更新日志", link: "/ChangeLog/clangelog"},
+            {text: "更新日志", link: "/ChangeLog/changelog"},
         ],
     },
     {
