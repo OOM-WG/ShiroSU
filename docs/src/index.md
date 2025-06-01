@@ -31,11 +31,11 @@ features:
   - title: 安全性
     details: 采用先进的安全机制，确保设备和数据的安全。
 
-  - title: 开源社区
-    details: 开源社区支持，持续更新和改进，欢迎参与贡献。
-
   - title: 多平台支持
     details: 支持多种Android版本和设备，兼容性强。
+
+  - title: 享受UI
+    details: SakitinSU为用户带来美观且高效的界面体验，提升操作乐趣。
 
 
 ---

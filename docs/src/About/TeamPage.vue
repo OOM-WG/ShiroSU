@@ -22,16 +22,12 @@ const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
 
 <script lang="ts" setup>
 import {VTLink} from '@vue/theme'
-import membersCoreData from './members-core.json'
-import membersEmeritiData from './members-emeriti.json'
-import membersPartnerData from './members-partner.json'
+import membersCoreData from './members.json'
 import TeamHero from './TeamHero.vue'
 import TeamList from './TeamList.vue'
 import type {Member} from './Member'
 
 shuffleMembers(membersCoreData as Member[], true)
-shuffleMembers(membersEmeritiData as Member[])
-shuffleMembers(membersPartnerData as Member[])
 </script>
 
 <template>
@@ -47,18 +43,9 @@ shuffleMembers(membersPartnerData as Member[])
 
     <TeamList :members="membersCoreData as Member[]">
       <template #title>核心开发成员</template>
-      <template #lead>他是真正当之无的核心开发者，技术与热情兼备，如同中枢般引领整个项自运转呢！（·人*。）</template>
+      <template #lead>他们是驱动项目成功的核心力量，致力于更好的的使用体验</template>
     </TeamList>
 
-    <TeamList :members="membersEmeritiData as Member[]">
-      <template #title>共同合作伙伴</template>
-      <template #lead>他或许是唯一没有划水的真正核心开发者，撑起了整个APP的灵魂与骨架呢</template>
-    </TeamList>
-
-    <TeamList :members="membersPartnerData as Member[]">
-      <template #title>特别鸣谢</template>
-      <template #lead>他就像现实中的技术魔法使，赋予了代码灵魂与生命</template>
-    </TeamList>
   </div>
 </template>
 
