@@ -4,11 +4,12 @@ import {markdown} from "./local/markdown";
 import {themeConfig} from "./local/theme";
 import {fileURLToPath, URL} from "node:url";
 import {
-    GitChangelog,
-    GitChangelogMarkdownSection,
+  GitChangelog,
+  GitChangelogMarkdownSection,
 } from "@nolebase/vitepress-plugin-git-changelog/vite";
 import {ThumbnailHashImages} from "@nolebase/vitepress-plugin-thumbnail-hash/vite";
 import {generateBreadcrumbsData} from "@nolebase/vitepress-plugin-breadcrumbs/vitepress";
+import {visualizer} from "rollup-plugin-visualizer";
 
 // 导航修复函数
 const fixNavigationScript = `
@@ -58,7 +59,6 @@ export default defineConfig({
   transformPageData(pageData, context) {
     generateBreadcrumbsData(pageData, context);
   },
-
   vite: {
     resolve: {
       alias: [
@@ -69,6 +69,20 @@ export default defineConfig({
           ),
         },
       ],
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            nolebase: [
+              "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+              "@nolebase/vitepress-plugin-git-changelog/client",
+              "@nolebase/vitepress-plugin-inline-link-preview/client",
+            ],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 600,
     },
     plugins: [
       ThumbnailHashImages(),
@@ -86,9 +100,21 @@ export default defineConfig({
       GitChangelogMarkdownSection({
         excludes: ["index.md", "about.md"],
       }),
+      // 构建分析插件
+      ...(process.env.ANALYZE
+          ? [
+            visualizer({
+              filename: "dist/stats.html",
+              open: true,
+              gzipSize: true,
+              brotliSize: true,
+            }),
+          ]
+          : []),
     ],
     optimizeDeps: {
       exclude: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities",
         "@nolebase/vitepress-plugin-enhanced-readabilities/client",
         "@nolebase/vitepress-plugin-inline-link-preview/client",
         "@nolebase/vitepress-plugin-breadcrumbs/client",
@@ -100,6 +126,7 @@ export default defineConfig({
     ssr: {
       noExternal: [
         // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
+        "@nolebase/vitepress-plugin-enhanced-readabilities",
         "@nolebase/vitepress-plugin-enhanced-readabilities/client",
         "@nolebase/vitepress-plugin-breadcrumbs/client",
         "@nolebase/vitepress-plugin-inline-link-preview",

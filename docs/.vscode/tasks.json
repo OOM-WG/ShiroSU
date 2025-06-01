@@ -1,0 +1,207 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "🚀 启动开发服务器",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"dev"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			},
+			"problemMatcher": [],
+			"isBackground": true
+		},
+		{
+			"label": "🏗️ 构建项目",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"build"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "🧹 清理缓存",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"clean"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "🧹 完全清理",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"clean:all"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "📦 重新安装依赖",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"deps:reinstall"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "🔍 环境检查",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"check:env"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "📊 项目健康检查",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"health"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "🔧 清理并构建",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"build:clean"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "🎯 测试构建",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"test:build"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": [],
+			"isBackground": true
+		},
+		{
+			"label": "📈 构建分析",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"analyze"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "🔄 更新依赖",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"deps:update"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "🌐 启动预览服务器",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"preview"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			},
+			"problemMatcher": [],
+			"isBackground": true
+		}
+	]
+}

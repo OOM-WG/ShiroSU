@@ -11,18 +11,16 @@ import mediumZoom from "medium-zoom";
 
 // ===== Nolebase 插件 =====
 import {
-    NolebaseGitChangelogPlugin,
-    NolebaseGitContributors,
+  NolebaseGitChangelogPlugin,
+  NolebaseGitContributors,
 } from "@nolebase/vitepress-plugin-git-changelog/client";
 import {NolebaseUnlazyImg} from "@nolebase/vitepress-plugin-thumbnail-hash/client";
 import {
-    NolebaseEnhancedReadabilitiesMenu,
-    NolebaseEnhancedReadabilitiesScreenMenu,
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
-import {InjectionKey} from '@nolebase/vitepress-plugin-inline-link-preview/client'
 import {NolebaseHighlightTargetedHeading} from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
 import {NolebaseInlineLinkPreviewPlugin} from "@nolebase/vitepress-plugin-inline-link-preview/client";
-
 
 // ===== 本地组件 =====
 import Card from "../theme/components/Card";
@@ -47,72 +45,73 @@ import "@nolebase/vitepress-plugin-thumbnail-hash/client/style.css";
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css"; //*
-import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
+import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
 let homePageStyle: HTMLStyleElement | undefined;
 
 export default {
-    extends: DefaultTheme,
+  extends: DefaultTheme,
 
-    Layout: () => {
-        return h(DefaultTheme.Layout, null, {
-            "layout-top": () => [h(NolebaseHighlightTargetedHeading)],
-            // 为较宽的屏幕的导航栏添加阅读增强菜单
-            "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
-            // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
-            "nav-screen-content-after": () =>
-                h(NolebaseEnhancedReadabilitiesScreenMenu),
-        });
-    }, enhanceApp({app, router}) {
-        app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
-        app.component("HomeUnderline", HomeUnderline);
-        app.component("Linkcard", Linkcard);
-        app.component("VPCard", Card);
-        app.component("NolebaseGitContributors", NolebaseGitContributors);
-        app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
-        app.use(NolebaseGitChangelogPlugin);
-        app.use(NolebaseInlineLinkPreviewPlugin);
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      "layout-top": () => [h(NolebaseHighlightTargetedHeading)],
+      // 为较宽的屏幕的导航栏添加阅读增强菜单
+      "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
+      // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
+      "nav-screen-content-after": () =>
+          h(NolebaseEnhancedReadabilitiesScreenMenu),
+    });
+  },
+  enhanceApp({app, router}) {
+    app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
+    app.component("HomeUnderline", HomeUnderline);
+    app.component("Linkcard", Linkcard);
+    app.component("VPCard", Card);
+    app.component("NolebaseGitContributors", NolebaseGitContributors);
+    app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
+    app.use(NolebaseGitChangelogPlugin);
+    app.use(NolebaseInlineLinkPreviewPlugin);
 
-        if (typeof window !== "undefined") {
-            watch(
-                () => router.route.data.relativePath,
-                () => updateHomePageStyle(location.pathname === "/"),
-                {immediate: true}
-            );
-        }
-    },
+    if (typeof window !== "undefined") {
+      watch(
+          () => router.route.data.relativePath,
+          () => updateHomePageStyle(location.pathname === "/"),
+          {immediate: true}
+      );
+    }
+  },
 
-    setup() {
-        const route = useRoute();
-        const initZoom = () => {
-            // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
-            mediumZoom(".main img", {background: "var(--vp-c-bg)"}); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
-        };
-        onMounted(() => {
-            initZoom();
-        });
-        watch(
-            () => route.path,
-            () => nextTick(() => initZoom())
-        );
-        // Get frontmatter and route
-        const {frontmatter} = useData();
-    },
+  setup() {
+    const route = useRoute();
+    const initZoom = () => {
+      // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
+      mediumZoom(".main img", {background: "var(--vp-c-bg)"}); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+    };
+    onMounted(() => {
+      initZoom();
+    });
+    watch(
+        () => route.path,
+        () => nextTick(() => initZoom())
+    );
+    // Get frontmatter and route
+    const {frontmatter} = useData();
+  },
 } satisfies Theme;
 
 function updateHomePageStyle(value: boolean) {
-    if (value) {
-        if (homePageStyle) return;
+  if (value) {
+    if (homePageStyle) return;
 
-        homePageStyle = document.createElement("style");
-        homePageStyle.innerHTML = `
+    homePageStyle = document.createElement("style");
+    homePageStyle.innerHTML = `
     :root {
       animation: rainbow 12s linear infinite;
     }`;
-        document.body.appendChild(homePageStyle);
-    } else {
-        if (!homePageStyle) return;
+    document.body.appendChild(homePageStyle);
+  } else {
+    if (!homePageStyle) return;
 
-        homePageStyle.remove();
-        homePageStyle = undefined;
-    }
+    homePageStyle.remove();
+    homePageStyle = undefined;
+  }
 }
