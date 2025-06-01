@@ -7,10 +7,10 @@ export const nav: DefaultTheme.Config["nav"] = [
     },
     {
         text: "关于咲苏",
-        link: "/About",
+        link: "/about",
     },
     {
         text: "更新日志",
-        link: "/ChangeLog/clangelog",
+        link: "/changeLog/clangelog",
     },
 ];

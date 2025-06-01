@@ -2,6 +2,11 @@ import type {MarkdownOptions} from 'vitepress';
 import mathjax3 from 'markdown-it-mathjax3';
 import footnote from 'markdown-it-footnote';
 import timeline from "vitepress-markdown-timeline";
+import {BiDirectionalLinks} from '@nolebase/markdown-it-bi-directional-links'
+import {
+    InlineLinkPreviewElementTransform
+} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+
 
 export const markdown: MarkdownOptions = {
     // Shiki主题, 所有主题参见: https://github.com/shikijs/shiki/blob/main/docs/themes.md
@@ -15,6 +20,9 @@ export const markdown: MarkdownOptions = {
         md.use(mathjax3);
         md.use(footnote);
         md.use(timeline);
+        md.use(BiDirectionalLinks())
+        md.use(InlineLinkPreviewElementTransform)
+
         // md.use(markdownItTaskCheckbox); //todo
 
         // 在所有文档的<h1>标签后添加<ArticleMetadata/>组件
