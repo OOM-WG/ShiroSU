@@ -424,10 +424,10 @@
 
     /* 品牌主色，使用彩虹变量 */
     --vp-c-brand-1: var(--rainbow-prev);
-    --vp-c-brand-light: #4ad1b4;
-    --vp-c-brand-lighter: #78fadc;
-    --vp-c-brand-dark: #008269;
-    --vp-c-brand-darker: #005d47;
+    --vp-c-brand-light: #fcbfc7;
+    --vp-c-brand-lighter: #fcbfc7;
+    --vp-c-brand-dark: #7c3aed;
+    --vp-c-brand-darker: #4c1d95;
     --vp-c-brand-next: var(--rainbow-next);
 
     animation: rainbow 40s linear infinite;

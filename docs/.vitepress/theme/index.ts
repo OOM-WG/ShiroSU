@@ -21,6 +21,20 @@ import {
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 import {NolebaseHighlightTargetedHeading} from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
 import {NolebaseInlineLinkPreviewPlugin} from "@nolebase/vitepress-plugin-inline-link-preview/client";
+import {
+    LayoutSwitch,
+    ScreenLayoutSwitch,
+    Spotlight,
+    ScreenSpotlight,
+} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import type {Options} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import {InjectionKey} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import type {Options} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import {NolebaseEnhancedReadabilitiesPlugin} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import {NolebaseHighlightTargetedHeading} from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
+
+
+
 
 // ===== 本地组件 =====
 import Card from "../theme/components/Card";
@@ -46,6 +60,7 @@ import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css"; //*
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
+
 let homePageStyle: HTMLStyleElement | undefined;
 
 export default {
@@ -53,12 +68,12 @@ export default {
 
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      "layout-top": () => [h(NolebaseHighlightTargetedHeading)],
       // 为较宽的屏幕的导航栏添加阅读增强菜单
       "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       "nav-screen-content-after": () =>
           h(NolebaseEnhancedReadabilitiesScreenMenu),
+        "layout-top": () => [h(NolebaseHighlightTargetedHeading)],
     });
   },
   enhanceApp({app, router}) {
@@ -70,6 +85,21 @@ export default {
     app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
     app.use(NolebaseGitChangelogPlugin);
     app.use(NolebaseInlineLinkPreviewPlugin);
+      app.use(NolebaseEnhancedReadabilitiesPlugin, {
+          spotlight: {
+              defaultToggle: true,
+              disableHelp: true,
+              defaultToggle: true,
+              hoverBlockColor: "rgb(240 197 52 / 10%)",
+          },
+      } as Options);
+      app.provide(InjectionKey, {
+          hideChangelogNoChangesText: true,
+          commitsRelativeTime: true,
+          displayAuthorsInsideCommitLine: true,
+          hideContributorsHeader: true,
+          hideChangelogHeader: true,
+      });
 
     if (typeof window !== "undefined") {
       watch(
@@ -115,3 +145,8 @@ function updateHomePageStyle(value: boolean) {
     homePageStyle = undefined;
   }
 }
+
+
+
+
+

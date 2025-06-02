@@ -249,3 +249,120 @@ div.VPLink.no-icon.VPFeature {
 .VPFeature .VPImage {
     border-radius: 8px;
 }
+
+/* ===== 双向链接样式 ===== */
+/* 无效链接的样式 */
+a.nolebase-route-link-invalid {
+    color: #ef4444;
+    opacity: 0.7;
+    text-decoration: line-through;
+    position: relative;
+}
+
+a.nolebase-route-link-invalid:hover {
+    opacity: 1;
+}
+
+/* 为无效链接添加提示图标 */
+a.nolebase-route-link-invalid::after {
+    content: "⚠️";
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+
+/* 暗色主题下的无效链接样式 */
+html.dark a.nolebase-route-link-invalid {
+    color: #f87171;
+}
+
+/* ===== 目标标题高亮组件自定义颜色 ===== */
+:root {
+    /* 明亮主题下的高亮颜色 - 使用彩虹渐变 */
+    --vp-nolebase-highlight-targeted-heading-color: var(--rainbow-prev);
+    --vp-nolebase-highlight-targeted-heading-bg: color-mix(in srgb, var(--rainbow-prev), transparent 85%);
+}
+
+html.dark {
+    /* 暗色主题下的高亮颜色 - 使用彩虹渐变 */
+    --vp-nolebase-highlight-targeted-heading-color: var(--rainbow-next);
+    --vp-nolebase-highlight-targeted-heading-bg: color-mix(in srgb, var(--rainbow-next), transparent 80%);
+}
+
+/* 重写彩虹高亮动画 - 保持原有的动画逻辑 */
+@keyframes vp-nolebase-highlight-targeted-heading-rainbow-animation {
+    0% {
+        background: transparent;
+        box-shadow: 0px 0px 0px 8px transparent;
+        color: inherit;
+        opacity: 1;
+    }
+    10% {
+        color: var(--vp-nolebase-highlight-targeted-heading-color);
+        border-color: transparent;
+        border-radius: 8px;
+        background: linear-gradient(120deg,
+        color-mix(in srgb, var(--rainbow-prev), transparent 90%),
+        color-mix(in srgb, var(--rainbow-next), transparent 90%)
+        );
+        box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 95%);
+        opacity: 1;
+    }
+    20% {
+        color: var(--vp-nolebase-highlight-targeted-heading-color);
+        border-radius: 8px;
+        background: linear-gradient(120deg,
+        color-mix(in srgb, var(--rainbow-prev), transparent 85%),
+        color-mix(in srgb, var(--rainbow-next), transparent 85%)
+        );
+        box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 90%);
+        opacity: 1;
+    }
+    30% {
+        color: var(--vp-nolebase-highlight-targeted-heading-color);
+        border-radius: 8px;
+        background: linear-gradient(120deg,
+        color-mix(in srgb, var(--rainbow-prev), transparent 80%),
+        color-mix(in srgb, var(--rainbow-next), transparent 80%)
+        );
+        box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 85%);
+        opacity: 1;
+    }
+    70% {
+        background: linear-gradient(120deg,
+        color-mix(in srgb, var(--rainbow-prev), transparent 92%),
+        color-mix(in srgb, var(--rainbow-next), transparent 92%)
+        );
+        border-radius: 8px;
+        box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 97%);
+        color: var(--vp-nolebase-highlight-targeted-heading-color);
+        opacity: 1;
+    }
+    85% {
+        background: linear-gradient(120deg,
+        color-mix(in srgb, var(--rainbow-prev), transparent 98%),
+        color-mix(in srgb, var(--rainbow-next), transparent 98%));
+        border-radius: 8px;
+        box-shadow: 0px 0px 8px 0px color-mix(in srgb, var(--rainbow-prev), transparent 98%);
+        color: color-mix(in srgb, var(--vp-nolebase-highlight-targeted-heading-color), #222 60%);
+        opacity: 1;
+    }
+    95% {
+        background: transparent;
+        border-radius: 4px;
+        box-shadow: 0px 0px 0px 0px transparent;
+        color: #222;
+        opacity: 1;
+    }
+    100% {
+        border-radius: 0px;
+        background: transparent;
+        box-shadow: none;
+        color: #222;
+        opacity: 1;
+    }
+}
+
+/* 应用新的彩虹动画 */
+.VPNolebaseHighlightTargetedHeadingAnimated {
+    animation: vp-nolebase-highlight-targeted-heading-rainbow-animation 1.5s ease-in-out !important;
+}

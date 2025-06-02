@@ -12,12 +12,38 @@ export const markdown: MarkdownOptions = {
         dark: "github-dark-dimmed",
     },
     lineNumbers: true, // 启用行号
-
     config: (md) => {
         md.use(mathjax3);
         md.use(footnote);
         md.use(timeline);
-        // md.use(BiDirectionalLinks());
+        md.use(BiDirectionalLinks({
+            dir: process.cwd(), // 项目根目录opp
+            baseDir: '/', // 基础路径
+            includesPatterns: [
+                '*.md',
+                '*.vue',
+                '*.png',
+                '*.jpg',
+                '*.jpeg',
+                '*.gif',
+                '*.svg',
+                '*.webp'
+            ],
+            excludesPatterns: [
+                '_*',
+                'dist',
+                'node_modules',
+                '.vitepress',
+                '.git',
+                '.github',
+                'public',
+                'scripts'
+            ],
+            debug: false, // 生产环境设为 false
+            noNoMatchedFileWarning: false, // 显示未匹配文件的警告
+            stillRenderNoMatched: true, // 渲染无效链接便于调试
+            isRelativePath: false // 使用绝对路径
+        }));
         md.use(InlineLinkPreviewElementTransform);
 
         // md.use(markdownItTaskCheckbox); //todo
