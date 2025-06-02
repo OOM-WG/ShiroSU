@@ -20,8 +20,8 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         {
             text: "面向开发者",
             items: [
-                {text: "模块开发", link: "/development/module-development.md"},
-                {text: "模块WebUI", link: "/development/webui-module.md"},
+                {text: "模块开发", link: "/development/module-development"},
+                {text: "模块WebUI", link: "/development/webui-module"},
             ],
         },
         {

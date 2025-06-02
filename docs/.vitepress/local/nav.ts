@@ -2,6 +2,10 @@ import type {DefaultTheme} from "vitepress";
 
 export const nav: DefaultTheme.Config["nav"] = [
     {
+        text: "主页",
+        link: "/",
+    },
+    {
         text: "快速了解",
         link: "/guide/what-is-sakitinsu.md",
     },
