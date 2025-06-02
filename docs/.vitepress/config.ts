@@ -77,9 +77,8 @@ export default defineConfig({
                         mapByEmailAliases: ["Miao@YumeYuka.plus"],
                     },
                 ],
-            }),
-            GitChangelogMarkdownSection({
-                excludes: ["index.md", "./about/about.md"],
+            }),            GitChangelogMarkdownSection({
+                excludes: ["index.md"],
             }),
             PageProperties(),
             PagePropertiesMarkdownSection({

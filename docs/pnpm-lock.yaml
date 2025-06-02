@@ -23,6 +23,9 @@ importers:
       '@vueuse/integrations':
         specifier: ^13.3.0
         version: 13.3.0(async-validator@4.2.5)(focus-trap@7.6.4)(qrcode@1.5.4)(vue@3.5.16)
+      canvas-confetti:
+        specifier: ^1.9.3
+        version: 1.9.3
       dynamics.js:
         specifier: ^1.1.5
         version: 1.1.5
@@ -1004,6 +1007,9 @@ packages:
   camelcase@5.3.1:
     resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
     engines: {node: '>=6'}
+
+  canvas-confetti@1.9.3:
+    resolution: {integrity: sha512-rFfTURMvmVEX1gyXFgn5QMn81bYk70qa0HLzcIOSVEyl57n6o9ItHeBtUSWdvKAPY0xlvBHno4/v3QPrT83q9g==}
 
   canvaskit-wasm@0.40.0:
     resolution: {integrity: sha512-Od2o+ZmoEw9PBdN/yCGvzfu0WVqlufBPEWNG452wY7E9aT8RBE+ChpZF526doOlg7zumO4iCS+RAeht4P0Gbpw==}
@@ -3038,6 +3044,8 @@ snapshots:
     optional: true
 
   camelcase@5.3.1: {}
+
+  canvas-confetti@1.9.3: {}
 
   canvaskit-wasm@0.40.0:
     dependencies:
