@@ -15,7 +15,8 @@ export const head: HeadConfig[] = [
     ["meta", {property: "og:title", content: "咲苏"}],
     ["meta", {property: "og:description", content: "新的Root实现方式"}],
     ["meta", {property: "og:site", content: "https://ssu.yumeyuka.plus"}],
-    ["meta", {property: "og:site_name", content: "咲苏"}],
+  ["meta", { property: "og:site_name", content: "咲苏" }],
+    
     [
         "meta",
         {

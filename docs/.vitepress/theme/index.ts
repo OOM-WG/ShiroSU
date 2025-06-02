@@ -41,7 +41,6 @@ import RainbowAnimationSwitcher from "./components/RainbowAnimationSwitcher.vue"
 import HomeUnderline from "./components/HomeUnderline.vue";
 import Linkcard from "./components/Linkcard.vue";
 import Confetti from "./components/Confetti.vue";
-import Custom_Confetti from "./components/Custom_Confetti.vue"
 // ===== 样式文件 =====
 // 本地样式
 import "./styles/main.css";
@@ -82,7 +81,6 @@ export default {
         app.component("Linkcard", Linkcard);
         app.component("VPCard", Card);
         app.component("Confetti", Confetti);
-        app.component("Custom_Confetti", Custom_Confetti);
         app.component("NolebaseGitContributors", NolebaseGitContributors);
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.use(NolebaseGitChangelogPlugin);
