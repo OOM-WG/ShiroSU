@@ -6,7 +6,7 @@ aside: false
 ---
 
 <script setup>
-import TeamPage from './about/TeamPage.vue'
+import TeamPage from './TeamPage.vue'
 </script>
 
 <TeamPage/>
