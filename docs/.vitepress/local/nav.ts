@@ -7,14 +7,14 @@ export const nav: DefaultTheme.Config["nav"] = [
     },
     {
         text: "快速了解",
-        link: "/guide/what-is-sakitinsu.md",
+        link: "/guide/what-is-sakitinsu",
     },
     {
         text: "关于咲苏",
-        link: "/about",
+        link: "/about/about",
     },
     {
         text: "更新日志",
-        link: "/changeLog/changelog.md",
+        link: "/changeLog/changelog",
     },
 ];
