@@ -79,7 +79,7 @@ export default defineConfig({
                 ],
             }),
             GitChangelogMarkdownSection({
-                excludes: ["index.md", "about.md"],
+                excludes: ["index.md", "./about/about.md"],
             }),
             PageProperties(),
             PagePropertiesMarkdownSection({
