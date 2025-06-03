@@ -40,4 +40,4 @@ next:
 
 ## 了解 SakitinSU 更多信息
 
-请跳转 [项目起源](../origin.md)
+请跳转 [项目起源](../about/origin.md)

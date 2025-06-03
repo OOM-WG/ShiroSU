@@ -10,7 +10,7 @@ const footer: CustomConfig["footer"] = {
             items: [
                 {
                     text: "团队信息",
-                    link: "/about",
+                    link: "/about/author",
                 },
             ],
         },
