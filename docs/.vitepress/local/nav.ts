@@ -11,7 +11,7 @@ export const nav: DefaultTheme.Config["nav"] = [
     },
     {
         text: "关于咲苏",
-        link: "/about/about",
+        link: "/about/author",
     },
     {
         text: "更新日志",

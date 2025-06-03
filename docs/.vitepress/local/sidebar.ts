@@ -28,7 +28,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
             text: "关于SakitinSU",
             items: [
                 {text: "SakitinSU的起源", link: "/about/origin"},
-                {text: "关于团队", link: "/about/about"},
+                {text: "关于团队", link: "/about/author"},
             ],
         },
     ],
