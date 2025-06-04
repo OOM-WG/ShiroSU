@@ -13,4 +13,37 @@ next:
 
 # 安装指南
 
-<mark>尚未开始编写</mark>
+---
+
+## 下载SakitinSU管理器 <Badge type="warning" text="V1.0.0" />
+
+> [!TIP]
+> 请选择`AList`下载
+
+<LinkGrid>
+  <SakuraLinkCard
+    title="GitCode"
+    icon="/public/linkcard/GitCode.svg"
+    href="https://gitcode.com"
+  />
+  <SakuraLinkCard
+    title="GitHub"
+    icon="/public/linkcard/Github.svg"
+    href="https://github.com"
+  />
+  <SakuraLinkCard
+    title="Alist"
+    icon="/linkcard/alist.svg"
+    href="https://pan.linso.top/d/Ubuntu/SSU/SSU-1.0.0-universal.APK"
+  />
+  <SakuraLinkCard
+    title="123云盘"
+    icon="/public/linkcard/123云盘.svg"
+    href="https://github.com"
+  />
+   <SakuraLinkCard
+    title="蓝奏云"
+    icon="/public/linkcard/lanzou.svg"
+    href="https://github.com"
+  />
+</LinkGrid>

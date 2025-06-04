@@ -1,45 +1,25 @@
-<script lang="ts" setup>
-import {withBase} from 'vitepress'
-
-defineProps<{
-  items: Integration[]
-}>()
-
-interface Integration {
-  icon: string
-  name: string
-  link: string
-  target?: string
-  secondary?: string
-}
-</script>
-
 <template>
-  <div class="flex flex-wrap gap-4 slide-enter">
-    <a v-for="item of items" :key="item.name" :href="item.link" :target="item.target" :title="withBase(item.link)"
-       class="Link w-30 h-30 text-center text-inherit flex flex-col items-center justify-center">
-      <div v-if="item.icon.startsWith('i')" :class="item.icon" class="w-10 h-10 mb2"/>
-      <img v-else :src="withBase(item.icon)" class="w-10 h-10 mb-2 no-zoomable"/>
-      <span class="text-sm">{{ item.name }}</span>
-      <span class="text-xs opacity-50">{{ item.secondary }}</span>
-    </a>
+  <div class="link-grid">
+    <slot />
   </div>
 </template>
 
+<script lang="ts" setup>
+// 链接网格容器组件
+</script>
+
 <style scoped>
-.Link {
-  color: inherit !important;
-  text-decoration: none !important;
-  border: 1px solid var(--vp-c-bg-soft);
-  border-radius: 12px;
-  background-color: var(--vp-c-bg-soft);
-  box-shadow: var(--vp-shadow-1);
-  transition: border-color 0.25s,
-  background-color 0.25s;
+.link-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  margin: 20px 0 !important;
+  align-items: flex-start !important;
 }
 
-.Link:hover {
-  color: var(--vp-c-brand) !important;
-  border-color: var(--vp-c-brand) !important;
+/* 确保子元素不被覆盖 */
+.link-grid > * {
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
 }
 </style>

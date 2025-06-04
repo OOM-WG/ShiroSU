@@ -8,3 +8,4 @@ dist/
 /.vitepress/cache
 /.vitepress/cache
 /.idea
+/.fleet
