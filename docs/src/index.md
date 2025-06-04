@@ -12,8 +12,8 @@ hero:
       text: 快速了解
       link: ./guide/what-is-sakitinsu
     - theme: alt
-      text: QQ频道
-      link: https://pd.qq.com/s/cq98l9kk7
+      text: QQ群组
+      link: https://qq.yumeyuka.plus
     - theme: brand
       text: Discord频道
       link: https://discord.gg/RQBBVhSCa5
