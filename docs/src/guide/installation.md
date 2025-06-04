@@ -23,12 +23,12 @@ next:
 <LinkGrid>
   <SakuraLinkCard
     title="GitCode"
-    icon="/public/linkcard/GitCode.svg"
+    icon="/linkcard/GitCode.svg"
     href="https://gitcode.com"
   />
   <SakuraLinkCard
     title="GitHub"
-    icon="/public/linkcard/Github.svg"
+    icon="/linkcard/Github.svg"
     href="https://github.com"
   />
   <SakuraLinkCard
