@@ -36,14 +36,4 @@ next:
     icon="/linkcard/alist.svg"
     href="https://pan.linso.top/d/Ubuntu/SSU/SSU-1.0.0-universal.APK"
   />
-  <SakuraLinkCard
-    title="123云盘"
-    icon="/public/linkcard/123云盘.svg"
-    href="https://github.com"
-  />
-   <SakuraLinkCard
-    title="蓝奏云"
-    icon="/public/linkcard/lanzou.svg"
-    href="https://github.com"
-  />
 </LinkGrid>
