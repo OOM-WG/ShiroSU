@@ -15,7 +15,7 @@ next:
 
 ---
 
-## 下载SakitinSU管理器 <Badge type="warning" text="V1.0.0" />
+## 下载SakitinSU管理器 <Badge type="warning" text="V0.1.0" />
 
 > [!TIP]
 > 请选择`AList`下载
@@ -34,6 +34,6 @@ next:
   <SakuraLinkCard
     title="Alist"
     icon="/linkcard/alist.svg"
-    href="https://pan.linso.top/d/Ubuntu/SSU/SSU-1.0.0-universal.APK"
+    href="https://emas-devops-cdn.aliyuncs.com/publish/2/3911161/335552265/P718582199666391040/SSU-0.1.0_preview0-universal.APK?spm=5176.a2c8x.0.0.40459482Ck7lvw&response-content-type=application/octet-stream"
   />
 </LinkGrid>
