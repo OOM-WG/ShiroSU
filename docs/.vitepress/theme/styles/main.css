@@ -2,6 +2,25 @@
 @import './vars.css';
 @import './rainbow.css';
 
+/* 横幅相关变量 */
+:root {
+    --vp-layout-top-height: 0px;
+}
+
+/* 当页面有横幅时，导航栏下移 */
+body.has-banner .VPNav {
+    top: 40px !important;
+}
+
+/* 当页面有横幅时，主内容区域下移 */
+body.has-banner .VPContent {
+    padding-top: 40px;
+}
+
+/* 确保横幅在所有内容之上 */
+.under-construction-banner {
+    z-index: 60 !important;
+}
 
 html.dark {
     color-scheme: dark;

@@ -1,8 +1,5 @@
 <template>
-  <Content/>
-  <PageProperties/>
+	<Content />
 </template>
 
-<script lang="ts" setup>
-import PageProperties from '@nolebase/vitepress-plugin-page-properties/dist/client/PageProperties.vue'
-</script>
+<script lang="ts" setup></script>
