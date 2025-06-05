@@ -9,7 +9,7 @@ outline: deep
 
 ---
 
-::: timeline 2023-06-04
+::: timeline 2025-06-04
 
 ## SakitinSU 1.0.0 <Badge type="warning" text="previews" />
 
