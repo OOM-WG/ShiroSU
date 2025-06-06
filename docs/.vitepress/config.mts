@@ -17,108 +17,112 @@ import {
 
 
 export default defineConfig({
-    title: "SakitinSU",
-    description: "",
+	title: "SakitinSU",
+	description: "",
 
-    base: "/",
-    lastUpdated: true,
-    ignoreDeadLinks: true,
+	base: "/",
+	lastUpdated: true,
+	ignoreDeadLinks: true,
 
-    srcDir: "src",
-    outDir: "./dist",
-    srcExclude: [],
-    scrollOffset: "header",
-    cleanUrls: true,
-    sitemap: {
-        hostname: "https://ssu.yumeyuka.plus",
-    },
-    head: head, // 头部配置
-    lang: "zh-CN", // 语言配置
-    markdown: markdown, // Markdown配置
-    themeConfig,
+	srcDir: "src",
+	outDir: "./dist",
+	srcExclude: [],
+	scrollOffset: "header",
+	cleanUrls: true,
+	sitemap: {
+		hostname: "https://ssu.yumeyuka.plus",
+	},
+	head: head, // 头部配置
+	lang: "zh-CN", // 语言配置
+	markdown: markdown, // Markdown配置
+	themeConfig,
 
-    transformPageData(pageData, context) {
-        generateBreadcrumbsData(pageData, context);
-    },
-    vite: {
-        resolve: {
-            alias: [
-                {
-                    find: /^.*\/VPFooter\.vue$/,
-                    replacement: fileURLToPath(
-                        new URL("./theme/components/Footer.vue", import.meta.url)
-                    ),
-                },
-            ],
-        },
-        build: {
-            rollupOptions: {
-                output: {
-                    manualChunks: {
-                        nolebase: [
-                            "@nolebase/vitepress-plugin-enhanced-readabilities/client",
-                            "@nolebase/vitepress-plugin-git-changelog/client",
-                            "@nolebase/vitepress-plugin-inline-link-preview/client",
-                        ],
-                    },
-                },
-            },
-            chunkSizeWarningLimit: 600,
-        },
-        plugins: [
-            ThumbnailHashImages(),
-            GitChangelog({
-                // 填写在此处填写您的仓库链接
-                repoURL: () => "https://github.com/YumeYuka/SSU_Docs",
-                mapAuthors: [
-                    {
-                        name: "YumeYuka",
-                        username: "YumeYuka",
-                        mapByEmailAliases: ["Miao@YumeYuka.plus"],
-                    },
-                ],
-            }),            GitChangelogMarkdownSection({
-                excludes: ["index.md"],
-            }),
-            PageProperties(),
-            PagePropertiesMarkdownSection({
-                excludes: ["index.md"],
-            }),
-            // 构建分析插件
-            ...(process.env.ANALYZE
-                ? [
-                    visualizer({
-                        filename: "dist/stats.html",
-                        open: true,
-                        gzipSize: true,
-                        brotliSize: true,
-                    }),
-                ]
-                : []),
-        ],
-        optimizeDeps: {
-            exclude: [
-                "@nolebase/vitepress-plugin-enhanced-readabilities",
-                "@nolebase/vitepress-plugin-enhanced-readabilities/client",
-                "@nolebase/vitepress-plugin-inline-link-preview/client",
-                "@nolebase/vitepress-plugin-breadcrumbs/client",
-                "@nolebase/vitepress-plugin-git-changelog/client",
-                "vitepress",
-                "@nolebase/ui",
-            ],
-        },
-        ssr: {
-            noExternal: [
-                // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
-                "@nolebase/vitepress-plugin-enhanced-readabilities",
-                "@nolebase/vitepress-plugin-enhanced-readabilities/client",
-                "@nolebase/vitepress-plugin-breadcrumbs/client",
-                "@nolebase/vitepress-plugin-inline-link-preview",
-                "@nolebase/vitepress-plugin-highlight-targeted-heading",
-                "@nolebase/vitepress-plugin-git-changelog/client",
-                "vitepress",
-                "@nolebase/ui",
-            ],
-        },
-    },
+	transformPageData(pageData, context) {
+		generateBreadcrumbsData(pageData, context);
+	},
+	vite: {
+		resolve: {
+			alias: [
+				{
+					find: /^.*\/VPFooter\.vue$/,
+					replacement: fileURLToPath(new URL("./theme/components/Footer.vue", import.meta.url)),
+				},
+			],
+		},
+		build: {
+			rollupOptions: {
+				output: {
+					manualChunks: {
+						nolebase: [
+							"@nolebase/vitepress-plugin-enhanced-readabilities/client",
+							"@nolebase/vitepress-plugin-git-changelog/client",
+							"@nolebase/vitepress-plugin-inline-link-preview/client",
+						],
+					},
+				},
+			},
+			chunkSizeWarningLimit: 600,
+		},
+		plugins: [
+			ThumbnailHashImages(),
+			GitChangelog({
+				// 填写在此处填写您的仓库链接
+				repoURL: () => "https://github.com/YumeYuka/SSU_Docs",
+				mapAuthors: [
+					{
+						name: "YumeYuka",
+						username: "YumeYuka",
+						mapByEmailAliases: ["Miao@YumeYuka.plus"],
+					},
+					{
+						name: "FengYing",
+						username: "FengYing1314",
+						mapByEmailAliases: ["FengYing@miao520.fun"],
+					},
+				],
+			}),
+			GitChangelogMarkdownSection({
+				excludes: ["index.md"],
+			}),
+			PageProperties(),
+			PagePropertiesMarkdownSection({
+				excludes: ["index.md"],
+			}),
+			// 构建分析插件
+			...(process.env.ANALYZE
+				? [
+						visualizer({
+							filename: "dist/stats.html",
+							open: true,
+							gzipSize: true,
+							brotliSize: true,
+						}),
+				  ]
+				: []),
+		],
+		optimizeDeps: {
+			exclude: [
+				"@nolebase/vitepress-plugin-enhanced-readabilities",
+				"@nolebase/vitepress-plugin-enhanced-readabilities/client",
+				"@nolebase/vitepress-plugin-inline-link-preview/client",
+				"@nolebase/vitepress-plugin-breadcrumbs/client",
+				"@nolebase/vitepress-plugin-git-changelog/client",
+				"vitepress",
+				"@nolebase/ui",
+			],
+		},
+		ssr: {
+			noExternal: [
+				// 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
+				"@nolebase/vitepress-plugin-enhanced-readabilities",
+				"@nolebase/vitepress-plugin-enhanced-readabilities/client",
+				"@nolebase/vitepress-plugin-breadcrumbs/client",
+				"@nolebase/vitepress-plugin-inline-link-preview",
+				"@nolebase/vitepress-plugin-highlight-targeted-heading",
+				"@nolebase/vitepress-plugin-git-changelog/client",
+				"vitepress",
+				"@nolebase/ui",
+			],
+		},
+	},
 });

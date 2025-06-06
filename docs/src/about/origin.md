@@ -5,7 +5,7 @@ description: 了解 SakitinSU 项目的诞生背景、发展历程和设计理�
 outline: deep
 prev:
   text: '关于我们'
-  link: '/about/about'
+  link: '/about/author'
 next:
   text: '什么是 SakitinSU？'
   link: '/guide/what-is-sakitinsu'
