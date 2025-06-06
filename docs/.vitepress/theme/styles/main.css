@@ -1,6 +1,8 @@
 @import './custom-block.css';
 @import './vars.css';
 @import './rainbow.css';
+@import './override.css';
+
 
 /* 横幅相关变量 */
 :root {

@@ -1,8 +1,8 @@
-import type {DefaultTheme} from "vitepress";
-import {nav} from "./nav";
-import {sidebar} from "./sidebar";
-import {localSearchOptions} from "./search";
-import footer from "./footer";
+    import type {DefaultTheme} from "vitepress";
+    import {nav} from "./nav";
+    import {sidebar} from "./sidebar";
+    import {localSearchOptions} from "./search";
+    import footer from "./footer";
 
 export const themeConfig: DefaultTheme.Config = {
     nav,
