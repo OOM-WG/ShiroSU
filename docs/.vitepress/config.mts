@@ -75,8 +75,8 @@ export default defineConfig({
 						mapByEmailAliases: ["Miao@YumeYuka.plus"],
 					},
 					{
-						name: "FengYing",
-						username: "FengYing1314",
+						name: "FengYing1314",
+						username: "FengYing",
 						mapByEmailAliases: ["FengYing@miao520.fun"],
 					},
 				],
