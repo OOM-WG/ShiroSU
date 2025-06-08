@@ -8,16 +8,31 @@ outline: deep
 # 更新日志
 
 ---
+::: tip
+当前版本为 Preview 版本
+:::
 
-::: timeline 2025-06-04
+::: timeline 2025-06-08 <Badge type="warning" text="V 0.1.5 " />
 
-## SakitinSU 0.1.0 <Badge type="warning" text="preview0" />
+-  支持在模块描述和脚本输出中使用ANSI代码
+-  修复模块页面部分错误，优化模块更新流程，支持一键禁用/启用/更新模块
+:::
+::: timeline 2025-06-07 <Badge type="warning" text="V 0.1.4" />
 
-- <mark>预览版，一切内容仅供参考，请关注官方后续动态</mark>
-- SSU使用百度移动统计以及阿里云EMAS收集您的使用数据，依此增强后续的使用体验
-### 2025-06-05  
-
-- 修复了点问题，并且添加了更新api
-- 新增可以直接在软件内更新
+-  支持HDR模式并优化设置页面部分UI
+-  调整主页页面部分UI
+-  新增主页关机/重启菜单
+:::
+::: timeline 2025-06-06 <Badge type="warning" text="V 0.1.3" /> 
+- 完善版本号命名规则，支持按渠道更新
+- 新增模块损坏检测并优化部分UI
+- 使用DoH获取模块更新信息
 
 :::
+::: timeline 2025-06-05 <Badge type="warning" text="V 0.1.0" />
+
+- 第一个预览版本
+- 获取模块信息时过滤非目录
+:::
+
+

@@ -11,29 +11,16 @@ next:
   link: '/guide/faq'
 ---
 
-# 安装指南
-
+# 下载SakitinSU管理器 
 ---
 
-## 下载SakitinSU管理器 <Badge type="warning" text="V0.1.0" />
-
-> [!TIP]
-> 请选择`AList`下载
 
 <LinkGrid>
   <SakuraLinkCard
     title="GitCode"
     icon="/linkcard/GitCode.svg"
-    href="https://gitcode.com"
-  />
-  <SakuraLinkCard
-    title="GitHub"
-    icon="/linkcard/Github.svg"
-    href="https://github.com"
-  />
-  <SakuraLinkCard
-    title="Alist"
-    icon="/linkcard/alist.svg"
-    href="https://emas-devops-cdn.aliyuncs.com/publish/2/3911161/335552265/P718582199666391040/SSU-0.1.0_preview0-universal.APK?spm=5176.a2c8x.0.0.40459482Ck7lvw&response-content-type=application/octet-stream"
+    href="https://emas-devops-cdn.aliyuncs.com/publish/2/3911161/335552265/P719634901892642816/SSU-0.1.5.0-universal.APK?spm=5176.a2c8x.0.0.40459482Wa2W0w&response-content-type=application/octet-stream"
   />
 </LinkGrid>
+
+
