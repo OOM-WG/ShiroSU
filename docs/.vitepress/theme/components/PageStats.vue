@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { computed, onMounted, onUnmounted, nextTick, ref, watch } from "vue";
-	import { useData, useRoute } from "vitepress";
+	import { useData, useRoute } from "vitepress/client";
 	// 获取前言数据
 	const { frontmatter, page } = useData();
 	const route = useRoute();

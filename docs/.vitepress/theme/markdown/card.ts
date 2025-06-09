@@ -1,10 +1,32 @@
-import {container} from '@mdit/plugin-container'
-import {type MarkdownEnv} from 'vitepress'
+import { container } from '@mdit/plugin-container'
 import {load} from 'js-yaml'
 import {type Options, type PluginSimple} from 'markdown-it'
-import type Token from 'markdown-it/lib/token.js'
+import type Token from 'markdown-it/lib/token.mjs'
 
 import {entries, fromEntries, isPlainObject, isString, stringifyProp,} from '../utils.js'
+
+// 定义 MarkdownEnv 接口 (来自 vitepress/types/shared.d.ts)
+interface MarkdownEnv {
+    content?: string
+    excerpt?: string
+    frontmatter?: Record<string, unknown>
+    headers?: Array<{
+        level: number
+        title: string
+        slug: string
+        link: string
+        children: Array<any>
+    }>
+    sfcBlocks?: any
+    title?: string
+    path: string
+    relativePath: string
+    cleanUrls: boolean
+    links?: string[]
+    includes?: string[]
+    realPath?: string
+    localeIndex?: string
+}
 
 export interface CardOptions {
     title: string

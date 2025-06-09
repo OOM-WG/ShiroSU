@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {onMounted, ref, watch} from 'vue'
-import {useData} from 'vitepress/dist/client/theme-default/composables/data'
-import {APPEARANCE_KEY, inBrowser} from 'vitepress/dist/client/shared'
+import {useData} from 'vitepress/client'
+import {APPEARANCE_KEY, inBrowser} from 'vitepress/dist/client/shared.js'
 import VPSwitch from 'vitepress/dist/client/theme-default/components/VPSwitch.vue'
 import VPIconSun from 'vitepress/dist/client/theme-default/components/icons/VPIconSun.vue'
 import VPIconMoon from 'vitepress/dist/client/theme-default/components/icons/VPIconMoon.vue'
@@ -16,7 +16,6 @@ onMounted(() => {
 })
 
 const isAppearanceTransition =
-    // @ts-expect-error: Transition API
     document.startViewTransition &&
     !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
 
@@ -62,7 +61,7 @@ function useAppearance() {
         Math.max(y, innerHeight - y),
     )
 
-    // @ts-expect-error: Transition API
+    
     const transition = document.startViewTransition(() => {
       setClass((isDark = !isDark))
 

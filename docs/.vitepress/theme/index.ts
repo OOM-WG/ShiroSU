@@ -1,9 +1,9 @@
 // .vitepress/theme/index.ts
 
 // ===== 框架核心导入 =====
-import type { Theme } from "vitepress";
+import type { Theme } from "vitepress/client";
 import DefaultTheme from "vitepress/theme";
-import { useData, useRoute } from "vitepress";
+import { useData, useRoute } from "vitepress/client";
 import { nextTick, onMounted, watch, h } from "vue";
 // ===== 第三方库 =====
 import mediumZoom from "medium-zoom";
