@@ -20,7 +20,7 @@ import { NolebaseInlineLinkPreviewPlugin } from "@nolebase/vitepress-plugin-inli
 import { NolebaseEnhancedReadabilitiesPlugin } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 
 // ===== 本地组件 =====
-import Card from "../theme/components/Card";
+import Card from "./components/Card";
 import RainbowAnimationSwitcher from "./components/RainbowAnimationSwitcher.vue";
 import Confetti from "./components/Confetti.vue";
 import Linkcard from "./components/Linkcard.vue";
