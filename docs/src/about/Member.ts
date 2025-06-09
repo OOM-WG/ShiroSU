@@ -1,6 +1,6 @@
 export interface Member {
     name: string;
-    qq: string;
+    qq: number;
     avatarPic?: string;
     title: string;
     company?: string;
