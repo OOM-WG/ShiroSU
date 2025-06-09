@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 	import { ref, onMounted, onUnmounted, nextTick, watch } from "vue";
-	import { useData, useRoute } from "vitepress";
+	import { useData, useRoute } from "vitepress/client";
 	import { createApp } from "vue";
 	import PageStats from "./PageStats.vue";
 

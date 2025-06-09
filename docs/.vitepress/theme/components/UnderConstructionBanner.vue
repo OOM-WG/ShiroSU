@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-	import { useData } from "vitepress";
+	import { useData } from "vitepress/client";
 
 	const show = ref(true);
 	const { frontmatter } = useData();
@@ -14,6 +14,7 @@
 	let styleElement: HTMLStyleElement | null = null;
 
 	const addPageStyles = () => {
+		if (typeof document === 'undefined') return;
 		if (styleElement) return;
 
 		styleElement = document.createElement("style");
@@ -49,6 +50,7 @@
 	};
 
 	const removePageStyles = () => {
+		if (typeof document === 'undefined') return;
 		if (styleElement) {
 			document.head.removeChild(styleElement);
 			styleElement = null;

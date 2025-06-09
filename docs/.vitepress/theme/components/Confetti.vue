@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import confetti from "canvas-confetti";
+import { onMounted } from 'vue';
+import confetti from 'canvas-confetti';
 
-/* 纸屑 */
-confetti({
-  particleCount: 100,
-  spread: 70,
-  origin: { y: 0.6 }
+// 仅在客户端挂载后触发纸屑效果
+onMounted(() => {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
 });
 
 </script>

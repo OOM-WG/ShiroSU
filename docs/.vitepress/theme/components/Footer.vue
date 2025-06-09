@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {useQRCode} from '@vueuse/integrations/useQRCode'
-import {useData, withBase} from 'vitepress'
+import {useData, withBase} from 'vitepress/client'
 
 import {socialList} from './socialList'
 

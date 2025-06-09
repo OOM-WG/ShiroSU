@@ -1,4 +1,4 @@
-import {defineConfig} from "vitepress";
+import { defineConfig } from "vitepress/dist/node/index.js";
 import {head} from "./local/head";
 import {markdown} from "./local/markdown";
 import {themeConfig} from "./local/theme";
@@ -61,7 +61,7 @@ export default defineConfig({
 					},
 				},
 			},
-			chunkSizeWarningLimit: 600,
+			chunkSizeWarningLimit: 1000,
 		},
 		plugins: [
 			ThumbnailHashImages(),
