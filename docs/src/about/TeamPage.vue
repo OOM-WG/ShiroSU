@@ -29,7 +29,8 @@ import TeamHero from './TeamHero.vue'
 import TeamList from './TeamList.vue'
 import type {Member} from './Member'
 
-shuffleMembers(membersCoreData as Member[], true)
+const members = membersCoreData as Member[]
+shuffleMembers(members, true)
 </script>
 
 <template>
@@ -43,7 +44,7 @@ shuffleMembers(membersCoreData as Member[], true)
       </template>
     </TeamHero>
 
-    <TeamList :members="membersCoreData as Member[]">
+    <TeamList v-bind="{ members }">
       <template #title>核心开发成员</template>
       <template #lead>他们是驱动项目成功的核心力量，致力于更好的的使用体验</template>
     </TeamList>
