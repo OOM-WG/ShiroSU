@@ -13,6 +13,7 @@
 		"deps:install": "pnpm install"
 	},
 	"dependencies": {
+		"@mdit/plugin-container": "^0.22.0",
 		"@nolebase/vitepress-plugin-breadcrumbs": "^2.17.2",
 		"@vue/repl": "^4.5.1",
 		"@vue/theme": "^2.3.0",
