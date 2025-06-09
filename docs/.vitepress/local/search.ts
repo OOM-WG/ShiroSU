@@ -1,6 +1,6 @@
-import type {LocalSearchOptions} from 'vitepress';
+import type { DefaultTheme } from 'vitepress';
 
-export const localSearchOptions: LocalSearchOptions = {
+export const localSearchOptions: DefaultTheme.LocalSearchOptions = {
     locales: {
         root: {
             translations: {

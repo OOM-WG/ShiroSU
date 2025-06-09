@@ -13,4 +13,8 @@ onMounted(() => {
 
 </script>
 
+<template>
+  <!-- 纸屑效果组件，在客户端挂载后自动触发动画 -->
+</template>
+
 

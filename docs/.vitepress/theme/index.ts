@@ -18,16 +18,22 @@ import {
 import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
 import { NolebaseInlineLinkPreviewPlugin } from "@nolebase/vitepress-plugin-inline-link-preview/client";
 import { NolebaseEnhancedReadabilitiesPlugin } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import {
+	NolebasePagePropertiesEditor,
+	NolebasePageProperties
+} from "@nolebase/vitepress-plugin-page-properties/client";
 
 // ===== 本地组件 =====
 import Card from "../theme/components/Card";
 import RainbowAnimationSwitcher from "./components/RainbowAnimationSwitcher.vue";
 import Confetti from "./components/Confetti.vue";
+import HomeUnderline from "./components/HomeUnderline.vue";
 import Linkcard from "./components/Linkcard.vue";
 import SakuraLinkCard from "./components/SakuraLinkCard.vue";
 import LinkGrid from "./components/LinkGrid.vue";
 import UnderConstructionBanner from "./components/UnderConstructionBanner.vue";
 import PageStats from "./components/PageStats.vue";
+import ArticleMetadata from "./components/ArticleMetadata.vue";
 
 // ===== 样式文件 =====
 // 本地样式
@@ -47,6 +53,7 @@ import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
+import "@nolebase/vitepress-plugin-page-properties/client/style.css";
 
 let homePageStyle: HTMLStyleElement | undefined;
 
@@ -69,11 +76,14 @@ export default {
 		app.component("Linkcard", Linkcard);
 		app.component("VPCard", Card);
 		app.component("Confetti", Confetti);
+		app.component("HomeUnderline", HomeUnderline);
 		app.component("SakuraLinkCard", SakuraLinkCard);
 		app.component("LinkGrid", LinkGrid);
 		app.component("PageStats", PageStats);
-		app.component("NolebaseGitContributors", NolebaseGitContributors);
+		app.component("ArticleMetadata", ArticleMetadata);
 		app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
+		app.component("NolebasePagePropertiesEditor", NolebasePagePropertiesEditor);
+		app.component("NolebasePageProperties", NolebasePageProperties);
 		app.use(NolebaseGitChangelogPlugin);
 		app.use(NolebaseInlineLinkPreviewPlugin);
 		app.use(NolebaseEnhancedReadabilitiesPlugin, {

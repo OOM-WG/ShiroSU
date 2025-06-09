@@ -1,9 +1,9 @@
-import type {MarkdownOptions} from "vitepress";
+import type { MarkdownOptions } from "vitepress";
 import mathjax3 from "markdown-it-mathjax3";
 import footnote from "markdown-it-footnote";
 import timeline from "vitepress-markdown-timeline";
-import {BiDirectionalLinks} from "@nolebase/markdown-it-bi-directional-links";
-import {InlineLinkPreviewElementTransform} from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
+import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
+import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 
 export const markdown: MarkdownOptions = {
     // Shiki主题, 所有主题参见: https://github.com/shikijs/shiki/blob/main/docs/themes.md

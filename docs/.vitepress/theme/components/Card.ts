@@ -1,4 +1,4 @@
-import { withBase } from 'vitepress/client'
+import { withBase } from 'vitepress'
 import {isLinkExternal, isRelativeLink} from '../utils'
 import {type FunctionalComponent, h} from 'vue'
 

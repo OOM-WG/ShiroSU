@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-	import { useData } from "vitepress/client";
+	import { useData } from "vitepress";
 
 	const show = ref(true);
 	const { frontmatter } = useData();
