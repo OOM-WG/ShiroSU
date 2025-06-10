@@ -1,7 +1,15 @@
 <script lang="ts">
+// 使用种子随机数生成器确保 SSR 和客户端的一致性
+const seededRandom = (seed: number) => {
+  let state = seed
+  return () => {
+    state = (state * 1664525 + 1013904223) % 2147483648
+    return state / 2147483648
+  }
+}
 
-
-const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
+const shuffleMembers = (members: Member[], pinTheFirstMember = false, seed = 12345): void => {
+  const random = seededRandom(seed)
   let offset = pinTheFirstMember ? 1 : 0
   // `i` is between `1` and `length - offset`
   // `j` is between `0` and `length - offset - 1`
@@ -9,7 +17,7 @@ const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
   // `offset + j` is between `offset` and `length - 1`
   let i = members.length - offset
   while (i > 0) {
-    const j = Math.floor(Math.random() * i);
+    const j = Math.floor(random() * i);
     [
       members[offset + i - 1],
       members[offset + j]
