@@ -7,13 +7,22 @@ defineProps<{ text?: string, screenMenu?: boolean }>()
 
 const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)').value
 
-const animated = useLocalStorage('animate-rainbow', inBrowser ? !reduceMotion : true)
+// 确保服务端渲染和客户端的初始状态一致
+const animated = useLocalStorage('animate-rainbow', inBrowser ? !reduceMotion : true, {
+  // 添加序列化器确保状态一致性
+  serializer: {
+    read: (v: any) => v === 'true',
+    write: (v: any) => String(v)
+  }
+})
 
 function toggleRainbow() {
   animated.value = !animated.value
 }
 
+// 只在浏览器环境中执行 DOM 操作
 watch(animated, (anim) => {
+  if (!inBrowser) return
   document.documentElement.classList.remove('rainbow')
   if (anim) {
     document.documentElement.classList.add('rainbow')

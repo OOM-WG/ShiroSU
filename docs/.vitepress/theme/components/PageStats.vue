@@ -1,6 +1,7 @@
 <script setup lang="ts">
 	import { computed, onMounted, onUnmounted, nextTick, ref, watch } from "vue";
 	import { useData, useRoute } from "vitepress";
+	import { inBrowser } from "vitepress";
 	// 获取前言数据
 	const { frontmatter, page } = useData();
 	const route = useRoute();
@@ -19,7 +20,7 @@
 			return progress;
 		}
 		return undefined; // 如果无效或未定义，则不显示进度条
-	}); // 计算字数的函数
+	});	// 计算字数的函数
 	const calculateWordCount = () => {
 		// 如果前言中有明确设置的字数，则使用它
 		if (frontmatter.value?.wordCount !== undefined && frontmatter.value?.wordCount !== null) {
@@ -27,8 +28,8 @@
 			return;
 		}
 
-		// 否则尝试从页面内容计算
-		if (typeof window !== "undefined") {
+		// 只在浏览器环境中计算字数，避免 SSR/Client 不一致
+		if (inBrowser && typeof window !== "undefined") {
 			try {
 				// 获取文档主体内容区域的文本
 				const contentElement =
@@ -112,7 +113,7 @@
 	}
 	// 定位逻辑
 	const moveToCorrectPosition = async () => {
-		if (!enableStats.value || !statsRef.value) {
+		if (!enableStats.value || !statsRef.value || !inBrowser) {
 			return;
 		}
 
