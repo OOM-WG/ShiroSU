@@ -12,19 +12,14 @@ const toggle = inBrowser ? useAppearance() : () => {
 }
 
 onMounted(() => {
-  if (inBrowser) {
-    checked.value = document.documentElement.classList.contains('dark')
-  }
+  checked.value = document.documentElement.classList.contains('dark')
 })
 
 const isAppearanceTransition =
-    inBrowser && 
     document.startViewTransition &&
     !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
 
 function useAppearance() {
-  if (!inBrowser) return () => {}
-  
   const query = window.matchMedia('(prefers-color-scheme: dark)')
   const classList = document.documentElement.classList
 
