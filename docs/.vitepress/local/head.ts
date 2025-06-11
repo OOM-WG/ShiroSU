@@ -14,14 +14,14 @@ export const head: HeadConfig[] = [
   ["meta", { property: "og:locale", content: "zh-CN" }],
   ["meta", { property: "og:title", content: "咲苏" }],
   ["meta", { property: "og:description", content: "新的Root实现方式" }],
-  ["meta", { property: "og:site", content: "https://ssu.yumeyuka.plus" }],
+  ["meta", { property: "og:site", content: "https://suu.oom-wg.dev" }],
   ["meta", { property: "og:site_name", content: "咲苏" }],
 
   [
     "meta",
     {
       property: "og:image",
-      content: "https://ssu.yumeyuka.plus/Logo_Rounded.webp",
+      content: "https://suu.oom-wg.dev/Logo_Rounded.webp",
     },
   ],
 
