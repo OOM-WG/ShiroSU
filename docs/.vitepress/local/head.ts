@@ -42,7 +42,7 @@ export const head: HeadConfig[] = [
     })(window, document, 'script', 'aplus_queue', '203467608');
     aplus_queue.push({
       action: 'aplus.setMetaInfo',
-      arguments: ['appKey', '68234476bc47b67d8364a026']
+      arguments: ['appKey', '6849a077bc47b67d8382f404']
     });`,
   ]
 ];
