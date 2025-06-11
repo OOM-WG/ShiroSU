@@ -1,4 +1,4 @@
 [submodule ".vitepress"]
 path = .vitepress
-url = https://github.com/YumeYuka/SSU_Docs_Config
+url = https://github.com/OOM-WG/SSU_Docs_Config
 branch = master
