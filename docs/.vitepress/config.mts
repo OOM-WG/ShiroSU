@@ -1,20 +1,13 @@
 import { defineConfig } from "vitepress/dist/node/index.js";
-import {head} from "./local/head";
-import {markdown} from "./local/markdown";
-import {themeConfig} from "./local/theme";
-import {fileURLToPath, URL} from "node:url";
-import {
-    GitChangelog,
-    GitChangelogMarkdownSection,
-} from "@nolebase/vitepress-plugin-git-changelog/vite";
-import {ThumbnailHashImages} from "@nolebase/vitepress-plugin-thumbnail-hash/vite";
-import {generateBreadcrumbsData} from "@nolebase/vitepress-plugin-breadcrumbs/vitepress";
-import {visualizer} from "rollup-plugin-visualizer";
-import {
-    PageProperties,
-    PagePropertiesMarkdownSection,
-} from "@nolebase/vitepress-plugin-page-properties/vite";
-
+import { head } from "./local/head";
+import { markdown } from "./local/markdown";
+import { themeConfig } from "./local/theme";
+import { fileURLToPath, URL } from "node:url";
+import { GitChangelog, GitChangelogMarkdownSection } from "@nolebase/vitepress-plugin-git-changelog/vite";
+import { ThumbnailHashImages } from "@nolebase/vitepress-plugin-thumbnail-hash/vite";
+import { generateBreadcrumbsData } from "@nolebase/vitepress-plugin-breadcrumbs/vitepress";
+import { visualizer } from "rollup-plugin-visualizer";
+import { PageProperties, PagePropertiesMarkdownSection } from "@nolebase/vitepress-plugin-page-properties/vite";
 
 export default defineConfig({
 	title: "SakitinSU",
