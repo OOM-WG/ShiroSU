@@ -67,7 +67,7 @@ export default defineConfig({
 			ThumbnailHashImages(),
 			GitChangelog({
 				// 填写在此处填写您的仓库链接
-				repoURL: () => "https://github.com/oom-wg/SSU_Docs",
+				repoURL: () => "https://github.com/OOM-WG/SSU_Docs",
 				mapAuthors: [
 					{
 						name: "YumeYuka",
@@ -75,9 +75,19 @@ export default defineConfig({
 						mapByEmailAliases: ["Miao@YumeYuka.plus"],
 					},
 					{
-						name: "FengYing1314",
-						username: "FengYing",
+						name: "FengYing",
+						username: "FengYing1314",
 						mapByEmailAliases: ["FengYing@miao520.fun"],
+					},
+					{
+						name: "nuofang6",
+						username: "方舟",
+						mapByEmailAliases: ["991921514@qq.com"],
+					},
+					{
+						name: "GunRain",
+						username: "𝕊𝔸𝕂𝕀✧",
+						mapByEmailAliases: ["im@sakit.in"],
 					},
 				],
 			}),
