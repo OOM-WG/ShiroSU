@@ -387,3 +387,13 @@ html.dark {
 .VPNolebaseHighlightTargetedHeadingAnimated {
     animation: vp-nolebase-highlight-targeted-heading-rainbow-animation 1.5s ease-in-out !important;
 }
+/* 默认隐藏聚光灯 */
+.VPNolebaseEnhancedReadabilitiesSpotlightHoverBlock {
+    opacity: 0 !important;
+    transition: opacity 0.25s ease;
+}
+
+/* 当 .content:hover 时显示聚光灯 */
+body:has(.VPDoc .content:hover) .VPNolebaseEnhancedReadabilitiesSpotlightHoverBlock {
+    opacity: 1 !important;
+}

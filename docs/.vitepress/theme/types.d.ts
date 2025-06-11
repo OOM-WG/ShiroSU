@@ -26,23 +26,23 @@ declare module "vitepress" {
     }
 }
 
-// 同时扩展内部模块路径，确保与 VitePress 核心类型系统兼容
-// 这继承了 node_modules/vitepress/dist/node/index.d.ts 中的模块声明
-declare module '../../types/default-theme.js' {
-    namespace DefaultTheme {
-        interface Config {
-            customFooter?: {
-                qrcodeTitle: string;
-                qrcodeMessage: string;
-                qrcodeLink: string;
-                navigation: {
-                    title: string;
-                    items: {
-                        text: string;
-                        link: string;
-                    }[];
-                }[];
-            };
-        }
-    }
-}
+// // 同时扩展内部模块路径，确保与 VitePress 核心类型系统兼容
+// // 这继承了 node_modules/vitepress/dist/node/index.d.ts 中的模块声明
+// declare module '../../types/default-theme.js' {
+//     namespace DefaultTheme {
+//         interface Config {
+//             customFooter?: {
+//                 qrcodeTitle: string;
+//                 qrcodeMessage: string;
+//                 qrcodeLink: string;
+//                 navigation: {
+//                     title: string;
+//                     items: {
+//                         text: string;
+//                         link: string;
+//                     }[];
+//                 }[];
+//             };
+//         }
+//     }
+// }
