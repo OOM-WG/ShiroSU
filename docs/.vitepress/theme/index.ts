@@ -35,7 +35,7 @@ import UnderConstructionBanner from "./components/UnderConstructionBanner.vue";
 import PageStats from "./components/PageStats.vue";
 import ArticleMetadata from "./components/ArticleMetadata.vue";
 import HomeLayout from "./home/HomeLayout.vue";
-// WalletApp 现在通过 alias 替换 VPHome，无需在此处导入
+import MyLayout from "./components/MyLayout.vue";
 
 // ===== 样式文件 =====
 // 本地样式
@@ -63,6 +63,7 @@ export default {
 	extends: DefaultTheme,
 	Layout: () => {
 		return h(DefaultTheme.Layout, null, {
+			"default": () => h(MyLayout),
 			// 为较宽的屏幕的导航栏添加阅读增强菜单
 			"nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
 			// 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
@@ -71,6 +72,7 @@ export default {
 			"layout-top": () => [h(UnderConstructionBanner), h(NolebaseHighlightTargetedHeading)],
 			// 在文档内容后添加页面统计信息
 			"doc-after": () => h(PageStats),
+			// 使用自定义布局
 		});
 	},
 	enhanceApp({ app, router }) {
