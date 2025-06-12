@@ -82,7 +82,7 @@
 		width: 100%;
 		margin: 0;
 		animation: slideInUp 0.8s ease-out;
-		padding: 0 25vw 10vw 25vw;
+		padding: 0 25vw 10vw 20vw;
 		box-sizing: border-box;
 	}
 	.brand-tag {
