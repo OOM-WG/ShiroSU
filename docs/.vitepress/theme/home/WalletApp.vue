@@ -12,7 +12,7 @@
 					</div>
 					<img src="/Logo.webp" alt="SakitinSU Logo" class="mobile-logo" />
 					<h1 class="hero-title">
-						<span class="title-highlight">Android Root </span> Implementation
+						<span class="title-highlight">Android Root </span><span class="implementation-text">Implementation</span>
 						<br />
 						<span class="platform-tag">Easy Start</span>
 					</h1>
@@ -112,7 +112,7 @@
 		letter-spacing: -0.02em;
 		word-break: keep-all;
 		max-width: 100%;
-		white-space: normal;
+		white-space: nowrap; /* 设置为nowrap防止自动换行 */
 		overflow: visible;
 	}
 
@@ -122,6 +122,11 @@
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		position: relative;
+	}
+
+	.implementation-text {
+		display: inline-block; /* 确保元素不换行 */
+		white-space: nowrap; /* 额外确保不换行 */
 	}
 
 	.platform-tag {
@@ -295,10 +300,10 @@
 			display: block; /* 在移动端显示logo */
 		}
 		.hero-title {
-			font-size: clamp(2rem, 12vw, 3rem);
+			font-size: clamp(2rem, 8vw, 2rem);
 			margin-top: 0.5rem; /* 减少标题顶部间距 */
 			margin-bottom: 1rem;
-			white-space: normal;
+			white-space: normal; /* 移动端允许换行 */
 			max-width: 100%;
 		}
 		.hero-subtitle {
@@ -307,19 +312,21 @@
 		}
 
 		.cta-group {
-			flex-direction: column;
-			align-items: stretch;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 0.75rem;
 		}
-
 		.cta-primary,
 		.cta-secondary {
-			justify-content: center;
-			padding: 0.875rem 1.5rem;
+			flex: 1 1 0;
+			min-width: 0;
+			padding: 0.875rem 0;
 		}
 	}
 	@media (max-width: 480px) {
 		.hero-title {
-			font-size: clamp(1.75rem, 10vw, 2.5rem);
+			font-size: clamp(1.75rem, 8vw, 2rem);
 		}
 		.mobile-logo {
 			width: 140px; /* 较小屏幕上稍微缩小Logo */
@@ -327,10 +334,14 @@
 			margin: -4rem auto 1.5rem; /* 更大的负上边距使logo位置更高 */
 		}
 
+		.cta-group {
+			gap: 0.25rem;
+		}
 		.cta-primary,
 		.cta-secondary {
-			padding: 0.75rem 1.25rem;
-			font-size: 0.875rem;
+			font-size: 0.9rem;
+			padding: 0.6rem 0.3rem;
+			max-width: 110px;
 		}
 	}
 
@@ -342,7 +353,7 @@
 		}
 
 		.hero-title {
-			font-size: clamp(1.5rem, 9vw, 2rem);
+			font-size: clamp(1.5rem, 7vw, 1.5rem);
 			margin-top: 0;
 		}
 	}
