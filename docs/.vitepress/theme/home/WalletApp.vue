@@ -10,10 +10,11 @@
 						<span class="brand-icon">⚡</span>
 						SakitinSU
 					</div>
+					<img src="/Logo.webp" alt="SakitinSU Logo" class="mobile-logo" />
 					<h1 class="hero-title">
 						<span class="title-highlight">Android Root </span> Implementation
 						<br />
-					<span class="platform-tag">Easy Start</span>
+						<span class="platform-tag">Easy Start</span>
 					</h1>
 					<p class="hero-subtitle">Change reality with cutting-edge technology</p>
 					<div class="cta-group">
@@ -81,7 +82,7 @@
 		width: 100%;
 		margin: 0;
 		animation: slideInUp 0.8s ease-out;
-		padding: 0 18vw 10vw 25vw;
+		padding: 0 25vw 10vw 25vw;
 		box-sizing: border-box;
 	}
 	.brand-tag {
@@ -287,12 +288,15 @@
 		}
 
 		.brand-tag {
-			font-size: 0.75rem;
-			padding: 0.375rem 0.75rem;
+			display: none; /* 移动端设备不显示品牌标签 */
 		}
 
+		.mobile-logo {
+			display: block; /* 在移动端显示logo */
+		}
 		.hero-title {
 			font-size: clamp(2rem, 12vw, 3rem);
+			margin-top: 0.5rem; /* 减少标题顶部间距 */
 			margin-bottom: 1rem;
 			white-space: normal;
 			max-width: 100%;
@@ -317,11 +321,29 @@
 		.hero-title {
 			font-size: clamp(1.75rem, 10vw, 2.5rem);
 		}
+		.mobile-logo {
+			width: 140px; /* 较小屏幕上稍微缩小Logo */
+			height: 140px;
+			margin: -4rem auto 1.5rem; /* 更大的负上边距使logo位置更高 */
+		}
 
 		.cta-primary,
 		.cta-secondary {
 			padding: 0.75rem 1.25rem;
 			font-size: 0.875rem;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.mobile-logo {
+			width: 120px; /* 超小屏幕进一步缩小Logo */
+			height: 120px;
+			margin: -4rem auto 1rem; /* 更大的负上边距使logo位置更高 */
+		}
+
+		.hero-title {
+			font-size: clamp(1.5rem, 9vw, 2rem);
+			margin-top: 0;
 		}
 	}
 
@@ -388,5 +410,22 @@
 		font-weight: 500;
 		color: var(--vp-c-text-2);
 		line-height: 24px;
+	}
+	.mobile-logo {
+		display: none; /* 默认在桌面端不显示 */
+		width: 120px;
+		height: 120px;
+		margin: 0 auto 1.5rem;
+		object-fit: contain;
+		border-radius: 12px;
+	}
+	@media (max-width: 768px) {
+		.mobile-logo {
+			display: block;
+			margin: -5.5rem auto 2rem; /* 更大的负上边距使logo位置更高 */
+			width: 160px; /* 设置固定宽度而不是百分比 */
+			height: 160px;
+			object-fit: contain;
+		}
 	}
 </style>
