@@ -20,7 +20,7 @@ import { NolebaseInlineLinkPreviewPlugin } from "@nolebase/vitepress-plugin-inli
 import { NolebaseEnhancedReadabilitiesPlugin } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 import {
 	NolebasePagePropertiesEditor,
-	NolebasePageProperties
+	NolebasePageProperties,
 } from "@nolebase/vitepress-plugin-page-properties/client";
 
 // ===== 本地组件 =====
@@ -34,6 +34,8 @@ import LinkGrid from "./components/LinkGrid.vue";
 import UnderConstructionBanner from "./components/UnderConstructionBanner.vue";
 import PageStats from "./components/PageStats.vue";
 import ArticleMetadata from "./components/ArticleMetadata.vue";
+import HomeLayout from "./home/HomeLayout.vue";
+import WalletApp from "./home/WalletApp.vue";
 
 // ===== 样式文件 =====
 // 本地样式
@@ -72,6 +74,7 @@ export default {
 		});
 	},
 	enhanceApp({ app, router }) {
+		app.component("HomeLayout", HomeLayout);
 		app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
 		app.component("Linkcard", Linkcard);
 		app.component("VPCard", Card);
@@ -81,7 +84,9 @@ export default {
 		app.component("LinkGrid", LinkGrid);
 		app.component("PageStats", PageStats);
 		app.component("ArticleMetadata", ArticleMetadata);
+		app.component("WalletApp", WalletApp);
 		app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
+		app.component("NolebaseGitContributors", NolebaseGitContributors);
 		app.component("NolebasePagePropertiesEditor", NolebasePagePropertiesEditor);
 		app.component("NolebasePageProperties", NolebasePageProperties);
 		app.use(NolebaseGitChangelogPlugin);
