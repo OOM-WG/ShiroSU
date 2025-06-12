@@ -40,6 +40,10 @@ export default defineConfig({
 					find: /^.*\/VPFooter\.vue$/,
 					replacement: fileURLToPath(new URL("./theme/components/Footer.vue", import.meta.url)),
 				},
+				{
+					find: /^.*\/VPHome\.vue$/,
+					replacement: fileURLToPath(new URL("./theme/home/WalletApp.vue", import.meta.url)),
+				},
 			],
 		},
 		build: {

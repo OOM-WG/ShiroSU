@@ -1,142 +1,392 @@
 <template>
-	<div class="wallet-hero-bg">
-		<div class="wallet-hero-content">
-			<div class="wallet-main">
-				<div class="wallet-tagline">SakitinSU</div>
-				<h1 class="wallet-title">
-					New Root Implementation <br />
-					For AndRoid
-				</h1>
-				<div class="wallet-subtitle">Change reality with me!</div>
-				<a href="/guide/what-is-sakitinsu" class="wallet-btn wallet-download">开始</a>
+	<div class="VPHome">
+		<div class="jetbrains-hero">
+			<div class="hero-background">
+				<div class="gradient-overlay"></div>
+			</div>
+			<div class="hero-content">
+				<div class="content-wrapper">
+					<div class="brand-tag">
+						<span class="brand-icon">⚡</span>
+						SakitinSU
+					</div>
+					<h1 class="hero-title">
+						<span class="title-highlight">Android Root </span> Implementation
+						<br />
+					<span class="platform-tag">Easy Start</span>
+					</h1>
+					<p class="hero-subtitle">Change reality with cutting-edge technology</p>
+					<div class="cta-group">
+						<a href="/guide/what-is-sakitinsu" class="cta-primary">
+							<span class="cta-text">开始使用</span>
+						</a>
+						<a href="https://qq.yumeyuka.plus" class="cta-secondary" target="_blank" rel="noopener">
+							<span class="cta-text">群组</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-	// 无需任何脚本
+	// 移除对frontmatter的依赖，内容直接硬编码在模板中
+	// 这样组件可以完全独立工作，不需要外部配置
 </script>
 
 <style scoped>
-	.wallet-hero-bg {
-		min-height: 100vh;
-		width: 100vw;
-		background: none;
-		position: relative;
-		animation: none;
-		overflow: hidden;
+	@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+	/* VPHome 容器样式 */
+	.VPHome {
+		margin: 0;
+		width: 100%;
 	}
-	.wallet-hero-bg::after {
+
+	.jetbrains-hero {
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	}
+	.hero-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #ffffff;
+		z-index: 1;
+	}
+
+	.gradient-overlay {
 		display: none;
 	}
-	.wallet-hero-content {
+	.hero-content {
 		position: relative;
-		z-index: 2;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
+		z-index: 3;
 		min-height: 100vh;
-		padding-left: 2vw;
-		padding-top: 0;
-		max-width: 80vw;
-	}
-	.wallet-main {
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 1.8rem;
+		align-items: center;
+		padding: 0 2vw;
+		width: 100%;
+		box-sizing: border-box;
+		justify-content: flex-start;
 	}
-	.wallet-tagline {
-		font-size: 2rem;
-		font-weight: 700;
-		color: #222;
-		margin-bottom: 0.8rem;
-	}
-	.wallet-title {
-		font-size: 4.2rem;
-		font-weight: 800;
-		color: #222;
-		line-height: 1.08;
-		margin-bottom: 1rem;
-		word-break: break-word;
+	.content-wrapper {
 		max-width: none;
+		width: 100%;
+		margin: 0;
+		animation: slideInUp 0.8s ease-out;
+		padding: 0 18vw 10vw 25vw;
+		box-sizing: border-box;
 	}
-	.wallet-subtitle {
-		font-size: 2rem;
-		color: #333;
+	.brand-tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: rgba(255, 119, 48, 0.1);
+		color: #ff7730;
+		padding: 0.625rem 1.25rem;
+		border-radius: 2rem;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 2rem;
+		border: 1px solid rgba(255, 119, 48, 0.2);
+		backdrop-filter: blur(10px);
+	}
+
+	.brand-icon {
+		font-size: 1rem;
+	}
+	.hero-title {
+		font-size: clamp(2.4rem, 8vw, 4.5rem);
+		font-weight: 800;
+		line-height: 1.1;
+		color: #1e293b;
+		margin-bottom: 1.5rem;
+		letter-spacing: -0.02em;
+		word-break: keep-all;
+		max-width: 100%;
+		white-space: normal;
+		overflow: visible;
+	}
+
+	.title-highlight {
+		background: linear-gradient(135deg, #ff7730 0%, #ff5722 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		position: relative;
+	}
+
+	.platform-tag {
+		background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		position: relative;
+	}
+	.hero-subtitle {
+		font-size: 1.5rem;
+		color: #64748b;
 		font-weight: 400;
-		margin-bottom: 2.2rem;
-		max-width: 32em;
-		line-height: 1.5;
+		margin-bottom: 3rem;
+		line-height: 1.6;
+		max-width: 100%;
 	}
-	.wallet-btn.wallet-download {
-		background: #222;
-		color: #fff;
-		border: none;
-		border-radius: 2.5rem;
-		padding: 1rem 2.5rem;
-		font-size: 1.3rem;
-		font-weight: 500;
-		cursor: pointer;
+
+	.cta-group {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.cta-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: #ff7730;
+		color: #ffffff;
+		padding: 0.95rem 2.1rem;
+		border-radius: 2rem;
+		font-weight: 700;
+		font-size: 1.18rem;
 		text-decoration: none;
-		box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
-		transition: background 0.2s, color 0.2s;
-		margin-top: 1.5rem;
+		box-shadow: 0 2px 8px rgba(255, 119, 48, 0.2);
+		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+		position: relative;
+		border: none;
+		outline: none;
+		min-width: 140px;
+		justify-content: center;
+		letter-spacing: 0.04em;
 	}
-	.wallet-btn.wallet-download:hover {
-		background: #fff;
-		color: #222;
+
+	.cta-primary:active,
+	.cta-primary:focus {
+		box-shadow: 0 0 0 2px rgba(255, 119, 48, 0.3);
 	}
-	:root.dark .wallet-tagline,
-	:root.dark .wallet-title {
+
+	.cta-primary:hover {
+		background: #ff5722;
 		color: #fff;
+		border-color: #ff5722;
+		box-shadow: 0 4px 16px rgba(255, 119, 48, 0.3);
+		transform: translateY(-2px);
 	}
-	:root.dark .wallet-subtitle {
-		color: #e0e0e0;
+
+	.cta-icon {
+		transition: transform 0.3s ease;
 	}
-	:root.dark .wallet-btn.wallet-download {
-		background: #fff;
-		color: #222;
+
+	.cta-primary:hover .cta-icon {
+		transform: translateX(4px);
 	}
-	:root.dark .wallet-btn.wallet-download:hover {
-		background: #222;
-		color: #fff;
+	.cta-secondary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: #ffffff;
+		color: #333;
+		padding: 0.95rem 2.1rem;
+		border-radius: 2rem;
+		font-weight: 700;
+		font-size: 1.18rem;
+		text-decoration: none;
+		border: 1.5px solid #ddd;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+		outline: none;
+		min-width: 140px;
+		justify-content: center;
+		letter-spacing: 0.04em;
 	}
-	@media (max-width: 900px) {
-		.wallet-hero-content {
-			max-width: 95vw;
-			padding-left: 4vw;
+
+	.cta-secondary:active,
+	.cta-secondary:focus {
+		box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+	}
+
+	.cta-secondary:hover {
+		background: #f5f5f5;
+		color: #333;
+		border-color: #ccc;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+		transform: translateY(-2px);
+	}
+	@keyframes slideInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
 		}
-		.wallet-title {
-			font-size: 2.6rem;
-			max-width: 35ch;
-		}
-		.wallet-tagline {
-			font-size: 1.3rem;
-		}
-		.wallet-subtitle {
-			font-size: 1.2rem;
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
-	@media (max-width: 600px) {
-		.wallet-hero-content {
-			padding-left: 2vw;
-			padding-top: 2vh;
+	/* Dark Mode */
+	:root.dark .hero-background {
+		background: #1a1a1a;
+	}
+
+	:root.dark .gradient-overlay {
+		display: none;
+	}
+
+	:root.dark .brand-tag {
+		background: rgba(255, 119, 48, 0.15);
+		border-color: rgba(255, 119, 48, 0.3);
+	}
+
+	:root.dark .hero-title {
+		color: #f8fafc;
+	}
+
+	:root.dark .hero-subtitle {
+		color: #94a3b8;
+	}
+
+	:root.dark .cta-secondary {
+		background: rgba(30, 41, 59, 0.8);
+		color: #cbd5e1;
+		border-color: rgba(71, 85, 105, 0.5);
+	}
+
+	:root.dark .cta-secondary:hover {
+		background: rgba(30, 41, 59, 0.95);
+		border-color: rgba(255, 119, 48, 0.3);
+		color: #ff7730;
+	} /* Responsive Design */
+	@media (max-width: 1200px) {
+		.VPHome {
+			padding-left: 6vw;
 		}
-		.wallet-title {
-			font-size: 1.4rem;
+		.content-wrapper {
+			max-width: none;
+			padding: 0 3vw;
 		}
-		.wallet-tagline {
-			font-size: 1rem;
+		.hero-content {
+			padding: 0 3vw;
 		}
-		.wallet-subtitle {
-			font-size: 1rem;
+	}
+	@media (max-width: 768px) {
+		.VPHome {
+			padding-left: 3vw;
 		}
-		.wallet-btn.wallet-download {
-			font-size: 1rem;
-			padding: 0.7rem 1.5rem;
+		.hero-content {
+			padding: 0 4vw;
 		}
+		.content-wrapper {
+			max-width: none;
+			padding: 0 2vw;
+			text-align: center;
+		}
+
+		.brand-tag {
+			font-size: 0.75rem;
+			padding: 0.375rem 0.75rem;
+		}
+
+		.hero-title {
+			font-size: clamp(2rem, 12vw, 3rem);
+			margin-bottom: 1rem;
+			white-space: normal;
+			max-width: 100%;
+		}
+		.hero-subtitle {
+			font-size: 1.25rem;
+			margin-bottom: 2rem;
+		}
+
+		.cta-group {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.cta-primary,
+		.cta-secondary {
+			justify-content: center;
+			padding: 0.875rem 1.5rem;
+		}
+	}
+	@media (max-width: 480px) {
+		.hero-title {
+			font-size: clamp(1.75rem, 10vw, 2.5rem);
+		}
+
+		.cta-primary,
+		.cta-secondary {
+			padding: 0.75rem 1.25rem;
+			font-size: 0.875rem;
+		}
+	}
+
+	/* VPFeatures 样式 */
+	.VPFeatures {
+		position: relative;
+		padding: 60px 24px;
+		background-color: var(--vp-c-bg-soft);
+	}
+
+	.VPFeatures .container {
+		margin: 0 auto;
+		max-width: 1152px;
+	}
+
+	.VPFeatures .items {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -8px;
+	}
+
+	.VPFeatures .item {
+		padding: 8px;
+		width: 100%;
+	}
+
+	@media (min-width: 640px) {
+		.VPFeatures .item {
+			width: 50%;
+		}
+	}
+
+	@media (min-width: 960px) {
+		.VPFeatures .item {
+			width: 33.333333%;
+		}
+	}
+
+	.VPFeatures .item .icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		border-radius: 6px;
+		background-color: var(--vp-c-default-soft);
+		width: 48px;
+		height: 48px;
+		font-size: 24px;
+		transition: background-color 0.25s;
+	}
+
+	.VPFeatures .item .title {
+		margin: 0 0 12px;
+		border: 0;
+		padding: 0;
+		font-size: 18px;
+		font-weight: 600;
+		color: var(--vp-c-text-1);
+	}
+
+	.VPFeatures .item .details {
+		margin: 0;
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--vp-c-text-2);
+		line-height: 24px;
 	}
 </style>

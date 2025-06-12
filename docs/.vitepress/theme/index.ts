@@ -35,7 +35,7 @@ import UnderConstructionBanner from "./components/UnderConstructionBanner.vue";
 import PageStats from "./components/PageStats.vue";
 import ArticleMetadata from "./components/ArticleMetadata.vue";
 import HomeLayout from "./home/HomeLayout.vue";
-import WalletApp from "./home/WalletApp.vue";
+// WalletApp 现在通过 alias 替换 VPHome，无需在此处导入
 
 // ===== 样式文件 =====
 // 本地样式
@@ -84,7 +84,7 @@ export default {
 		app.component("LinkGrid", LinkGrid);
 		app.component("PageStats", PageStats);
 		app.component("ArticleMetadata", ArticleMetadata);
-		app.component("WalletApp", WalletApp);
+		// WalletApp 现在通过 alias 替换 VPHome，无需在此处注册
 		app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
 		app.component("NolebaseGitContributors", NolebaseGitContributors);
 		app.component("NolebasePagePropertiesEditor", NolebasePagePropertiesEditor);
