@@ -13,10 +13,9 @@ next:
 # 什么是 SakitinSU？
 
 <mark>SakitinSU</mark> ，简称<mark>SakiSU/SKTSU/SSU</mark>，是由回忆溢出工作组<mark>(OOM. WG.)</mark>
-以核心成员[@安音咲汀](https://github.com/GunRain)的名称命名的内核级root实现
+以核心成员[@安音咲汀](https://github.com/TianwanTW)的名称命名的内核级root实现
 
-<mark>SakitinSU</mark> 是继`Magisk` `KernelSU`和`Apatch` 之后的,适用于 Android 设备的基于内核的 `Root` 新解决方案，它与
-`KernelSU`相同,工作在内核模式，并直接在内核空间中为用户空间应用程序授予 `root` 权限。
+<mark>SakitinSU</mark> 是一款继 `Magisk、KernelSU` 和 `Apatch` 之后，为 Android 设备设计的易于上手的内核级 Root 解决方案。它与 `KernelSU` 一样，在内核模式下运行，直接在内核空间中为用户空间应用程序授予 `Root` 权限。
 
 > [!TIP]
 > 只是想尝试一下？跳到[快速开始](installation.md)
