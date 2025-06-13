@@ -44,6 +44,7 @@
 		"cytoscape-cose-bilkent": "^4.1.0",
 		"dayjs": "^1.11.13",
 		"debug": "^4.4.1",
+		"depcheck": "^1.4.7",
 		"fast-glob": "^3.3.3",
 		"gray-matter": "^4.0.3",
 		"js-yaml": "^4.1.0",
