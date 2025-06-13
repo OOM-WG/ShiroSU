@@ -56,7 +56,7 @@ export const endsWith = (str: unknown, suffix: string): boolean =>
  * Check if a value is plain object, with generic type support
  */
 export const isPlainObject = <T extends Record<any, any> = Record<any, any>>(
-    val: unknown
+    val: unknown,
 ): val is T => Object.prototype.toString.call(val) === "[object Object]";
 
 const markdownLinkRegexp = /.md((\?|#).*)?$/;
@@ -364,7 +364,8 @@ export function shuffle(array: Array<any>): Array<any> {
     const lastIndex = length - 1;
     const result = copyArray(array, []);
     while (++index < length) {
-        const rand = index + Math.floor(Math.random() * (lastIndex - index + 1));
+        const rand =
+            index + Math.floor(Math.random() * (lastIndex - index + 1));
         const value = result[rand];
         result[rand] = result[index];
         result[index] = value;

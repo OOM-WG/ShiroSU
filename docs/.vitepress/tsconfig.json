@@ -1,19 +1,14 @@
 {
-  "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "target": "esnext",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ]
-  },
-  "include": [
-    "../.vitepress/**/*.ts",
-    "../.vitepress/**/*.mts",
-    "../.vitepress/**/*.vue"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"target": "esnext",
+		"lib": ["ESNext", "DOM"]
+	},
+	"include": [
+		"../.vitepress/**/*.ts",
+		"../.vitepress/**/*.mts",
+		"../.vitepress/**/*.vue"
+	],
+	"exclude": ["node_modules"]
 }

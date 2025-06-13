@@ -1,6 +1,12 @@
 <template>
-  <a class="link-card" :class="{ hovered: isHovered }" :href="href" target="_blank" rel="noopener noreferrer"
-     @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+  <a
+    class="link-card"
+    :class="{ hovered: isHovered }"
+    :href="href"
+    target="_blank"
+    rel="noopener noreferrer"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false">
     <div class="icon-box">
       <img :src="icon" alt="icon" />
     </div>
@@ -9,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from "vue"
 
 defineProps<{
   title: string
@@ -32,7 +38,10 @@ const isHovered = ref(false)
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
   cursor: pointer;
   position: relative;
   overflow: hidden;

@@ -17,8 +17,8 @@ $mobile: 419px !default;
 $rtl-selector: 'html[dir="rtl"]' !default;
 
 /* Content Class */
-$content-class: '.theme-default-content' !default;
+$content-class: ".theme-default-content" !default;
 
 /** dark mode selectors */
-$dark-selector: 'html.dark' !default;
-$light-selector: 'html:not(.dark)' !default;
+$dark-selector: "html.dark" !default;
+$light-selector: "html:not(.dark)" !default;

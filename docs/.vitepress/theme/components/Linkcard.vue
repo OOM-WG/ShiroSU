@@ -7,20 +7,21 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  url: '',
-  title: '',
-  description: '',
-  logo: '',
+  url: "",
+  title: "",
+  description: "",
+  logo: "",
 })
 </script>
-
 
 <template>
   <div class="linkcard">
     <a :href="props.url" target="_blank">
-      <p class="description">{{ props.title }}<br><span>{{ props.description }}</span></p>
+      <p class="description">
+        {{ props.title }}<br /><span>{{ props.description }}</span>
+      </p>
       <div class="logo">
-        <img :src="props.logo" alt="logo" height="70px" width="70px"/>
+        <img :src="props.logo" alt="logo" height="70px" width="70px" />
       </div>
     </a>
   </div>
@@ -32,7 +33,9 @@ const props = withDefaults(defineProps<Props>(), {
   background-color: var(--vp-c-bg-soft);
   border-radius: 8px;
   padding: 8px 16px 8px 8px;
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
   margin-top: 15px;
 }
 

@@ -1,6 +1,6 @@
 interface Info {
-    title: string
-    desc?: string
+    title: string;
+    desc?: string;
 }
 
 export interface CustomConfig {
@@ -18,7 +18,7 @@ export interface CustomConfig {
                 link: string;
             }[];
         }[];
-    },
+    };
     team: {
         title: string;
         desc: string;
@@ -27,4 +27,3 @@ export interface CustomConfig {
         partnerMember: Info;
     };
 }
-
