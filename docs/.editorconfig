@@ -1,0 +1,24 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+trim_trailing_whitespace = true # 删除行尾空格
+
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+[*.{json,jsonc}]
+indent_style = tab
+indent_size = 4
+
+[*.{ts,mts}]
+indent_style = space
+indent_size = 4
+
+[*.vue]
+indent_style = space
+indent_size = 2

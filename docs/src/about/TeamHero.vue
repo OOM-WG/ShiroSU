@@ -2,13 +2,13 @@
   <div class="TeamHero">
     <div class="container">
       <h1 class="title">
-        <slot name="title"/>
+        <slot name="title" />
       </h1>
       <p class="lead">
-        <slot name="lead"/>
+        <slot name="lead" />
       </p>
       <p class="action">
-        <slot name="action"/>
+        <slot name="action" />
       </p>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type {Member} from './Member'
-import TeamMember from './TeamMember.vue'
+import type { Member } from "./Member"
+import TeamMember from "./TeamMember.vue"
 
 defineProps<{
   members: Member[]
@@ -12,10 +12,10 @@ defineProps<{
     <div class="container">
       <div class="info">
         <h2 class="title">
-          <slot name="title"/>
+          <slot name="title" />
         </h2>
         <p class="lead">
-          <slot name="lead"/>
+          <slot name="lead" />
         </p>
       </div>
 
@@ -23,7 +23,7 @@ defineProps<{
         <!-- to skip SSG since the members are shuffled -->
         <ClientOnly>
           <div v-for="member in members" :key="member.name" class="member">
-            <TeamMember :member="member"/>
+            <TeamMember :member="member" />
           </div>
         </ClientOnly>
       </div>

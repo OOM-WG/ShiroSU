@@ -1,0 +1,13 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode", // 默认格式化器 Prettier
+	"[ignore]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"[properties]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"files.exclude": {
+		// "**/.git": false,
+		"!**/.git/config": true // 保持 git config 可见
+	}
+}

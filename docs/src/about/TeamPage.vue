@@ -1,6 +1,4 @@
 <script lang="ts">
-
-
 const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
   let offset = pinTheFirstMember ? 1 : 0
   // `i` is between `1` and `length - offset`
@@ -9,13 +7,10 @@ const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
   // `offset + j` is between `offset` and `length - 1`
   let i = members.length - offset
   while (i > 0) {
-    const j = Math.floor(Math.random() * i);
-    [
-      members[offset + i - 1],
-      members[offset + j]
-    ] = [
+    const j = Math.floor(Math.random() * i)
+    ;[members[offset + i - 1], members[offset + j]] = [
       members[offset + j],
-      members[offset + i - 1]
+      members[offset + i - 1],
     ]
     i--
   }
@@ -23,11 +18,11 @@ const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
 </script>
 
 <script lang="ts" setup>
-import {VTLink} from '@vue/theme'
-import membersCoreData from './members.json'
-import TeamHero from './TeamHero.vue'
-import TeamList from './TeamList.vue'
-import type {Member} from './Member'
+import { VTLink } from "@vue/theme"
+import membersCoreData from "./members.json"
+import TeamHero from "./TeamHero.vue"
+import TeamList from "./TeamList.vue"
+import type { Member } from "./Member"
 
 const members = membersCoreData as Member[]
 shuffleMembers(members, true)
@@ -40,15 +35,18 @@ shuffleMembers(members, true)
       <template #lead>作者们</template>
 
       <template #action>
-        <VTLink href="https://gitcode.com/OutOfMemories-WorkGroup">了解团队的更多</VTLink>
+        <VTLink href="https://gitcode.com/OutOfMemories-WorkGroup"
+          >了解团队的更多</VTLink
+        >
       </template>
     </TeamHero>
 
     <TeamList v-bind="{ members }">
       <template #title>核心开发成员</template>
-      <template #lead>他们是驱动项目成功的核心力量，致力于更好的的使用体验</template>
+      <template #lead
+        >他们是驱动项目成功的核心力量，致力于更好的的使用体验</template
+      >
     </TeamList>
-
   </div>
 </template>
 

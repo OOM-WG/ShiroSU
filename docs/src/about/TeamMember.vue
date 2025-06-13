@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {computed} from 'vue'
+import { computed } from "vue"
 import {
   VTIconCode,
   VTIconCodePen,
@@ -10,9 +10,9 @@ import {
   VTIconLinkedIn,
   VTIconMapPin,
   VTIconX,
-  VTLink
-} from '@vue/theme'
-import type {Member} from './Member'
+  VTLink,
+} from "@vue/theme"
+import type { Member } from "./Member"
 
 const props = defineProps<{
   member: Member
@@ -20,22 +20,28 @@ const props = defineProps<{
 
 const avatarUrl = computed(() => {
   return (
-      props.member.avatarPic ??
-      `https://q1.qlogo.cn/g?b=qq&nk=${props.member.qq}&s=640`
+    props.member.avatarPic ??
+    `https://q1.qlogo.cn/g?b=qq&nk=${props.member.qq}&s=640`
   )
 })
 </script>
 
 <template>
   <article class="TeamMember">
-    <VTLink v-if="member.sponsor" :href="`https://github.com/sponsors/${member.socials.github}`" class="sponsor"
-            no-icon>
-      <VTIconHeart class="sponsor-icon"/>
+    <VTLink
+      v-if="member.sponsor"
+      :href="`https://github.com/sponsors/${member.socials.github}`"
+      class="sponsor"
+      no-icon>
+      <VTIconHeart class="sponsor-icon" />
       Sponsor
     </VTLink>
 
     <figure class="avatar">
-      <img :alt="`${member.name}'s Profile Picture`" :src="avatarUrl" class="avatar-img"/>
+      <img
+        :alt="`${member.name}'s Profile Picture`"
+        :src="avatarUrl"
+        class="avatar-img" />
     </figure>
 
     <div class="data">
@@ -44,7 +50,11 @@ const avatarUrl = computed(() => {
         {{ member.title }}
         <span v-if="member.company" class="nowrap">
           @
-          <VTLink v-if="member.companyLink" :href="member.companyLink" :no-icon="true" class="company link">
+          <VTLink
+            v-if="member.companyLink"
+            :href="member.companyLink"
+            :no-icon="true"
+            class="company link">
             {{ member.company }}
           </VTLink>
           <span v-else class="company">
@@ -57,10 +67,13 @@ const avatarUrl = computed(() => {
         <section v-if="member.projects" class="desc">
           <div class="desc-title">
             <h2 class="sr-only">项目</h2>
-            <VTIconCode class="desc-icon code"/>
+            <VTIconCode class="desc-icon code" />
           </div>
           <ul class="desc-list">
-            <li v-for="project in member.projects" :key="project.label" class="desc-item">
+            <li
+              v-for="project in member.projects"
+              :key="project.label"
+              class="desc-item">
               <VTLink :href="project.url" :no-icon="true" class="desc-link">
                 {{ project.label }}
               </VTLink>
@@ -71,7 +84,7 @@ const avatarUrl = computed(() => {
         <section class="desc">
           <div class="desc-title">
             <h2 class="sr-only">位置</h2>
-            <VTIconMapPin class="desc-icon"/>
+            <VTIconMapPin class="desc-icon" />
           </div>
           <p class="desc-text">
             {{ member.location }}
@@ -81,10 +94,13 @@ const avatarUrl = computed(() => {
         <section class="desc">
           <div class="desc-title">
             <h2 class="sr-only">语言</h2>
-            <VTIconGlobe class="desc-icon"/>
+            <VTIconGlobe class="desc-icon" />
           </div>
           <ul class="desc-list">
-            <li v-for="language in member.languages" :key="language" class="desc-item">
+            <li
+              v-for="language in member.languages"
+              :key="language"
+              class="desc-item">
               {{ language }}
             </li>
           </ul>
@@ -93,36 +109,49 @@ const avatarUrl = computed(() => {
         <section v-if="member.website" class="desc">
           <div class="desc-title">
             <h2 class="sr-only">网站</h2>
-            <VTIconLink class="desc-icon"/>
+            <VTIconLink class="desc-icon" />
           </div>
           <p class="desc-text">
-            <VTLink :href="member.website.url" :no-icon="true" class="desc-link">
+            <VTLink
+              :href="member.website.url"
+              :no-icon="true"
+              class="desc-link">
               {{ member.website.label }}
             </VTLink>
           </p>
         </section>
 
         <ul class="social-list">
-
           <li v-if="member.socials.github" class="social-item">
-            <VTLink :href="`https://github.com/${member.socials.github}`" :no-icon="true" class="social-link">
-              <VTIconGitHub class="social-icon"/>
+            <VTLink
+              :href="`https://github.com/${member.socials.github}`"
+              :no-icon="true"
+              class="social-link">
+              <VTIconGitHub class="social-icon" />
             </VTLink>
           </li>
           <li v-if="member.socials.x" class="social-item">
-            <VTLink :href="`https://x.com/${member.socials.x}`" :no-icon="true" class="social-link">
-              <VTIconX class="social-icon"/>
+            <VTLink
+              :href="`https://x.com/${member.socials.x}`"
+              :no-icon="true"
+              class="social-link">
+              <VTIconX class="social-icon" />
             </VTLink>
           </li>
           <li v-if="member.socials.linkedin" class="social-item">
-            <VTLink :href="`https://www.linkedin.com/in/${member.socials.linkedin}`" :no-icon="true"
-                    class="social-link">
-              <VTIconLinkedIn class="social-icon"/>
+            <VTLink
+              :href="`https://www.linkedin.com/in/${member.socials.linkedin}`"
+              :no-icon="true"
+              class="social-link">
+              <VTIconLinkedIn class="social-icon" />
             </VTLink>
           </li>
           <li v-if="member.socials.codepen" class="social-item">
-            <VTLink :href="`https://codepen.io/${member.socials.codepen}`" :no-icon="true" class="social-link">
-              <VTIconCodePen class="social-icon"/>
+            <VTLink
+              :href="`https://codepen.io/${member.socials.codepen}`"
+              :no-icon="true"
+              class="social-link">
+              <VTIconCodePen class="social-icon" />
             </VTLink>
           </li>
         </ul>
@@ -162,7 +191,9 @@ const avatarUrl = computed(() => {
   font-size: 12px;
   font-weight: 500;
   color: #fd1d7c;
-  transition: color 0.25s, background-color 0.25s;
+  transition:
+    color 0.25s,
+    background-color 0.25s;
 }
 
 .sponsor:hover {
@@ -287,7 +318,7 @@ const avatarUrl = computed(() => {
 
 .desc-item::after {
   margin-left: 8px;
-  content: '•';
+  content: "•";
   color: var(--vt-c-text-3);
   transition: color 0.25s;
 }

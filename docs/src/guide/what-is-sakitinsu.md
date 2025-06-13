@@ -6,8 +6,8 @@ showPageStats: true
 progress: 30
 outline: deep
 next:
-  text: '安装指南'
-  link: '/guide/installation'
+  text: "安装指南"
+  link: "/guide/installation"
 ---
 
 # 什么是 SakitinSU？

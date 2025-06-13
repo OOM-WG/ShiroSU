@@ -10,14 +10,7 @@
 		"skipLibCheck": true,
 		"noUnusedLocals": true,
 		"resolveJsonModule": true,
-		"lib": [
-			"ESNext",
-			"DOM"
-		]
+		"lib": ["ESNext", "DOM"]
 	},
-	"exclude": [
-		"**/node_modules/**",
-		"**/dist/**",
-		"unocss.config.ts"
-	]
+	"exclude": ["**/node_modules/**", "**/dist/**", "unocss.config.ts"]
 }
