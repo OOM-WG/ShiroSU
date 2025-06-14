@@ -8,9 +8,9 @@
         <div class="content-wrapper">
           <div class="brand-tag">
             <span class="brand-icon">⚡</span>
-            SakitinSU
+            𝕊𝔸𝕂𝕀 𝕊𝕌 ✧
           </div>
-          <img src="/Logo.webp" alt="SakitinSU Logo" class="mobile-logo" />
+          <img src="/logo.webp" alt="SakitinSU Logo" class="mobile-logo" />
           <h1 class="hero-title">
             <span class="title-highlight">Android Root </span
             ><span class="implementation-text">Implementation</span>
