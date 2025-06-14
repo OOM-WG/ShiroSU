@@ -31,6 +31,13 @@
               rel="noopener">
               <span class="cta-text">群组</span>
             </a>
+            <a
+              href="https://discord.gg/RQBBVhSCa5"
+              class="cta-secondary"
+              target="_blank"
+              rel="noopener">
+              <span class="cta-text">频道</span>
+            </a>
           </div>
         </div>
       </div>
