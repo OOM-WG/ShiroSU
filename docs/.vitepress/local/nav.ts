@@ -10,7 +10,7 @@ export const nav: DefaultTheme.Config["nav"] = [
         link: "/guide/what-is-sakitinsu",
     },
     {
-        text: "关于咲苏",
+        text: "关于SSU",
         items: [
             {
                 text: "作者介绍",

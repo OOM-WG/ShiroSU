@@ -9,7 +9,7 @@ export const themeConfig: DefaultTheme.Config = {
     sidebar,
 
     logo: "/logo-rounded.webp",
-    siteTitle: "咲苏",
+    siteTitle: "SSU",
     outline: {
         level: "deep", // 右侧大纲标题层级
         label: "目录", // 右侧大纲标题文本配置
