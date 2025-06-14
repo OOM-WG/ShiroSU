@@ -59,7 +59,7 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
             <a
               href="https://github.com/OOM-WG"
               style="color: var(--vp-c-brand); text-decoration: none">
-              SUU Developers (OOM. WG.)
+              SSU Developers (OOM. WG.)
             </a>
           </p>
         </div>

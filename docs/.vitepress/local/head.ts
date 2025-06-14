@@ -1,10 +1,10 @@
 import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
-    ["link", { rel: "icon", href: "/Logo_Rounded.webp" }],
-    ["meta", { name: "author", content: "安音咲汀, YumeYuka" }],
-    ["meta", { name: "keywords", content: "SakitinSU, SSU, 咲苏" }],
-    ["meta", { name: "description", content: "新的Root实现方式" }],
+    ["link", { rel: "icon", href: "/logo-rounded.webp" }],
+    ["meta", { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" }],
+    ["meta", { name: "keywords", content: "SakitinSU, SakiSU, SKTSU, SSU, 咲苏" }],
+    ["meta", { name: "description", content: "简单易上手的root实现" }],
 
     ["meta", { name: "HandheldFriendly", content: "True" }],
     ["meta", { name: "MobileOptimized", content: "320" }],
@@ -12,16 +12,16 @@ export const head: HeadConfig[] = [
 
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:locale", content: "zh-CN" }],
-    ["meta", { property: "og:title", content: "咲苏" }],
-    ["meta", { property: "og:description", content: "新的Root实现方式" }],
-    ["meta", { property: "og:site", content: "https://suu.oom-wg.dev" }],
-    ["meta", { property: "og:site_name", content: "咲苏" }],
+    ["meta", { property: "og:title", content: "SSU" }],
+    ["meta", { property: "og:description", content: "简单易上手的root实现" }],
+    ["meta", { property: "og:site", content: "https://ssu.oom-wg.dev" }],
+    ["meta", { property: "og:site_name", content: "SSU" }],
 
     [
         "meta",
         {
             property: "og:image",
-            content: "https://suu.oom-wg.dev/Logo_Rounded.webp",
+            content: "https://ssu.oom-wg.dev/logo-rounded.webp",
         },
     ],
 

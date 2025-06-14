@@ -29,7 +29,7 @@ export default defineConfig({
     scrollOffset: "header",
     cleanUrls: true,
     sitemap: {
-        hostname: "https://suu.oom-wg.dev",
+        hostname: "https://ssu.oom-wg.dev",
     },
     head: head, // 头部配置
     lang: "zh-CN", // 语言配置
@@ -82,22 +82,27 @@ export default defineConfig({
                     {
                         name: "YumeYuka",
                         username: "YumeYuka",
-                        mapByEmailAliases: ["Miao@YumeYuka.plus"],
+                        mapByEmailAliases: ["yumeyuka@oom-wg.dev"],
                     },
                     {
-                        name: "FengYing",
+                        name: "枫莹",
                         username: "FengYing1314",
-                        mapByEmailAliases: ["FengYing@miao520.fun"],
+                        mapByEmailAliases: ["fengying@oom-wg.dev"],
                     },
                     {
-                        name: "nuofang6",
-                        username: "方舟",
-                        mapByEmailAliases: ["991921514@qq.com"],
+                        name: "悠栾",
+                        username: "NuoFang6",
+                        mapByEmailAliases: ["ark@oom-wg.dev"],
                     },
                     {
-                        name: "GunRain",
-                        username: "𝕊𝔸𝕂𝕀✧",
-                        mapByEmailAliases: ["im@sakit.in"],
+                        name: "安音咲汀",
+                        username: "TianwanTW",
+                        mapByEmailAliases: ["tianwan@oom-wg.dev"],
+                    },
+                    {
+                        name: "Linso",
+                        username: "Linso05",
+                        mapByEmailAliases: ["linso@oom-wg.dev"],
                     },
                 ],
             }),

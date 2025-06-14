@@ -8,7 +8,7 @@ export const themeConfig: DefaultTheme.Config = {
     nav,
     sidebar,
 
-    logo: "/Logo_Rounded.webp",
+    logo: "/logo-rounded.webp",
     siteTitle: "咲苏",
     outline: {
         level: "deep", // 右侧大纲标题层级
