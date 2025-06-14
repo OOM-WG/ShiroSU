@@ -2,8 +2,14 @@ import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
     ["link", { rel: "icon", href: "/logo-rounded.webp" }],
-    ["meta", { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" }],
-    ["meta", { name: "keywords", content: "SakitinSU, SakiSU, SKTSU, SSU, 咲苏" }],
+    [
+        "meta",
+        { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" },
+    ],
+    [
+        "meta",
+        { name: "keywords", content: "SakitinSU, SakiSU, SKTSU, SSU, 咲苏" },
+    ],
     ["meta", { name: "description", content: "简单易上手的root实现" }],
 
     ["meta", { name: "HandheldFriendly", content: "True" }],
