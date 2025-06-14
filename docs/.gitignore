@@ -1,3 +1,6 @@
+# Ark's
+/tmp/
+
 # End of https://www.gitignore.io/api/visualstudiocode
 .DS_Store
 node_modules/
