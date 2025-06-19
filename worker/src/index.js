@@ -3,10 +3,10 @@ export default {
     const url = new URL(request.url);
     const parts = url.pathname.split('/').filter(Boolean);
 
-    if (parts.length !== 2) return new Response({ status: 404 });
+    if (parts.length !== 2) return new Response(null, { status: 404 });
 
     const [branch, spec] = parts;
-    if (!['preview', 'rc', 'release'].includes(branch)) return new Response({ status: 404 });
+    if (!['preview', 'rc', 'release'].includes(branch)) return new Response(null, { status: 404 });
 
     let lines = (await (await env.ASSETS.fetch(new URL('/dll.fvv', request.url))).text())
       .split('\n')
@@ -32,11 +32,11 @@ export default {
             301
           );
       }
-      return new Response({ status: 404 });
+      return new Response(null, { status: 404 });
     } else {
       const target = spec + '_' + branch;
       for (const line of lines) if (line.startsWith(target)) return Response.redirect(line.split('=')[1].trim().replace(/^"|"$/g, ''), 301);
-      return new Response({ status: 404 });
+      return new Response(null, { status: 404 });
     }
   },
 };
