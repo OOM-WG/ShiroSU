@@ -15,5 +15,5 @@
    * Static Assets
    * https://developers.cloudflare.com/workers/static-assets/binding/
    */
-  "assets": { "directory": "../dat", "binding": "ASSETS" }
+  "assets": { "directory": "./dat", "binding": "ASSETS" }
 }
