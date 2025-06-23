@@ -428,6 +428,8 @@
   .hero-content {
     padding: 0;
     justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 15vh;
   }
   .content-wrapper {
     max-width: 100%;
@@ -490,6 +492,9 @@
   }
 }
 @media (max-width: 480px) {
+  .hero-content {
+    padding-top: 12vh;
+  }
   .hero-title {
     font-size: clamp(1.5rem, 6vw, 1.75rem);
     line-height: 1.3;
@@ -539,6 +544,9 @@
 }
 
 @media (max-width: 360px) {
+  .hero-content {
+    padding-top: 10vh;
+  }
   .hero-title {
     font-size: clamp(1.4rem, 7vw, 1.5rem);
     margin-top: 0.5rem;
