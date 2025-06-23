@@ -158,7 +158,7 @@ const handleDownload = () => {
 
   if (downloadType === "direct") {
     const url =
-      "https://emas-devops-cdn.aliyuncs.com/publish/2/3911161/335552265/P719634901892642816/SSU-0.1.5.0-universal.APK?spm=5176.a2c8x.0.0.40459482Wa2W0w&response-content-type=application/octet-stream"
+      "https://emas-devops-cdn.aliyuncs.com/publish/2/3911161/335552265/P723234872713852928/SSU-0.1.8.0-universal.APK?spm=5176.a2c8x.0.0.40459482ECCjoK&response-content-type=application/octet-stream"
     const a = document.createElement("a")
     a.href = url
     a.download = ""
