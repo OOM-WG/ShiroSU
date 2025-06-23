@@ -28,6 +28,7 @@ onMounted(() => {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  background: linear-gradient(to bottom, var(--vp-c-bg), var(--vp-c-bg-soft));
 }
 
 .home-content {
@@ -35,7 +36,10 @@ onMounted(() => {
   z-index: 1;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .home-content.animate-in {

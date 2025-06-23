@@ -6,16 +6,16 @@
       </div>
       <div class="hero-content">
         <div class="content-wrapper">
-          <div class="brand-tag">
-            <span class="brand-icon">⚡</span>
-            𝕊𝔸𝕂𝕀 𝕊𝕌 ✧
+          <div class="hero-header">
+            <div class="brand-tag">
+              <span class="brand-icon">⚡</span>
+              𝕊𝔸𝕂𝕀 𝕊𝕌 ✧
+            </div>
           </div>
-          <img src="/logo.webp" alt="SakitinSU Logo" class="mobile-logo" />
           <h1 class="hero-title">
             <span class="title-highlight">Android Root </span
-            ><span class="implementation-text">Implementation</span>
-            <br />
-            <span class="platform-tag">Easy Start</span>
+            ><span class="implementation-text">Implementation</span
+            > <span class="platform-tag">Easy Start</span>
           </h1>
           <p class="hero-subtitle">
             Change reality with cutting-edge technology
@@ -79,12 +79,19 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ffffff;
+  background: #f8fafc;
   z-index: 1;
 }
 
 .gradient-overlay {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(247, 250, 255, 0.9) 100%);
+  z-index: 2;
+  backdrop-filter: blur(10px);
 }
 .hero-content {
   position: relative;
@@ -92,77 +99,117 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 2vw;
+  padding: 0;
   width: 100%;
   box-sizing: border-box;
   justify-content: flex-start;
 }
 .content-wrapper {
-  max-width: none;
+  max-width: 1200px;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   animation: slideInUp 0.8s ease-out;
-  padding: 0 25vw 10vw 20vw;
+  padding: 0 5vw 0 10vw;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
 }
 .brand-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 119, 48, 0.1);
-  color: #ff7730;
+  background: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
   padding: 0.625rem 1.25rem;
   border-radius: 2rem;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 2rem;
-  border: 1px solid rgba(255, 119, 48, 0.2);
+  margin: 0 0 1rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
   backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.brand-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.15);
 }
 
 .brand-icon {
   font-size: 1rem;
 }
 .hero-title {
-  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.2;
   color: #1e293b;
-  margin-bottom: 1.5rem;
+  margin: 2rem 0 1.5rem;
   letter-spacing: -0.02em;
   word-break: keep-all;
   max-width: 100%;
-  white-space: nowrap; /* 设置为nowrap防止自动换行 */
+  white-space: normal;
   overflow: visible;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  animation: fadeIn 1s ease-out, scaleIn 1s ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .title-highlight {
-  background: linear-gradient(135deg, #ff7730 0%, #ff5722 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-fill-color: transparent;
   position: relative;
+  text-shadow: none;
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.title-highlight:hover {
+  transform: scale(1.03);
 }
 
 .implementation-text {
   display: inline-block; /* 确保元素不换行 */
   white-space: nowrap; /* 额外确保不换行 */
+  color: #1e293b; /* 明确定义颜色 */
 }
 
 .platform-tag {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-fill-color: transparent;
   position: relative;
+  display: inline-block;
+  padding: 0.2rem 0 0.2rem 1rem;
+  text-shadow: none;
+  font-size: 0.85em;
 }
 .hero-subtitle {
   font-size: 1.5rem;
   color: #64748b;
   font-weight: 400;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem 0;
   line-height: 1.6;
-  max-width: 100%;
+  max-width: 700px;
+  text-align: left;
+  animation: fadeIn 1.2s ease-out 0.3s both;
 }
 
 .cta-group {
@@ -170,39 +217,58 @@
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin: 0;
 }
 .cta-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #ff7730;
+  background: #4f46e5;
   color: #ffffff;
   padding: 0.95rem 2.1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   font-weight: 700;
   font-size: 1.18rem;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(255, 119, 48, 0.2);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: none;
   outline: none;
   min-width: 140px;
   justify-content: center;
   letter-spacing: 0.04em;
+  overflow: hidden;
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .cta-primary:active,
 .cta-primary:focus {
-  box-shadow: 0 0 0 2px rgba(255, 119, 48, 0.3);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4);
 }
 
 .cta-primary:hover {
-  background: #ff5722;
+  background: #6366f1;
   color: #fff;
-  border-color: #ff5722;
-  box-shadow: 0 4px 16px rgba(255, 119, 48, 0.3);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+  transform: translateY(-3px);
+}
+
+.cta-primary:hover::before {
+  opacity: 1;
 }
 
 .cta-icon {
@@ -216,33 +282,34 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #ffffff;
-  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  color: #4f46e5;
   padding: 0.95rem 2.1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   font-weight: 700;
   font-size: 1.18rem;
   text-decoration: none;
-  border: 1.5px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   min-width: 140px;
   justify-content: center;
   letter-spacing: 0.04em;
+  backdrop-filter: blur(5px);
 }
 
 .cta-secondary:active,
 .cta-secondary:focus {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
 .cta-secondary:hover {
-  background: #f5f5f5;
-  color: #333;
-  border-color: #ccc;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.95);
+  color: #6366f1;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
 }
 @keyframes slideInUp {
   from {
@@ -254,127 +321,247 @@
     transform: translateY(0);
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 /* Dark Mode */
 :root.dark .hero-background {
-  background: #1a1a1a;
+  background: #1b1b1f;
 }
 
 :root.dark .gradient-overlay {
-  display: none;
+  display: block;
+  background: #1b1b1f;
+  backdrop-filter: none;
 }
 
 :root.dark .brand-tag {
-  background: rgba(255, 119, 48, 0.15);
-  border-color: rgba(255, 119, 48, 0.3);
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #818cf8;
 }
 
 :root.dark .hero-title {
   color: #f8fafc;
 }
 
+:root.dark .title-highlight {
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+:root.dark .implementation-text {
+  color: #f8fafc;
+}
+
+:root.dark .platform-tag {
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
 :root.dark .hero-subtitle {
-  color: #94a3b8;
+  color: #cbd5e1;
+}
+
+:root.dark .cta-primary {
+  background: #6366f1;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+:root.dark .cta-primary:hover {
+  background: #818cf8;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
 }
 
 :root.dark .cta-secondary {
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(30, 41, 59, 0.5);
   color: #cbd5e1;
-  border-color: rgba(71, 85, 105, 0.5);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 :root.dark .cta-secondary:hover {
-  background: rgba(30, 41, 59, 0.95);
-  border-color: rgba(255, 119, 48, 0.3);
-  color: #ff7730;
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #818cf8;
 } /* Responsive Design */
 @media (max-width: 1200px) {
   .VPHome {
-    padding-left: 6vw;
+    padding-left: 0;
   }
   .content-wrapper {
-    max-width: none;
-    padding: 0 3vw;
+    max-width: 90%;
+    padding: 0 5vw 0 8vw;
   }
   .hero-content {
-    padding: 0 3vw;
+    padding: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
   }
 }
 @media (max-width: 768px) {
   .VPHome {
-    padding-left: 3vw;
+    padding-left: 0;
   }
   .hero-content {
-    padding: 0 4vw;
+    padding: 0;
+    justify-content: flex-start;
   }
   .content-wrapper {
-    max-width: none;
-    padding: 0 2vw;
-    text-align: center;
+    max-width: 100%;
+    padding: 0 5vw;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hero-header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   .brand-tag {
-    display: none; /* 移动端设备不显示品牌标签 */
+    display: inline-flex; /* 保持显示品牌标签 */
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 
-  .mobile-logo {
-    display: block; /* 在移动端显示logo */
-  }
   .hero-title {
-    font-size: clamp(2rem, 8vw, 2rem);
+    font-size: clamp(2rem, 6vw, 2.25rem);
     margin-top: 0.5rem; /* 减少标题顶部间距 */
     margin-bottom: 1rem;
     white-space: normal; /* 移动端允许换行 */
     max-width: 100%;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .platform-tag {
+    padding: 0.2rem 0;
+    margin-top: 0.5rem;
+  }
+
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin-bottom: 2rem;
+    max-width: 90%;
+    text-align: left;
   }
 
   .cta-group {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
   }
   .cta-primary,
   .cta-secondary {
-    flex: 1 1 0;
+    flex: 0 1 auto;
     min-width: 0;
-    padding: 0.875rem 0;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 480px) {
   .hero-title {
-    font-size: clamp(1.75rem, 8vw, 2rem);
+    font-size: clamp(1.5rem, 6vw, 1.75rem);
+    line-height: 1.3;
+    margin-top: 1rem;
+    text-align: left;
+    display: block;
   }
-  .mobile-logo {
-    width: 140px; /* 较小屏幕上稍微缩小Logo */
-    height: 140px;
-    margin: -4rem auto 1.5rem; /* 更大的负上边距使logo位置更高 */
+
+  .title-highlight,
+  .implementation-text,
+  .platform-tag {
+    display: inline;
+  }
+
+  .platform-tag {
+    font-size: 0.8em;
+    padding-left: 0.5rem;
+  }
+
+  .brand-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    margin: 1rem 0;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+    text-align: left;
   }
 
   .cta-group {
-    gap: 0.25rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: flex-start;
   }
   .cta-primary,
   .cta-secondary {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.3rem;
-    max-width: 110px;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    max-width: none;
+    width: auto;
+    min-width: 120px;
   }
 }
 
 @media (max-width: 360px) {
-  .mobile-logo {
-    width: 120px; /* 超小屏幕进一步缩小Logo */
-    height: 120px;
-    margin: -4rem auto 1rem; /* 更大的负上边距使logo位置更高 */
+  .hero-title {
+    font-size: clamp(1.4rem, 7vw, 1.5rem);
+    margin-top: 0.5rem;
+    line-height: 1.3;
+    text-align: left;
   }
 
-  .hero-title {
-    font-size: clamp(1.5rem, 7vw, 1.5rem);
-    margin-top: 0;
+  .brand-tag {
+    margin: 0.75rem 0;
+  }
+
+  .content-wrapper {
+    padding: 0 4vw;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
   }
 }
 
@@ -442,21 +629,11 @@
   color: var(--vp-c-text-2);
   line-height: 24px;
 }
-.mobile-logo {
-  display: none; /* 默认在桌面端不显示 */
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.5rem;
-  object-fit: contain;
-  border-radius: 12px;
-}
-@media (max-width: 768px) {
-  .mobile-logo {
-    display: block;
-    margin: -5.5rem auto 2rem; /* 更大的负上边距使logo位置更高 */
-    width: 160px; /* 设置固定宽度而不是百分比 */
-    height: 160px;
-    object-fit: contain;
-  }
+.hero-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 </style>
