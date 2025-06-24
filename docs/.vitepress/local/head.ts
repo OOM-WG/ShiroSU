@@ -27,7 +27,7 @@ export const head: HeadConfig[] = [
         "meta",
         {
             property: "og:image",
-            content: "https://ssu.oom-wg.dev/logo-rounded.webp",
+            content: "https://ssu.oom-wg.dev/og-template.png",
         },
     ],
 
