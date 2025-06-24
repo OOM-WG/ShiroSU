@@ -20,7 +20,11 @@ export const nav: DefaultTheme.Config["nav"] = [
                 text: "项目介绍",
                 link: "/about/origin",
             },
-        ],
+            {
+                text: "文档鸣谢",
+                link: "/about/document",
+            }
+        ]
     },
     {
         text: "更新日志",

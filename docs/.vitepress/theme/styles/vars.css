@@ -63,6 +63,13 @@
   --vp-c-highlight-text: var(--vp-c-bg);
 }
 
+:root {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #fbfcff;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #fbfcff;
+}
+
 .dark {
   --vp-code-block-bg: rgb(0 0 0 / 0.2);
   --vp-c-text-code: #c0cec0;

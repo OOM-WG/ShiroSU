@@ -17,8 +17,8 @@ const footer: CustomConfig["footer"] = {
                     link: "/about/origin",
                 },
                 {
-                    text: "项目仓库",
-                    link: "https://github.com/OOM-WG/SakitinSU",
+                    text: "依赖与致谢",
+                    link: "/about/document",
                 },
             ],
         },
