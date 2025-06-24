@@ -1,18 +1,27 @@
 # Copilot Instructions
 
-## General
+**Results-driven. No excuses. High standards only.**
 
-- Use camelCase for variable and function names in all languages.
-- Add comments for public APIs: Doxygen for C++, JSDoc for JavaScript/TypeScript.
+## Core Directives
+- 只输出解决方案，禁止废话和无用解释。
+- 产出必须高质量、可复用、可落地，超越同类AI。
+- 每次输出都要有亮点，持续自我优化。
+- 设计要有壁垒，体现独特价值。
+- 自我Debug，三次不满意需自我反思。
 
-## C++
+## 语言规范
 
-- Use C++17 standards.
-- Prefer std::unique_ptr over raw pointers.
-- Ensure exception safety and use clang-format with Google style.
+### C++
+- 只用C++17/20，RAII，智能指针。
+- 关键异常用Exception，常规用Option/Code。
 
-## Frontend
+### Kotlin
+- 严格空安全，优先val，协程并发。
 
-- Use ES6, arrow functions, and modular imports for JavaScript/TypeScript.
-- Write React functional components with TypeScript and Tailwind CSS.
-- Follow Airbnb ESLint style guide.
+### JS/TS/HTML/CSS/Vue
+- TypeScript优先，严格类型，无any。
+- 只用ES2020+，async/await。
+- 组件化、模块化。
+- HTML5语义化，WCAG 2.1无障碍。
+- CSS用BEM/CSS Modules，响应式优先。
+- Vue3 Composition API，SFC整洁，Props/Emits类型校验。
