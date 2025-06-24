@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ref } from "vue"
 import { useQRCode } from "@vueuse/integrations/useQRCode"
 import { useData, withBase } from "vitepress"
 
@@ -7,6 +8,19 @@ import { socialList } from "./socialList"
 const { frontmatter, theme } = useData()
 const customFooter = theme.value.customFooter
 const qrcode = useQRCode(customFooter.qrcodeLink)
+
+// 为每个导航项添加折叠状态
+const collapsedItems = ref<Record<string, boolean>>({})
+
+// 切换折叠状态
+const toggleCollapse = (title: string) => {
+  collapsedItems.value[title] = !collapsedItems.value[title]
+}
+
+// 检查是否展开（默认为折叠状态）
+const isExpanded = (title: string) => {
+  return collapsedItems.value[title] || false
+}
 </script>
 
 <template>
@@ -16,10 +30,15 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
         v-for="item in customFooter.navigation"
         :key="item.title"
         class="footer-navigation">
-        <h3 class="footer-title">
+        <h3 class="footer-title" @click="toggleCollapse(item.title)">
           {{ item.title }}
+          <span
+            class="footer-toggle"
+            :class="{ expanded: isExpanded(item.title) }"
+            >+</span
+          >
         </h3>
-        <ul>
+        <ul class="footer-links" :class="{ expanded: isExpanded(item.title) }">
           <li v-for="ic in item.items" :key="ic.text" class="footer-link-item">
             <a
               :href="withBase(ic.link)"
@@ -97,8 +116,7 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
 
 .footer:first-child {
   padding-top: 2.5rem;
-  display: flex;
-  justify-content: space-between;
+  display: block; /* 移动端改为块级布局，确保垂直排列 */
 }
 
 .footer:last-child {
@@ -122,6 +140,8 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
   font-family: var(--vp-font-family-base);
   line-height: 1.25rem;
   margin: 0 auto;
+  grid-template-columns: 1fr; /* 移动端强制单列布局 */
+  gap: 0; /* 移动端移除间距，让边框连续 */
 }
 
 .footer > * {
@@ -147,12 +167,16 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
   border-bottom: 1px solid var(--vp-c-divider);
   gap: 0;
   overflow: hidden;
-
-  ul {
+  .footer-links {
     width: 100%;
-    height: auto; // 修改为可见
-    overflow: visible; // 确保内容可见
-    transition: 300ms ease;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+
+    &.expanded {
+      height: auto;
+      overflow: visible;
+    }
 
     li:last-child {
       margin-bottom: 16px;
@@ -184,7 +208,7 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
 .footer-title {
   cursor: pointer;
   width: 100%;
-  user-select: all;
+  user-select: none;
   font-weight: 700;
   line-height: 1.33337;
   color: var(--vp-c-text-2);
@@ -192,29 +216,20 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
   letter-spacing: -0.01em;
   padding: 1rem 0;
   opacity: 0.8;
-
-  &::after {
-    content: "+";
-    filter: invert(50%);
-    float: right;
-    width: 14px;
-    height: 14px;
-    text-align: center;
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-  }
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.footer-title:hover {
-  &::after {
-    transform: rotate(45deg) scale(1.08);
-  }
-}
+.footer-toggle {
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  font-weight: normal;
 
-// 这里逻辑还有点问题
-.footer-title:hover ~ ul,
-.footer-title ~ ul:hover {
-  height: 100%;
+  &.expanded {
+    transform: rotate(45deg);
+  }
 }
 
 .footer-qrcode {
@@ -224,7 +239,7 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
   border-radius: 9px;
   background-color: var(--vp-c-bg-soft-up);
   border: 1px solid var(--vp-c-divider);
-  display: none;
+  display: none; /* 移动端默认隐藏 */
   flex-direction: column;
   align-items: center;
   font-size: 14px;
@@ -268,6 +283,11 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
     grid-auto-flow: column;
     place-items: self-start;
     row-gap: 2.5rem;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* 桌面端自适应列布局 */
+    gap: 1rem; /* 桌面端恢复间距 */
   }
 
   .footer:last-child {
@@ -278,15 +298,15 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
   .footer-navigation:first-child {
     border-top: none;
   }
-
   .footer-navigation {
     place-items: self-start;
     border: none;
     flex: 1;
     /* 让导航占据可用空间 */
 
-    ul {
-      height: auto; // 确保在大屏幕上链接仍然可见
+    .footer-links {
+      height: auto !important; // 确保在大屏幕上链接始终可见
+      overflow: visible !important;
     }
 
     .footer-link {
@@ -301,20 +321,21 @@ const qrcode = useQRCode(customFooter.qrcodeLink)
   .footer-qrcode {
     display: flex;
   }
-
   .footer:first-child {
     padding-bottom: 2.5rem;
+    display: flex; /* 桌面端恢复为flex布局 */
     flex-direction: row;
     /* 确保水平排列 */
     align-items: flex-start;
     /* 顶部对齐 */
+    justify-content: space-between;
   }
 
   .footer-title {
     cursor: default;
 
-    &::after {
-      display: none;
+    .footer-toggle {
+      display: none; // 桌面端隐藏折叠图标
     }
   }
 }
