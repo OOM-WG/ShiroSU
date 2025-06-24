@@ -4,37 +4,18 @@ layout: doc
 sidebar: false
 aside: false
 underConstruction: true
-description: SakitinSU 项目的隐私政策说明
+description: SakitinSU 的隐私政策
 ---
 
 # 隐私政策
 
-> **提示**：
-> - SSU 使用百度移动统计和阿里云 EMAS 收集匿名使用数据，以提升产品体验。
-> - 您当前使用的是 Preview 分支，内容仅供参考，请关注官方动态。
+SakitinSU 使用百度移动统计和阿里云EMAS收集用户的使用数据，依此增强后续的使用体验。
 
-SakitinSU 尊重并保护用户隐私。我们承诺仅在必要范围内收集和使用数据，绝不滥用任何权限。
+SakitinSU 尊重并保护用户隐私。用户的使用数据仅用于错误分析、性能优化等用途，绝不会进行任何滥用行为。
 
-## 信息收集
+SakitinSU 软件本体仅使用百度移动统计和阿里云EMAS两个第三方SDK用于数据收集，除此之外，不存在任何第一方/第三方数据收集行为。软件携带的第一方二进制文件不存在任何数据收集行为。
 
-- SakitinSU 核心功能本地运行，不主动收集或上传个人信息。
-- 管理器（如有）仅本地验证权限，不上传认证信息。
-- Preview 分支集成了百度移动统计和阿里云 EMAS，仅收集匿名使用数据。
+## 第三方SDK相关链接
 
-## 第三方服务
-
-- 可能依赖第三方组件或服务，相关隐私政策请参见其官方说明。
-- 本项目不对第三方服务的数据收集行为负责。
-
-## 日志与调试
-
-- 默认不收集或上传日志。
-- 用户主动反馈日志仅用于问题定位。
-
-## 政策变更
-
-- 本政策如有更新，将在本页面公示。
-
----
-
-如有疑问，欢迎通过 [GitHub Issues](https://github.com/OOM-WG/SSU_Docs/issues) 联系我们。
+- [百度统计隐私政策](https://tongji.baidu.com/web/help/article?id=330&type=0&castk=LTE%3D)
+- [EMAS隐私权政策](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)
