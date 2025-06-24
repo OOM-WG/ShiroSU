@@ -22,11 +22,25 @@ export const head: HeadConfig[] = [
     ["meta", { property: "og:description", content: "简单易上手的root实现" }],
     ["meta", { property: "og:site", content: "https://ssu.oom-wg.dev" }],
     ["meta", { property: "og:site_name", content: "SSU" }],
-
     [
         "meta",
         {
             property: "og:image",
+            content: "https://ssu.oom-wg.dev/og-template.png",
+        },
+    ],
+    ["meta", { property: "og:image:width", content: "1200" }],
+    ["meta", { property: "og:image:height", content: "630" }],
+    ["meta", { property: "og:image:type", content: "image/png" }],
+
+    // Twitter 卡片支持
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:title", content: "SSU" }],
+    ["meta", { name: "twitter:description", content: "简单易上手的root实现" }],
+    [
+        "meta",
+        {
+            name: "twitter:image",
             content: "https://ssu.oom-wg.dev/og-template.png",
         },
     ],
