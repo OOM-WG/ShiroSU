@@ -75,6 +75,9 @@ importers:
       '@nolebase/vitepress-plugin-meta':
         specifier: ^2.17.2
         version: 2.17.2(vitepress@2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0))
+      '@nolebase/vitepress-plugin-og-image':
+        specifier: ^2.17.2
+        version: 2.17.2(vitepress@2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0))
       '@nolebase/vitepress-plugin-page-properties':
         specifier: ^2.17.2
         version: 2.17.2(vitepress@2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0))
@@ -627,6 +630,11 @@ packages:
     peerDependencies:
       vitepress: ^1.5.0 || ^2.0.0-alpha.1
 
+  '@nolebase/vitepress-plugin-og-image@2.17.2':
+    resolution: {integrity: sha512-RAOxjRJKlB1TkgSm6+PdKOTWEzpr8pPr0784HeoqFAjSD9DX/EzNMggaWuR4NZFHp5dZ75QhDDs94GawcNYx/Q==}
+    peerDependencies:
+      vitepress: ^1.5.0 || ^2.0.0-alpha.1
+
   '@nolebase/vitepress-plugin-page-properties@2.17.2':
     resolution: {integrity: sha512-feyVEo5Fl3Xe5OOFG28HdRzuEhZzaQUvYJPk8Y2bSDJ3aMihmQthEJr501LdlOJn2yeg3aAmsr7PlTEmF1gGVA==}
     peerDependencies:
@@ -718,6 +726,10 @@ packages:
   '@parcel/watcher@2.5.1':
     resolution: {integrity: sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg==}
     engines: {node: '>= 10.0.0'}
+
+  '@resvg/resvg-wasm@2.6.2':
+    resolution: {integrity: sha512-FqALmHI8D4o6lk/LRWDnhw95z5eO+eAa6ORjVg09YRR7BkcM6oPHU9uyC0gtQG5vpFLvgpeU4+zEAz2H8APHNw==}
+    engines: {node: '>= 10'}
 
   '@rollup/rollup-android-arm-eabi@4.43.0':
     resolution: {integrity: sha512-Krjy9awJl6rKbruhQDgivNbD1WuLb8xAclM4IR4cN5pHGAs2oIMMQJEiC3IC/9TZJ+QZkmZhlMO/6MBGxPidpw==}
@@ -1500,6 +1512,10 @@ packages:
     resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
     engines: {node: '>=14'}
 
+  fs-extra@11.3.0:
+    resolution: {integrity: sha512-Z4XaCL6dUDHfP/jT25jJKMmtxvuwbkrD1vNSMFlo9lNLY2c5FHYSQgHPRZUjAB26TpDEoW9HCOgplrdbaPV/ew==}
+    engines: {node: '>=14.14'}
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1567,6 +1583,9 @@ packages:
 
   hast-util-from-parse5@8.0.3:
     resolution: {integrity: sha512-3kxEVkEKt0zvcZ3hCRYI8rqrgwtlIOFMWkbclACvjlDw8Li9S2hk/d51OI0nr/gIpdMHNepwgOKqZ/sy0Clpyg==}
+
+  hast-util-from-selector@3.0.1:
+    resolution: {integrity: sha512-CA2dwcsAS6a7DNZq8HT5fNP4FzUq2PUpQpKnAtOCmfTk429jR0RtasLSMlFA1FNKd8lgfeCIAFl3/vD95be8Lg==}
 
   hast-util-has-property@3.0.0:
     resolution: {integrity: sha512-MNilsvEKLFpV604hwfhVStK0usFY/QmM5zX16bo7EjnAEGofr5YyI37kzopBlZJkHD4t887i+q/C8/tr5Q94cA==}
@@ -1743,6 +1762,9 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
+
+  jsonfile@6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
 
   juice@8.1.0:
     resolution: {integrity: sha512-FLzurJrx5Iv1e7CfBSZH68dC04EEvXvvVvPYB7Vx1WAuhCp1ZPIMtqxc+WTWxVkpTIC2Ach/GAv0rQbtGf6YMA==}
@@ -2135,6 +2157,9 @@ packages:
   regex@6.0.1:
     resolution: {integrity: sha512-uorlqlzAKjKQZ5P+kTJr3eeJGSVroLKoHmquUj4zHWuR+hEyNqlXsSKlYYF5F4NI6nl7tWCs0apKJ0lmfsXAPA==}
 
+  rehype-meta@4.0.1:
+    resolution: {integrity: sha512-nLwA17+GbtBYi3C1KSrFR8JlqXv76mz185U//xDEAYgzE3g/bSD6WKSXva1W95ttzouUCJwA09X3AQZIi3R+Nw==}
+
   rehype-parse@9.0.1:
     resolution: {integrity: sha512-ksCzCD0Fgfh7trPDxr2rSylbwq9iYDkSn8TCDmEJ49ljEUBxDVCzCHv7QNzZOfODanX4+bWQ4WZqLCRWYLfhag==}
 
@@ -2421,6 +2446,10 @@ packages:
 
   unist-util-visit@5.0.0:
     resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
+
+  universalify@2.0.1:
+    resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
+    engines: {node: '>= 10.0.0'}
 
   unlazy@0.12.4:
     resolution: {integrity: sha512-fdx0Fmz2DYuxWkcUWFAUZBMRzN3gsRL9m/t2eE2UI2BoefFUwxLgC0ApYswwgYwZjwBaA1asnvwwYfnx2cEEcw==}
@@ -3088,6 +3117,24 @@ snapshots:
       unist-util-remove-position: 5.0.0
       vitepress: 2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0)
 
+  '@nolebase/vitepress-plugin-og-image@2.17.2(vitepress@2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0))':
+    dependencies:
+      '@resvg/resvg-wasm': 2.6.2
+      colorette: 2.0.20
+      defu: 6.1.4
+      emoji-regex: 10.4.0
+      fs-extra: 11.3.0
+      gray-matter: 4.0.3
+      ora: 8.2.0
+      rehype: 13.0.2
+      rehype-meta: 4.0.1
+      rehype-parse: 9.0.1
+      rehype-stringify: 10.0.1
+      tinyglobby: 0.2.14
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+      vitepress: 2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0)
+
   '@nolebase/vitepress-plugin-page-properties@2.17.2(vitepress@2.0.0-alpha.5(@algolia/client-search@5.27.0)(@types/node@22.15.31)(async-validator@4.2.5)(less@4.3.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.5)(qrcode@1.5.4)(sass@1.89.2)(search-insights@2.13.0)(terser@5.39.0))':
     dependencies:
       '@iconify-json/icon-park-outline': 1.2.2
@@ -3174,6 +3221,8 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.1
       '@parcel/watcher-win32-x64': 2.5.1
     optional: true
+
+  '@resvg/resvg-wasm@2.6.2': {}
 
   '@rollup/rollup-android-arm-eabi@4.43.0':
     optional: true
@@ -3978,6 +4027,12 @@ snapshots:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
+  fs-extra@11.3.0:
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+
   fsevents@2.3.3:
     optional: true
 
@@ -4034,8 +4089,7 @@ snapshots:
       slash: 5.1.0
       unicorn-magic: 0.3.0
 
-  graceful-fs@4.2.11:
-    optional: true
+  graceful-fs@4.2.11: {}
 
   gray-matter@4.0.3:
     dependencies:
@@ -4069,6 +4123,13 @@ snapshots:
       vfile: 6.0.3
       vfile-location: 5.0.3
       web-namespaces: 2.0.1
+
+  hast-util-from-selector@3.0.1:
+    dependencies:
+      '@types/hast': 3.0.4
+      css-selector-parser: 3.1.2
+      devlop: 1.1.0
+      hastscript: 9.0.1
 
   hast-util-has-property@3.0.0:
     dependencies:
@@ -4246,6 +4307,12 @@ snapshots:
   json-parse-even-better-errors@2.3.1: {}
 
   json5@2.2.3: {}
+
+  jsonfile@6.1.0:
+    dependencies:
+      universalify: 2.0.1
+    optionalDependencies:
+      graceful-fs: 4.2.11
 
   juice@8.1.0:
     dependencies:
@@ -4654,6 +4721,14 @@ snapshots:
     dependencies:
       regex-utilities: 2.3.0
 
+  rehype-meta@4.0.1:
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-from-selector: 3.0.1
+      hast-util-select: 6.0.4
+      hastscript: 9.0.1
+      vfile: 6.0.3
+
   rehype-parse@9.0.1:
     dependencies:
       '@types/hast': 3.0.4
@@ -4969,6 +5044,8 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
+
+  universalify@2.0.1: {}
 
   unlazy@0.12.4:
     dependencies:

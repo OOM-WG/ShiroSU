@@ -37,6 +37,7 @@
 		"@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.17.2",
 		"@nolebase/vitepress-plugin-inline-link-preview": "^2.17.2",
 		"@nolebase/vitepress-plugin-meta": "^2.17.2",
+		"@nolebase/vitepress-plugin-og-image": "^2.17.2",
 		"@nolebase/vitepress-plugin-page-properties": "^2.17.2",
 		"@nolebase/vitepress-plugin-thumbnail-hash": "^2.17.2",
 		"@types/animejs": "^3.1.13",
