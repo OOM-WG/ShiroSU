@@ -40,7 +40,6 @@ import LinkGrid from "./components/LinkGrid.vue";
 import UnderConstructionBanner from "./components/UnderConstructionBanner.vue";
 import PageStats from "./components/PageStats.vue";
 import ArticleMetadata from "./components/ArticleMetadata.vue";
-import HomeLayout from "./home/HomeLayout.vue";
 import MyLayout from "./components/MyLayout.vue";
 import Downloaded from "./attached/Downloaded.vue";
 
@@ -148,7 +147,6 @@ export default {
             const { collect } = setup(app);
             app.provide("css-render-collect", collect);
         }
-        app.component("HomeLayout", HomeLayout);
         app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
         app.component("Linkcard", Linkcard);
         app.component("VPCard", Card);
