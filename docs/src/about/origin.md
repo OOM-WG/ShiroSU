@@ -13,26 +13,28 @@ next:
 
 ## 项目起源
 
-> @Saki 说：没有什么起源，他说："让 linso 去写，然后就写了。"
+> @安音咲汀 说：没有什么起源，他说："让 Linso 去写，然后他就写了。"
+>
+> （这里指内核部分）
+>
+> （实际上SakitinSU是为了解决realme GT Neo不能很好地使用内核级root而存在的）
 
 ---
 
 ## 名称的由来
 
-> @Saki：
-> "njd SSU 是 SakitinSU 还是 SimpleSU 还是 sm，或者改其他名字？"
+> @安音咲汀：
 >
-> @YumeYume：
+> "你觉得 SSU 是 SakitinSU 还是 SimpleSU 还是什么，或者改其他名字？"
+>
+> @YumeYuka：
+>
 > "前者……"
 
 然后就没有然后了。
 
 ---
 
-## Logo 的由来
+## 图标的由来
 
-Logo 由 @YumeYuka 使用 `ConfyUI` 绘制。
-
-不过因为 @Saki 破事太多，这个 Logo 的设计经历了多次修改和调整，最终才确定下来。
-
-> @悠栾 评价道："Saki thl"
+图标由 @YumeYuka 使用 `ConfyUI` 绘制。
