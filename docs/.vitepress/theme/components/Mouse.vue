@@ -42,10 +42,10 @@ const textEffects = ref([])
 const config = {
   texts: [
     "SakitinSU是个PPT项目",
-    "永远年轻，永远在“即将发布",
-    "别问 SakitinSu 的进展，问就是“在写了”",
+    "永远年轻，永远在“即将发布”",
+    "别问 SakitinSU 的进展，问就是“在写了”",
     "还没写好就出来造势",
-    "copy copy copy",
+    "Copy Copy Copy",
     "从哪复制的的页面没改",
   ],
   colors: [
