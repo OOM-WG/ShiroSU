@@ -3,13 +3,13 @@
   <div class="mouse-toggle-wrapper">
     <!-- 移动端显示切换开关样式 -->
     <div class="mobile-toggle" v-if="isMobile">
-      <span class="mobile-toggle-label">鼠标特效</span>
+      <span class="mobile-toggle-label">{{ isEnabled ? "嘲讽开启" : "嘲讽关闭" }}</span>
       <button
-        @click="toggleMouseEffects"
-        class="mobile-toggle-switch"
-        :class="{ active: isEnabled }"
-        :title="isEnabled ? '关闭鼠标特效' : '开启鼠标特效'">
-        <span class="mobile-toggle-slider"></span>
+      @click="toggleMouseEffects"
+      class="mobile-toggle-switch"
+      :class="{ active: isEnabled }"
+      :title="isEnabled ? '关闭鼠标特效' : '开启鼠标特效'">
+      <span class="mobile-toggle-slider"></span>
       </button>
     </div>
 
