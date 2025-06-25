@@ -124,10 +124,10 @@
       <div class="hero-content">
         <div class="content-wrapper">
           <h1 class="hero-main-title">SakitinSU / SSU</h1>
-          <h2 class="hero-subtitle">Android root 实现：简易上手的开始 </h2>
+          <h2 class="hero-subtitle">Android root 实现：简易上手的开始</h2>
           <p class="hero-description">
-            SakitinSU 将继续坚持 SUU 和 CU 一贯的简洁设计理念,
-            你只需专注于刷写模块，繁琐的底层细节交由我们处理。
+            SakitinSU 将继续坚持 NGA 和 CU 一贯的简洁设计理念，
+            您只需要享受 SSU 带来的权能，繁琐的底层细节交给我们就好。
           </p>
           <div class="cta-group">
             <a href="/guide/what-is-sakitinsu" class="cta-primary">
