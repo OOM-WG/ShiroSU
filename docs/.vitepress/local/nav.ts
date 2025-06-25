@@ -2,14 +2,6 @@ import type { DefaultTheme } from "vitepress";
 
 export const nav: DefaultTheme.Config["nav"] = [
     {
-        text: "主页",
-        link: "/",
-    },
-    {
-        text: "快速了解",
-        link: "/guide/what-is-sakitinsu",
-    },
-    {
         text: "关于SSU",
         items: [
             {
@@ -23,8 +15,8 @@ export const nav: DefaultTheme.Config["nav"] = [
             {
                 text: "文档鸣谢",
                 link: "/about/document",
-            }
-        ]
+            },
+        ],
     },
     {
         text: "更新日志",
@@ -38,5 +30,8 @@ export const nav: DefaultTheme.Config["nav"] = [
                 link: "/changeLog/changelog",
             },
         ],
+    },
+    {
+        component: "MouseToggle",
     },
 ];

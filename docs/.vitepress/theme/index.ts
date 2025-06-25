@@ -10,7 +10,6 @@ import { defineComponent, inject, nextTick, onMounted, watch, h } from "vue";
 // ===== 第三方库 =====
 import mediumZoom from "medium-zoom";
 import ElementPlus from "element-plus";
-
 // ===== Nolebase 插件 =====
 import {
     NolebaseGitChangelogPlugin,
@@ -28,34 +27,26 @@ import {
     NolebasePagePropertiesEditor,
     NolebasePageProperties,
 } from "@nolebase/vitepress-plugin-page-properties/client";
-
 // ===== 本地组件 =====
-import Card from "../theme/components/Card";
+import Layout from "./components/Layout.vue";
 import RainbowAnimationSwitcher from "./components/RainbowAnimationSwitcher.vue";
 import Confetti from "./components/Confetti.vue";
-import HomeUnderline from "./components/HomeUnderline.vue";
-import Linkcard from "./components/Linkcard.vue";
-import SakuraLinkCard from "./components/SakuraLinkCard.vue";
-import LinkGrid from "./components/LinkGrid.vue";
-import UnderConstructionBanner from "./components/UnderConstructionBanner.vue";
-import PageStats from "./components/PageStats.vue";
 import ArticleMetadata from "./components/ArticleMetadata.vue";
-import MyLayout from "./components/MyLayout.vue";
+import Update from "./components/Update.vue";
+import SakuraLinkCard from "./components/SakuraLinkCard.vue";
+import UnderConstructionBanner from "./components/Width.vue";
 import Downloaded from "./attached/Downloaded.vue";
-
+import TeamPage from "./team/TeamPage.vue";
+import MouseToggle from "./components/MouseToggle.vue";
+import Mouse from "./components/Mouse.vue";
 // ===== 样式文件 =====
-// 本地样式
 import "./styles/main.css";
 import "./styles/linkcard.css";
 import "./styles/rainbow.css";
 import "./styles/vars.css";
 import "element-plus/dist/index.css";
-
-// 第三方库样式
 import "vitepress-markdown-timeline/dist/theme/index.css";
 import "nprogress-v2/dist/index.css";
-
-// Nolebase 插件样式
 import "@nolebase/vitepress-plugin-enhanced-mark/client/style.css";
 import "@nolebase/vitepress-plugin-thumbnail-hash/client/style.css";
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
@@ -66,64 +57,42 @@ import "@nolebase/vitepress-plugin-page-properties/client/style.css";
 
 let homePageStyle: HTMLStyleElement | undefined;
 
-/**
- * CssRenderStyle 组件：用于 SSR 时注入 css-render 生成的样式。
- * @returns {JSX.Element}
- */
+// CssRenderStyle 组件：用于 SSR 时注入 css-render 生成的样式。
 const CssRenderStyle = defineComponent({
     setup() {
-        // 断言 collect 为函数，防止类型报错
-        const collect = inject("css-render-collect") as (() => string) | undefined;
-        return {
-            style: collect ? collect() : "",
-        };
+        const collect = inject("css-render-collect") as
+            | (() => string)
+            | undefined;
+        return { style: collect ? collect() : "" };
     },
     render() {
-        return h("css-render-style", {
-            innerHTML: this.style,
-        });
+        return h("css-render-style", { innerHTML: this.style });
     },
 });
 
-/**
- * VitepressPath 组件：用于 SSR 时输出当前路由路径。
- * @returns {JSX.Element}
- */
+// VitepressPath 组件：用于 SSR 时输出当前路由路径。
 const VitepressPath = defineComponent({
     setup() {
         const route = useRoute();
-        return () => {
-            return h("vitepress-path", null, [route.path]);
-        };
+        return () => h("vitepress-path", null, [route.path]);
     },
 });
 
-/**
- * 原本自定义 Layout，包含所有插槽扩展。
- */
-const CustomLayout = () => {
-    return h(DefaultTheme.Layout, null, {
-        default: () => h(MyLayout),
-        // 为较宽的屏幕的导航栏添加阅读增强菜单
+// 自定义 Layout，包含所有插槽扩展。
+const CustomLayout = () =>
+    h(DefaultTheme.Layout, null, {
+        default: () => h(Layout),
         "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
-        // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
-        "nav-screen-content-after": () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-        // 将横幅和高亮功能都放在layout-top，确保横幅在最顶部
+        "nav-screen-content-after": () =>
+            h(NolebaseEnhancedReadabilitiesScreenMenu),
         "layout-top": () => [
             h(UnderConstructionBanner),
             h(NolebaseHighlightTargetedHeading),
+            h(Mouse), // 全局鼠标特效组件
         ],
-        // 在文档内容后添加页面统计信息
-        "doc-after": () => h(PageStats),
-        // 使用自定义布局
     });
-};
 
-/**
- * NaiveUIProvider 组件：为全局提供 Naive UI 配置，并包裹自定义 Layout。
- * SSR 时注入 CssRenderStyle 和 VitepressPath。
- * @returns {JSX.Element}
- */
+// NaiveUIProvider 组件：为全局提供 Naive UI 配置，并包裹自定义 Layout。
 const NaiveUIProvider = defineComponent({
     render() {
         return h(
@@ -132,7 +101,9 @@ const NaiveUIProvider = defineComponent({
             {
                 default: () => [
                     h(CustomLayout),
-                    import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null,
+                    import.meta.env.SSR
+                        ? [h(CssRenderStyle), h(VitepressPath)]
+                        : null,
                 ],
             },
         );
@@ -148,16 +119,13 @@ export default {
             app.provide("css-render-collect", collect);
         }
         app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
-        app.component("Linkcard", Linkcard);
-        app.component("VPCard", Card);
         app.component("Confetti", Confetti);
-        app.component("HomeUnderline", HomeUnderline);
-        app.component("SakuraLinkCard", SakuraLinkCard);
-        app.component("LinkGrid", LinkGrid);
-        app.component("PageStats", PageStats);
+        app.component("Update", Update);
+        app.component("TeamPage", TeamPage);
         app.component("ArticleMetadata", ArticleMetadata);
+        app.component("SakuraLinkCard", SakuraLinkCard);
         app.component("Downloaded", Downloaded);
-        // WalletApp 现在通过 alias 替换 VPHome，无需在此处注册
+        app.component("MouseToggle", MouseToggle);
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.component("NolebaseGitContributors", NolebaseGitContributors);
         app.component(
@@ -183,12 +151,10 @@ export default {
             );
         }
     },
-
     setup() {
         const route = useRoute();
         const initZoom = () => {
-            // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
-            mediumZoom(".main img", { background: "var(--vp-c-bg)" }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+            mediumZoom(".main img", { background: "var(--vp-c-bg)" });
         };
         onMounted(() => {
             initZoom();
@@ -197,7 +163,6 @@ export default {
             () => route.path,
             () => nextTick(() => initZoom()),
         );
-        // Get frontmatter and route
         const { frontmatter } = useData();
     },
 } satisfies Theme;
@@ -205,7 +170,6 @@ export default {
 function updateHomePageStyle(value: boolean) {
     if (value) {
         if (homePageStyle) return;
-
         homePageStyle = document.createElement("style");
         homePageStyle.innerHTML = `
     :root {
@@ -214,7 +178,6 @@ function updateHomePageStyle(value: boolean) {
         document.body.appendChild(homePageStyle);
     } else {
         if (!homePageStyle) return;
-
         homePageStyle.remove();
         homePageStyle = undefined;
     }
