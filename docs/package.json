@@ -60,6 +60,7 @@
 		"naive-ui": "^2.42.0",
 		"nprogress-v2": "^1.1.10",
 		"prettier": "^3.5.3",
+		"prettier-plugin-lint-md": "^1.0.1",
 		"prettier-plugin-properties": "^0.3.0",
 		"rimraf": "^6.0.1",
 		"rollup-plugin-visualizer": "^6.0.3",

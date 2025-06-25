@@ -15,5 +15,8 @@
 	"files.exclude": {
 		// "**/.git": false,
 		"!**/.git/config": true // 保持 git config 可见
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

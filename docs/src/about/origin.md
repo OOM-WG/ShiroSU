@@ -11,7 +11,6 @@ next:
   link: "/guide/what-is-sakitinsu"
 ---
 
-
 ## 项目起源
 
 > @Saki 说：没有什么起源，他说："让 linso 去写，然后就写了。"
