@@ -1,13 +1,27 @@
 <!-- 鼠标特效开关组件 -->
 <template>
   <div class="mouse-toggle-wrapper">
+    <!-- 移动端显示切换开关样式 -->
+    <div class="mobile-toggle" v-if="isMobile">
+      <span class="mobile-toggle-label">鼠标特效</span>
+      <button
+        @click="toggleMouseEffects"
+        class="mobile-toggle-switch"
+        :class="{ active: isEnabled }"
+        :title="isEnabled ? '关闭鼠标特效' : '开启鼠标特效'">
+        <span class="mobile-toggle-slider"></span>
+      </button>
+    </div>
+
+    <!-- 桌面端显示按钮样式 -->
     <button
+      v-else
       @click="toggleMouseEffects"
       class="mouse-toggle-btn"
       :class="{ active: isEnabled }"
       :title="isEnabled ? '关闭鼠标特效' : '开启鼠标特效'">
       <span class="toggle-icon">{{ isEnabled ? "🎨" : "💤" }}</span>
-      <span v-if="!screenMenu" class="toggle-text">
+      <span class="toggle-text">
         {{ isEnabled ? "嘲讽开启" : "嘲讽关闭" }}
       </span>
     </button>
@@ -15,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, provide } from "vue"
+import { ref, onMounted, provide, computed } from "vue"
 
 // Props from VitePress
 defineProps({
@@ -28,6 +42,12 @@ defineProps({
 // 状态管理
 const isEnabled = ref(false)
 const STORAGE_KEY = "vitepress-mouse-effects-enabled"
+
+// 检测是否为移动端
+const isMobile = computed(() => {
+  if (typeof window === "undefined") return false
+  return window.innerWidth <= 768
+})
 
 // 提供全局状态
 provide("mouseEffectsEnabled", isEnabled)
@@ -82,7 +102,7 @@ onMounted(() => {
 .mouse-toggle-btn {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   padding: 0 12px;
   height: var(--vp-nav-height-mobile);
   border: none;
@@ -95,6 +115,7 @@ onMounted(() => {
   cursor: pointer;
   transition: all 0.25s;
   user-select: none;
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
@@ -127,11 +148,69 @@ onMounted(() => {
 /* 移动端适配 */
 @media (max-width: 768px) {
   .mouse-toggle-btn {
-    padding: 0 8px;
-    gap: 0;
+    display: none;
   }
+}
 
-  .toggle-text {
+/* 移动端切换开关样式 */
+.mobile-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.mobile-toggle-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  flex: 1;
+}
+
+.mobile-toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  background: var(--vp-c-bg-mute);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 11px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  padding: 0;
+  margin-left: auto;
+}
+
+.mobile-toggle-switch:hover {
+  background: var(--vp-c-bg-alt);
+}
+
+.mobile-toggle-switch.active {
+  background: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.mobile-toggle-slider {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  background: var(--vp-c-bg);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-toggle-switch.active .mobile-toggle-slider {
+  transform: translateX(18px);
+  background: var(--vp-c-bg);
+}
+
+/* 桌面端隐藏移动端样式 */
+@media (min-width: 769px) {
+  .mobile-toggle {
     display: none;
   }
 }
