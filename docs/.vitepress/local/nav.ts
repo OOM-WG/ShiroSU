@@ -30,8 +30,5 @@ export const nav: DefaultTheme.Config["nav"] = [
                 link: "/changeLog/changelog",
             },
         ],
-    },
-    {
-        component: "MouseToggle",
-    },
+    }
 ];

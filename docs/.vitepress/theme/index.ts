@@ -28,7 +28,6 @@ import {
     NolebasePageProperties,
 } from "@nolebase/vitepress-plugin-page-properties/client";
 // ===== 本地组件 =====
-import Layout from "./components/Layout.vue";
 import RainbowAnimationSwitcher from "./components/RainbowAnimationSwitcher.vue";
 import Confetti from "./components/Confetti.vue";
 import ArticleMetadata from "./components/ArticleMetadata.vue";
@@ -37,6 +36,7 @@ import SakuraLinkCard from "./components/SakuraLinkCard.vue";
 import UnderConstructionBanner from "./components/Width.vue";
 import Downloaded from "./attached/Downloaded.vue";
 import TeamPage from "./team/TeamPage.vue";
+import Music from "./components/Music.vue";
 import MouseToggle from "./components/MouseToggle.vue";
 import Mouse from "./components/Mouse.vue";
 // ===== 样式文件 =====
@@ -78,29 +78,37 @@ const VitepressPath = defineComponent({
     },
 });
 
-// 自定义 Layout，包含所有插槽扩展。
-const CustomLayout = () =>
-    h(DefaultTheme.Layout, null, {
-        default: () => h(Layout),
-        "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
-        "nav-screen-content-after": () =>
-            h(NolebaseEnhancedReadabilitiesScreenMenu),
-        "layout-top": () => [
-            h(UnderConstructionBanner),
-            h(NolebaseHighlightTargetedHeading),
-            h(Mouse), // 全局鼠标特效组件
-        ],
-    });
+export default {
+    extends: DefaultTheme,
 
-// NaiveUIProvider 组件：为全局提供 Naive UI 配置，并包裹自定义 Layout。
-const NaiveUIProvider = defineComponent({
-    render() {
+    Layout() {
         return h(
             NConfigProvider,
             { abstract: true, inlineThemeDisabled: true },
             {
                 default: () => [
-                    h(CustomLayout),
+                    // VitePress 默认布局
+                    h(DefaultTheme.Layout, null, {
+                        // 在导航栏内容后面添加音乐组件（这是导航栏的右侧）
+                        "nav-bar-content-after": () => [
+                            h(NolebaseEnhancedReadabilitiesMenu),
+                        ],
+                        // 在屏幕导航内容后面添加增强可读性菜单
+                        "nav-screen-content-after": () =>
+                            h(NolebaseEnhancedReadabilitiesScreenMenu),
+                        // 在侧边栏导航前面添加鼠标切换
+                        "sidebar-nav-before": () => h(MouseToggle),
+                        // 在侧边栏导航后面添加音乐播放器
+                        "sidebar-nav-after": () => h(Music),
+                        // 在布局顶部添加其他组件
+                        "layout-top": () => [
+                            h(UnderConstructionBanner),
+                            h(NolebaseHighlightTargetedHeading),
+                            h(Mouse),
+                        ],
+                    }),
+
+                    // SSR 相关组件
                     import.meta.env.SSR
                         ? [h(CssRenderStyle), h(VitepressPath)]
                         : null,
@@ -108,16 +116,26 @@ const NaiveUIProvider = defineComponent({
             },
         );
     },
-});
 
-export default {
-    extends: DefaultTheme,
-    Layout: NaiveUIProvider,
     enhanceApp({ app, router }) {
         if (import.meta.env.SSR) {
             const { collect } = setup(app);
             app.provide("css-render-collect", collect);
         }
+
+        // 注册所有第三方库和插件
+        app.use(ElementPlus);
+        app.use(NolebaseGitChangelogPlugin);
+        app.use(NolebaseInlineLinkPreviewPlugin);
+        app.use(NolebaseEnhancedReadabilitiesPlugin, {
+            spotlight: {
+                defaultToggle: true,
+                disableHelp: true,
+                hoverBlockColor: "rgb(240 197 52 / 10%)",
+            },
+        });
+
+        // 注册所有自定义全局组件
         app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
         app.component("Confetti", Confetti);
         app.component("Update", Update);
@@ -133,16 +151,8 @@ export default {
             NolebasePagePropertiesEditor,
         );
         app.component("NolebasePageProperties", NolebasePageProperties);
-        app.use(NolebaseGitChangelogPlugin);
-        app.use(NolebaseInlineLinkPreviewPlugin);
-        app.use(NolebaseEnhancedReadabilitiesPlugin, {
-            spotlight: {
-                defaultToggle: true,
-                disableHelp: true,
-                hoverBlockColor: "rgb(240 197 52 / 10%)",
-            },
-        });
-        app.use(ElementPlus);
+
+        // 客户端逻辑
         if (typeof window !== "undefined") {
             watch(
                 () => router.route.data.relativePath,
@@ -151,6 +161,7 @@ export default {
             );
         }
     },
+
     setup() {
         const route = useRoute();
         const initZoom = () => {
