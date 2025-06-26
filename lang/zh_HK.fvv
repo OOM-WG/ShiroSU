@@ -1,5 +1,6 @@
 Global = {
     NA = "不適用"
+    SUNA = "未獲取到SU實現"
 }
 
 UI = {
@@ -82,7 +83,6 @@ Modules = {
     CopyErr = "複製失敗"
     DlErr = "下載失敗"
 
-    NA = "未獲取到SU實現"
     InstMod = "安裝模組"
     InstModErr = "未選擇模組"
     NoMod = "未安裝模組"
