@@ -39,6 +39,7 @@ import TeamPage from "./team/TeamPage.vue";
 import Music from "./components/Music.vue";
 import MouseToggle from "./components/MouseToggle.vue";
 import Mouse from "./components/Mouse.vue";
+import Carousel from "./components/Carousel.vue";
 // ===== 样式文件 =====
 import "./styles/main.css";
 import "./styles/linkcard.css";
@@ -101,6 +102,7 @@ export default {
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
                         // 在布局顶部添加其他组件
+                        "aside-top": () => h(Carousel),
                         "layout-top": () => [
                             h(UnderConstructionBanner),
                             h(NolebaseHighlightTargetedHeading),
