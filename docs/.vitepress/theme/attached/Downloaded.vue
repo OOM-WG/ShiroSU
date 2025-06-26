@@ -110,17 +110,17 @@ const themeOverrides = {
     iconColorSuccess: "rgb(107, 189, 131)",
   },
 }
+const newLocal = "version"
 // ----------------------------
 
 const selectors = ref([
   {
-    key: "arch",
-    placeholder: "请选择架构",
-    value: "arm64",
+    key: newLocal,
+    placeholder: "请选择版本",
+    value: "preview",
     options: [
-      { label: "x86_64", value: "x86_64" },
-      { label: "arm64", value: "arm64" },
-      { label: "RISC-V", value: "riscv" },
+      { label: "preview", value: "preview" },
+      { label: "lastest", value: "latest" },
     ],
   },
   {
@@ -139,10 +139,10 @@ const resultType = ref("info")
 
 // --- 修改：移除了 autoHideAlert 的逻辑 ---
 const handleDownload = () => {
-  const arch = selectors.value[0].value
+  const version = selectors.value[0].value
   const downloadType = selectors.value[1].value
 
-  if (!arch || !downloadType) {
+  if (!version || !downloadType) {
     resultType.value = "warning"
     downloadResult.value = "请先选择完整的架构和下载方式。"
     return // 不再自动隐藏
@@ -151,7 +151,7 @@ const handleDownload = () => {
   if (downloadType === "cloud") {
     window.open("https://pan.yumeyuka.plus", "_blank")
     resultType.value = "info"
-    downloadResult.value = `已为架构 ${arch} 跳转到网盘下载页面。`
+    downloadResult.value = `已为架构 ${version} 跳转到网盘下载页面。`
     autoHideAlert()
     return
   }
@@ -167,7 +167,7 @@ const handleDownload = () => {
     a.click()
     document.body.removeChild(a)
     resultType.value = "success"
-    downloadResult.value = `已为架构：${arch} 启动直链下载。`
+    downloadResult.value = `已为架构：${version} 启动直链下载。`
     autoHideAlert()
     return
   }
