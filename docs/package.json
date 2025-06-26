@@ -20,6 +20,8 @@
 		"@vue/theme": "^2.3.0",
 		"@vueuse/core": "^13.3.0",
 		"@vueuse/integrations": "^13.3.0",
+		"aplayer": "^1.10.1",
+		"axios": "^1.10.0",
 		"canvas-confetti": "^1.9.3",
 		"dynamics.js": "^1.1.5",
 		"element-plus": "^2.10.2",

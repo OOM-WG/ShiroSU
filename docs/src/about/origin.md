@@ -17,7 +17,7 @@ next:
 >
 > （这里指内核部分）
 >
-> （实际上SakitinSU是为了解决realme GT Neo不能很好地使用内核级root而存在的）
+> （实际上 SakitinSU 是为了解决 realme GT Neo 不能很好地使用内核级 root 而存在的）
 
 ---
 
