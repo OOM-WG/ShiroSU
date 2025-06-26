@@ -26,7 +26,8 @@ next:
 
 ### 通过 SakitinSU （开发中）
 
-> [!NOTE] > `SakitinSU` 的原生 Root 实现功能正在开发中，当前版本暂不支持。
+> [!NOTE] 
+> `SakitinSU` 的原生 Root 实现功能正在开发中，当前版本暂不支持。
 
 ---
 
