@@ -1,5 +1,6 @@
 Global = {
     NA = "不适用"
+    SUNA = "未获取到SU实现"
 }
 
 UI = {
@@ -16,6 +17,7 @@ UI = {
     ExtMod = "安装命令集拓展模块"
 
     Home = "主页"
+    SUPower = "权能"
     Modules = "模块"
     Settings = "设置"
     About = "关于"
@@ -73,6 +75,11 @@ Home = {
     JoinUsCnt = "SakitinSU作为新兴项目，在很多地方尚有欠缺，如有问题请向开发者反馈，您也可以与其他用户交流讨论\n我们建议优先加入我们的QQ群，其群主YumeYuka是原神玩家，并且群聊内会不定期清理不活跃成员"
 }
 
+SUPower = {
+    Grant = "赋权"
+    Hide = "隐藏"
+}
+
 Modules = {
     DlTtl = "正在下载: %s"
     DlCnt = "下载完成后将会安装模块，请勿退出软件"
@@ -82,7 +89,6 @@ Modules = {
     CopyErr = "复制失败"
     DlErr = "下载失败"
 
-    NA = "未获取到SU实现"
     InstMod = "安装模块"
     InstModErr = "未选择模块"
     NoMod = "未安装模块"

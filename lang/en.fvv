@@ -1,5 +1,6 @@
 Global = {
     NA = "Not applicable"
+    SUNA = "The SU implementation was not obtained"
 }
 
 UI = {
@@ -82,7 +83,6 @@ Modules = {
     CopyErr = "Copy failed"
     DlErr = "Download failed"
 
-    NA = "The SU implementation was not obtained"
     InstMod = "Install Module"
     InstModErr = "No module selected"
     NoMod = "No module installed"
