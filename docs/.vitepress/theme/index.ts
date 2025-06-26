@@ -90,7 +90,6 @@ export default {
                 default: () => [
                     // VitePress 默认布局
                     h(DefaultTheme.Layout, null, {
-                        // 在导航栏内容后面添加音乐组件（这是导航栏的右侧）
                         "nav-bar-content-after": () => [
                             h(NolebaseEnhancedReadabilitiesMenu),
                         ],
@@ -102,7 +101,17 @@ export default {
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
                         // 在布局顶部添加其他组件
-                        "aside-top": () => h(Carousel),
+                        "aside-top": () => {
+                            if (typeof window !== "undefined") {
+                                const isMobile =
+                                    window.innerWidth <= 768 ||
+                                    /mobile|android|iphone|ipad|phone/i.test(
+                                        navigator.userAgent,
+                                    );
+                                if (isMobile) return null;
+                            }
+                            return h(Carousel);
+                        },
                         "layout-top": () => [
                             h(UnderConstructionBanner),
                             h(NolebaseHighlightTargetedHeading),
