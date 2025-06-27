@@ -13,21 +13,21 @@
 		"deps:install": "pnpm install"
 	},
 	"dependencies": {
-		"@mdit/plugin-container": "^0.22.0",
+		"@mdit/plugin-container": "^0.22.1",
 		"@nolebase/vitepress-plugin-breadcrumbs": "^2.17.2",
 		"@vicons/ionicons5": "^0.13.0",
 		"@vue/repl": "^4.6.1",
 		"@vue/theme": "^2.3.0",
-		"@vueuse/core": "^13.3.0",
-		"@vueuse/integrations": "^13.3.0",
+		"@vueuse/core": "^13.4.0",
+		"@vueuse/integrations": "^13.4.0",
 		"aplayer": "^1.10.1",
 		"axios": "^1.10.0",
 		"canvas-confetti": "^1.9.3",
 		"dynamics.js": "^1.1.5",
 		"element-plus": "^2.10.2",
 		"gsap": "^3.13.0",
-		"vitepress": "2.0.0-alpha.5",
-		"vue-amazing-ui": "^2.4.13"
+		"vitepress": "2.0.0-alpha.7",
+		"vue-amazing-ui": "^2.4.14"
 	},
 	"devDependencies": {
 		"@braintree/sanitize-url": "^7.1.1",
@@ -43,7 +43,7 @@
 		"@nolebase/vitepress-plugin-page-properties": "^2.17.2",
 		"@nolebase/vitepress-plugin-thumbnail-hash": "^2.17.2",
 		"@types/animejs": "^3.1.13",
-		"@types/node": "^22.15.31",
+		"@types/node": "^24.0.4",
 		"animejs": "4.0.2",
 		"cross-env": "^7.0.3",
 		"cytoscape": "^3.32.0",
@@ -61,16 +61,15 @@
 		"medium-zoom": "^1.1.0",
 		"naive-ui": "^2.42.0",
 		"nprogress-v2": "^1.1.10",
-		"prettier": "^3.5.3",
+		"prettier": "^3.6.2",
 		"prettier-plugin-lint-md": "^1.0.1",
 		"prettier-plugin-properties": "^0.3.0",
 		"rimraf": "^6.0.1",
 		"rollup-plugin-visualizer": "^6.0.3",
 		"sass": "^1.89.2",
-		"vite": "^6.3.5",
-		"vitepress": "1.6.3p",
+		"vite": "^7.0.0",
 		"vitepress-markdown-timeline": "^1.2.2",
 		"vitepress-plugin-comment-with-giscus": "^1.1.15",
-		"vue": "^3.5.16"
+		"vue": "^3.5.17"
 	}
 }
