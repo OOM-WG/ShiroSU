@@ -9,6 +9,9 @@ UI = {
     HotReboot = "热重启"
     Reboot2 = "重启至%s"
 
+    ShowSysApp = "显示系统应用"
+    HideSysApp = "隐藏系统应用"
+
     DisableAll = "全部禁用"
     EnableAll = "全部启用"
     NoCanUp = "暂无可更新模块"
