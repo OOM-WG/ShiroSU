@@ -1,4 +1,5 @@
 {
+	// "$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"outDir": "dist",
 		"module": "esnext",
@@ -10,7 +11,17 @@
 		"skipLibCheck": true,
 		"noUnusedLocals": true,
 		"resolveJsonModule": true,
-		"lib": ["ESNext", "DOM"]
+		"lib": ["ESNext", "DOM"],
+		"jsx": "preserve",
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
 	},
+	"include": ["src", ".vitepress", "*.d.ts"],
 	"exclude": ["**/node_modules/**", "**/dist/**", "unocss.config.ts"]
 }
