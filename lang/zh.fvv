@@ -82,6 +82,7 @@ Home = {
 }
 
 SUPower = {
+    SearchApp = "搜索软件"
 }
 
 Modules = {
