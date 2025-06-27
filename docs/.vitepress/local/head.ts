@@ -40,15 +40,6 @@ export const head: HeadConfig[] = [
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:site", content: "@SSU" }],
 
-    // --- 动态资源路径函数 (配合 experimental.renderBuiltUrl 使用) ---
-    [
-        "script",
-        {},
-        // 定义一个全局函数，用于在运行时解析资源路径
-        // 请将下面的 CDN 地址 'https://ssu.yumeyuka.plus' 替换为你的实际 CDN 地址
-        `window.__assetsPath = (file) => 'https://ssu.yumeyuka.plus/assets/' + file;`
-    ],
-
     // --- 友盟(UMeng) Aplus 统计脚本 ---
     [
         "script",
