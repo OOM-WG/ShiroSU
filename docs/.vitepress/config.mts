@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress/dist/node/index.js";
+import path from "path";
 import { head } from "./local/head";
 import { markdown } from "./local/markdown";
 import { themeConfig } from "./local/theme";
@@ -21,7 +22,7 @@ export default defineConfig({
     title: "SakitinSU",
     description: "",
 
-    base: "/",
+    // base: "/",
     lastUpdated: true,
     ignoreDeadLinks: true,
 
@@ -42,6 +43,19 @@ export default defineConfig({
         generateBreadcrumbsData(pageData, context);
     },
     vite: {
+        experimental: {
+            renderBuiltUrl(filename, { hostType, type, hostId }) {
+                if (type === "public") {
+                    return "https://ssu.yumeyuka.plus/" + filename;
+                } else if (path.extname(hostId) === ".js") {
+                    return {
+                        runtime: `window.__assetsPath(${JSON.stringify(filename)})`,
+                    };
+                } else {
+                    return "https://ssu.yumeyuka.plus/assets/" + filename;
+                }
+            },
+        },
         resolve: {
             alias: [
                 {
