@@ -19,6 +19,9 @@ UI = {
     ExtModErr = "创建模块失败"
     ExtMod = "安装命令集拓展模块"
 
+    Grant = "赋权"
+    Hide = "隐藏"
+
     Home = "主页"
     SUPower = "权能"
     Modules = "模块"
@@ -79,8 +82,6 @@ Home = {
 }
 
 SUPower = {
-    Grant = "赋权"
-    Hide = "隐藏"
 }
 
 Modules = {
