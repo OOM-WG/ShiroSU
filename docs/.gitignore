@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Ark's
 /tmp/
 
@@ -12,3 +13,10 @@ dist/
 /.vitepress/cache
 /.idea
 /.fleet
+=======
+node_modules
+/.idea
+/.vitepress
+>>>>>>> Stashed changes
+/dist
+/dist
