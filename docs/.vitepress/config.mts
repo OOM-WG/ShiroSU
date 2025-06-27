@@ -22,7 +22,7 @@ export default defineConfig({
     title: "SakitinSU",
     description: "",
 
-    base: "https://ssu.yumeyuka.plus/",
+    // base: "https://ssu.yumeyuka.plus/",
     lastUpdated: true,
     ignoreDeadLinks: true,
 
