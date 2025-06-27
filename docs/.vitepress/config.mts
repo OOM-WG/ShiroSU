@@ -45,6 +45,13 @@ export default defineConfig({
     vite: {
         experimental: {
             renderBuiltUrl(filename, { hostType, type, hostId }) {
+                // 字体文件后缀列表
+                const fontExts = ['.woff', '.woff2', '.ttf', '.otf', '.eot'];
+                const ext = path.extname(filename);
+                if (fontExts.includes(ext)) {
+                    // 字体等文件不走 CDN，使用相对路径
+                    return { relative: true };
+                }
                 if (type === "public") {
                     return "https://ssu.yumeyuka.plus/" + filename;
                 } else if (path.extname(hostId) === ".js") {
