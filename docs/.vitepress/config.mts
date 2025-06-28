@@ -46,7 +46,6 @@ export default defineConfig({
         if (process.env.NODE_ENV !== 'production') return
 
         const extra = [
-            '',
             '<link crossorigin="" href="https://sakitinsu.resource.sawahara.host/" rel="preconnect">',
             '<link href="https://sakitinsu.resource.sawahara.host/" rel="dns-prefetch">',
             '<link crossorigin="" href="https://d.alicdn.com/" rel="preconnect">',
@@ -58,7 +57,7 @@ export default defineConfig({
             (_, attr, path) => `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`
         ).replace(
             /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
-            `$1\n${extra}`
+            `$1\n\n${extra}`
         )
 
         return newCode
