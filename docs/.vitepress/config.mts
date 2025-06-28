@@ -67,6 +67,10 @@ export default defineConfig({
             renderBuiltUrl(filename, { hostType, type, hostId }) {
                 if (type === "public") {
                     return "https://sakitinsu.resource.sawahara.host/" + filename;
+                } else if (path.extname(hostId) === ".js") {
+                    return {
+                        runtime: `window.__assetsPath(${JSON.stringify(filename)})`,
+                    };
                 } else {
                     return "https://sakitinsu.resource.sawahara.host/assets/" + filename;
                 }
