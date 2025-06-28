@@ -45,10 +45,19 @@ export default defineConfig({
     transformHtml(code, id, { pageData }) {
         if (process.env.NODE_ENV !== 'production') return
 
-        const baseTag = '<base href="https://sakitinsu.resource.sawahara.host/">'
+        const extra = [
+            '<base href="https://sakitinsu.resource.sawahara.host/">',
+            '',
+            '<link crossorigin="" href="https://sakitinsu.resource.sawahara.host/" rel="preconnect">',
+            '<link href="https://sakitinsu.resource.sawahara.host/" rel="dns-prefetch">',
+            '',
+            '<link crossorigin="" href="https://d.alicdn.com/" rel="preconnect">',
+            '<link href="https://d.alicdn.com/" rel="dns-prefetch">'
+        ].map(line => '    ' + line).join('\n')
+
         const newCode = code.replace(
-            /<head([^>]*)>/,
-            `<head$1>\n    ${baseTag}`
+            /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
+            `$1\n${extra}`
         )
 
         return newCode
