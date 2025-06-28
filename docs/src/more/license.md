@@ -9,7 +9,7 @@ description: SakitinSU 的许可协议
 
 > SakitinSU 的分发物使用F2DLPRL许可，其相关开源代码同样使用F2DLPRL许可
 
-# File to Download 公共资源许可证 (F2DLPRL或F2DLPR许可证)
+## File to Download 公共资源许可证 (F2DLPRL或F2DLPR许可证)
 
 > 本许可适用于源代码、分发物、文字作品及其他形式作品原件。
 
@@ -17,7 +17,7 @@ __官方网站: <http://license.fileto.download>__
 
 _如有差异，以官方网站为准。_
 
-## 使用、复制和再分发的条款和条件
+### 使用、复制和再分发的条款和条件
 
 - 版权所有者在源代码、随附文档或与原件一起分发的其他材料中提供的描述优先于本许可证的条款和条件。
 
