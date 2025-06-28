@@ -40,6 +40,7 @@ import Music from "./components/Music.vue";
 import MouseToggle from "./components/MouseToggle.vue";
 import Mouse from "./components/Mouse.vue";
 import Carousel from "./components/Carousel.vue";
+import backtotop from "./components/backtotop.vue";
 // ===== 样式文件 =====
 import "./styles/main.css";
 import "./styles/linkcard.css";
@@ -90,6 +91,8 @@ export default {
                 default: () => [
                     // VitePress 默认布局
                     h(DefaultTheme.Layout, null, {
+                        "doc-footer-before": () => h(backtotop),
+                        // 在导航栏内容后面添加增强可读性菜单
                         "nav-bar-content-after": () => [
                             h(NolebaseEnhancedReadabilitiesMenu),
                         ],
