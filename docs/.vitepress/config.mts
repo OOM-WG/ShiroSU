@@ -46,9 +46,9 @@ export default defineConfig({
         if (process.env.NODE_ENV !== 'production') return
 
         const extra = [
+            '',
             '<link crossorigin="" href="https://sakitinsu.resource.sawahara.host/" rel="preconnect">',
             '<link href="https://sakitinsu.resource.sawahara.host/" rel="dns-prefetch">',
-            '',
             '<link crossorigin="" href="https://d.alicdn.com/" rel="preconnect">',
             '<link href="https://d.alicdn.com/" rel="dns-prefetch">'
         ].map(line => '    ' + line).join('\n')
