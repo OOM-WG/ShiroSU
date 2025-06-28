@@ -2,7 +2,7 @@ import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
     // --- 基础和SEO元数据 ---
-    ["link", { rel: "icon", href: "/logo-rounded.webp" }],
+    ["link", { rel: "icon", href: "/logo-round.webp" }],
     [
         "meta",
         { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" },
