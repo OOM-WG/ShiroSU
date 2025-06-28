@@ -42,6 +42,17 @@ export default defineConfig({
     transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context);
     },
+    transformHtml(code, id, { pageData }) {
+        if (process.env.NODE_ENV !== 'production') return
+
+        const baseTag = '<base href="https://sakitinsu.resource.sawahara.host/">'
+        const newCode = code.replace(
+            /<head([^>]*)>/,
+            `<head$1>\n        ${baseTag}`
+        )
+
+        return newCode
+    },
     vite: {
         resolve: {
             alias: [
@@ -119,13 +130,13 @@ export default defineConfig({
             // 构建分析插件
             ...(process.env.ANALYZE
                 ? [
-                      visualizer({
-                          filename: "dist/stats.html",
-                          open: true,
-                          gzipSize: true,
-                          brotliSize: true,
-                      }),
-                  ]
+                    visualizer({
+                        filename: "dist/stats.html",
+                        open: true,
+                        gzipSize: true,
+                        brotliSize: true,
+                    }),
+                ]
                 : []),
         ],
         optimizeDeps: {
@@ -155,6 +166,6 @@ export default defineConfig({
                 "vueuc",
             ],
         },
-        
+
     },
 });
