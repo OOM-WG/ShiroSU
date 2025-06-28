@@ -1,0 +1,172 @@
+Global = {
+    NA = "適用なし"
+    SUNA = "SU実装が取得できませんでした"
+}
+
+UI = {
+    Poweroff = "シャットダウン"
+    Reboot = "再起動"
+    HotReboot = "ホット再起動"
+    Reboot2 = "%sに再起動"
+
+    ShowSysApp = "システムアプリを表示"
+    HideSysApp = "システムアプリを隠す"
+
+    DisableAll = "すべて無効化"
+    EnableAll = "すべて有効化"
+    NoCanUp = "更新可能なモジュールはありません"
+    UpdateAll = "すべて更新"
+    ExtModErr = "モジュールの作成に失敗しました"
+    ExtMod = "コマンドセット拡張モジュールをインストール"
+
+    Grant = "権限付与"
+    Hide = "隠す"
+
+    Home = "ホーム"
+    SUPower = "権能"
+    Modules = "モジュール"
+    Settings = "設定"
+    About = "について"
+}
+
+App = {
+    AuthTtl = "起動認証"
+    AuthCnt = "起動認証が有効になっています。認証後に使用してください"
+}
+
+Home = {
+    PreDl = "ダウンロードを開始しました"
+    DlOk = "ダウンロード完了"
+    DlErr = "ダウンロード失敗: %s"
+
+    Tip = "ヒント"
+    TipCnt = "SSUは百度モバイル統計およびアリババクラウドEMASを使用して、あなたの使用データを収集し、今後の使用体験を向上させます\nあなたが現在使用しているのは%sブランチ%sです"
+    TipCntPre = "\nすべての内容は参考のためのものであり、公式の今後の動向に注目してください"
+
+    InstTtl = "%s バージョンをインストール"
+    InstCnt = "インストールパッケージのダウンロードが完了しました。クリックしてインストールしてください"
+    InstPmErr = "権限取得に失敗しました"
+
+    UpdateTtl = "%s バージョンの更新"
+    UpdateCnt = "- インストールパッケージサイズ: %s\n%s"
+
+    NewVerTtl = "新しい%sバージョンがリリースされました！"
+    NewVerCnt = "新バージョン %s が利用可能です。クリックして更新してください"
+
+    SUStatus = "SU状態"
+    SUSource = "ソース"
+    SUVersion = "バージョン"
+    SUCLI = "CLI "
+
+    ModStatus = "モジュール概要"
+    Calc = "計算中"
+    ModSum = "総数"
+    ModDisable = "無効化された"
+    ModCanUp = "更新可能"
+    ModUpdate = "更新済み"
+    ModDelete = "アンインストール待ち"
+
+    DevStatus = "デバイス情報"
+    AndroidVer = "Androidバージョン"
+    OSArch = "システムアーキテクチャ"
+    OSVersion = "カーネルバージョン"
+    SELinuxEnf = "強制モード"
+    SELinuxPer = "許容モード"
+    SELinuxDis = "無効"
+
+    InstKS = "SakitinSUをインストール"
+    InstKSErr = "未実装です。公式の今後の動向に注目してください"
+
+    JoinUsTtl = "私たちに参加しませんか"
+    JoinUsCnt = "SakitinSUは新興プロジェクトであり、多くの面で不足があります。問題がある場合は開発者にフィードバックしてください。他のユーザーと交流することもできます\n私たちはまず私たちのQQグループに参加することをお勧めします。グループの管理者YumeYukaは原神プレイヤーであり、グループチャット内では不定期に非アクティブメンバーを整理します"
+}
+
+SUPower = {
+    SearchApp = "アプリを検索"
+}
+
+Modules = {
+    DlTtl = "ダウンロード中: %s"
+    DlCnt = "ダウンロード完了後、モジュールがインストールされます。ソフトウェアを終了しないでください"
+    DlQueryErr = "ダウンロードのクエリに失敗しました"
+    DlFetchErr = "ダウンロードの取得に失敗しました"
+    DlOk = "ダウンロード成功"
+    CopyErr = "コピーに失敗しました"
+    DlErr = "ダウンロード失敗"
+
+    InstMod = "モジュールをインストール"
+    InstModErr = "モジュールが選択されていません"
+    NoMod = "インストールされたモジュールはありません"
+    SearchMod = "モジュールを検索"
+    UnstarMod = "お気に入りを解除しました"
+    StarMod = "モジュールをお気に入りに追加しました"
+
+    ModErrTtl = "なぜこの内容が表示されるのか？"
+    ModErrCnt = "この内容が表示されるのは、通常モジュール情報が破損しているか、モジュール情報が規格に合っていないためです\nモジュール情報が破損している具体的な表れは、モジュール情報に「%s」という文字列が含まれていることです。これは通常、作者の誤操作によってモジュール情報ファイルが破損したためです。モジュールを再インストールすることでこの問題を解決できます\nモジュール情報が規格に合っていないのは、通常、作者が大文字と小文字を誤用したり、間違ったモジュールIDを使用したためです"
+    ModErr = "モジュールに異常または品質の低下があります。再インストールするか、作者に連絡してください"
+    CanUp = "更新可能"
+    Updated = "更新済み"
+    Stared = "お気に入りに追加済み"
+
+    EnableErr = "有効化に失敗しました"
+    DisableErr = "無効化に失敗しました"
+
+    Version = "バージョン"
+    Author = "作者"
+    Action = "操作"
+    WebUI = "インターフェース"
+
+    UpTtl = "%s(%s) バージョンの更新"
+    UpCntGet = "ログを取得中"
+    UpCntNull = "取得できません"
+    UpCntNoOk = "取得に失敗しました"
+    UpCntEmpty = "更新ログはありません"
+    UpCntErr = "取得中にエラーが発生しました"
+    UpDlNull = "ダウンロードできません"
+    Update = "更新"
+
+    Restore = "復元"
+    Delete = "削除"
+    RestoreErr = "復元に失敗しました"
+    DeleteErr = "削除に失敗しました"
+}
+
+Settings = {
+    Custom = "カスタマイズ"
+    HDRMode = "HDRモード"
+    HomeTip = "ホームヒント"
+    AppTheme = "ソフトウェアテーマ"
+
+    Common = "基本"
+    UpChannel = "更新チャネル"
+    UpChannelTip = "ソフトウェアを再起動した後に有効になります"
+    Auth = "起動認証"
+
+    Module = "モジュール"
+    WebUIDebug = "WebUIデバッグ"
+}
+
+About = {
+    Version = "バージョン: %s"
+    Copyright = "©️ 2023-現在 OOM. WG. 所有権を保留"
+    OOM_WG = "思い出の溢れ出し作業グループ"
+    Docs = "SakitinSUドキュメント"
+    DepsList = "依存リスト"
+    DepsList3Q = "以下のプロジェクトに感謝"
+}
+
+ShellUI = {
+    InstMod = "モジュールをインストール"
+    Error = "エラーページ"
+    InstModOk = "インストール成功"
+    InstModErr = "インストール失敗"
+    InstModIng = "インストール中"
+    ActionOk = "操作成功"
+    ActionErr = "操作失敗"
+    ActionIng = "操作中"
+
+    Saved2 = "保存先: %s"
+
+    Reboot = "デバイスを再起動"
+    Back = "ページを退出"
+}
