@@ -48,7 +48,7 @@ export default defineConfig({
         const baseTag = '<base href="https://sakitinsu.resource.sawahara.host/">'
         const newCode = code.replace(
             /<head([^>]*)>/,
-            `<head$1>\n        ${baseTag}`
+            `<head$1>\n    ${baseTag}`
         )
 
         return newCode
