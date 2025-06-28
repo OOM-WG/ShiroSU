@@ -78,9 +78,11 @@ jobs:
           branch: html
           folder: dist_html
           clean: true
+          single-commit: true
       - name: Deploy Resource
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: res
           folder: dist
           clean: true
+          single-commit: true
