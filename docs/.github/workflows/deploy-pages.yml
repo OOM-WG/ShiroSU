@@ -60,10 +60,25 @@ jobs:
         run: pnpm i --frozen-lockfile
       # 6、打包
       - name: Build
-        run: pnpm build
-      # 7、部署 GitHub Pages
-      - name: Deploy GitHub Pages
+        run: |
+          pnpm build
+          mkdir -p dist_html
+          find dist -type f -name '*.html' | while read -r src; do
+            rel=${src#dist/}
+            mkdir -p "dist_html/$(dirname "$rel")"
+            mv "$src" "dist_html/$rel"
+          done
+          mv dist/_headers dist_html/_headers
+      # 7、部署 Pages
+      - name: Deploy HTML
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: pages
+          branch: html
+          folder: dist_html
+          clean: true
+      - name: Deploy Resource
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: res
           folder: dist
+          clean: true
