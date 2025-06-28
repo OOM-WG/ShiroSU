@@ -70,6 +70,7 @@ jobs:
           done
           mv dist/sitemap.xml dist_html/sitemap.xml
           mv dist/_headers dist_html/_headers
+          mv dist/functions dist_html/functions
       # 7、部署 Pages
       - name: Deploy HTML
         uses: JamesIves/github-pages-deploy-action@v4
