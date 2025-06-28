@@ -17,9 +17,6 @@ import {
     PagePropertiesMarkdownSection,
 } from "@nolebase/vitepress-plugin-page-properties/vite";
 
-const fileAndStyles: Record<string, string> = {};
-const CDN_URL = 'https://ssu.yumeyuka.plus'
-
 
 export default defineConfig({
     title: "SakitinSU",
@@ -44,25 +41,6 @@ export default defineConfig({
 
     transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context);
-    },
-    // --- 使用 VitePress 原生的 transformHtml 钩子 ---
-    transformHtml(code, id, { pageData }) {
-        // 只在生产构建时进行替换
-        // 注意：VitePress 的 build 命令会自动设置 NODE_ENV
-        if (process.env.NODE_ENV !== 'production') {
-            return
-        }
-
-        // 关键的调试日志：确认此函数是否被调用
-        console.log(`[transformHtml] Processing page: ${pageData.relativePath}`)
-
-        const newCode = code.replace(/(src|href)="\/((assets|vp-icons\.css|logo-rounded\.webp)[^"]*)"/g, (match, p1, p2) => {
-            const newUrl = `${CDN_URL}/${p2}`
-            console.log(`[transformHtml] Rewriting ${match} to ${p1}="${newUrl}"`)
-            return `${p1}="${newUrl}"`
-        })
-
-        return newCode
     },
     vite: {
         resolve: {

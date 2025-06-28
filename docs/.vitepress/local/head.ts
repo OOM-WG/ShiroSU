@@ -1,6 +1,10 @@
 import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
+    ...(process.env.NODE_ENV === 'production'
+        ? [['base', { href: 'https://sakitinsu.resource.sawahara.host/' }]]
+        : []
+    ),
     // --- 基础和SEO元数据 ---
     ["link", { rel: "icon", href: "/logo-rounded.webp" }],
     [
