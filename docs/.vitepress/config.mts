@@ -53,7 +53,7 @@ export default defineConfig({
         ].map(line => '    ' + line).join('\n')
 
         const newCode = code.replace(
-            /(src|href)=["']\/([^"']+)["']/g,
+            /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
             (_, attr, path) => `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`
         ).replace(
             /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
