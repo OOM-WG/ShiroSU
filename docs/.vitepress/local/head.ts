@@ -1,11 +1,6 @@
 import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
-    [
-        "script",
-        {},
-        `window.__assetsPath = (file) => 'https://sakitinsu.resource.sawahara.host/assets/' + file;`
-    ],
     // --- 基础和SEO元数据 ---
     ["link", { rel: "icon", href: "/logo-rounded.webp" }],
     [
