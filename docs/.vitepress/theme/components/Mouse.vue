@@ -51,6 +51,7 @@ const config = {
     "代码里全是 // TODO",
     "忘了改复制来的 Copyright",
     "发布日期：下辈子",
+    "玩KSU Next玩的",
   ],
   colors: [
     "#ff6b6b",
