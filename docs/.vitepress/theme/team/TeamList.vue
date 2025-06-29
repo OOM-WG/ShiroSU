@@ -7,22 +7,17 @@ const props = defineProps<{
   members: Member[]
 }>()
 
-// Create a computed property that duplicates the members array for seamless scrolling
 const duplicatedMembers = computed(() => {
-  // 如果只有一个成员，不需要重复
   if (props.members.length <= 1) {
     return props.members
   }
-  // Duplicate the array to create a seamless loop
   return [...props.members, ...props.members]
 })
 
-// 检查是否需要滚动动画
 const shouldScroll = computed(() => {
   return props.members.length > 1
 })
 
-// Set the CSS variable for the number of members
 onMounted(() => {
   if (typeof document !== "undefined") {
     const membersContainer = document.querySelector(".members") as HTMLElement

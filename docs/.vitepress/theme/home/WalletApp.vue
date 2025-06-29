@@ -19,7 +19,7 @@
               attributeType="XML"
               attributeName="transform"
               begin="0s"
-              dur="35s"
+              dur="15s"
               type="rotate"
               from="0 1450 550"
               to="360 1450 550"
@@ -32,14 +32,14 @@
             fill="rgb(253, 214, 99)">
             <animateMotion
               path="M 800 -200 L 800 -300 L 800 -200"
-              dur="20s"
+              dur="8s"
               begin="0s"
               repeatCount="indefinite" />
             <animateTransform
               attributeType="XML"
               attributeName="transform"
               begin="0s"
-              dur="30s"
+              dur="12s"
               type="rotate"
               values="0 210 530 ; -30 210 530 ; 0 210 530"
               keyTimes="0 ; 0.5 ; 1"
@@ -49,7 +49,7 @@
           <circle cx="200" cy="150" r="20" stroke="#5D67E8" fill="#5D67E8">
             <animateMotion
               path="M 0 0 L 40 20 Z"
-              dur="5s"
+              dur="2s"
               repeatCount="indefinite" />
           </circle>
 
@@ -61,7 +61,7 @@
               attributeType="XML"
               attributeName="transform"
               begin="0s"
-              dur="35s"
+              dur="18s"
               type="rotate"
               from="0 210 530"
               to="360 210 530"
@@ -76,7 +76,7 @@
             fill="rgb(241, 243, 244)">
             <animateMotion
               path="M 0 0 L -20 40 Z"
-              dur="9s"
+              dur="4s"
               repeatCount="indefinite" />
           </circle>
 
@@ -86,14 +86,14 @@
             fill="rgb(241, 243, 244)">
             <animateMotion
               path="M 140 390 L 180 360 L 140 390"
-              dur="20s"
+              dur="10s"
               begin="0s"
               repeatCount="indefinite" />
             <animateTransform
               attributeType="XML"
               attributeName="transform"
               begin="0s"
-              dur="30s"
+              dur="15s"
               type="rotate"
               values="0 140 390; -60 140 390; 0 140 390"
               keyTimes="0 ; 0.5 ; 1"
@@ -113,7 +113,7 @@
               attributeType="XML"
               attributeName="transform"
               begin="0s"
-              dur="35s"
+              dur="16s"
               type="rotate"
               from="-30 550 750"
               to="330 550 750"
@@ -126,8 +126,8 @@
           <h1 class="hero-main-title">SakitinSU / SSU</h1>
           <h2 class="hero-subtitle">Android root 实现：简易上手的开始</h2>
           <p class="hero-description">
-            SakitinSU 将继续坚持 NGA 和 CU 一贯的简洁设计理念，
-            您只需要享受 SSU 带来的权能，繁琐的底层细节交给我们就好。
+            SakitinSU 将继续坚持 NGA 和 CU 一贯的简洁设计理念， 您只需要享受 SSU
+            带来的权能，繁琐的底层细节交给我们就好。
           </p>
           <div class="cta-group">
             <a href="/guide/what-is-sakitinsu" class="cta-primary">
@@ -211,7 +211,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
 .VPHome {
   margin: 0;
   width: 100%;

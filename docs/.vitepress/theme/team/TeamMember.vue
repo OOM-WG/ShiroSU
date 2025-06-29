@@ -14,19 +14,6 @@ import {
 } from "@vue/theme"
 import type { Member } from "./Member"
 
-// 确保图标组件在构建时被正确引用
-const iconComponents = {
-  VTIconCode,
-  VTIconCodePen,
-  VTIconGitHub,
-  VTIconGlobe,
-  VTIconHeart,
-  VTIconLink,
-  VTIconLinkedIn,
-  VTIconMapPin,
-  VTIconX,
-}
-
 const props = defineProps<{
   member: Member
 }>()
@@ -37,16 +24,11 @@ const avatarUrl = computed(() => {
     `https://q1.qlogo.cn/g?b=qq&nk=${props.member.qq}&s=640`
   )
 })
-
-// 强制引用图标组件以防止被tree-shaking优化掉
-if (process.env.NODE_ENV === 'development') {
-  console.debug('Available icons:', Object.keys(iconComponents))
-}
 </script>
 
 <template>
   <article class="TeamMember">
-    <div class="liquid-glass-wrapper">
+    <div class="member-card">
       <div class="member-content">
         <VTLink
           v-if="member.sponsor"
@@ -84,7 +66,6 @@ if (process.env.NODE_ENV === 'development') {
           </p>
 
           <div class="profiles">
-            <!-- 项目信息 -->
             <div
               v-if="member.projects && member.projects.length > 0"
               class="info-row">
@@ -107,7 +88,6 @@ if (process.env.NODE_ENV === 'development') {
               </div>
             </div>
 
-            <!-- 位置信息 -->
             <div
               v-if="member.location && member.location.trim()"
               class="info-row">
@@ -119,7 +99,6 @@ if (process.env.NODE_ENV === 'development') {
               </div>
             </div>
 
-            <!-- 语言信息 -->
             <div
               v-if="member.languages && member.languages.length > 0"
               class="info-row">
@@ -140,7 +119,6 @@ if (process.env.NODE_ENV === 'development') {
               </div>
             </div>
 
-            <!-- 网站信息 -->
             <div
               v-if="
                 member.website && member.website.url && member.website.label
@@ -159,7 +137,6 @@ if (process.env.NODE_ENV === 'development') {
               </div>
             </div>
 
-            <!-- 社交媒体链接 -->
             <div class="info-row social-row">
               <div class="info-icon"></div>
               <div class="info-content">
@@ -222,167 +199,35 @@ if (process.env.NODE_ENV === 'development') {
   flex-direction: column;
 }
 
-/* 液态玻璃包装器 - 纯 CSS 实现 */
-.liquid-glass-wrapper {
+.member-card {
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-
-  /* 基础玻璃效果 - 使用新的颜色 #fbfcff */
-  background: linear-gradient(
-    135deg,
-    rgba(251, 252, 255, 0.85) 0%,
-    rgba(251, 252, 255, 0.75) 50%,
-    rgba(251, 252, 255, 0.8) 100%
-  );
-  backdrop-filter: blur(20px) saturate(150%) brightness(110%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%) brightness(110%);
-
-  /* 增强的玻璃边框效果 */
-  border: 2px solid transparent;
-  background-clip: padding-box;
-
-  /* 多层边框效果 */
-  box-shadow:
-    /* 外层发光边框 */
-    0 0 0 1px rgba(251, 252, 255, 0.8),
-    /* 外层彩色光晕 */ 0 0 0 2px rgba(123, 131, 255, 0.2),
-    /* 内层高光边框 */ inset 0 0 0 1px rgba(255, 255, 255, 0.9),
-    /* 内层彩色边框 */ inset 0 0 0 2px rgba(251, 252, 255, 0.7),
-    /* 主要阴影 */ 0 8px 32px rgba(0, 0, 0, 0.12),
-    /* 次要阴影层 */ 0 4px 16px rgba(123, 131, 255, 0.08),
-    /* 玻璃反光效果 */ inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.4),
-    /* 侧边玻璃反光 */ inset 1px 0 0 rgba(255, 255, 255, 0.5),
-    inset -1px 0 0 rgba(255, 255, 255, 0.5),
-    /* 边角高光 */ inset 0 2px 4px rgba(255, 255, 255, 0.3),
-    inset 0 -2px 4px rgba(255, 255, 255, 0.2);
-
-  /* 过渡效果 */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(251, 252, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease;
 }
 
-/* 悬停时的动态效果 */
-.liquid-glass-wrapper:hover {
-  backdrop-filter: blur(25px) saturate(180%) brightness(120%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(120%);
-
-  /* 悬停时增强玻璃边框效果 */
-  box-shadow:
-    /* 外层发光边框 - 增强 */
-    0 0 0 1px rgba(251, 252, 255, 1),
-    /* 外层彩色光晕 - 增强 */ 0 0 0 3px rgba(123, 131, 255, 0.35),
-    /* 内层高光边框 - 增强 */ inset 0 0 0 1px rgba(255, 255, 255, 1),
-    /* 内层彩色边框 - 增强 */ inset 0 0 0 2px rgba(251, 252, 255, 0.9),
-    /* 主要阴影 - 增强 */ 0 12px 48px rgba(0, 0, 0, 0.18),
-    /* 次要阴影层 - 增强 */ 0 6px 24px rgba(123, 131, 255, 0.15),
-    /* 玻璃反光效果 - 增强 */ inset 0 1px 0 rgba(255, 255, 255, 1),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.6),
-    /* 侧边玻璃反光 - 增强 */ inset 1px 0 0 rgba(255, 255, 255, 0.7),
-    inset -1px 0 0 rgba(255, 255, 255, 0.7),
-    /* 边角高光 - 增强 */ inset 0 3px 6px rgba(255, 255, 255, 0.4),
-    inset 0 -3px 6px rgba(255, 255, 255, 0.3),
-    /* 额外的外围光晕 */ 0 0 20px rgba(251, 252, 255, 0.4),
-    0 0 40px rgba(123, 131, 255, 0.2);
-
-  transform: translateY(-2px);
+.member-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
-/* 流动光效背景 */
-.liquid-glass-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 70%
-  );
-  animation: liquid-flow 8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
+.dark .member-card {
+  background: rgba(40, 44, 52, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes liquid-flow {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(-30%, -30%) rotate(180deg);
-    opacity: 0.6;
-  }
+.dark .member-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Safari 和 Firefox 降级方案 */
-@supports not (backdrop-filter: blur(20px)) {
-  .liquid-glass-wrapper {
-    background: linear-gradient(
-      135deg,
-      rgba(251, 252, 255, 0.9) 0%,
-      rgba(251, 252, 255, 0.8) 50%,
-      rgba(251, 252, 255, 0.85) 100%
-    );
-    border: 2px solid rgba(251, 252, 255, 0.7);
-  }
-}
-
-/* 深色模式适配 */
-.dark .liquid-glass-wrapper {
-  background: linear-gradient(
-    135deg,
-    rgba(251, 252, 255, 0.12) 0%,
-    rgba(251, 252, 255, 0.08) 50%,
-    rgba(251, 252, 255, 0.1) 100%
-  );
-
-  /* 深色模式下的玻璃边框 */
-  box-shadow:
-    /* 外层发光边框 */
-    0 0 0 1px rgba(251, 252, 255, 0.4),
-    /* 外层彩色光晕 */ 0 0 0 2px rgba(123, 131, 255, 0.15),
-    /* 内层高光边框 */ inset 0 0 0 1px rgba(255, 255, 255, 0.5),
-    /* 内层彩色边框 */ inset 0 0 0 2px rgba(251, 252, 255, 0.3),
-    /* 主要阴影 */ 0 8px 32px rgba(0, 0, 0, 0.7),
-    /* 次要阴影层 */ 0 4px 16px rgba(123, 131, 255, 0.1),
-    /* 玻璃反光效果 */ inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.25),
-    /* 侧边玻璃反光 */ inset 1px 0 0 rgba(255, 255, 255, 0.3),
-    inset -1px 0 0 rgba(255, 255, 255, 0.3),
-    /* 边角高光 */ inset 0 2px 4px rgba(255, 255, 255, 0.2),
-    inset 0 -2px 4px rgba(255, 255, 255, 0.15);
-}
-
-.dark .liquid-glass-wrapper:hover {
-  box-shadow:
-    /* 外层发光边框 - 增强 */
-    0 0 0 1px rgba(251, 252, 255, 0.6),
-    /* 外层彩色光晕 - 增强 */ 0 0 0 3px rgba(123, 131, 255, 0.25),
-    /* 内层高光边框 - 增强 */ inset 0 0 0 1px rgba(255, 255, 255, 0.7),
-    /* 内层彩色边框 - 增强 */ inset 0 0 0 2px rgba(251, 252, 255, 0.5),
-    /* 主要阴影 - 增强 */ 0 12px 48px rgba(0, 0, 0, 0.9),
-    /* 次要阴影层 - 增强 */ 0 6px 24px rgba(123, 131, 255, 0.15),
-    /* 玻璃反光效果 - 增强 */ inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.4),
-    /* 侧边玻璃反光 - 增强 */ inset 1px 0 0 rgba(255, 255, 255, 0.5),
-    inset -1px 0 0 rgba(255, 255, 255, 0.5),
-    /* 边角高光 - 增强 */ inset 0 3px 6px rgba(255, 255, 255, 0.3),
-    inset 0 -3px 6px rgba(255, 255, 255, 0.2),
-    /* 额外的外围光晕 */ 0 0 20px rgba(251, 252, 255, 0.3),
-    0 0 40px rgba(123, 131, 255, 0.15);
-}
-
-/* 成员内容容器 */
 .member-content {
   position: relative;
-  background-color: rgba(251, 252, 255, 0.95);
-  transition: background-color 0.5s;
+  background-color: transparent;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -392,12 +237,10 @@ if (process.env.NODE_ENV === 'development') {
 
 @media (min-width: 512px) {
   .member-content {
-    display: flex;
     flex-direction: row;
     border-radius: 24px;
   }
-
-  .liquid-glass-wrapper {
+  .member-card {
     border-radius: 24px;
   }
 }
@@ -406,8 +249,7 @@ if (process.env.NODE_ENV === 'development') {
   .member-content {
     border-radius: 28px;
   }
-
-  .liquid-glass-wrapper {
+  .member-card {
     border-radius: 28px;
   }
 }
@@ -424,9 +266,7 @@ if (process.env.NODE_ENV === 'development') {
   font-size: 12px;
   font-weight: 500;
   color: #fd1d7c;
-  transition:
-    color 0.25s,
-    background-color 0.25s;
+  transition: all 0.15s ease;
 }
 
 .sponsor:hover {
@@ -456,14 +296,12 @@ if (process.env.NODE_ENV === 'development') {
   border-radius: 50%;
   width: 90px;
   height: 90px;
-  transform: translateX(0);
 }
 
 @media (min-width: 512px) {
   .avatar-img {
     width: 100px;
     height: 100px;
-    transform: translateX(0);
   }
 }
 
@@ -484,6 +322,7 @@ if (process.env.NODE_ENV === 'development') {
   font-size: 16px;
   font-weight: 600;
   margin: 0;
+  color: var(--vt-c-text-1);
 }
 
 .org {
@@ -493,18 +332,16 @@ if (process.env.NODE_ENV === 'development') {
   font-size: 12px;
   font-weight: 500;
   color: var(--vt-c-text-2);
-  transition: color 0.5s;
   margin: 0;
 }
 
 .company {
   color: var(--vt-c-text-1);
-  transition: color 0.25s;
+  transition: color 0.15s ease;
 }
 
 .company.link:hover {
-  color: var(--vt-c-brand);
-  transition: color 0.5s;
+  color: #fcbfc7;
 }
 
 .profiles {
@@ -512,25 +349,9 @@ if (process.env.NODE_ENV === 'development') {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* 固定间隔 */
+  gap: 12px;
 }
 
-.desc {
-  display: flex;
-  align-items: flex-start;
-  min-height: 20px;
-}
-
-.desc-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  padding-right: 12px;
-  height: 20px;
-}
-
-/* 新的信息行样式 */
 .info-row {
   display: flex;
   align-items: flex-start;
@@ -552,7 +373,6 @@ if (process.env.NODE_ENV === 'development') {
   font-size: 12px;
   font-weight: 500;
   color: var(--vt-c-text-1);
-  transition: color 0.25s;
 }
 
 .separator {
@@ -569,7 +389,6 @@ if (process.env.NODE_ENV === 'development') {
   width: 16px;
   height: 16px;
   fill: var(--vt-c-text-2);
-  transition: fill 0.25s;
 }
 
 .desc-icon.code {
@@ -581,23 +400,23 @@ if (process.env.NODE_ENV === 'development') {
   font-size: 12px;
   font-weight: 500;
   color: #fcbfc7;
-  transition: color 0.25s;
+  transition: color 0.15s ease;
   text-decoration: none;
 }
 
 .desc-link:hover {
-  color: var(--vt-c-brand-1);
+  color: #fd1d7c;
+}
+
+.dark .desc-link {
+  color: #fcbfc7;
 }
 
 .social-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 0; /* 移除额外的上边距，使用gap统一控制 */
-}
-
-.social-item + .social-item {
-  padding-left: 0; /* 移除padding，使用gap控制间距 */
+  margin-top: 0;
 }
 
 .social-link {
@@ -607,54 +426,16 @@ if (process.env.NODE_ENV === 'development') {
   width: 24px;
   height: 24px;
   color: var(--vt-c-text-2);
-  transition: color 0.25s;
-  flex-shrink: 0;
-  position: relative;
+  transition: color 0.15s ease;
 }
 
 .social-link:hover {
   color: var(--vt-c-text-1);
 }
 
-/* 防止构建时图标被优化掉 */
-.social-link > * {
-  pointer-events: none;
-}
-
-/* 强制确保 SVG 图标显示 */
-.social-link svg,
 .social-icon {
-  width: 16px !important;
-  height: 16px !important;
-  fill: currentColor !important;
-  display: block !important;
-  flex-shrink: 0 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* 确保社交链接容器始终可见 */
-.social-list {
-  min-height: 24px;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 8px !important;
-  margin-top: 0;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* 防止链接被隐藏 */
-.social-link {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: flex !important;
-}
-
-/* 针对特定图标的兼容性修复 */
-[class*="VTIcon"] {
-  display: inline-block !important;
-  width: 16px !important;
-  height: 16px !important;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 </style>

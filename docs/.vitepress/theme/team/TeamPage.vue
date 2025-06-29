@@ -1,10 +1,6 @@
 <script lang="ts">
 const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
   let offset = pinTheFirstMember ? 1 : 0
-  // `i` is between `1` and `length - offset`
-  // `j` is between `0` and `length - offset - 1`
-  // `offset + i - 1` is between `offset` and `length - 1`
-  // `offset + j` is between `offset` and `length - 1`
   let i = members.length - offset
   while (i > 0) {
     const j = Math.floor(Math.random() * i)
@@ -25,7 +21,6 @@ import TeamHero from "./TeamHero.vue"
 import TeamList from "./TeamList.vue"
 import type { Member } from "./Member"
 
-// 特别感谢数据 - 直接定义避免导入问题
 const specialThanksData: Member[] = Space
 const members = membersCoreData as Member[]
 const specialThanks = specialThanksData
@@ -55,9 +50,7 @@ shuffleMembers(specialThanks, false)
 
     <TeamList v-bind="{ members: specialThanks }">
       <template #title>特别感谢</template>
-      <template #lead
-        >感谢@chenzyadb 的 CU 风格指导</template
-      >
+      <template #lead>感谢@chenzyadb 的 CU 风格指导</template>
     </TeamList>
   </div>
 </template>

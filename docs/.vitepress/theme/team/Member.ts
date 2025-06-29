@@ -5,27 +5,27 @@ export interface Member {
     title: string;
     company?: string;
     companyLink?: string;
-    projects: Link[]; // 参与项目列表
-    location: string; // 成员所在地点
-    languages: string[]; // 掌握的编程语言列表
-    website?: Link; // 个人网站链接（可选）
-    socials: Socials; // 社交账号链接
-    sponsor?: boolean | string; // 是否为赞助者（可选）
-    reposPersonal?: string[]; // 个人仓库列表（可选）
+    projects: Link[];
+    location: string;
+    languages: string[];
+    website?: Link;
+    socials: Socials;
+    sponsor?: boolean | string;
+    reposPersonal?: string[];
 }
 
 export interface Link {
-    label: string; // 链接标签
-    url: string; // 链接URL
+    label: string;
+    url: string;
 }
 
 export interface Socials {
-    github?: string; // GitHub链接
-    x?: string; // X (formerly Twitter) 链接（可选）
-    twitter?: string; // Twitter链接（可选，兼容性）
-    linkedin?: string; // LinkedIn链接（可选）
-    codepen?: string; // CodePen链接（可选）
-    bilibili?: string; // Bilibili链接（可选）
+    github?: string;
+    x?: string;
+    twitter?: string;
+    linkedin?: string;
+    codepen?: string;
+    bilibili?: string;
 
-    [x: string]: unknown; // 键为字符串，值为未知
+    [x: string]: unknown;
 }

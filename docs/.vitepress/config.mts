@@ -33,9 +33,9 @@ export default defineConfig({
     sitemap: {
         hostname: "https://ssu.oom-wg.dev",
     },
-    head: head, // 头部配置
-    lang: "zh-CN", // 语言配置
-    markdown: markdown, // Markdown配置
+    head: head,
+    lang: "zh-CN",
+    markdown: markdown,
     themeConfig,
 
     transformPageData(pageData, context) {
@@ -73,7 +73,6 @@ export default defineConfig({
             },
         },
         define: {
-            // enable hydration mismatch details in production build
             __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true",
         },
         resolve: {
@@ -101,7 +100,6 @@ export default defineConfig({
         plugins: [
             ThumbnailHashImages(),
             GitChangelog({
-                // 填写在此处填写您的仓库链接
                 repoURL: () => "https://github.com/OOM-WG/SSU_Docs",
                 mapAuthors: [
                     {
@@ -138,16 +136,15 @@ export default defineConfig({
             PagePropertiesMarkdownSection({
                 excludes: ["index.md"],
             }),
-            // 构建分析插件
             ...(process.env.ANALYZE
                 ? [
-                    visualizer({
-                        filename: "dist/stats.html",
-                        open: true,
-                        gzipSize: true,
-                        brotliSize: true,
-                    }),
-                ]
+                      visualizer({
+                          filename: "dist/stats.html",
+                          open: true,
+                          gzipSize: true,
+                          brotliSize: true,
+                      }),
+                  ]
                 : []),
         ],
         optimizeDeps: {
@@ -163,7 +160,6 @@ export default defineConfig({
         },
         ssr: {
             noExternal: [
-                // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
                 "@nolebase/vitepress-plugin-enhanced-readabilities",
                 "@nolebase/vitepress-plugin-enhanced-readabilities/client",
                 "@nolebase/vitepress-plugin-breadcrumbs/client",
