@@ -46,7 +46,7 @@ import backtotop from "./components/backtotop.vue";
 import "./styles/main.css";
 import "./styles/linkcard.css";
 import "./styles/rainbow.css";
-import "./styles/vars.css";;
+import "./styles/vars.css";
 import "element-plus/dist/index.css";
 import "vitepress-markdown-timeline/dist/theme/index.css";
 import "nprogress-v2/dist/index.css";
@@ -57,7 +57,6 @@ import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
 import "@nolebase/vitepress-plugin-page-properties/client/style.css";
-
 
 let homePageStyle: HTMLStyleElement | undefined;
 

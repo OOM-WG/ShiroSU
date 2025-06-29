@@ -20,12 +20,17 @@ const shuffleMembers = (members: Member[], pinTheFirstMember = false): void => {
 <script lang="ts" setup>
 import { VTLink } from "@vue/theme"
 import membersCoreData from "./members.json"
+import Space from "./specialThanks.json"
 import TeamHero from "./TeamHero.vue"
 import TeamList from "./TeamList.vue"
 import type { Member } from "./Member"
 
+// 特别感谢数据 - 直接定义避免导入问题
+const specialThanksData: Member[] = Space
 const members = membersCoreData as Member[]
+const specialThanks = specialThanksData
 shuffleMembers(members, true)
+shuffleMembers(specialThanks, false)
 </script>
 
 <template>
@@ -47,17 +52,24 @@ shuffleMembers(members, true)
         >他们是驱动项目成功的核心力量，致力于更好的的使用体验</template
       >
     </TeamList>
+
+    <TeamList v-bind="{ members: specialThanks }">
+      <template #title>特别感谢</template>
+      <template #lead
+        >感谢@chenzyadb 的 CU 风格指导</template
+      >
+    </TeamList>
   </div>
 </template>
 
 <style scoped>
 .TeamPage {
-  padding-bottom: 16px;
+  padding-bottom: 48px;
 }
 
 @media (min-width: 768px) {
   .TeamPage {
-    padding-bottom: 96px;
+    padding-bottom: 160px;
   }
 }
 

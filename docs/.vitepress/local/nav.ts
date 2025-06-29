@@ -30,5 +30,22 @@ export const nav: DefaultTheme.Config["nav"] = [
                 link: "/changeLog/changelog",
             },
         ],
+    },
+    {
+        text: "多语言",
+        items: [
+            {
+                text: "说明",
+                link: "/more/Translation",
+            },
+            {
+                text: "沉浸式翻译",
+                link: "https://immersivetranslate.com/",
+            },
+            {
+                text: "DeepL",
+                link: "https://www.deepl.com/ja/translator",
+            }
+        ]
     }
 ];

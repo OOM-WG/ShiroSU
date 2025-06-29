@@ -38,7 +38,8 @@
 .title {
   line-height: 32px;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -50,14 +51,17 @@
 
 .lead {
   padding-top: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   max-width: 512px;
+  margin: 0 auto;
+  text-align: center;
   color: var(--vt-c-text-2);
 }
 
 .action {
   padding-top: 4px;
+  text-align: center;
 }
 
 .action :deep(a) {

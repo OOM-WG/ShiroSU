@@ -39,6 +39,10 @@ const footer: CustomConfig["footer"] = {
             title: "更多",
             items: [
                 {
+                    text: "多语言",
+                    link: "/more/Translation",
+                },
+                {
                     text: "Latest Module",
                     link: "https://www.mod.latestfile.zip",
                 },

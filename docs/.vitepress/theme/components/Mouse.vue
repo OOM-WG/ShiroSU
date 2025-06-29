@@ -47,6 +47,10 @@ const config = {
     "还没写好就出来造势",
     "Copy Copy Copy",
     "从哪复制的的页面没改",
+    "又是一个KSU分支,不做评价",
+    "代码里全是 // TODO",
+    "忘了改复制来的 Copyright",
+    "发布日期：下辈子",
   ],
   colors: [
     "#ff6b6b",
