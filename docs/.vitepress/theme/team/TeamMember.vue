@@ -14,6 +14,19 @@ import {
 } from "@vue/theme"
 import type { Member } from "./Member"
 
+// 确保图标组件在构建时被正确引用
+const iconComponents = {
+  VTIconCode,
+  VTIconCodePen,
+  VTIconGitHub,
+  VTIconGlobe,
+  VTIconHeart,
+  VTIconLink,
+  VTIconLinkedIn,
+  VTIconMapPin,
+  VTIconX,
+}
+
 const props = defineProps<{
   member: Member
 }>()
@@ -24,6 +37,11 @@ const avatarUrl = computed(() => {
     `https://q1.qlogo.cn/g?b=qq&nk=${props.member.qq}&s=640`
   )
 })
+
+// 强制引用图标组件以防止被tree-shaking优化掉
+if (process.env.NODE_ENV === 'development') {
+  console.debug('Available icons:', Object.keys(iconComponents))
+}
 </script>
 
 <template>
@@ -147,31 +165,43 @@ const avatarUrl = computed(() => {
               <div class="info-content">
                 <div class="social-list">
                   <VTLink
-                    v-if="member.socials.github"
+                    v-if="member.socials?.github"
                     :href="`https://github.com/${member.socials.github}`"
                     :no-icon="true"
-                    class="social-link">
+                    class="social-link"
+                    :aria-label="`GitHub: ${member.socials.github}`"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <VTIconGitHub class="social-icon" />
                   </VTLink>
                   <VTLink
-                    v-if="member.socials.x"
+                    v-if="member.socials?.x"
                     :href="`https://x.com/${member.socials.x}`"
                     :no-icon="true"
-                    class="social-link">
+                    class="social-link"
+                    :aria-label="`X: ${member.socials.x}`"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <VTIconX class="social-icon" />
                   </VTLink>
                   <VTLink
-                    v-if="member.socials.linkedin"
+                    v-if="member.socials?.linkedin"
                     :href="`https://www.linkedin.com/in/${member.socials.linkedin}`"
                     :no-icon="true"
-                    class="social-link">
+                    class="social-link"
+                    :aria-label="`LinkedIn: ${member.socials.linkedin}`"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <VTIconLinkedIn class="social-icon" />
                   </VTLink>
                   <VTLink
-                    v-if="member.socials.codepen"
+                    v-if="member.socials?.codepen"
                     :href="`https://codepen.io/${member.socials.codepen}`"
                     :no-icon="true"
-                    class="social-link">
+                    class="social-link"
+                    :aria-label="`CodePen: ${member.socials.codepen}`"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <VTIconCodePen class="social-icon" />
                   </VTLink>
                 </div>
@@ -578,15 +608,53 @@ const avatarUrl = computed(() => {
   height: 24px;
   color: var(--vt-c-text-2);
   transition: color 0.25s;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .social-link:hover {
   color: var(--vt-c-text-1);
 }
 
+/* 防止构建时图标被优化掉 */
+.social-link > * {
+  pointer-events: none;
+}
+
+/* 强制确保 SVG 图标显示 */
+.social-link svg,
 .social-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 确保社交链接容器始终可见 */
+.social-list {
+  min-height: 24px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 防止链接被隐藏 */
+.social-link {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* 针对特定图标的兼容性修复 */
+[class*="VTIcon"] {
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
 }
 </style>

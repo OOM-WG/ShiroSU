@@ -20,8 +20,11 @@ export interface Link {
 }
 
 export interface Socials {
-    github: string; // GitHub链接
-    twitter?: string; // Twitter链接（可选）
+    github?: string; // GitHub链接
+    x?: string; // X (formerly Twitter) 链接（可选）
+    twitter?: string; // Twitter链接（可选，兼容性）
+    linkedin?: string; // LinkedIn链接（可选）
+    codepen?: string; // CodePen链接（可选）
     bilibili?: string; // Bilibili链接（可选）
 
     [x: string]: unknown; // 键为字符串，值为未知
