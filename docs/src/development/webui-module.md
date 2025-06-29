@@ -18,7 +18,7 @@ SakitinSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [Ker
 
 模块目录应遵循以下结构：
 
-```tree {3}
+``` tree
 .
 ├── module.prop
 └── webroot
