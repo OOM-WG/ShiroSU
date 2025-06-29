@@ -1,5 +1,5 @@
-import type { Plugin } from 'vite'
-import { defineConfig } from 'vitepress'
+import type { Plugin } from "vite";
+import { defineConfig } from "vitepress";
 import path from "path";
 import { head } from "./local/head";
 import { markdown } from "./local/markdown";
@@ -16,7 +16,6 @@ import {
     PageProperties,
     PagePropertiesMarkdownSection,
 } from "@nolebase/vitepress-plugin-page-properties/vite";
-
 
 export default defineConfig({
     title: "SakitinSU",
@@ -43,26 +42,35 @@ export default defineConfig({
         generateBreadcrumbsData(pageData, context);
     },
     transformHtml(code, id, { pageData }) {
-        if (process.env.NODE_ENV !== 'production') return
+        if (process.env.NODE_ENV !== "production") return;
 
         const extra = [
             '<link crossorigin="" href="https://sakitinsu.resource.sawahara.host/" rel="preconnect">',
             '<link href="https://sakitinsu.resource.sawahara.host/" rel="dns-prefetch">',
             '<link crossorigin="" href="https://d.alicdn.com/" rel="preconnect">',
-            '<link href="https://d.alicdn.com/" rel="dns-prefetch">'
-        ].map(line => '    ' + line).join('\n')
+            '<link href="https://d.alicdn.com/" rel="dns-prefetch">',
+        ]
+            .map((line) => "    " + line)
+            .join("\n");
 
-        const newCode = code.replace(
-            /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
-            (_, attr, path) => `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`
-        ).replace(
-            /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
-            `$1\n\n${extra}`
-        )
+        const newCode = code
+            .replace(
+                /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
+                (_, attr, path) =>
+                    `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
+            )
+            .replace(
+                /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
+                `$1\n\n${extra}`,
+            );
 
-        return newCode
+        return newCode;
     },
     vite: {
+        define: {
+            // enable hydration mismatch details in production build
+            __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true",
+        },
         resolve: {
             alias: [
                 {
@@ -83,18 +91,7 @@ export default defineConfig({
             ],
         },
         build: {
-            rollupOptions: {
-                output: {
-                    manualChunks: {
-                        nolebase: [
-                            "@nolebase/vitepress-plugin-enhanced-readabilities/client",
-                            "@nolebase/vitepress-plugin-git-changelog/client",
-                            "@nolebase/vitepress-plugin-inline-link-preview/client",
-                        ],
-                    },
-                },
-            },
-            chunkSizeWarningLimit: 1000,
+            chunkSizeWarningLimit: 2000,
         },
         plugins: [
             ThumbnailHashImages(),
@@ -139,13 +136,13 @@ export default defineConfig({
             // 构建分析插件
             ...(process.env.ANALYZE
                 ? [
-                    visualizer({
-                        filename: "dist/stats.html",
-                        open: true,
-                        gzipSize: true,
-                        brotliSize: true,
-                    }),
-                ]
+                      visualizer({
+                          filename: "dist/stats.html",
+                          open: true,
+                          gzipSize: true,
+                          brotliSize: true,
+                      }),
+                  ]
                 : []),
         ],
         optimizeDeps: {
@@ -175,6 +172,5 @@ export default defineConfig({
                 "vueuc",
             ],
         },
-
     },
 });

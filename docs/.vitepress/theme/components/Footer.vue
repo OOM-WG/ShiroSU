@@ -3,7 +3,7 @@ import { ref } from "vue"
 import { useQRCode } from "@vueuse/integrations/useQRCode"
 import { useData, withBase } from "vitepress"
 
-import { socialList } from "./socialList"
+import { socialList } from "./config/socialList"
 
 const { frontmatter, theme } = useData()
 const customFooter = theme.value.customFooter

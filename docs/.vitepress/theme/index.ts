@@ -4,7 +4,8 @@
 import { setup } from "@css-render/vue3-ssr";
 import { NConfigProvider } from "naive-ui";
 import type { Theme } from "vitepress/client";
-import DefaultTheme from "vitepress/theme";
+// import DefaultTheme from "vitepress/theme";
+import DefaultTheme from "vitepress/theme-without-fonts";
 import { useData, useRoute } from "vitepress/client";
 import { defineComponent, inject, nextTick, onMounted, watch, h } from "vue";
 // ===== 第三方库 =====
@@ -46,6 +47,7 @@ import "./styles/main.css";
 import "./styles/linkcard.css";
 import "./styles/rainbow.css";
 import "./styles/vars.css";
+import "./styles/font.css";
 import "element-plus/dist/index.css";
 import "vitepress-markdown-timeline/dist/theme/index.css";
 import "nprogress-v2/dist/index.css";
@@ -56,6 +58,7 @@ import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
 import "@nolebase/vitepress-plugin-page-properties/client/style.css";
+
 
 let homePageStyle: HTMLStyleElement | undefined;
 
