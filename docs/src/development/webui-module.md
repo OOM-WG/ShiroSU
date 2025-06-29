@@ -8,7 +8,6 @@ prev:
   link: "/development/module-development"
 ---
 
-
 # **WebUI 模块开发**
 
 SakitinSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [KerenlSU WebUI 模块 Web 界面](https://kernelsu.org/zh_CN/guide/module-webui.html)。
@@ -33,5 +32,5 @@ SakitinSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [Ker
 
 我们提供了一个简单的 WebUI Demo，它使用 **`vite`** 进行打包，并基于 **`vue3`** 开发，同时集成了 **`KernelSU`** 包，以帮助您快速入门。
 
-* **WebUI Demo 仓库**: <https://github.com/OOM-WG/WebUI_Demo>
-* **WebUI Demo 截图**: [WebUI Demo 截图](/assets/img/webui.jpeg)
+- **WebUI Demo 仓库**: <https://github.com/OOM-WG/WebUI_Demo>
+- **WebUI Demo 截图**: [WebUI Demo 截图](/assets/img/webui.webp)
