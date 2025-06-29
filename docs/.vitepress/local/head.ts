@@ -7,6 +7,14 @@ export const head: HeadConfig[] = [
         {
             rel: "preconnect",
             href: "https://fonts.googleapis.com",
+            crossorigin: "",
+        },
+    ],
+    [
+        "link",
+        {
+            rel: "dns-prefetch",
+            href: "https://fonts.googleapis.com",
         },
     ],
     [
@@ -15,6 +23,13 @@ export const head: HeadConfig[] = [
             rel: "preconnect",
             href: "https://fonts.gstatic.com",
             crossorigin: "",
+        },
+    ],
+    [
+        "link",
+        {
+            rel: "dns-prefetch",
+            href: "https://fonts.gstatic.com",
         },
     ],
     [
