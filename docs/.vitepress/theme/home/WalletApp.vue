@@ -211,7 +211,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 .VPHome {
   margin: 0;
@@ -223,13 +222,7 @@ onMounted(() => {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: var(--vp-font-family-base);
 }
 .hero-background {
   position: absolute;

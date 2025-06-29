@@ -237,7 +237,7 @@ onUnmounted(() => {
 
 .text-effect {
   position: fixed;
-  font-family: "Arial", sans-serif;
+  font-family: var(--vp-font-family-base);
   font-weight: bold;
   pointer-events: none;
   white-space: nowrap;

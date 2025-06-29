@@ -4,6 +4,7 @@
 @import "./override.css";
 @import "./sidebar.css";
 @import './hidden.css';
+@import './font.css';
 
 /* 横幅相关变量 */
 :root {
