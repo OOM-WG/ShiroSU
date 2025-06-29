@@ -64,8 +64,8 @@ export const defaultMusicConfig: MusicConfig = {
         {
             title: "Serenity",
             artist: "Ambient Dreams",
-            url: "/music/Bande-annonce.mp3",
-            cover: "/music/1.png",
+            url: "/assets/music/Bande-annonce.mp3",
+            cover: "/assets/music/1.png",
             album: "Peaceful Moments",
             duration: 68,
         }

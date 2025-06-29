@@ -41,7 +41,7 @@ export const head: HeadConfig[] = [
     ],
 
     // --- 基础和SEO元数据 ---
-    ["link", { rel: "icon", href: "/logo-round.webp" }],
+    ["link", { rel: "icon", href: "https://sakitinsu.resource.sawahara.host/logo-round.webp" }],
     [
         "meta",
         { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" },
@@ -64,7 +64,7 @@ export const head: HeadConfig[] = [
         "meta",
         {
             property: "og:image",
-            content: "https://ssu.oom-wg.dev/og-template.png",
+            content: "https://sakitinsu.resource.sawahara.host/og-template.png",
         },
     ],
     [

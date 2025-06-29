@@ -10,19 +10,19 @@
       >
         <img
           class="carousel-img"
-          src="/Carousel/1.png"
+          src="/assets/carousel/1.png"
         >
         <img
           class="carousel-img"
-          src="/Carousel/2.png"
+          src="/assets/carousel/2.png"
         >
         <img
           class="carousel-img"
-          src="/Carousel/3.png"
+          src="/assets/carousel/3.png"
         >
         <img
           class="carousel-img"
-          src="/Carousel/4.png"
+          src="/assets/carousel/4.png"
         >
       </n-carousel>
     </div>
