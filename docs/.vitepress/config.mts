@@ -69,11 +69,7 @@ export default defineConfig({
     vite: {
         experimental: {
             renderBuiltUrl(filename, { hostType, type, hostId }) {
-                if (type === "public") {
-                    return "https://sakitinsu.resource.sawahara.host/" + filename;
-                } else {
-                    return "https://sakitinsu.resource.sawahara.host/assets/" + filename;
-                }
+                return "https://sakitinsu.resource.sawahara.host/" + filename;
             },
         },
         define: {
