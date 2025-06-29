@@ -13,8 +13,7 @@
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
 	"files.exclude": {
-		// "**/.git": false,
-		"!**/.git/config": true // 保持 git config 可见
+		"!**/.git/config": true
 	},
 	"[markdown]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
