@@ -77,11 +77,7 @@ const isExpanded = (title: string) => {
             <a
               href="https://license.fileto.download"
               style="color: var(--vp-c-brand); text-decoration: none">
-              <a
-                href="https://license.fileto.download"
-                style="color: var(--vp-c-brand); text-decoration: none">
-                F2DLPR License.
-              </a>
+              F2DLPR License.
             </a>
           </p>
           <p class="text-left m-0">
