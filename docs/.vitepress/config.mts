@@ -67,6 +67,15 @@ export default defineConfig({
         return newCode;
     },
     vite: {
+        experimental: {
+            renderBuiltUrl(filename, { hostType, type, hostId }) {
+                if (type === "public") {
+                    return "https://sakitinsu.resource.sawahara.host/" + filename;
+                } else {
+                    return "https://sakitinsu.resource.sawahara.host/assets/" + filename;
+                }
+            },
+        },
         define: {
             // enable hydration mismatch details in production build
             __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true",
@@ -136,13 +145,13 @@ export default defineConfig({
             // 构建分析插件
             ...(process.env.ANALYZE
                 ? [
-                      visualizer({
-                          filename: "dist/stats.html",
-                          open: true,
-                          gzipSize: true,
-                          brotliSize: true,
-                      }),
-                  ]
+                    visualizer({
+                        filename: "dist/stats.html",
+                        open: true,
+                        gzipSize: true,
+                        brotliSize: true,
+                    }),
+                ]
                 : []),
         ],
         optimizeDeps: {
