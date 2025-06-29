@@ -21,10 +21,8 @@ prev:
 .
 ├── module.prop
 └── webroot
-  ├── index.html
-  └── assets
-    ├── style.css
-    └── app.js
+  ├── Web资源
+  ...
 ```
 
 **`webroot`** 目录是 WebUI 的根目录，包含所有前端资源。
