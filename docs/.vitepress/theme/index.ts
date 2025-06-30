@@ -44,7 +44,7 @@ import Mouse from "./components/Mouse.vue";
 import Carousel from "./components/Carousel.vue";
 import backtotop from "./components/backtotop.vue";
 import ArticleShare from "./components/ArticleShare.vue";
-import MyLayout from './attached/MyLayout.vue';
+import MyLayout from "./attached/MyLayout.vue";
 // ===== 样式文件 =====
 import "./styles/main.scss";
 import "element-plus/dist/index.css";
