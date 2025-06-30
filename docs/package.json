@@ -7,6 +7,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vitepress dev --port 25527 --host",
+		"termux:dev": "vitepress dev --port 25527",
 		"build": "vitepress build",
 		"preview": "vitepress preview",
 		"clean": "rimraf .vitepress/.temp .vitepress/cache node_modules/.cache dist .temp",
