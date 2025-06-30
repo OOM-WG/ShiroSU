@@ -1,30 +1,11 @@
-@import "./custom-block.css";
-@import "./vars.css";
-@import "./rainbow.css";
-@import "./override.css";
-@import "./sidebar.css";
-@import './hidden.css';
-@import './font.css';
-
-/* 横幅相关变量 */
-:root {
-  --vp-layout-top-height: 0px;
-}
-
-/* 当页面有横幅时，导航栏下移 */
-body.has-banner .VPNav {
-  top: 40px !important;
-}
-
-/* 当页面有横幅时，主内容区域下移 */
-body.has-banner .VPContent {
-  padding-top: 40px;
-}
-
-/* 确保横幅在所有内容之上 */
-.under-construction-banner {
-  z-index: 60 !important;
-}
+@use "./custom-block.scss";
+@use "./vars.scss";
+@use "./rainbow.scss";
+@use "./override.scss";
+@use "./sidebar.scss";
+@use './hidden.scss';
+@use './font.scss';
+@use "./doc-fade-in.scss";
 
 html.dark {
   color-scheme: dark;
@@ -34,9 +15,9 @@ html.light {
   color-scheme: light;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/*html {*/
+/*  scroll-behavior: smooth;*/
+/*}*/
 
 .vp-doc h2 {
   border: none;
@@ -47,14 +28,6 @@ html {
   border-top: 1px;
 }
 
-.VPLocalNav {
-  padding-top: 0 !important;
-  margin-top: var(--vp-layout-top-height);
-}
-
-.reached-top {
-  top: var(--vp-layout-top-height) !important;
-}
 
 .banner ~ .reached-top {
   top: 0px !important;
@@ -109,10 +82,10 @@ html {
 }
 
 .VPSidebar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
   background: transparent;
-  height: 8px;
-  width: 8px;
-  margin-right: 8px;
 }
 
 #app > div > div.VPLocalNav > div > div > div.outline {
@@ -138,115 +111,6 @@ html {
 
 .medium-zoom-image {
   z-index: 21;
-}
-
-@keyframes slide-enter {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 100;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html:not(.no-sliding) [slide-enter],
-  html:not(.no-sliding) .slide-enter,
-  html:not(.no-sliding) .main > div > *,
-  html:not(.no-sliding) #VPContent > div > div.VPFeatures.VPHomeFeatures > *,
-  html:not(.no-sliding) .TeamPage > *,
-  html:not(.no-sliding) .VPHomeHero > * {
-    --enter-stage: 0;
-    --enter-step: 90ms;
-    --enter-initial: 0ms;
-    animation: slide-enter 1s both 1;
-    animation-delay: calc(
-      var(--enter-initial) + var(--enter-stage) * var(--enter-step)
-    );
-  }
-
-  .main > div > *:nth-child(1) {
-    --enter-stage: 1;
-  }
-
-  .main > div > *:nth-child(2) {
-    --enter-stage: 2;
-  }
-
-  .main > div > *:nth-child(3) {
-    --enter-stage: 3;
-  }
-
-  .main > div > *:nth-child(4) {
-    --enter-stage: 4;
-  }
-
-  .main > div > *:nth-child(5) {
-    --enter-stage: 5;
-  }
-
-  .main > div > *:nth-child(6) {
-    --enter-stage: 6;
-  }
-
-  .main > div > *:nth-child(7) {
-    --enter-stage: 7;
-  }
-
-  .main > div > *:nth-child(8) {
-    --enter-stage: 8;
-  }
-
-  .main > div > *:nth-child(9) {
-    --enter-stage: 9;
-  }
-
-  .main > div > *:nth-child(10) {
-    --enter-stage: 10;
-  }
-
-  .main > div > *:nth-child(11) {
-    --enter-stage: 11;
-  }
-
-  .main > div > *:nth-child(12) {
-    --enter-stage: 12;
-  }
-
-  .main > div > *:nth-child(13) {
-    --enter-stage: 13;
-  }
-
-  .main > div > *:nth-child(14) {
-    --enter-stage: 14;
-  }
-
-  .main > div > *:nth-child(15) {
-    --enter-stage: 15;
-  }
-
-  .main > div > *:nth-child(16) {
-    --enter-stage: 16;
-  }
-
-  .main > div > *:nth-child(17) {
-    --enter-stage: 17;
-  }
-
-  .main > div > *:nth-child(18) {
-    --enter-stage: 18;
-  }
-
-  .main > div > *:nth-child(19) {
-    --enter-stage: 19;
-  }
-
-  .main > div > *:nth-child(20) {
-    --enter-stage: 20;
-  }
 }
 
 .VPNavBarTitle {
@@ -333,9 +197,9 @@ html.dark a.nolebase-route-link-invalid {
   /* 明亮主题下的高亮颜色 - 使用彩虹渐变 */
   --vp-nolebase-highlight-targeted-heading-color: var(--rainbow-prev);
   --vp-nolebase-highlight-targeted-heading-bg: color-mix(
-    in srgb,
-    var(--rainbow-prev),
-    transparent 85%
+                  in srgb,
+                  var(--rainbow-prev),
+                  transparent 85%
   );
 }
 
@@ -343,9 +207,9 @@ html.dark {
   /* 暗色主题下的高亮颜色 - 使用彩虹渐变 */
   --vp-nolebase-highlight-targeted-heading-color: var(--rainbow-next);
   --vp-nolebase-highlight-targeted-heading-bg: color-mix(
-    in srgb,
-    var(--rainbow-next),
-    transparent 80%
+                  in srgb,
+                  var(--rainbow-next),
+                  transparent 80%
   );
 }
 
@@ -362,63 +226,58 @@ html.dark {
     border-color: transparent;
     border-radius: 8px;
     background: linear-gradient(
-      120deg,
-      color-mix(in srgb, var(--rainbow-prev), transparent 90%),
-      color-mix(in srgb, var(--rainbow-next), transparent 90%)
+                    120deg,
+                    color-mix(in srgb, var(--rainbow-prev), transparent 90%),
+                    color-mix(in srgb, var(--rainbow-next), transparent 90%)
     );
-    box-shadow: 0px 0px 0px 8px
-      color-mix(in srgb, var(--rainbow-prev), transparent 95%);
+    box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 95%);
     opacity: 1;
   }
   20% {
     color: var(--vp-nolebase-highlight-targeted-heading-color);
     border-radius: 8px;
     background: linear-gradient(
-      120deg,
-      color-mix(in srgb, var(--rainbow-prev), transparent 85%),
-      color-mix(in srgb, var(--rainbow-next), transparent 85%)
+                    120deg,
+                    color-mix(in srgb, var(--rainbow-prev), transparent 85%),
+                    color-mix(in srgb, var(--rainbow-next), transparent 85%)
     );
-    box-shadow: 0px 0px 0px 8px
-      color-mix(in srgb, var(--rainbow-prev), transparent 90%);
+    box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 90%);
     opacity: 1;
   }
   30% {
     color: var(--vp-nolebase-highlight-targeted-heading-color);
     border-radius: 8px;
     background: linear-gradient(
-      120deg,
-      color-mix(in srgb, var(--rainbow-prev), transparent 80%),
-      color-mix(in srgb, var(--rainbow-next), transparent 80%)
+                    120deg,
+                    color-mix(in srgb, var(--rainbow-prev), transparent 80%),
+                    color-mix(in srgb, var(--rainbow-next), transparent 80%)
     );
-    box-shadow: 0px 0px 0px 8px
-      color-mix(in srgb, var(--rainbow-prev), transparent 85%);
+    box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 85%);
     opacity: 1;
   }
   70% {
     background: linear-gradient(
-      120deg,
-      color-mix(in srgb, var(--rainbow-prev), transparent 92%),
-      color-mix(in srgb, var(--rainbow-next), transparent 92%)
+                    120deg,
+                    color-mix(in srgb, var(--rainbow-prev), transparent 92%),
+                    color-mix(in srgb, var(--rainbow-next), transparent 92%)
     );
     border-radius: 8px;
-    box-shadow: 0px 0px 0px 8px
-      color-mix(in srgb, var(--rainbow-prev), transparent 97%);
+    box-shadow: 0px 0px 0px 8px color-mix(in srgb, var(--rainbow-prev), transparent 97%);
     color: var(--vp-nolebase-highlight-targeted-heading-color);
     opacity: 1;
   }
   85% {
     background: linear-gradient(
-      120deg,
-      color-mix(in srgb, var(--rainbow-prev), transparent 98%),
-      color-mix(in srgb, var(--rainbow-next), transparent 98%)
+                    120deg,
+                    color-mix(in srgb, var(--rainbow-prev), transparent 98%),
+                    color-mix(in srgb, var(--rainbow-next), transparent 98%)
     );
     border-radius: 8px;
-    box-shadow: 0px 0px 8px 0px
-      color-mix(in srgb, var(--rainbow-prev), transparent 98%);
+    box-shadow: 0px 0px 8px 0px color-mix(in srgb, var(--rainbow-prev), transparent 98%);
     color: color-mix(
-      in srgb,
-      var(--vp-nolebase-highlight-targeted-heading-color),
-      #222 60%
+                    in srgb,
+                    var(--vp-nolebase-highlight-targeted-heading-color),
+                    #222 60%
     );
     opacity: 1;
   }
@@ -440,9 +299,9 @@ html.dark {
 
 /* 应用新的彩虹动画 */
 .VPNolebaseHighlightTargetedHeadingAnimated {
-  animation: vp-nolebase-highlight-targeted-heading-rainbow-animation 1.5s
-    ease-in-out !important;
+  animation: vp-nolebase-highlight-targeted-heading-rainbow-animation 1.5s ease-in-out !important;
 }
+
 /* 默认隐藏聚光灯 */
 .VPNolebaseEnhancedReadabilitiesSpotlightHoverBlock {
   opacity: 0 !important;
@@ -451,7 +310,7 @@ html.dark {
 
 /* 当 .content:hover 时显示聚光灯 */
 body:has(.VPDoc .content:hover)
-  .VPNolebaseEnhancedReadabilitiesSpotlightHoverBlock {
+.VPNolebaseEnhancedReadabilitiesSpotlightHoverBlock {
   opacity: 1 !important;
 }
 

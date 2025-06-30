@@ -12,6 +12,20 @@ export const markdown: MarkdownOptions = {
         dark: "github-dark-dimmed",
     },
     lineNumbers: true, // 启用行号
+    languages: [
+        'javascript',
+        'typescript',
+        'vue',
+        'css',
+        'html',
+        'json',
+        'jsx',
+        'tsx',
+        'yaml',
+        'md',
+        'bash',
+        'powershell',
+    ],
     config: (md) => {
         md.use(mathjax3);
         md.use(footnote);

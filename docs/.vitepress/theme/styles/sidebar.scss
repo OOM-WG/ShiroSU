@@ -194,11 +194,12 @@
   /* ... 您的层级样式 ... */
 }
 .VPSidebar::-webkit-scrollbar {
-  width: 4px;
+  width: 0;
+  display: none;
 }
 .VPSidebar::-webkit-scrollbar-thumb {
-  background: var(--vp-c-divider);
-  border-radius: 2px;
+  background: transparent;
+  border-radius: 0;
 }
 
 /* --- 减少动画 (保持不变) --- */

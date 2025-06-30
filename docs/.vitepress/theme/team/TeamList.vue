@@ -159,7 +159,7 @@ onMounted(() => {
 
   /* Auto-scrolling animation */
   .members-container {
-    animation: scroll-members 60s linear infinite;
+    animation: scroll-members 40s linear infinite;
     display: flex;
     gap: 16px;
     width: max-content; /* Ensure container is as wide as needed */
@@ -178,7 +178,7 @@ onMounted(() => {
 
   /* 为滚动中的元素添加动态效果 */
   .members-container:not(.no-scroll) .member {
-    animation: fade-scroll 60s linear infinite;
+    animation: fade-scroll 40s linear infinite;
   }
 }
 

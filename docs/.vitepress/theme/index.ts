@@ -11,6 +11,7 @@ import { defineComponent, inject, nextTick, onMounted, watch, h } from "vue";
 // ===== 第三方库 =====
 import mediumZoom from "medium-zoom";
 import ElementPlus from "element-plus";
+import "@theojs/lumen";
 // ===== Nolebase 插件 =====
 import {
     NolebaseGitChangelogPlugin,
@@ -42,11 +43,10 @@ import MouseToggle from "./components/MouseToggle.vue";
 import Mouse from "./components/Mouse.vue";
 import Carousel from "./components/Carousel.vue";
 import backtotop from "./components/backtotop.vue";
+import ArticleShare from "./components/ArticleShare.vue";
+import MyLayout from './attached/MyLayout.vue';
 // ===== 样式文件 =====
-import "./styles/main.css";
-import "./styles/linkcard.css";
-import "./styles/rainbow.css";
-import "./styles/vars.css";
+import "./styles/main.scss";
 import "element-plus/dist/index.css";
 import "vitepress-markdown-timeline/dist/theme/index.css";
 import "nprogress-v2/dist/index.css";
@@ -90,8 +90,13 @@ export default {
             { abstract: true, inlineThemeDisabled: true },
             {
                 default: () => [
-                    // VitePress 默认布局
-                    h(DefaultTheme.Layout, null, {
+                    // 使用自定义MyLayout
+                    h(MyLayout, null, {
+                        "layout-top": () => [
+                            h(UnderConstructionBanner),
+                            h(NolebaseHighlightTargetedHeading),
+                            h(Mouse),
+                        ],
                         "doc-footer-before": () => h(backtotop),
                         // 在导航栏内容后面添加增强可读性菜单
                         "nav-bar-content-after": () => [
@@ -104,6 +109,8 @@ export default {
                         "sidebar-nav-before": () => h(MouseToggle),
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
+                        // 在侧边栏下方添加分享按钮
+                        "aside-outline-after": () => h(ArticleShare),
                         // 在布局顶部添加其他组件
                         "aside-top": () => {
                             if (typeof window !== "undefined") {
@@ -116,11 +123,6 @@ export default {
                             }
                             return h(Carousel);
                         },
-                        "layout-top": () => [
-                            h(UnderConstructionBanner),
-                            h(NolebaseHighlightTargetedHeading),
-                            h(Mouse),
-                        ],
                     }),
 
                     // SSR 相关组件
@@ -166,6 +168,7 @@ export default {
             NolebasePagePropertiesEditor,
         );
         app.component("NolebasePageProperties", NolebasePageProperties);
+        app.component("ArticleShare", ArticleShare);
 
         // 客户端逻辑
         if (typeof window !== "undefined") {
@@ -174,6 +177,18 @@ export default {
                 () => updateHomePageStyle(location.pathname === "/"),
                 { immediate: true },
             );
+
+            // // 处理路由变化时的动画重置
+            // watch(
+            //     () => router.route.path,
+            //     () => {
+            //         // 路由变化时重置滚动位置，避免内容被截断
+            //         nextTick(() => {
+            //             window.scrollTo({ top: 0, behavior: "auto" });
+            //         });
+            //     },
+            //     { flush: "post" },
+            // );
         }
     },
 

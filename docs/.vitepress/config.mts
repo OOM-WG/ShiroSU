@@ -16,6 +16,14 @@ import {
     PageProperties,
     PagePropertiesMarkdownSection,
 } from "@nolebase/vitepress-plugin-page-properties/vite";
+import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
+
+// const baseUrl = "https://ssu.oom-wg.dev";
+// const RSS: RSSOptions = {
+//     title: "SakitinSU",
+//     baseUrl,
+//     copyright: "Copyright © 2023-present SSU Developers (OOM. WG.)",
+// };
 
 export default defineConfig({
     title: "SakitinSU",
@@ -98,6 +106,7 @@ export default defineConfig({
             chunkSizeWarningLimit: 2000,
         },
         plugins: [
+            // RssPlugin(RSS),
             ThumbnailHashImages(),
             GitChangelog({
                 repoURL: () => "https://github.com/OOM-WG/SSU_Docs",

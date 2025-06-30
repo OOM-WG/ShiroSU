@@ -1,0 +1,17 @@
+.VPDoc .vp-doc > div {
+  animation: slideInFade 0.7s cubic-bezier(0, 0, 0.58, 1) forwards;
+}
+
+@keyframes slideInFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  30% {
+    animation-timing-function: ease-out;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
