@@ -6,7 +6,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vitepress dev --port 25527",
+		"dev": "vitepress dev --port 25527 --host",
 		"build": "vitepress build",
 		"preview": "vitepress preview",
 		"clean": "rimraf .vitepress/.temp .vitepress/cache node_modules/.cache dist .temp",
@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@mdit/plugin-container": "^0.22.1",
 		"@nolebase/vitepress-plugin-breadcrumbs": "^2.17.2",
+		"@theojs/lumen": "^5.8.2",
 		"@vicons/ionicons5": "^0.13.0",
 		"@vue/repl": "^4.6.1",
 		"@vue/theme": "^2.3.0",
@@ -28,6 +29,7 @@
 		"element-plus": "^2.10.2",
 		"gsap": "^3.13.0",
 		"vitepress": "2.0.0-alpha.7",
+		"vitepress-plugin-rss": "^0.3.1",
 		"vue-amazing-ui": "^2.4.14"
 	},
 	"devDependencies": {
@@ -44,7 +46,7 @@
 		"@nolebase/vitepress-plugin-page-properties": "^2.17.2",
 		"@nolebase/vitepress-plugin-thumbnail-hash": "^2.17.2",
 		"@types/animejs": "^3.1.13",
-		"@types/node": "^24.0.6",
+		"@types/node": "^24.0.7",
 		"animejs": "4.0.2",
 		"cross-env": "^7.0.3",
 		"cytoscape": "^3.32.0",

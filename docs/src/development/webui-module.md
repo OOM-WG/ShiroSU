@@ -3,9 +3,6 @@ layout: doc
 title: WebUI 模块开发
 description: 了解如何开发具有 Web 界面的 SakitinSU 模块
 outline: deep
-prev:
-  text: "模块开发"
-  link: "/development/module-development"
 ---
 
 # **WebUI 模块开发**
@@ -18,7 +15,7 @@ SakitinSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [Ker
 
 模块目录应遵循以下结构：
 
-``` tree
+```
 .
 ├── module.prop
 └── webroot
