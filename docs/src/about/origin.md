@@ -3,12 +3,6 @@ layout: doc
 title: 项目起源
 description: 了解 SakitinSU 项目的诞生背景、发展历程和设计理念
 outline: deep
-prev:
-  text: "模块WebUI"
-  link: "/development/webui-module"
-next:
-  text: "关于团队"
-  link: "/about/author"
 ---
 
 ## 项目起源
