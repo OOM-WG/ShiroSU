@@ -4,7 +4,7 @@ import type { DefaultTheme } from "vitepress";
 export const sidebar: DefaultTheme.Config["sidebar"] = {
     "/": [
         {
-            text: "快速了解", //<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25em;color:#FFD700;"></iconify-icon>
+            text: "快速了解", 
             items: [
                 { text: "<iconify-icon icon=\"f7:question-circle-fill\" style=\"margin-right:0.25em;color:#58B2DC;\"></iconify-icon>什么是SakitinSU", link: "/guide/what-is-sakitinsu" },
                 { text: "<iconify-icon icon=\"f7:arrow-2-circlepath-circle-fill\" style=\"margin-right:0.25em;color:#FF6B6B;\"></iconify-icon>更新日志", link: "/changeLog/changelog" },
@@ -27,6 +27,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         {
             text: "关于SakitinSU",
             items: [
+                { text: "<iconify-icon icon=\"fa6-solid:bolt\" style=\"margin-right:0.30em;color:#7EB2DD;\"></iconify-icon>面对质疑", link: "/about/statement" },
                 { text: "<iconify-icon icon=\"fa6-solid:paintbrush\" style=\"margin-right:0.30em;color:#FF85A2;\"></iconify-icon>SakitinSU的起源", link: "/about/origin" },
                 { text: "<iconify-icon icon=\"fa6-solid:users-gear\" style=\"margin-right:0.30em;color:#7EB2DD;\"></iconify-icon>关于团队", link: "/about/author" },
             ],
