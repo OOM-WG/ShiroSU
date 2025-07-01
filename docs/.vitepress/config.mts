@@ -94,12 +94,12 @@ export default defineConfig({
                         ),
                     ),
                 },
-                // {
-                //     find: /^.*\/VPHome\.vue$/,
-                //     replacement: fileURLToPath(
-                //         new URL("./theme/home/WalletApp.vue", import.meta.url),
-                //     ),
-                // },
+                {
+                    find: /^.*\/VPHome\.vue$/,
+                    replacement: fileURLToPath(
+                        new URL("./theme/home/WalletApp.vue", import.meta.url),
+                    ),
+                },
             ],
         },
         build: {

@@ -7,7 +7,15 @@ import type { Theme } from "vitepress/client";
 // import DefaultTheme from "vitepress/theme";
 import DefaultTheme from "vitepress/theme-without-fonts";
 import { useData, useRoute } from "vitepress/client";
-import { defineComponent, inject, nextTick, onMounted, watch, h } from "vue";
+import {
+    defineAsyncComponent,
+    defineComponent,
+    inject,
+    nextTick,
+    onMounted,
+    watch,
+    h,
+} from "vue";
 // ===== 第三方库 =====
 import mediumZoom from "medium-zoom";
 import ElementPlus from "element-plus";
@@ -46,6 +54,7 @@ import backtotop from "./components/backtotop.vue";
 import ArticleShare from "./components/ArticleShare.vue";
 import MyLayout from "./attached/MyLayout.vue";
 import WalletApp from "./home/WalletApp.vue";
+import Banner from "./components/Banner.vue";
 
 // ===== 样式文件 =====
 import "./styles/main.scss";
@@ -96,6 +105,11 @@ export default {
                     h(MyLayout, null, {
                         "layout-top": () => [
                             h(UnderConstructionBanner),
+                            h(
+                                defineAsyncComponent(
+                                    () => import("./components/Banner.vue"),
+                                ),
+                            ),
                             h(NolebaseHighlightTargetedHeading),
                             h(Mouse),
                         ],
@@ -114,6 +128,7 @@ export default {
                         // 在侧边栏下方添加分享按钮
                         "aside-outline-after": () => h(ArticleShare),
                         // 在布局顶部添加其他组件
+                        // "page-top": () => h(Banner),
                         "aside-top": () => {
                             if (typeof window !== "undefined") {
                                 const isMobile =
