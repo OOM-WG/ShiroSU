@@ -45,6 +45,8 @@ import Carousel from "./components/Carousel.vue";
 import backtotop from "./components/backtotop.vue";
 import ArticleShare from "./components/ArticleShare.vue";
 import MyLayout from "./attached/MyLayout.vue";
+import WalletApp from "./home/WalletApp.vue";
+
 // ===== 样式文件 =====
 import "./styles/main.scss";
 import "element-plus/dist/index.css";
@@ -153,6 +155,7 @@ export default {
         });
 
         // 注册所有自定义全局组件
+        app.component("WalletApp", WalletApp);
         app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
         app.component("Confetti", Confetti);
         app.component("Update", Update);

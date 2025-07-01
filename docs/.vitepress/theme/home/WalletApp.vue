@@ -214,6 +214,7 @@ onMounted(() => {
 .VPHome {
   margin: 0;
   width: 100%;
+  contain: layout style paint;
 }
 .jetbrains-hero {
   position: relative;
@@ -222,6 +223,7 @@ onMounted(() => {
   overflow-x: hidden;
   overflow-y: hidden;
   font-family: var(--vp-font-family-base);
+  contain: layout style;
 }
 .hero-background {
   position: absolute;
@@ -231,6 +233,8 @@ onMounted(() => {
   bottom: 0;
   background: #ffffff;
   z-index: 1;
+  will-change: auto;
+  contain: layout style paint;
 }
 .animated-bg {
   position: absolute;
@@ -242,6 +246,9 @@ onMounted(() => {
   height: 100%;
   z-index: 1;
   opacity: 1;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .hero-content {
   position: relative;
@@ -252,6 +259,8 @@ onMounted(() => {
   justify-content: center;
   padding-left: 0;
   width: 100%;
+  will-change: auto;
+  contain: layout style;
 }
 .content-wrapper {
   max-width: 800px;
@@ -263,6 +272,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  contain: layout style;
 }
 .hero-main-title {
   font-size: clamp(3.2rem, 9vw, 5rem);
@@ -279,6 +289,9 @@ onMounted(() => {
   line-height: 1.1;
   display: block;
   text-shadow: none;
+  will-change: auto;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .hero-subtitle {
   font-size: clamp(1.8rem, 5vw, 2.4rem);
@@ -290,6 +303,9 @@ onMounted(() => {
   text-align: left;
   background: none;
   animation: none;
+  will-change: auto;
+  transform: translate3d(0, 0, 0);
+  contain: layout style;
 }
 .hero-description {
   font-size: 1.3rem;
@@ -301,6 +317,9 @@ onMounted(() => {
   text-align: left;
   background: none;
   animation: none;
+  will-change: auto;
+  transform: translate3d(0, 0, 0);
+  contain: layout style;
 }
 .title-highlight {
   background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
@@ -311,12 +330,13 @@ onMounted(() => {
   position: relative;
   text-shadow: none;
   display: inline-block;
-  transform: scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
   transition: transform 0.3s ease;
   white-space: nowrap;
+  will-change: transform;
 }
 .title-highlight:hover {
-  transform: scale(1.03);
+  transform: translate3d(0, 0, 0) scale(1.03);
 }
 .implementation-text {
   display: inline-block;
@@ -343,6 +363,7 @@ onMounted(() => {
   flex-wrap: wrap;
   justify-content: flex-start;
   max-width: 100%;
+  contain: layout style;
 }
 .cta-primary {
   display: inline-flex;
@@ -364,6 +385,9 @@ onMounted(() => {
   justify-content: center;
   letter-spacing: 0.04em;
   overflow: hidden;
+  will-change: transform, box-shadow, background-color;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .cta-primary::before {
   content: "";
@@ -388,16 +412,18 @@ onMounted(() => {
   background: #6366f1;
   color: #fff;
   box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
-  transform: translateY(-3px);
+  transform: translate3d(0, -3px, 0);
 }
 .cta-primary:hover::before {
   opacity: 1;
 }
 .cta-icon {
   transition: transform 0.3s ease;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 .cta-primary:hover .cta-icon {
-  transform: translateX(4px);
+  transform: translate3d(4px, 0, 0);
 }
 .cta-secondary {
   display: inline-flex;
@@ -418,6 +444,9 @@ onMounted(() => {
   justify-content: center;
   letter-spacing: 0.04em;
   backdrop-filter: blur(5px);
+  will-change: transform, box-shadow, background-color, border-color;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .cta-secondary:active,
 .cta-secondary:focus {
@@ -428,7 +457,7 @@ onMounted(() => {
   color: #6366f1;
   border-color: rgba(99, 102, 241, 0.5);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
+  transform: translate3d(0, -3px, 0);
 }
 @keyframes slideInUp {
   from {
@@ -697,6 +726,9 @@ onMounted(() => {
   max-width: 500px; /* 桌面端更大 */
   min-width: 360px; /* 桌面端更大 */
   border-radius: 16px;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .toast-content {
   background: var(--vp-c-bg);
@@ -710,6 +742,9 @@ onMounted(() => {
   gap: 16px; /* 桌面端更大 */
   cursor: pointer;
   transition: all 0.2s ease;
+  will-change: box-shadow;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 .toast-content:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
