@@ -6,6 +6,9 @@
           class="animated-bg"
           viewBox="0 0 1400 800"
           preserveAspectRatio="xMidYMid slice"
+          width="1400" height="800"
+          loading="lazy"
+          aria-hidden="true"
         >
           <rect
             x="1300"
@@ -142,7 +145,7 @@
         <div class="content-wrapper">
           <h1 class="hero-main-title">SakitinSU / SSU</h1>
           <h2 class="hero-subtitle">Android root 实现：简易上手的开始</h2>
-          <p class="hero-description">
+          <p class="hero-description" v-once>
             SakitinSU 将继续坚持 NGA 和 CU 一贯的简洁设计理念， 您只需要享受 SSU
             带来的权能，繁琐的底层细节交给我们就好。
           </p>
@@ -184,7 +187,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from "vue"
+import { ref, onMounted, nextTick, defineAsyncComponent } from "vue"
+
+// 预加载关键内容，使用 ref 初始化为已准备好的状态
+const preloadContent = ref(true)
 
 // [优化 2]: 添加一个 ref 来控制背景的可见性
 const backgroundVisible = ref(false)
@@ -219,19 +225,33 @@ const show = () => {
 }
 
 onMounted(() => {
-  // 延迟渲染动画背景，优先处理 LCP
-  setTimeout(() => {
-    backgroundVisible.value = true
-  }, 200) // 200毫秒延迟足以让初始内容完成绘制
+  // 使用requestIdleCallback延迟渲染动画背景，优先处理LCP
+  if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(() => {
+      backgroundVisible.value = true
+    }, { timeout: 1000 });
+  } else {
+    // 回退方案：延长延迟时间以确保关键内容已渲染
+    setTimeout(() => {
+      backgroundVisible.value = true
+    }, 1000) 
+  }
 
   // 原有的通知逻辑
   if (autoShow) {
-    setTimeout(show, 1000)
+    setTimeout(show, 1500) // 增加延迟时间
   }
 })
 </script>
 
 <style scoped>
+/* 关键渲染路径优化 */
+@font-face {
+  font-family: 'LocalHeroFont';
+  font-display: swap; /* 使用swap策略加快文本显示 */
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+}
+
 .VPHome {
   margin: 0;
   width: 100%;
@@ -265,6 +285,9 @@ onMounted(() => {
   height: 100%;
   z-index: 1;
   opacity: 1;
+  transform: translateZ(0); /* 启用GPU加速 */
+  will-change: transform; /* 提示浏览器该元素将发生变化 */
+  contain: layout paint style; /* 优化渲染性能 */
 }
 .hero-content {
   position: relative;
@@ -275,6 +298,8 @@ onMounted(() => {
   justify-content: center;
   padding-left: 0;
   width: 100%;
+  content-visibility: auto; /* 优化渲染性能 */
+  contain-intrinsic-size: 1px 800px; /* 提供渲染提示 */
 }
 .content-wrapper {
   max-width: 800px;
@@ -324,6 +349,9 @@ onMounted(() => {
   text-align: left;
   background: none;
   animation: none;
+  font-family: 'LocalHeroFont', var(--vp-font-family-base); /* 使用本地字体优先回退 */
+  transform: translateZ(0); /* 激活GPU加速 */
+  will-change: auto; /* 自动优化 */
 }
 .cta-group {
   margin-top: 0.5rem;
