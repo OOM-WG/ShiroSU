@@ -68,6 +68,8 @@ import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
 import "@nolebase/vitepress-plugin-page-properties/client/style.css";
+import vitepressNprogress from "vitepress-plugin-nprogress";
+import "vitepress-plugin-nprogress/lib/css/index.css";
 
 let homePageStyle: HTMLStyleElement | undefined;
 
@@ -152,6 +154,8 @@ export default {
     },
 
     enhanceApp({ app, router }) {
+        vitepressNprogress({ app, router });
+
         if (import.meta.env.SSR) {
             const { collect } = setup(app);
             app.provide("css-render-collect", collect);

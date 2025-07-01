@@ -180,6 +180,7 @@ export default defineConfig({
                 "naive-ui",
                 "date-fns",
                 "vueuc",
+                "vitepress-plugin-nprogress",
             ],
         },
     },

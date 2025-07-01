@@ -119,6 +119,56 @@
               to="330 550 750"
               repeatCount="indefinite" />
           </rect>
+
+          <!-- 五边形（圆角） -->
+          <rect
+            x="850"
+            y="150"
+            width="120"
+            height="120"
+            rx="25"
+            ry="25"
+            stroke="rgb(111, 134, 237)"
+            fill="rgb(111, 134, 237)">
+            <animateMotion
+              path="M 0 0 L 40 20 L 0 0"
+              dur="10s"
+              repeatCount="indefinite" />
+            <animateTransform
+              attributeType="XML"
+              attributeName="transform"
+              begin="0s"
+              dur="14s"
+              type="rotate"
+              from="0 910 210"
+              to="360 910 210"
+              repeatCount="indefinite" />
+          </rect>
+
+          <!-- 圆角三角形 -->
+          <rect
+            x="700"
+            y="500"
+            width="80"
+            height="80"
+            rx="15"
+            ry="15"
+            stroke="rgb(248, 113, 113)"
+            fill="rgb(248, 113, 113)">
+            <animateMotion
+              path="M 0 0 L -20 30 L 0 0"
+              dur="7s"
+              repeatCount="indefinite" />
+            <animateTransform
+              attributeType="XML"
+              attributeName="transform"
+              begin="0s"
+              dur="12s"
+              type="rotate"
+              values="0 740 540; -30 740 540; 0 740 540"
+              keyTimes="0 ; 0.5 ; 1"
+              repeatCount="indefinite" />
+          </rect>
         </svg>
       </div>
       <div class="hero-content">
