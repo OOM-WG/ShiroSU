@@ -1,6 +1,4 @@
 ---
-layout: page
-sidebar : false
+layout: home
 ---
 
-<WalletApp />
