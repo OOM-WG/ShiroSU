@@ -25,16 +25,14 @@ const props = defineProps({
 })
 
 const copied = ref(false)
-const isMounted = ref(false)
 const isClient = ref(false)
 
 onMounted(() => {
-  isMounted.value = true
-  isClient.value = typeof window !== "undefined"
+  isClient.value = true
 })
 
 const shareLink = computed(() => {
-  if (!isMounted.value || !isClient.value || typeof window === "undefined") {
+  if (!isClient.value) {
     return ""
   }
   try {
@@ -92,7 +90,7 @@ async function copyToClipboard() {
 </script>
 
 <template>
-  <div v-if="isMounted && isClient" class="article-share">
+  <div v-if="isClient" class="article-share">
     <Transition name="fade" mode="out-in" appear>
       <button
         :key="copied ? 'copied' : 'share'"
