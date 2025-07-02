@@ -131,26 +131,13 @@ export default {
 
                         // 在布局顶部添加其他组件
                         // "page-top": () => h(Banner),
-                        "aside-top": () => {
-                            if (typeof window !== "undefined") {
-                                const isMobile =
-                                    window.innerWidth <= 768 ||
-                                    /mobile|android|iphone|ipad|phone/i.test(
-                                        navigator.userAgent,
-                                    );
-                                if (isMobile) return null;
-                            }
-                            return [
-                                h(Carousel),
-                                h(ArticleShare)
-                            ];
-                        },
+                        "aside-top": () => [h(Carousel), h(ArticleShare)],
                     }),
 
-                    // // SSR 相关组件
-                    // import.meta.env.SSR
-                    //     ? [h(CssRenderStyle), h(VitepressPath)]
-                    //     : null,
+                    // SSR 相关组件
+                    import.meta.env.SSR
+                        ? [h(CssRenderStyle), h(VitepressPath)]
+                        : null,
                 ],
             },
         );
@@ -186,7 +173,7 @@ export default {
         app.component("SakuraLinkCard", SakuraLinkCard);
         app.component("Downloaded", Downloaded);
         app.component("MouseToggle", MouseToggle);
-        app.component("ArticleShare", ArticleShare); // 确保组件全局注册
+        app.component("ArticleShare", ArticleShare);
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.component("NolebaseGitContributors", NolebaseGitContributors);
         app.component(
@@ -202,17 +189,17 @@ export default {
                 { immediate: true },
             );
 
-            // // 处理路由变化时的动画重置
-            // watch(
-            //     () => router.route.path,
-            //     () => {
-            //         // 路由变化时重置滚动位置，避免内容被截断
-            //         nextTick(() => {
-            //             window.scrollTo({ top: 0, behavior: "auto" });
-            //         });
-            //     },
-            //     { flush: "post" },
-            // );
+            // 处理路由变化时的动画重置
+            watch(
+                () => router.route.path,
+                () => {
+                    // 路由变化时重置滚动位置，避免内容被截断
+                    nextTick(() => {
+                        window.scrollTo({ top: 0, behavior: "auto" });
+                    });
+                },
+                { flush: "post" },
+            );
         }
     },
 
