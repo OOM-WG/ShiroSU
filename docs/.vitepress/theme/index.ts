@@ -127,7 +127,7 @@ export default {
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
                         // 在侧边栏下方添加分享按钮（使用包装组件解决 SSR 问题）
-                        "aside-outline-after": () => h(ArticleShare),
+                        // "aside-outline-after": () => h(ArticleShare),
 
                         // 在布局顶部添加其他组件
                         // "page-top": () => h(Banner),
@@ -140,7 +140,10 @@ export default {
                                     );
                                 if (isMobile) return null;
                             }
-                            return h(Carousel);
+                            return [
+                                h(Carousel),
+                                h(ArticleShare)
+                            ];
                         },
                     }),
 
