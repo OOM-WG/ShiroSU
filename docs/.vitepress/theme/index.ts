@@ -190,8 +190,6 @@ export default {
             NolebasePagePropertiesEditor,
         );
         app.component("NolebasePageProperties", NolebasePageProperties);
-        app.component("ArticleShare", ArticleShare);
-
         // 客户端逻辑
         if (typeof window !== "undefined") {
             watch(
