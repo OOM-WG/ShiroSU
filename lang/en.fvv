@@ -71,7 +71,7 @@ Home = {
     InstKSErr = "It has not yet been realized, please pay attention to the official follow-up news"
 
     JoinUsTtl = "Join Us"
-    JoinUsCnt = "As an emerging project, SakitinSU is still lacking in many places, if you have any questions, please give feedback to the developers, and you can also communicate and discuss with other users\nWe recommend joining our QQ group first, whose owner YumeYuka is a Genshin Impact (原神) player, and the group chat will be cleaned up from time to time with inactive members"
+    JoinUsCnt = "As an emerging project, SakitinSU is still lacking in many places, if you have any questions, please give feedback to the developers, and you can also communicate and discuss with other users\nWe recommend joining our QQ group first, and it should be noted that inactive members will be cleaned up from time to time in the group chat"
 }
 
 Modules = {
