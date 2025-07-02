@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from "vue"
+import { ref, computed, onMounted, watch } from "vue"
 import { useData, withBase } from "vitepress"
 
 // 定义组件 props
@@ -26,17 +26,23 @@ const copied = ref(false)
 const mounted = ref(false)
 const shareUrl = ref("")
 
-// 在客户端挂载后初始化
-onMounted(async () => {
-  await nextTick()
+// onMounted 现在只负责标记组件已挂载到客户端
+onMounted(() => {
   mounted.value = true
-
-  // 确保在客户端环境中生成URL
-  if (typeof window !== "undefined") {
-    const currentPath = page.value.relativePath.replace(/\.md$/, ".html")
-    shareUrl.value = window.location.origin + withBase(currentPath)
-  }
 })
+
+// 使用 watch 响应式地处理页面路径变化，确保数据就绪
+watch(
+  () => page.value.path, // 侦听 page.path 的变化
+  (newPath) => {
+    // 确保在客户端环境并且 newPath 有效时才执行
+    if (typeof window !== "undefined" && newPath) {
+      const pathWithBase = withBase(newPath)
+      shareUrl.value = `${window.location.origin}${pathWithBase}`
+    }
+  },
+  { immediate: true }, // 立即执行一次以处理初始加载
+)
 
 // 计算属性：动态样式类
 const buttonClass = computed(() => ({
@@ -100,7 +106,6 @@ function fallbackCopyTextToClipboard(text: string): Promise<void> {
 </script>
 
 <template>
-  <!-- 只有在客户端挂载后才渲染 -->
   <div v-if="mounted" class="article-share">
     <button
       :class="buttonClass"
@@ -111,7 +116,6 @@ function fallbackCopyTextToClipboard(text: string): Promise<void> {
       :disabled="!shareUrl">
       <div class="article-share__content">
         <span class="article-share__icon" :class="{ success: copied }">
-          <!-- 分享图标 -->
           <svg
             v-if="!copied"
             xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +132,6 @@ function fallbackCopyTextToClipboard(text: string): Promise<void> {
             <line x1="12" y1="2" x2="12" y2="15" />
           </svg>
 
-          <!-- 成功图标 -->
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
