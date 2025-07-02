@@ -89,7 +89,7 @@ jobs:
           single-commit: true
         # 8、部署 GitHub Pages
       - name: Deploy GitHub Pages
-        uses: JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: output
