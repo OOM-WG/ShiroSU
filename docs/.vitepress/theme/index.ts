@@ -52,13 +52,8 @@ import Mouse from "./components/Mouse.vue";
 import Carousel from "./components/Carousel.vue";
 import backtotop from "./components/backtotop.vue";
 import ArticleShare from "./components/ArticleShare.vue";
-// 异步加载分享组件以避免SSR问题
-const AsyncArticleShare = defineAsyncComponent(
-    () => import("./components/ArticleShare.vue"),
-);
 import MyLayout from "./attached/MyLayout.vue";
 import WalletApp from "./home/WalletApp.vue";
-import Banner from "./components/Banner.vue";
 
 // ===== 样式文件 =====
 import "./styles/main.scss";
@@ -131,7 +126,7 @@ export default {
                         "sidebar-nav-before": () => h(MouseToggle),
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
-                        // 在侧边栏下方添加分享按钮（同步注册，避免异步组件导致插槽渲染丢失）
+                        // 在侧边栏下方添加分享按钮（使用包装组件解决 SSR 问题）
                         "aside-outline-after": () => h(ArticleShare),
 
                         // 在布局顶部添加其他组件
@@ -149,10 +144,10 @@ export default {
                         },
                     }),
 
-                    // SSR 相关组件
-                    import.meta.env.SSR
-                        ? [h(CssRenderStyle), h(VitepressPath)]
-                        : null,
+                    // // SSR 相关组件
+                    // import.meta.env.SSR
+                    //     ? [h(CssRenderStyle), h(VitepressPath)]
+                    //     : null,
                 ],
             },
         );
@@ -188,6 +183,7 @@ export default {
         app.component("SakuraLinkCard", SakuraLinkCard);
         app.component("Downloaded", Downloaded);
         app.component("MouseToggle", MouseToggle);
+        app.component("ArticleShare", ArticleShare); // 确保组件全局注册
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.component("NolebaseGitContributors", NolebaseGitContributors);
         app.component(
