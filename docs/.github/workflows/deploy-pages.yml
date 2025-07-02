@@ -62,13 +62,13 @@ jobs:
       - name: Build
         run: |
           pnpm build
+          cp -r dist/. output/
           mkdir dist_html
           find dist -type f -name '*.html' | while read -r src; do
             rel=${src#dist/}
             mkdir -p "dist_html/$(dirname "$rel")"
             mv "$src" "dist_html/$rel"
           done
-          cp dist output
           mv dist/sitemap.xml dist_html/sitemap.xml
           mv dist/_headers dist_html/_headers
           mv dist/functions dist_html/functions
