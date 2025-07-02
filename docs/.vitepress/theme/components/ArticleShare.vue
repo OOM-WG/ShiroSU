@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from "vue"
 
 // 定义组件的 props，用于从外部接收配置
 const props = defineProps({
   // 分享按钮的文本
   shareText: {
     type: String,
-    default: '分享链接',
+    default: "分享链接",
   },
   // 复制成功后的文本
   copiedText: {
     type: String,
-    default: '已复制!',
+    default: "已复制!",
   },
   // 分享链接是否包含查询参数 (e.g., ?foo=bar)
   includeQuery: {
@@ -27,78 +27,112 @@ const props = defineProps({
   copiedTimeout: {
     type: Number,
     default: 2000,
-  }
-});
+  },
+})
 
 // --- 内部状态和逻辑 ---
 
 // 响应式状态，用于追踪是否已复制
-const copied = ref(false);
+const copied = ref(false)
+// 客户端挂载状态，确保在客户端渲染
+const isMounted = ref(false)
 
 // 计算要复制的分享链接
-// 注意: 此组件依赖于浏览器环境的 `location` 对象
 const shareLink = computed(() => {
-  // 确保在浏览器环境中运行
-  if (typeof window === 'undefined') return '';
+  // 确保在浏览器环境中运行且已挂载
+  if (!isMounted.value || typeof window === "undefined") return ""
 
-  const { origin, pathname, search, hash } = window.location;
-  const finalSearch = props.includeQuery ? search : '';
-  const finalHash = props.includeHash ? hash : '';
-  return `${origin}${pathname}${finalSearch}${finalHash}`;
-});
+  const { origin, pathname, search, hash } = window.location
+  const finalSearch = props.includeQuery ? search : ""
+  const finalHash = props.includeHash ? hash : ""
+  return `${origin}${pathname}${finalSearch}${finalHash}`
+})
+
+// 客户端挂载后设置状态
+onMounted(() => {
+  isMounted.value = true
+})
 
 // 手动实现的剪贴板复制功能
 async function copyToClipboard() {
-  if (copied.value) return; // 防止重复点击
+  if (copied.value || !shareLink.value) return // 防止重复点击或无效链接
 
   try {
-    await navigator.clipboard.writeText(shareLink.value);
-    copied.value = true;
+    await navigator.clipboard.writeText(shareLink.value)
+    copied.value = true
     setTimeout(() => {
-      copied.value = false;
-    }, props.copiedTimeout);
+      copied.value = false
+    }, props.copiedTimeout)
   } catch (err) {
-    console.error('Failed to copy text: ', err);
-    // 你可以在这里添加复制失败的用户提示
+    console.error("Failed to copy text: ", err)
+    // 降级方案：使用传统方法复制
+    try {
+      const textArea = document.createElement("textarea")
+      textArea.value = shareLink.value
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand("copy")
+      document.body.removeChild(textArea)
+      copied.value = true
+      setTimeout(() => {
+        copied.value = false
+      }, props.copiedTimeout)
+    } catch (fallbackErr) {
+      console.error("Fallback copy also failed: ", fallbackErr)
+    }
   }
 }
-
-// 内联的 SVG 图标
-const shareIconSvg = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-    <polyline points="16 6 12 2 8 6"></polyline>
-    <line x1="12" y1="2" x2="12" y2="15"></line>
-  </svg>
-`;
-
-const copiedIconSvg = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 6 9 17l-5-5"></path>
-  </svg>
-`;
-
 </script>
 
 <template>
-  <div class="article-share">
-    <button
-      :class="['article-share__button', { 'copied': copied }]"
-      :aria-label="copied ? props.copiedText : props.shareText"
-      aria-live="polite"
-      @click="copyToClipboard"
-    >
-      <div v-if="!copied" class="content-wrapper">
-        <span class="icon" v-html="shareIconSvg"></span>
-        {{ props.shareText }}
-      </div>
+  <!-- 只在客户端挂载后显示，避免SSR水合问题 -->
+  <Transition name="fade" appear>
+    <div v-if="isMounted" class="article-share">
+      <button
+        :class="['article-share__button', { copied: copied }]"
+        :aria-label="copied ? props.copiedText : props.shareText"
+        aria-live="polite"
+        @click="copyToClipboard">
+        <div v-if="!copied" class="content-wrapper">
+          <span class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+          </span>
+          {{ props.shareText }}
+        </div>
 
-      <div v-else class="content-wrapper">
-        <span class="icon" v-html="copiedIconSvg"></span>
-        {{ props.copiedText }}
-      </div>
-    </button>
-  </div>
+        <div v-else class="content-wrapper">
+          <span class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </span>
+          {{ props.copiedText }}
+        </div>
+      </button>
+    </div>
+  </Transition>
 </template>
 
 <style scoped>
@@ -173,5 +207,14 @@ const copiedIconSvg = `
   display: inline-flex;
   align-items: center;
   margin-right: 6px;
+}
+
+/* 淡入动画 */
+.fade-enter-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
 }
 </style>

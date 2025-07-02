@@ -52,6 +52,10 @@ import Mouse from "./components/Mouse.vue";
 import Carousel from "./components/Carousel.vue";
 import backtotop from "./components/backtotop.vue";
 import ArticleShare from "./components/ArticleShare.vue";
+// 异步加载分享组件以避免SSR问题
+const AsyncArticleShare = defineAsyncComponent(
+    () => import("./components/ArticleShare.vue"),
+);
 import MyLayout from "./attached/MyLayout.vue";
 import WalletApp from "./home/WalletApp.vue";
 import Banner from "./components/Banner.vue";
@@ -127,8 +131,13 @@ export default {
                         "sidebar-nav-before": () => h(MouseToggle),
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
-                        // 在侧边栏下方添加分享按钮
-                        "aside-outline-after": () => h(ArticleShare),
+                        // 在侧边栏下方添加分享按钮（异步客户端渲染）
+                        "aside-outline-after": () => {
+                            if (typeof window !== "undefined") {
+                                return h(AsyncArticleShare);
+                            }
+                            return null;
+                        },
                         // 在布局顶部添加其他组件
                         // "page-top": () => h(Banner),
                         "aside-top": () => {
