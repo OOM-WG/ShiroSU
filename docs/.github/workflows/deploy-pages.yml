@@ -3,10 +3,10 @@ name: Deploy Pages
 on:
   # 推送时执行
   push:
-    branches: [main, master]
+    branches: [ main, master ]
   # pr 时执行
   pull_request:
-    branches: [main, master]
+    branches: [ main, master ]
   # 定时执行，字段含义：分钟 小时 日 月 星期
   # 注意：
   # 1.采用的是 UTC 时间
@@ -68,6 +68,7 @@ jobs:
             mkdir -p "dist_html/$(dirname "$rel")"
             mv "$src" "dist_html/$rel"
           done
+          cp dist output
           mv dist/sitemap.xml dist_html/sitemap.xml
           mv dist/_headers dist_html/_headers
           mv dist/functions dist_html/functions
@@ -84,5 +85,13 @@ jobs:
         with:
           branch: res
           folder: dist
+          clean: true
+          single-commit: true
+        # 8、部署 GitHub Pages
+      - name: Deploy GitHub Pages
+        uses: JamesIves/github-pages-deploy-action
+        with:
+          branch: gh-pages
+          folder: output
           clean: true
           single-commit: true
