@@ -131,9 +131,9 @@ export default {
                         "sidebar-nav-before": () => h(MouseToggle),
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
-                        // 在侧边栏下方添加分享按钮（异步客户端渲染）
-                        "aside-outline-after": () => h(AsyncArticleShare),
-                
+                        // 在侧边栏下方添加分享按钮（同步注册，避免异步组件导致插槽渲染丢失）
+                        "aside-outline-after": () => h(ArticleShare),
+
                         // 在布局顶部添加其他组件
                         // "page-top": () => h(Banner),
                         "aside-top": () => {
