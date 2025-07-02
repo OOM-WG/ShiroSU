@@ -6,29 +6,29 @@ const props = defineProps({
   // 分享按钮的文本
   shareText: {
     type: String,
-    default: "分享链接"
+    default: "分享链接",
   },
   // 复制成功后的文本
   copiedText: {
     type: String,
-    default: "已复制!"
+    default: "已复制!",
   },
   // 分享链接是否包含查询参数 (e.g., ?foo=bar)
   includeQuery: {
     type: Boolean,
-    default: false
+    default: false,
   },
   // 分享链接是否包含 hash (e.g., #section-1)
   includeHash: {
     type: Boolean,
-    default: false
+    default: false,
   },
   // "复制成功"状态的持续时间（毫秒）
   copiedTimeout: {
     type: Number,
-    default: 2000
-  },
-}
+    default: 2000,
+  }, // 添加了缺少的逗号
+})
 
 defineOptions({ name: "ArticleShare" })
 
