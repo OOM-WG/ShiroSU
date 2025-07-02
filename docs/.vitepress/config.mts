@@ -1,5 +1,6 @@
 import type { Plugin } from "vite";
 import { defineConfig } from "vitepress";
+// import { defineTeekConfig } from "vitepress-theme-teek/config";
 import path from "path";
 import { head } from "./local/head";
 import { markdown } from "./local/markdown";
@@ -25,7 +26,12 @@ import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
 //     copyright: "Copyright © 2023-present SSU Developers (OOM. WG.)",
 // };
 
+// Teek 主题配置
+// const teekConfig = defineTeekConfig({});
+
+// VitePress 配置
 export default defineConfig({
+    // extends: teekConfig,
     title: "SakitinSU",
     description: "",
 

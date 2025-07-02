@@ -19,6 +19,8 @@ import {
 // ===== 第三方库 =====
 import mediumZoom from "medium-zoom";
 import ElementPlus from "element-plus";
+import Teek from "vitepress-theme-teek";
+import "vitepress-theme-teek/index.css";
 import "@theojs/lumen";
 // ===== Nolebase 插件 =====
 import {
@@ -173,7 +175,7 @@ export default {
         app.component("SakuraLinkCard", SakuraLinkCard);
         app.component("Downloaded", Downloaded);
         app.component("MouseToggle", MouseToggle);
-        app.component("ArticleShare", ArticleShare);
+        // app.component("ArticleShare", ArticleShare);
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.component("NolebaseGitContributors", NolebaseGitContributors);
         app.component(

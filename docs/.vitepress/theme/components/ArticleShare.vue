@@ -1,155 +1,102 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from "vue"
-import { useData, withBase } from "vitepress"
+import { computed, ref } from "vue"
 
-// 定义组件 props
-interface Props {
-  /** 分享按钮显示的文本 */
-  shareText?: string
-  /** 复制成功后显示的文本 */
+export interface ArticleShareProps {
+  /** 分享按钮图标 SVG 字符串 */
+  icon?: string
+  /** 分享按钮文本 */
+  text?: string
+  /** 复制成功后的图标 SVG 字符串 */
+  copiedIcon?: string
+  /** 复制成功后的文本 */
   copiedText?: string
-  /** 复制成功提示的显示时长（毫秒） */
-  copiedTimeout?: number
+  /** 是否包含 URL 查询参数 */
+  includeQuery?: boolean
+  /** 是否包含 URL 哈希值 */
+  includeHash?: boolean
+  /** 复制成功状态持续时间(毫秒) */
+  timeout?: number
+  /** 自定义类名 */
+  className?: string
+  /** 自定义样式 */
+  customStyle?: Record<string, any>
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  shareText: "分享链接",
-  copiedText: "已复制!",
-  copiedTimeout: 2000,
+const props = withDefaults(defineProps<ArticleShareProps>(), {
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" style="vertical-align: -0.125em"><path fill="currentColor" fill-rule="evenodd" d="M13.803 5.333c0-1.84 1.5-3.333 3.348-3.333A3.34 3.34 0 0 1 20.5 5.333c0 1.841-1.5 3.334-3.349 3.334a3.35 3.35 0 0 1-2.384-.994l-4.635 3.156a3.34 3.34 0 0 1-.182 1.917l5.082 3.34a3.35 3.35 0 0 1 2.12-.753a3.34 3.34 0 0 1 3.348 3.334C20.5 20.507 19 22 17.151 22a3.34 3.34 0 0 1-3.348-3.333a3.3 3.3 0 0 1 .289-1.356L9.05 14a3.35 3.35 0 0 1-2.202.821A3.34 3.34 0 0 1 3.5 11.487a3.34 3.34 0 0 1 3.348-3.333c1.064 0 2.01.493 2.623 1.261l4.493-3.059a3.3 3.3 0 0 1-.161-1.023" clip-rule="evenodd"></path></svg>`,
+  text: "分享链接",
+  copiedIcon: `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" style="vertical-align: -0.125em"><path fill="currentColor" d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32c0-.41-.17-.79-.44-1.06L14.17 1L7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"></path></svg>`,
+  copiedText: "复制成功",
+  includeQuery: false,
+  includeHash: false,
+  timeout: 2000,
 })
 
-// 使用 VitePress 官方 Runtime API
-const { page, site, isDark } = useData()
+defineOptions({ name: "ArticleShare" })
 
-// 响应式状态
+// 复制功能
 const copied = ref(false)
-const mounted = ref(false)
-const shareUrl = ref("")
+const isClient =
+  typeof window !== "undefined" && typeof document !== "undefined"
 
-// onMounted 现在只负责标记组件已挂载到客户端
-onMounted(() => {
-  mounted.value = true
-})
-
-// 使用 watch 响应式地处理页面路径变化，确保数据就绪
-watch(
-  () => page.value.path, // 侦听 page.path 的变化
-  (newPath) => {
-    // 确保在客户端环境并且 newPath 有效时才执行
-    if (typeof window !== "undefined" && newPath) {
-      const pathWithBase = withBase(newPath)
-      shareUrl.value = `${window.location.origin}${pathWithBase}`
-    }
-  },
-  { immediate: true }, // 立即执行一次以处理初始加载
-)
-
-// 计算属性：动态样式类
-const buttonClass = computed(() => ({
-  "article-share__button": true,
-  "article-share__button--copied": copied.value,
-  "article-share__button--dark": isDark.value,
-}))
-
-// 复制到剪贴板功能
-async function copyToClipboard(): Promise<void> {
-  if (!shareUrl.value || copied.value || !mounted.value) return
+const copy = async (text: string) => {
+  if (!isClient) return
 
   try {
-    // 使用现代 Clipboard API
-    if (navigator?.clipboard?.writeText) {
-      await navigator.clipboard.writeText(shareUrl.value)
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(text)
     } else {
       // 降级方案
-      await fallbackCopyTextToClipboard(shareUrl.value)
+      const input = document.createElement("input")
+      input.setAttribute("readonly", "readonly")
+      input.setAttribute("value", text)
+      document.body.appendChild(input)
+      input.select()
+      document.execCommand("copy")
+      document.body.removeChild(input)
     }
 
-    // 设置复制成功状态
     copied.value = true
-
-    // 定时器重置状态
     setTimeout(() => {
       copied.value = false
-    }, props.copiedTimeout)
+    }, props.timeout)
   } catch (error) {
-    console.error("复制链接失败:", error)
+    console.error("复制失败:", error)
   }
 }
 
-// 降级复制方法
-function fallbackCopyTextToClipboard(text: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const textArea = document.createElement("textarea")
-    textArea.value = text
-    textArea.style.cssText =
-      "position:fixed;left:-9999px;top:-9999px;opacity:0;"
+// 生成分享链接
+const shareLink = computed(() => {
+  if (!isClient) return ""
 
-    document.body.appendChild(textArea)
-    textArea.focus()
-    textArea.select()
+  const { origin, pathname, search, hash } = location
+  return `${origin}${pathname}${props.includeQuery ? search : ""}${props.includeHash ? hash : ""}`
+})
 
-    try {
-      const successful = document.execCommand("copy")
-      document.body.removeChild(textArea)
-
-      if (successful) {
-        resolve()
-      } else {
-        reject(new Error("复制命令执行失败"))
-      }
-    } catch (error) {
-      document.body.removeChild(textArea)
-      reject(error)
-    }
-  })
+// 处理分享点击
+const handleShare = () => {
+  copy(shareLink.value)
 }
 </script>
 
 <template>
-  <div v-if="mounted" class="article-share">
+  <div :class="['article-share', className]" :style="customStyle">
     <button
-      :class="buttonClass"
-      :aria-label="copied ? copiedText : shareText"
-      :title="shareUrl"
+      :class="[
+        'article-share__button',
+        { 'article-share__button--copied': copied },
+      ]"
+      :aria-label="copied ? copiedText : text"
       aria-live="polite"
-      @click="copyToClipboard"
-      :disabled="!shareUrl">
-      <div class="article-share__content">
-        <span class="article-share__icon" :class="{ success: copied }">
-          <svg
-            v-if="!copied"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-            <polyline points="16,6 12,2 8,6" />
-            <line x1="12" y1="2" x2="12" y2="15" />
-          </svg>
+      @click="handleShare">
+      <div v-if="!copied" class="article-share__content">
+        <span class="article-share__icon" v-html="icon" />
+        <span class="article-share__text">{{ text }}</span>
+      </div>
 
-          <svg
-            v-else
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M20 6 9 17l-5-5" />
-          </svg>
-        </span>
-
-        <span class="article-share__text">
-          {{ copied ? copiedText : shareText }}
-        </span>
+      <div v-else class="article-share__content">
+        <span class="article-share__icon" v-html="copiedIcon" />
+        <span class="article-share__text">{{ copiedText }}</span>
       </div>
     </button>
   </div>
@@ -157,123 +104,84 @@ function fallbackCopyTextToClipboard(text: string): Promise<void> {
 
 <style scoped>
 .article-share {
-  padding: 14px 0;
-  user-select: none;
+  display: inline-block;
 }
 
 .article-share__button {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.4;
-  position: relative;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
+  justify-content: center;
   padding: 8px 16px;
-  width: 100%;
-  min-height: 40px;
-  color: var(--vp-c-text-1);
-  background-color: var(--vp-c-bg-soft);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
 }
 
-.article-share__button:hover:not(:disabled) {
-  transform: translateY(-1px);
-  border-color: var(--vp-c-brand);
-  background-color: var(--vp-c-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.article-share__button:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
 }
 
-.article-share__button:active:not(:disabled) {
-  transform: translateY(0);
+.article-share__button:focus {
+  box-shadow: 0 0 0 2px #3b82f6;
+  border-color: #3b82f6;
 }
 
-.article-share__button:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
+.article-share__button:active {
+  background-color: #f3f4f6;
 }
 
 .article-share__button--copied {
-  color: var(--vp-c-brand-1);
-  background-color: var(--vp-c-brand-soft);
-  border-color: var(--vp-c-brand);
-}
-
-.article-share__button--dark {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.article-share__button--dark:hover:not(:disabled) {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background-color: #dcfce7;
+  border-color: #16a34a;
+  color: #16a34a;
 }
 
 .article-share__content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .article-share__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
-}
-
-.article-share__icon.success {
-  animation: success-bounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  flex-shrink: 0;
 }
 
 .article-share__text {
-  font-weight: 500;
+  white-space: nowrap;
 }
 
-/* 动画效果 */
-@keyframes success-bounce {
-  0% {
-    transform: scale(0.8);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .article-share {
-    padding: 12px 0;
-  }
-
+/* 暗色主题适配 */
+@media (prefers-color-scheme: dark) {
   .article-share__button {
-    font-size: 13px;
-    padding: 6px 12px;
-    min-height: 36px;
-  }
-}
-
-/* 无障碍支持 */
-.article-share__button:focus-visible {
-  outline: 2px solid var(--vp-c-brand);
-  outline-offset: 2px;
-}
-
-/* 减少动画偏好支持 */
-@media (prefers-reduced-motion: reduce) {
-  .article-share__button,
-  .article-share__icon {
-    transition: none;
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #f3f4f6;
   }
 
-  .article-share__icon.success {
-    animation: none;
+  .article-share__button:hover {
+    background-color: #111827;
+    border-color: #6b7280;
+  }
+
+  .article-share__button:active {
+    background-color: #0f172a;
+  }
+
+  .article-share__button--copied {
+    background-color: #14532d;
+    border-color: #22c55e;
+    color: #22c55e;
   }
 }
 </style>
