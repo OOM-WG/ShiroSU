@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue"
+import { ref, onMounted, computed } from "vue"
 
 const props = defineProps({
   shareText: {
@@ -25,20 +25,35 @@ const props = defineProps({
 })
 
 const copied = ref(false)
-const shareLink = ref("") // 初始为空字符串
+const isMounted = ref(false)
+const isClient = ref(false)
 
-// onMounted 确保只在客户端执行，避免 SSR 错误
 onMounted(() => {
-  if (typeof window !== "undefined") {
+  isMounted.value = true
+  isClient.value = typeof window !== "undefined"
+})
+
+const shareLink = computed(() => {
+  if (!isMounted.value || !isClient.value || typeof window === "undefined") {
+    return ""
+  }
+  try {
     const { origin, pathname, search, hash } = window.location
     const finalSearch = props.includeQuery ? search : ""
     const finalHash = props.includeHash ? hash : ""
-    shareLink.value = `${origin}${pathname}${finalSearch}${finalHash}`
+    return `${origin}${pathname}${finalSearch}${finalHash}`
+  } catch (error) {
+    console.error("Error getting location:", error)
+    return ""
   }
 })
 
-// 为旧浏览器提供的降级复制方法
 const fallbackCopyToClipboard = () => {
+  if (typeof document === "undefined") {
+    console.error("Document is not available")
+    return
+  }
+
   const textArea = document.createElement("textarea")
   textArea.value = shareLink.value
   textArea.style.position = "fixed"
@@ -55,19 +70,20 @@ const fallbackCopyToClipboard = () => {
   document.body.removeChild(textArea)
 }
 
-// 复制功能
 async function copyToClipboard() {
-  if (!shareLink.value || copied.value) return
-  
+  if (!shareLink.value || copied.value || !isClient.value) return
+
   try {
-    // 优先使用现代 Clipboard API
-    await navigator.clipboard.writeText(shareLink.value)
+    if (navigator?.clipboard?.writeText) {
+      await navigator.clipboard.writeText(shareLink.value)
+    } else {
+      fallbackCopyToClipboard()
+    }
   } catch (err) {
     console.error("Failed to copy using navigator.clipboard: ", err)
-    // 失败时调用降级方案
     fallbackCopyToClipboard()
   }
-  
+
   copied.value = true
   setTimeout(() => {
     copied.value = false
@@ -76,7 +92,7 @@ async function copyToClipboard() {
 </script>
 
 <template>
-  <div class="article-share">
+  <div v-if="isMounted && isClient" class="article-share">
     <Transition name="fade" mode="out-in" appear>
       <button
         :key="copied ? 'copied' : 'share'"
