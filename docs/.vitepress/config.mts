@@ -29,7 +29,7 @@ export default defineConfig({
     title: "SakitinSU",
     description: "",
 
-    base: "/",
+    // base: "/",
     lastUpdated: true,
     ignoreDeadLinks: true,
 
