@@ -1,138 +1,115 @@
 <script setup lang="ts">
-import { ref, onMounted, Transition } from "vue"
+import { ref, onMounted, watch } from "vue"
+import { useRoute, withBase } from "vitepress"
 
 const props = defineProps({
-  shareText: {
-    type: String,
-    default: "分享链接",
-  },
-  copiedText: {
-    type: String,
-    default: "已复制!",
-  },
-  includeQuery: {
-    type: Boolean,
-    default: false,
-  },
-  includeHash: {
-    type: Boolean,
-    default: false,
-  },
-  copiedTimeout: {
-    type: Number,
-    default: 2000,
-  },
+  shareText: { type: String, default: "分享链接" },
+  copiedText: { type: String, default: "已复制!" },
+  includeQuery: { type: Boolean, default: false },
+  includeHash: { type: Boolean, default: false },
+  copiedTimeout: { type: Number, default: 2000 },
 })
 
 const copied = ref(false)
-const isClient = ref(false)
 const shareLink = ref("")
+const route = useRoute()
 
-onMounted(() => {
-  isClient.value = true
-  try {
-    const { origin, pathname, search, hash } = window.location
-    const finalSearch = props.includeQuery ? search : ""
-    const finalHash = props.includeHash ? hash : ""
-    shareLink.value = `${origin}${pathname}${finalSearch}${finalHash}`
-  } catch (error) {
-    console.error("Error getting location:", error)
-    shareLink.value = ""
+function updateShareLink() {
+  if (typeof window === "undefined") return
+  let url = window.location.origin + withBase(route.path)
+  if (
+    props.includeQuery &&
+    route.query &&
+    Object.keys(route.query).length > 0
+  ) {
+    url +=
+      "?" +
+      Object.entries(route.query)
+        .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+        .join("&")
   }
-})
-
-const fallbackCopyToClipboard = () => {
-  if (typeof document === "undefined") {
-    console.error("Document is not available")
-    return
-  }
-
-  const textArea = document.createElement("textarea")
-  textArea.value = shareLink.value
-  textArea.style.position = "fixed"
-  textArea.style.left = "-999999px"
-  textArea.style.top = "-999999px"
-  document.body.appendChild(textArea)
-  textArea.focus()
-  textArea.select()
-  try {
-    document.execCommand("copy")
-  } catch (err) {
-    console.error("Fallback copy failed: ", err)
-  }
-  document.body.removeChild(textArea)
+  if (props.includeHash && route.hash) url += route.hash
+  shareLink.value = url
 }
 
-async function copyToClipboard() {
-  if (!shareLink.value || copied.value || !isClient.value) return
+onMounted(updateShareLink)
+watch(route, updateShareLink)
 
+async function copyToClipboard() {
+  if (!shareLink.value || copied.value) return
   try {
     if (navigator?.clipboard?.writeText) {
       await navigator.clipboard.writeText(shareLink.value)
     } else {
-      fallbackCopyToClipboard()
+      const ta = document.createElement("textarea")
+      ta.value = shareLink.value
+      ta.style.position = "fixed"
+      ta.style.left = ta.style.top = "-999999px"
+      document.body.appendChild(ta)
+      ta.focus()
+      ta.select()
+      document.execCommand("copy")
+      document.body.removeChild(ta)
     }
+    copied.value = true
+    setTimeout(() => (copied.value = false), props.copiedTimeout)
   } catch (err) {
-    console.error("Failed to copy using navigator.clipboard: ", err)
-    fallbackCopyToClipboard()
+    console.error("复制失败", err)
   }
-
-  copied.value = true
-  setTimeout(() => {
-    copied.value = false
-  }, props.copiedTimeout)
 }
 </script>
 
 <template>
-  <div v-if="isClient" class="article-share">
-    <Transition name="fade" mode="out-in" appear>
-      <button
-        :key="copied ? 'copied' : 'share'"
-        :class="['article-share__button', { copied }]"
-        :aria-label="copied ? props.copiedText : props.shareText"
-        aria-live="polite"
-        @click="copyToClipboard"
-        :disabled="!shareLink">
-        <div v-if="!copied" class="content-wrapper">
-          <span class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-              <polyline points="16 6 12 2 8 6"></polyline>
-              <line x1="12" y1="2" x2="12" y2="15"></line>
-            </svg>
-          </span>
-          {{ props.shareText }}
-        </div>
-        <div v-else class="content-wrapper">
-          <span class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M20 6 9 17l-5-5"></path>
-            </svg>
-          </span>
-          {{ props.copiedText }}
-        </div>
-      </button>
-    </Transition>
-  </div>
+  <ClientOnly>
+    <div class="article-share">
+      <Transition name="fade" mode="out-in" appear>
+        <button
+          :key="copied ? 'copied' : 'share'"
+          :class="['article-share__button', { copied }]"
+          :aria-label="copied ? props.copiedText : props.shareText"
+          aria-live="polite"
+          @click="copyToClipboard"
+          :disabled="!shareLink">
+          <div v-if="!copied" class="content-wrapper">
+            <span class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                <polyline points="16 6 12 2 8 6"></polyline>
+                <line x1="12" y1="2" x2="12" y2="15"></line>
+              </svg>
+            </span>
+            {{ props.shareText }}
+          </div>
+          <div v-else class="content-wrapper">
+            <span class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+            {{ props.copiedText }}
+          </div>
+        </button>
+      </Transition>
+    </div>
+  </ClientOnly>
 </template>
 
 <style scoped>
