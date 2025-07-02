@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue"
+import { ref, onMounted, Transition } from "vue"
 
 const props = defineProps({
   shareText: {
@@ -26,23 +26,18 @@ const props = defineProps({
 
 const copied = ref(false)
 const isClient = ref(false)
+const shareLink = ref("")
 
 onMounted(() => {
   isClient.value = true
-})
-
-const shareLink = computed(() => {
-  if (!isClient.value) {
-    return ""
-  }
   try {
     const { origin, pathname, search, hash } = window.location
     const finalSearch = props.includeQuery ? search : ""
     const finalHash = props.includeHash ? hash : ""
-    return `${origin}${pathname}${finalSearch}${finalHash}`
+    shareLink.value = `${origin}${pathname}${finalSearch}${finalHash}`
   } catch (error) {
     console.error("Error getting location:", error)
-    return ""
+    shareLink.value = ""
   }
 })
 
