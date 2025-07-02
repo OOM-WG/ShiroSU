@@ -25,8 +25,9 @@ const props = defineProps({
 })
 
 const copied = ref(false)
-const shareLink = ref("")
+const shareLink = ref("") // 初始为空字符串
 
+// onMounted 确保只在客户端执行，避免 SSR 错误
 onMounted(() => {
   if (typeof window !== "undefined") {
     const { origin, pathname, search, hash } = window.location
@@ -36,6 +37,7 @@ onMounted(() => {
   }
 })
 
+// 为旧浏览器提供的降级复制方法
 const fallbackCopyToClipboard = () => {
   const textArea = document.createElement("textarea")
   textArea.value = shareLink.value
@@ -53,14 +55,19 @@ const fallbackCopyToClipboard = () => {
   document.body.removeChild(textArea)
 }
 
+// 复制功能
 async function copyToClipboard() {
   if (!shareLink.value || copied.value) return
+  
   try {
+    // 优先使用现代 Clipboard API
     await navigator.clipboard.writeText(shareLink.value)
   } catch (err) {
     console.error("Failed to copy using navigator.clipboard: ", err)
+    // 失败时调用降级方案
     fallbackCopyToClipboard()
   }
+  
   copied.value = true
   setTimeout(() => {
     copied.value = false
@@ -72,7 +79,6 @@ async function copyToClipboard() {
   <div class="article-share">
     <Transition name="fade" mode="out-in" appear>
       <button
-        v-if="shareLink"
         :key="copied ? 'copied' : 'share'"
         :class="['article-share__button', { copied }]"
         :aria-label="copied ? props.copiedText : props.shareText"
