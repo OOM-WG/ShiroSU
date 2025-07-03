@@ -4,7 +4,7 @@ import type { DefaultTheme } from "vitepress";
 export const sidebar: DefaultTheme.Config["sidebar"] = {
     "/": [
         {
-            text: "快速了解", 
+            text: "快速了解",
             items: [
                 { text: "<iconify-icon icon=\"f7:question-circle-fill\" style=\"margin-right:0.25em;color:#58B2DC;\"></iconify-icon>什么是SakitinSU", link: "/guide/what-is-sakitinsu" },
                 { text: "<iconify-icon icon=\"f7:arrow-2-circlepath-circle-fill\" style=\"margin-right:0.25em;color:#FF6B6B;\"></iconify-icon>更新日志", link: "/changeLog/changelog" },
@@ -22,6 +22,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
             items: [
                 { text: "<iconify-icon icon=\"streamline-flex:module-puzzle-2-solid\" style=\"margin-right:0.25em;color:#6CB4EE;\"></iconify-icon>模块开发", link: "/development/module-development" },
                 { text: "<iconify-icon icon=\"fa6-solid:globe\" style=\"margin-right:0.25em;color:#45B8AC;\"></iconify-icon>模块WebUI", link: "/development/webui-module" },
+                { text: "<iconify-icon icon=\"f7:chevron-left-slash-chevron-right\" style=\"margin-right:0.25em;color:#45B8AC;\"></iconify-icon>代码示例", link: "/development/code-demo" },
             ],
         },
         {
