@@ -18,6 +18,7 @@ import {
     PagePropertiesMarkdownSection,
 } from "@nolebase/vitepress-plugin-page-properties/vite";
 import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
@@ -30,7 +31,8 @@ import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
 // const teekConfig = defineTeekConfig({});
 
 // VitePress 配置
-export default defineConfig({
+export default withMermaid({
+    // export default defineConfig({
     // extends: teekConfig,
     title: "SakitinSU",
     description: "",
@@ -51,6 +53,14 @@ export default defineConfig({
     lang: "zh-CN",
     markdown: markdown,
     themeConfig,
+
+    mermaid: {
+        // 配置参考： https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults
+    },
+    // 可选地使用MermaidPluginConfig为插件本身设置额外的配置
+    mermaidPlugin: {
+        class: "mermaid my-class", // 为父容器设置额外的CSS类
+    },
 
     transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context);
