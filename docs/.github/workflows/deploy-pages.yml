@@ -61,7 +61,7 @@ jobs:
       # 6、打包
       - name: Build
         run: |
-          pnpm build
+          pnpm build:prod
           cp -r dist/. output/
           mkdir dist_html
           find dist -type f -name '*.html' | while read -r src; do
