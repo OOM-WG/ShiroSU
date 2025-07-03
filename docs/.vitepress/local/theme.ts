@@ -8,7 +8,7 @@ export const themeConfig: DefaultTheme.Config = {
     nav,
     sidebar,
 
-    logo: "/logo-round.webp",
+    logo: "https://sakitinsu.resource.sawahara.host/logo-round.webp",
     siteTitle: "SSU",
     outline: {
         level: "deep", // 右侧大纲标题层级
