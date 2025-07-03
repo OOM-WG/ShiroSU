@@ -9,9 +9,10 @@
 		"dev": "vitepress dev --port 25527 --host",
 		"termux:dev": "vitepress dev --port 25527",
 		"build": "vitepress build",
+		"minify": "node minify.js",
+		"build:prod": "pnpm build && pnpm minify",
 		"preview": "vitepress preview",
-		"clean": "rimraf .vitepress/.temp .vitepress/cache node_modules/.cache dist .temp",
-		"deps:install": "pnpm install"
+		"clean": "rimraf .vitepress/.temp .vitepress/cache node_modules/.cache dist .temp"
 	},
 	"dependencies": {
 		"@mdit/plugin-container": "^0.22.1",
@@ -29,6 +30,7 @@
 		"dynamics.js": "^1.1.5",
 		"element-plus": "^2.10.2",
 		"gsap": "^3.13.0",
+		"html-minifier-terser": "^7.2.0",
 		"vitepress": "2.0.0-alpha.7",
 		"vitepress-plugin-rss": "^0.3.1",
 		"vue-amazing-ui": "^2.4.14"
@@ -57,6 +59,7 @@
 		"debug": "^4.4.1",
 		"depcheck": "^1.4.7",
 		"fast-glob": "^3.3.3",
+		"glob": "^11.0.3",
 		"gray-matter": "^4.0.3",
 		"js-yaml": "^4.1.0",
 		"markdown-it": "^14.1.0",
