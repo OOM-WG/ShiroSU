@@ -32,5 +32,3 @@ outline: deep
 ## 图标的由来
 
 图标由 @YumeYuka 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制。
-
-<ArticleShare />
