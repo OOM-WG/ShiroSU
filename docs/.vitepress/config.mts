@@ -18,6 +18,7 @@ import {
     PagePropertiesMarkdownSection,
 } from "@nolebase/vitepress-plugin-page-properties/vite";
 import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
+import legacy from "@vitejs/plugin-legacy";
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
@@ -114,6 +115,9 @@ export default defineConfig({
         plugins: [
             // RssPlugin(RSS),
             ThumbnailHashImages(),
+            legacy({
+                targets: ["defaults", "not IE 11"],
+            }),
             GitChangelog({
                 repoURL: () => "https://github.com/OOM-WG/SSU_Docs",
                 mapAuthors: [
