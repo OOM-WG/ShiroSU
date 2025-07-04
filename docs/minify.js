@@ -7,7 +7,6 @@ import path from "path";
 const distDir = "dist";
 const minifyOptions = {
   collapseWhitespace: true,
-  removeComments: true,
 };
 
 async function run() {
