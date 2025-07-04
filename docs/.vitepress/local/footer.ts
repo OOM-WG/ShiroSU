@@ -6,19 +6,19 @@ const footer: CustomConfig["footer"] = {
     qrcodeLink: "https://qm.qq.com/q/YoA4Fa4mY2",
     navigation: [
         {
-            title: "关于",
+            title: "关于 SSU",
             items: [
                 {
-                    text: "团队信息",
-                    link: "/about/author",
+                    text: "团队",
+                    link: "/ssu/team",
                 },
                 {
-                    text: "项目起源",
-                    link: "/about/origin",
+                    text: "起源",
+                    link: "/ssu/origin",
                 },
                 {
-                    text: "依赖与致谢",
-                    link: "/about/document",
+                    text: "致谢",
+                    link: "/ssu/3q",
                 },
             ],
         },
@@ -26,7 +26,7 @@ const footer: CustomConfig["footer"] = {
             title: "政策",
             items: [
                 {
-                    text: "分发协议",
+                    text: "许可证",
                     link: "/more/license",
                 },
                 {
