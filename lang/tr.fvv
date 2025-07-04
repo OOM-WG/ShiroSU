@@ -1,0 +1,172 @@
+Global = {
+    NA = "Uygulanamaz"
+    SUNA = "SU uygulaması alınamadı"
+}
+
+UI = {
+    Poweroff = "Kapat"
+    Reboot = "Yeniden Başlat"
+    HotReboot = "Hızlı Yeniden Başlat"
+    Reboot2 = "%s modunda yeniden başlat"
+
+    ShowSysApp = "Sistem uygulamalarını göster"
+    HideSysApp = "Sistem uygulamalarını gizle"
+
+    DisableAll = "Tümünü devre dışı bırak"
+    EnableAll = "Tümünü etkinleştir"
+    NoCanUp = "Güncellenecek modül yok"
+    UpdateAll = "Tümünü güncelle"
+    ExtModErr = "Modül oluşturulamadı"
+    ExtMod = "Komut seti uzantı modülünü yükle"
+
+    Grant = "Yetki Ver"
+    Hide = "Gizle"
+
+    Home = "Anasayfa"
+    SUPower = "SU Yetkisi"
+    Modules = "Modüller"
+    Settings = "Ayarlar"
+    About = "Hakkında"
+}
+
+App = {
+    AuthTtl = "Başlatma doğrulaması"
+    AuthCnt = "Başlatma doğrulaması etkinleştirildi, lütfen kullanmadan önce doğrulama yapın."
+}
+
+Home = {
+    PreDl = "İndirme başlatıldı"
+    DlOk = "İndirme tamamlandı"
+    DlErr = "İndirme başarısız: %s"
+
+    Tip = "İpucu"
+    TipCnt = "SSU, gelecekteki kullanıcı deneyimini geliştirmek için kullanım verilerinizi toplamak üzere Baidu Mobil İstatistikleri ve Alibaba Cloud EMAS kullanır.\nŞu anda %s dalını kullanıyorsunuz%s"
+    TipCntPre = "\nTüm içerik sadece referans amaçlıdır, lütfen resmi güncellemeleri takip edin."
+
+    InstTtl = "%s sürümünü yükle"
+    InstCnt = "Kurulum paketi indirildi, yüklemek için tıklayın."
+    InstPmErr = "İzin alınamadı"
+
+    UpdateTtl = "%s sürümünü güncelle"
+    UpdateCnt = "- Paket boyutu: %s\n%s"
+
+    NewVerTtl = "Yeni %s sürümü mevcut!"
+    NewVerCnt = "Yeni sürüm %s kullanıma hazır, güncellemek için tıklayın."
+
+    SUStatus = "SU Durumu"
+    SUSource = "Kaynak"
+    SUVersion = "Sürüm"
+    SUCLI = "CLI "
+
+    ModStatus = "Modül Genel Bakışı"
+    Calc = "Hesaplanıyor"
+    ModSum = "Toplam"
+    ModDisable = "Devre dışı"
+    ModCanUp = "Güncellenebilir"
+    ModUpdate = "Güncellendi"
+    ModDelete = "Kaldırma bekleniyor"
+
+    DevStatus = "Cihaz Bilgileri"
+    AndroidVer = "Android sürümü"
+    OSArch = "Sistem mimarisi"
+    OSVersion = "Çekirdek sürümü"
+    SELinuxEnf = "Zorlayıcı mod"
+    SELinuxPer = "İzin verici mod"
+    SELinuxDis = "Devre dışı"
+
+    InstKS = "SakitinSU'yu Yükle"
+    InstKSErr = "Henüz uygulanmadı, lütfen resmi güncellemeleri takip edin."
+
+    JoinUsTtl = "Bize Katılın"
+    JoinUsCnt = "Yeni bir proje olarak SakitinSU'nun hala birçok eksiği var. Herhangi bir sorunuz varsa, lütfen geliştiricilere geri bildirimde bulunun. Ayrıca diğer kullanıcılarla sohbet edebilir ve tartışabilirsiniz.\nÖncelikle QQ grubumuza katılmanızı öneririz. Lütfen aktif olmayan üyelerin sohbetten periyodik olarak çıkarılacağını unutmayın."
+}
+
+SUPower = {
+    SearchApp = "Uygulama ara"
+}
+
+Modules = {
+    DlTtl = "İndiriliyor: %s"
+    DlCnt = "Modül, indirme tamamlandıktan sonra kurulacaktır, lütfen uygulamadan çıkmayın."
+    DlQueryErr = "İndirme sorgulanamadı"
+    DlFetchErr = "İndirme alınamadı"
+    DlOk = "İndirme başarılı"
+    CopyErr = "Kopyalanamadı"
+    DlErr = "İndirme başarısız"
+
+    InstMod = "Modül Yükle"
+    InstModErr = "Modül seçilmedi"
+    NoMod = "Yüklü modül yok"
+    SearchMod = "Modül ara"
+    UnstarMod = "Favorilerden kaldırıldı"
+    StarMod = "Modül favorilere eklendi"
+
+    ModErrTtl = "Bu mesaj neden görüntüleniyor?"
+    ModErrCnt = "Bu mesaj genellikle modül bilgisi bozuksa veya belirtimlere uymuyorsa görüntülenir.\nModül bilgisi bozulmasının belirli bir belirtisi, içinde \\"%s\\" kelimesinin bulunmasıdır, bu genellikle yazarın bir hatasından kaynaklanır. Modülü yeniden yüklemek genellikle bu sorunu çözer.\nModül bilgisinin belirtimlere uymaması genellikle yazarın büyük/küçük harf kullanımı veya yanlış modül kimliği kullanmasından kaynaklanır."
+    ModErr = "Modül hatası veya düşük kalite, yeniden yükleyin veya yazarla iletişime geçin."
+    CanUp = "Güncellenebilir"
+    Updated = "Güncellendi"
+    Stared = "Favorilere eklendi"
+
+    EnableErr = "Etkinleştirilemedi"
+    DisableErr = "Devre dışı bırakılamadı"
+
+    Version = "Sürüm"
+    Author = "Yazar"
+    Action = "Eylem"
+    WebUI = "Arayüz"
+
+    UpTtl = "%s(%s) sürümünü güncelle"
+    UpCntGet = "Değişiklik günlüğü alınıyor"
+    UpCntNull = "Alınamıyor"
+    UpCntNoOk = "Alınamadı"
+    UpCntEmpty = "Değişiklik günlüğü yok"
+    UpCntErr = "Alınırken hata oluştu"
+    UpDlNull = "İndirilemiyor"
+    Update = "Güncelle"
+
+    Restore = "Geri Yükle"
+    Delete = "Sil"
+    RestoreErr = "Geri yüklenemedi"
+    DeleteErr = "Silinemedi"
+}
+
+Settings = {
+    Custom = "Özelleştirme"
+    HDRMode = "HDR modu"
+    HomeTip = "Anasayfa ipuçları"
+    AppTheme = "Uygulama teması"
+
+    Common = "Genel"
+    UpChannel = "Güncelleme kanalı"
+    UpChannelTip = "Uygulamayı yeniden başlattıktan sonra etkili olur."
+    Auth = "Başlatma doğrulaması"
+
+    Module = "Modüller"
+    WebUIDebug = "WebUI hata ayıklama"
+}
+
+About = {
+    Version = "Sürüm: %s"
+    Copyright = "©️ 2023-günümüz OOM. WG. Tüm hakları saklıdır."
+    OOM_WG = "OOM. WG."
+    Docs = "SakitinSU Belgeleri"
+    DepsList = "Bağımlılık Listesi"
+    DepsList3Q = "Aşağıdaki projelere teşekkürler"
+}
+
+ShellUI = {
+    InstMod = "Modül Yükle"
+    Error = "Hata sayfası"
+    InstModOk = "Kurulum başarılı"
+    InstModErr = "Kurulum başarısız"
+    InstModIng = "Kuruluyor"
+    ActionOk = "Eylem başarılı"
+    ActionErr = "Eylem başarısız"
+    ActionIng = "Yürütülüyor"
+
+    Saved2 = "Kaydedildi: %s"
+
+    Reboot = "Cihazı yeniden başlat"
+    Back = "Sayfadan çık"
+} 
