@@ -55,10 +55,7 @@ function dismiss() {
       <span class="vt-text-primary"> SakitinSU </span>
       <span class="vt-place"> 负面声音</span>
       <span class="vt-date"> · 详见</span>
-      <a
-        target="_blank"
-        class="vt-primary-action"
-        href="/about/statement">
+      <a target="_blank" class="vt-primary-action" href="/ssu/defense">
         解释与说明
       </a>
     </p>
