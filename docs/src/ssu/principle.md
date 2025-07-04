@@ -4,6 +4,7 @@ title: SakitinSU 内核提权部分讲解
 ---
 
 # SakitinSU 内核提权部分讲解
+
 ## 1. 概述
 
 SakitinSU 内核部分 是一个针对 Android 内核的提权与 Selinux 处理的部分：
@@ -38,6 +39,7 @@ flowchart TD
 ```
 
 </div>
+
 ---
 
 ### 2.2 核心提权逻辑
