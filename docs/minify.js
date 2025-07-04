@@ -10,6 +10,10 @@ const minifyOptions = {
   collapseWhitespace: true,
   minifyCSS: true,
   removeAttributeQuotes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
 };
 
 async function run() {
