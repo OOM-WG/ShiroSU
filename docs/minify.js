@@ -6,7 +6,9 @@ import path from "path";
 
 const distDir = "dist";
 const minifyOptions = {
+  collapseInlineTagWhitespace: true,
   collapseWhitespace: true,
+  removeAttributeQuotes: true,
 };
 
 async function run() {
