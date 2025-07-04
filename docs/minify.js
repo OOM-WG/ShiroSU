@@ -8,6 +8,7 @@ const distDir = "dist";
 const minifyOptions = {
   collapseInlineTagWhitespace: true,
   collapseWhitespace: true,
+  minifyCSS: true,
   removeAttributeQuotes: true,
 };
 
