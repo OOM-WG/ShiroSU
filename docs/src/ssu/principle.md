@@ -68,8 +68,9 @@ current->seccomp.mode = 0;
 current->seccomp.filter = NULL;
 
 // 4. 设置 root 组
-if (cred->group_info)
+if (cred->group_info) {
     // 设置组为 root ...
+}
 ```
 
 **详细说明：**
@@ -99,7 +100,7 @@ if (current->real_cred->uid.val == /* 白名单 UID */) {
 
 - **SELinux 机制**：`SELinux` 通过访问控制决策函数（如 `avc_denied`）限制进程访问资源。
 - **kretprobe hook**：模块通过 kretprobe hook `avc_denied`，在该函数返回时劫持返回值。
-- **UID 检查**：仅对特定 `UID`（如 `SakitinSU 管理器` 以及由用户设置的白名单 UID）或 `root` 用户生效。
+- **UID 检查**：仅对特定 `UID`（如 `SakitinSU 管理器` 以及由用户设置的白名单 UID）或 `root` 生效。
 - **强制放行**：将返回值设为 0，表示访问被允许，从而绕过 SELinux 的安全策略。
 
 ---
