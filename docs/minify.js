@@ -6,10 +6,14 @@ import path from "path";
 
 const distDir = "dist";
 const minifyOptions = {
+  collapseInlineTagWhitespace: true,
   collapseWhitespace: true,
+  removeAttributeQuotes: true,
   removeComments: true,
-  minifyJS: true,
-  minifyCSS: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
 };
 
 async function run() {
