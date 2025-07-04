@@ -32,11 +32,3 @@ outline: deep
 ## 图标的由来
 
 图标由 @YumeYuka 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制。
-
-```mermaid
-flowchart TD
-     A[模块加载] --> B[注册 execve kprobe]
-     B --> C[注册 cap_capable kretprobe]
-     C --> D[注册 avc_denied kretprobe]
-     D --> E[监控/劫持敏感操作]
-```

@@ -3,7 +3,7 @@ layout: doc
 title: SakitinSU 内核提权部分讲解
 ---
 
-# SakitinSU 内核提权部分讲解  
+# SakitinSU 内核提权部分讲解
 ## 1. 概述
 
 SakitinSU 内核部分 是一个针对 Android 内核的提权与 Selinux 处理的部分：
@@ -27,6 +27,8 @@ SakitinSU 内核部分 是一个针对 Android 内核的提权与 Selinux 处理
 
 #### 探针注册流程
 
+<div align="center">
+
 ```mermaid
 flowchart TD
     A[模块加载] --> B[注册 execve kprobe]
@@ -35,6 +37,7 @@ flowchart TD
     D --> E[监控/劫持敏感操作]
 ```
 
+</div>
 ---
 
 ### 2.2 核心提权逻辑
