@@ -44,7 +44,7 @@ export const nav: DefaultTheme.Config["nav"] = [
             },
             {
                 text: '<iconify-icon icon="fa6-solid:language" style="margin-right:0.25em;color:#A084DC;"></iconify-icon>DeepL',
-                link: "https://www.deepl.com/ja/translator,
+                link: "https://www.deepl.com/ja/translator/",
             },
         ],
     },
