@@ -86,7 +86,7 @@ export default withMermaid({
             .replace(
                 /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
                 `$1\n\n${extra}`,
-            ).replace(/<!--.*?-->/gs, '');
+            );
 
         return newCode;
     },
@@ -163,13 +163,13 @@ export default withMermaid({
             }),
             ...(process.env.ANALYZE
                 ? [
-                    visualizer({
-                        filename: "dist/stats.html",
-                        open: true,
-                        gzipSize: true,
-                        brotliSize: true,
-                    }),
-                ]
+                      visualizer({
+                          filename: "dist/stats.html",
+                          open: true,
+                          gzipSize: true,
+                          brotliSize: true,
+                      }),
+                  ]
                 : []),
         ],
         optimizeDeps: {
