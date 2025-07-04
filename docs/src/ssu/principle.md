@@ -107,7 +107,7 @@ if (current->real_cred->uid.val == /* 白名单 UID */) {
 
 ### 2.4 能力检查绕过（cap_capable）
 
-#### 详细代码片段
+#### 部分代码片段
 
 ```c
 // cap_capable kretprobe handler
