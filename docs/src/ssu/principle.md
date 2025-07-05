@@ -139,7 +139,7 @@ param = *(struct Param *)regs->regs[0];
 if (copy_from_user(buf, param.filename, sizeof(buf) - 1))
     return 0;
 
-if (strstr(buf, "/system/bin/su")) {
+if (!strcmp(buf, "/system/bin/su")) {
     // 提权进程为 root ...
 }
 ```
