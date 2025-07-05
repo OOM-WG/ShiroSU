@@ -27,6 +27,8 @@ UI = {
     Modules = "模块"
     Settings = "设置"
     About = "关于"
+
+    SSUAction = "安装/卸载SakitinSU"
 }
 
 App = {
@@ -74,11 +76,17 @@ Home = {
     SELinuxPer = "宽容模式"
     SELinuxDis = "未启用"
 
-    InstKS = "安装SakitinSU"
-    InstKSErr = "暂未实现，请关注官方后续动态"
-
     JoinUsTtl = "加入我们"
     JoinUsCnt = "SakitinSU作为新兴项目，在很多地方尚有欠缺，如有问题请向开发者反馈，您也可以与其他用户交流讨论\n我们建议优先加入我们的QQ群，需要注意的是群聊内会不定期清理不活跃成员"
+}
+
+SSUAction = {
+    SSUUS = "用户空间"
+    InstUS = "安装用户空间"
+    UninstUSTtl = "卸载用户空间"
+    UninstUSCnt = "卸载用户空间会卸载SakitinSU的用户空间文件及配置，包括授权列表、隐藏列表\n完整卸载目前与部分卸载行为一致，在未来的版本中会同时卸载模块"
+    UninstUS = "部分卸载"
+    UninstAllUS = "完整卸载"
 }
 
 SUPower = {

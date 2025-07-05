@@ -67,9 +67,6 @@ Home = {
     SELinuxPer = "寬容模式"
     SELinuxDis = "未啟用"
 
-    InstKS = "安裝SakitinSU"
-    InstKSErr = "暫未實現，請關注官方後續動態"
-
     JoinUsTtl = "加入我們"
     JoinUsCnt = "SakitinSU作為新興專案，在很多地方尚有欠缺，如有問題請向開發者反饋，您也可以與其他使用者交流討論\n我們建議優先加入我們的QQ群，需要注意的是群聊內會不定期清理不活躍成員"
 }
