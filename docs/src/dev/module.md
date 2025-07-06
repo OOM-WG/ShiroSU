@@ -121,7 +121,7 @@ SakitinSU 使用 `/data/adb/ssu/._settings` 作为内核设置目录，通常包
 - `._bypass_list`: 绕过 SELinux 限制的列表
 - `._hide_list`: 需要隐藏 root 使用痕迹的列表
 
-<mark>以上文件均采用 `二进制 UID` + `\0` + `软件包名` 格式存储，多个值之间以 `\n` 间隔</mark>
+<mark>以上文件均采用 `二进制 UID`(32 位整数) + `\0` + `软件包名` 格式存储，多个值之间以 `\n` 间隔</mark>
 
 > [!IMPORTANT]
 > 以上文件均为只读，任何模块/软件都不应该修改 SakitinSU 的内核配置文件，**仅 SakitinSU 管理器**有修改权限！
