@@ -11,9 +11,9 @@ outline: deep
 
 ::: tip
 
-如果将 SakitinSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，SakitinSU 不会干涉其他 root 实现的任何行为
+如果将 SakitinSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，SakitinSU **不会干涉**其他 root 实现的任何行为
 
-但模块的 WebUI 需要考虑到 SakitinSU 的 [模块 WebUI](./webui)
+但模块的 **WebUI 需要考虑**到 SakitinSU 的 [模块 WebUI](./webui)
 
 :::
 
