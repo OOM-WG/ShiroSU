@@ -168,6 +168,8 @@ About = {
 
 ShellUI = {
     InstMod = "安装模块"
+    InstSSU = "安装SakitinSU"
+    UninstSSU = "卸载SakitinSU"
     Error = "错误页面"
     InstOk = "安装成功"
     InstErr = "安装失败"
