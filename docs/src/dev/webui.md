@@ -7,7 +7,7 @@ outline: deep
 
 # **WebUI 模块开发**
 
-SakitinSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [KerenlSU WebUI 模块 Web 界面](https://kernelsu.org/zh_CN/guide/module-webui.html)。
+SakitinSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [KerenlSU 模块 WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html)。
 
 除此之外，SakitinSU 的 WebUI JavaScript 接口的 `moduleInfo` 函数额外提供一个`updatable`值，此值会受到用户网络环境影响。
 

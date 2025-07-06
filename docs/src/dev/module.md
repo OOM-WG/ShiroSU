@@ -7,16 +7,59 @@ outline: deep
 
 # 模块开发指南
 
-SakitlinSU 提供了一个与 `Magisk` 和 `KernelSU` 类似的模块机制。
-在 SakitlinSU 中，即为 `SakitlinSU Systemless`，简称 `SSUS`。[^1]
+对于大部分内容，SakitinSU 与 **`Magisk` 和 `KernelSU`** 基本保持一致，此处仅介绍不同之处。
 
-SakitlinSU 模块的加载和运行行机制与 `Magisk` 和 `KernelSU` 几乎完全相同， 这意味着你只要熟悉 `Magisk` 模块的开发，就可以轻松上手。
-只需要了解 SakitlinSU 的一些 [[与 Magisk 模块的差异]] 即可。
+::: tip
 
-## 与 Magisk 模块的差异
+如果将 SakitinSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，SakitinSU 不会干涉其他 root 实现的任何行为
 
-SakitlinSU 中引入了 ASCII 颜色转义[^2]，这意味着你可以在 `modeule.prop` 或 `customize.sh` 中编写 `ASCII` 控制码来改变文本颜色。
-例如，你可以在 `module.prop` 中使用以下代码来设置模块
+但模块的 WebUI 需要考虑到 SakitinSU 的 [模块 WebUI](./webui)
+
+:::
+
+::: important
+
+请确保模块内的所有文本文件均使用 `UNIX (LF)` 换行类型，而不是 `Windows (CR + LF)` 或 `Macintosh (CR)`！
+
+:::
+
+## Systemless [^1]
+
+SakitinSU 的 Systemless 是一种类似于 Magisk 的挂载机制，其接口完全兼容 Magisk，例如 `.replace` 用法。但 SakitinSU 的挂载机制兼容性更强。是基于动态识别分区实现的。也就是说，模块可以直接通过 Systemless 挂载例如 `odm` 以及其他 root 实现无法挂载的分区，无需为此而付出额外的心血。
+
+并且，为了保证更强的安全性，SakitinSU 的 Systemless 会无视模块挂载的 **文件/目录的 SELinux 上下文**、**目录的权限**以及**文件/目录的用户/组**，如果文件挂载到了不存在的目录，那么其 **SELinux 上下文**、**权限**、**用户/组**均会继承自父目录。通常来说，这些行为不会影响模块的运行，反而有助于提高稳定性。
+
+## Shell
+
+SakitinSU 在此处与其他 root 实现有较大差异，SakitinSU 运行的 Shell 脚本默认**并不**在 `BusyBox` 中以 “独立模式” 运行。
+
+为了提升 Shell 脚本开发的便利性，SakitinSU 使用 [sush](https://github.com/shellgei/rusty_bash) (用 Rust 编写的 `Bash`) 运行 Shell 脚本，并且优先使用 [uutils](https://github.com/uutils/coreutils) (用 Rust 编写的 `coreutils`) 的命令集，以 Magisk 的 BusyBox 作为替补。也就是说，命令**优先从 uutils 获取**，没有的命令才会从 BusyBox 获取。
+
+由于并不在 BusyBox 中以 “独立模式” 运行，命令都是通过 `PATH` 环境变量注入的，请勿在模块的 Shell 脚本内硬编码修改 `PATH`！
+
+### 环境变量
+
+为了便于区分，SakitinSU 在模块运行时注入以下变量:
+
+- `SSU` (布尔值): 在 SakitinSU 环境下运行时，此值将为 `true`。但这并不能代表可以通过 `$SSU && # code ...` 来执行代码，应当始终使用 `[ "$SSU" = true ]` 或类似方法来检测 SakitinSU
+- `SSU_VER` (字符串): SakitinSU 的版本号 (不包括补丁号)
+- `SSU_VER_CODE` (整数值): SakitinSU 的纯数字版本号 (包括补丁号)
+
+### Recovery
+
+SakitinSU 不支持通过 Recovery 安装模块，并且在模块安装时 `META-INF/com/google/android/update-binary` 中的代码不会被执行。
+
+### su 调用
+
+SakitinSU 的 su 实现默认附带了一个仅能用于直接执行 Shell 命令的 `sudo`，可以直接通过 `sudo` 来执行例如 `sudo ls /`。
+
+`sudo` 仅作为一个简易的 `su -c` 替代品而存在，但是任何模块内都**不应该**通过 `sudo` 或 `su -c` 执行 Shell 命令！
+
+<mark>同样的，任何模块也**不应该**通过**硬编码**来获取命令，例如 `/data/adb/ssu/bin/busybox crond`，因为无论是在 BusyBox 的 “独立模式” 还是直接通过 `PATH` 注入命令，命令都已经可以直接调用，无需任何硬编码的手动获取行为。</mark>
+
+## ANSI 转义码 [^2]
+
+SakitinSU 允许在 `module.prop` 或 Shell 脚本中使用 `ANSI 转义码` 来丰富文本的显示，例如可在 `module.prop` 使用如下代码:
 
 ```properties {4,8}
 id=ssu_cmd_ext
@@ -29,106 +72,64 @@ description=Add coreutils, busybox, and bash to /system/bin.
 descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e[0m.
 ```
 
-在编写模块时不建议直接修改 `version` 和 `description` 中的原有字段，我们对此做了兼容性处理，
-你可以直接使用 `versionAnsi` 和 `descriptionAnsi` 来使用 ASCII 控制码。<mark>SakitlinSU 会优先解析这些字段。</mark>
+使用如上 `module.prop` 后，模块在 SakitinSU 管理器中显示时 `Auto-generated`、`coreutils, busybox, and bash` 以及 `/system/bin` 均会被加粗。
+
+在 `module.prop` 中，可使用 `nameAnsi`、`versionAnsi`、`authorAnsi` 以及 `descriptionAnsi` 来显示包含 ANSI 转义码的文本。
+
+虽然不包含 `Ansi` 后缀同样可以使用，但是为了确保兼容性，请这么做。
+
+<mark>SakitinSU 是通过顺序解析来读取 `module.prop` 中的内容的，所以请确保包含 `Ansi` 后缀的值是靠后的。</mark>
 
 ::: details 展开查看渲染效果
 ![module.prop 渲染效果](/assets/img/module_prop.jpg)
 :::
 
-## 模块Web界面
+## 模块 WebUI
 
-SakitlinSU 提供了一个模块 Web 界面，允许用户通过浏览器与模块进行交互。
-SakitlinSU 提供了一个模块 Web 界面，运行在Web界面与模块交互 详见 [模块 WebUI](./webui.md)。
+SakitinSU 与 `KernelSU` 同样允许模块使用 WebUI 提供功能，详见 [模块 WebUI](./webui)。
 
-## SakitinSU 模块
+## module.prop
 
-SakitlinSU 在刷入后会被放置在 `/data/adb/modules/` 目录下。且满足以下的目录结构
+SakitinSU 管理器有一个机制用来检测 `module.prop` 是否损坏或符合规范，如果损坏或不符合规范，SakitinSU 管理器会在该模块的上方显示一个标签。
 
-```txt
-/data/adb/modules
-├── .
-├── .
-|
-├── $MODID                  <-- 文件夹以模块的 ID 命名
-│   │
-│   │      *** 模块 ID ***
-│   │
-│   ├── module.prop         <-- 此文件存储模块的元数据（metadata）
-│   │
-│   │      *** 主要内容 ***
-│   │
-│   ├── system              <-- 如果 skip_mount 不存在，将挂载此文件夹
-│   │   ├── ...
-│   │   ├── ...
-│   │   └── ...
-│   │
-│   ├── zygisk              <-- 此文件夹包含模块的 Zygisk native 库
-│   │   ├── arm64-v8a.so
-│   │   ├── armeabi-v7a.so
-│   │   ├── x86.so
-│   │   ├── x86_64.so
-│   │   └── unloaded        <-- 如果存在，则 native 库不兼容
-│   │
-│   │      *** 状态标志 ***
-│   │
-│   ├── skip_mount          <-- 如果存在，Magisk 将不会挂载您的 system 文件夹
-│   ├── disable             <-- 如果存在，模块将被禁用
-│   ├── remove              <-- 如果存在，模块将在下次重新启动时删除
-│   │
-│   │      *** 可选文件 ***
-│   │
-│   ├── post-fs-data.sh     <-- 此脚本将在 post-fs-data 中执行
-│   ├── service.sh          <-- 此脚本将在 late_start 服务中执行
-|   ├── uninstall.sh        <-- 当 Magisk 删除您的模块时，将执行此脚本
-│   ├── system.prop         <-- resetprop 将此文件中的属性作为系统属性加载
-│   ├── sepolicy.rule       <-- 其他自定义 sepolicy 规则
-│   │
-│   │      *** 自动生成，请勿手动创建或修改 ***
-│   │
-│   ├── vendor              <-- $MODID/system/vendor 的符号链接
-│   ├── product             <-- $MODID/system/product 的符号链接
-│   ├── system_ext          <-- $MODID/system/system_ext 的符号链接
-│   │
-│   │      *** 允许任何其他的文件/文件夹 ***
-│   │
-│   ├── ...
-│   └── ...
-|
-├── 其他模块
-│   ├── .
-│   └── .
-├── .
-├── .
-```
+::: warning
 
-### module.prop
+有些模块会使用 `sed` 命令来修改 `module.prop` 以实现实时更新内容，但此方法有一定概率会导致 `module.prop` 文件损坏，请避免通过 `sed` 修改或者通过其他方式来显示实时内容，也可以实现一个 `module.prop` 损坏检测机制，在其损坏时恢复至默认内容
 
-这是 `module.prop` 必须遵守的格式,但是 SakitlinSU 对某些字段做了兼容性处理。`module.prop ` 会被判断为是否为模块标志，如果
-`刷入的模块` 中不存在 `module.prop` 文件，则 SakitlinSU 会将不会其视为一个模块。
+:::
 
-```properties
-id=<字符串> <string>
-name=<字符串> <string>
-version=<字符串> <string>
-versionAnsi=<字符串> <string>          <-- SakitlinSU 支持 ASCII 控制码
-versionCode=<整数> <int>
-author=<字符串> <string>
-description=<字符串> <string>
-descriptionAnsi=<字符串> <string>      <-- SakitlinSU 支持 ASCII 控制码
-updateJson=<链接> <url> (可选)
-```
+SakitinSU 管理器具体会检测如下内容:
 
-- `id` 必须匹配此正则表达式：`^[a-zA-Z][a-zA-Z0-9._-]+$`
+- `module.prop` 内是否包含不符合语法的内容
+- `id`、`name`、`version`、`author`、`description` 是否为空 (如有带有 `Ansi` 后缀的同样检测)
+- `id` 是否符合此正则表达式: `^[a-zA-Z][a-zA-Z0-9._-]+$`
+- `versionCode` 是否大于 **0**
+- `module.prop` 内是否存在大小写不规范的情况 (SakitinSU 管理器会正常解析，但仍会显示标签)
 
-示例: `a_module` <Badge type="tip"> ✓ </Badge> ，`a.module` <Badge type="tip"> ✓ </Badge> ，
-`module-101` <Badge type="tip"> ✓ </Badge> ，`a module` <Badge type="danger"> ✗ </Badge> ，
-`1_module` <Badge type="danger"> ✗ </Badge> ，`-a-module` <Badge type="danger"> ✗ </Badge>
+<mark>如果只是 `module.prop` 损坏，重装模块通常可解决此问题，如果不符合规范，则需要开发者自行修复以解决此问题。</mark>
 
-- versionCode 必须是一个整数，用于比较版本。
-- 其他未在上面提到的内容可以是任何单行字符串。
-- 请确保使用 `UNIX（LF）`换行类型，而不是 `Windows（CR + LF）`或 `Macintosh（CR）`。
+## 内核接口
 
-[^1]: systemless 机制是一种无需直接修改系统分区即可实现系统功能增强的方法，常用于提升系统安全性和可维护性。
-[^2]: ASCII
-控制码是一种用于控制文本显示样式的字符编码方式，常用于终端和控制台应用程序中。详见[维基百科](https://en.wikipedia.org/wiki/ANSI_escape_code)
+SakitinSU 使用 `/data/adb/ssu/._settings` 作为内核设置目录，通常包含以下文件:
+
+- `._su_list`: 授权使用超级用户权限的列表
+- `._bypass_list`: 绕过 SELinux 限制的列表
+- `._hide_list`: 需要隐藏 root 使用痕迹的列表
+
+<mark>以上文件均采用 `二进制 UID` + `\0` + `软件包名` 格式存储，多个值之间以 `\n` 间隔</mark>
+
+::: important
+
+以上文件均为只读，任何模块/软件都不应该修改 SakitinSU 的内核配置文件，**仅 SakitinSU 管理器**有修改权限！
+
+其他模块/软件修改理应无效，SakitinSU 会在后续更新中逐步添加对内核配置文件写入的限制
+
+:::
+
+## 其他差异
+
+SakitinSU 会在后续更新中提供**模块备份接口**、**模块更新接口 (在更新时执行原本模块的代码)**、**模块存储接口**等功能，这些内容尚在规划中，会在后续更新中推出。
+
+[^1]: Systemless 机制是一种无需直接修改系统分区即可实现修改系统文件的方法，为模块提供了便利性。
+
+[^2]: ANSI 转义码是一种用于控制文本显示样式的字符编码方式，常用于终端和控制台应用程序中，详见[维基百科](https://en.wikipedia.org/wiki/ANSI_escape_code)。
