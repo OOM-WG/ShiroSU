@@ -28,7 +28,7 @@ SakitinSU 的 Systemless 是一种类似于 Magisk 的挂载机制，其接口�
 
 ::: tip
 
-SakitinSU 的 Systemless 会使用模块目录中的 `systemless` 文件夹执行挂载，如果模块通过 `system` 文件夹使用 Systemless，那么 `systemless` 文件夹会被**自动创建**。
+SakitinSU 的 Systemless 会使用模块目录中的 `systemless` 文件夹执行挂载，如果模块通过 `system` 文件夹使用 Systemless，那么 `systemless` 文件夹会被**自动创建**
 
 如果模块仅适配 SakitinSU，那么可以直接通过 `systemless` 文件夹使用 Systemless
 
