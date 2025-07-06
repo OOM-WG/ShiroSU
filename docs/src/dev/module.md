@@ -17,11 +17,8 @@ outline: deep
 
 :::
 
-::: important
-
-请确保模块内的所有文本文件均使用 `UNIX (LF)` 换行类型，而不是 `Windows (CR + LF)` 或 `Macintosh (CR)`！
-
-:::
+> [!IMPORTANT]
+> 请确保模块内的所有文本文件均使用 `UNIX (LF)` 换行类型，而不是 `Windows (CR + LF)` 或 `Macintosh (CR)`！
 
 ## Systemless [^1]
 
@@ -126,13 +123,10 @@ SakitinSU 使用 `/data/adb/ssu/._settings` 作为内核设置目录，通常包
 
 <mark>以上文件均采用 `二进制 UID` + `\0` + `软件包名` 格式存储，多个值之间以 `\n` 间隔</mark>
 
-::: important
-
-以上文件均为只读，任何模块/软件都不应该修改 SakitinSU 的内核配置文件，**仅 SakitinSU 管理器**有修改权限！
-
-其他模块/软件修改理应无效，SakitinSU 会在后续更新中逐步添加对内核配置文件写入的限制
-
-:::
+> [!IMPORTANT]
+> 以上文件均为只读，任何模块/软件都不应该修改 SakitinSU 的内核配置文件，**仅 SakitinSU 管理器**有修改权限！
+>
+> 其他模块/软件修改理应无效，SakitinSU 会在后续更新中逐步添加对内核配置文件写入的限制
 
 ## 其他差异
 
