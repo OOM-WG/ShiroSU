@@ -16,8 +16,6 @@ UI = {
     EnableAll = "すべて有効化"
     NoCanUp = "更新可能なモジュールはありません"
     UpdateAll = "すべて更新"
-    ExtModErr = "モジュールの作成に失敗しました"
-    ExtMod = "コマンドセット拡張モジュールをインストール"
 
     Grant = "権限付与"
     Hide = "隠す"
@@ -141,6 +139,9 @@ Settings = {
 
     Module = "モジュール"
     WebUIDebug = "WebUIデバッグ"
+
+    ExtModErr = "モジュールの作成に失敗しました"
+    ExtMod = "コマンドセット拡張モジュールをインストール"
 }
 
 About = {

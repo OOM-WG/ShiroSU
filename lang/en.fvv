@@ -13,8 +13,6 @@ UI = {
     EnableAll = "Enable all"
     NoCanUp = "There are no modules to update at this time"
     UpdateAll = "Update all"
-    ExtModErr = "Failed to create the module"
-    ExtMod = "Install the command set extension module"
 
     Home = "Home"
     Modules = "Modules"
@@ -130,6 +128,9 @@ Settings = {
 
     Module = "Module"
     WebUIDebug = "WebUI debug mode"
+
+    ExtModErr = "Failed to create the module"
+    ExtMod = "Install the command set extension module"
 }
 
 About = {
