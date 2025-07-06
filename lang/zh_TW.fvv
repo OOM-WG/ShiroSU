@@ -13,8 +13,6 @@ UI = {
     EnableAll = "全部啟用"
     NoCanUp = "暫無可更新模組"
     UpdateAll = "全部更新"
-    ExtModErr = "創建模組失敗"
-    ExtMod = "安裝命令集拓展模組"
 
     Home = "主頁"
     Modules = "模組"
@@ -130,6 +128,9 @@ Settings = {
 
     Module = "模組"
     WebUIDebug = "WebUI調試"
+
+    ExtModErr = "創建模組失敗"
+    ExtMod = "安裝命令集拓展模組"
 }
 
 About = {
