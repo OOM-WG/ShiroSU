@@ -29,6 +29,14 @@ SakitinSU 的 Systemless 是一种类似于 Magisk 的挂载机制，其接口�
 
 并且，为了保证更强的安全性，SakitinSU 的 Systemless 会无视模块挂载的 **文件/目录的 SELinux 上下文**、**目录的权限**以及**文件/目录的用户/组**，如果文件挂载到了不存在的目录，那么其 **SELinux 上下文**、**权限**、**用户/组**均会继承自父目录。通常来说，这些行为不会影响模块的运行，反而有助于提高稳定性。
 
+::: tip
+
+SakitinSU 的 Systemless 会使用模块目录中的 `systemless` 文件夹执行挂载，如果模块通过 `system` 文件夹使用 Systemless，那么 `systemless` 文件夹会被**自动创建**。
+
+如果模块仅适配 SakitinSU，那么可以直接通过 `systemless` 文件夹使用 Systemless
+
+:::
+
 ## Shell
 
 SakitinSU 在此处与其他 root 实现有较大差异，SakitinSU 运行的 Shell 脚本默认**并不**在 `BusyBox` 中以 “独立模式” 运行。
@@ -49,9 +57,9 @@ SakitinSU 在此处与其他 root 实现有较大差异，SakitinSU 运行的 Sh
 
 SakitinSU 不支持通过 Recovery 安装模块，并且在模块安装时 `META-INF/com/google/android/update-binary` 中的代码不会被执行。
 
-### su 调用
+### SU 调用
 
-SakitinSU 的 su 实现默认附带了一个仅能用于直接执行 Shell 命令的 `sudo`，可以直接通过 `sudo` 来执行例如 `sudo ls /`。
+SakitinSU 的 SU 实现默认附带了一个仅能用于直接执行 Shell 命令的 `sudo`，可以直接通过 `sudo` 来执行例如 `sudo ls /`。
 
 `sudo` 仅作为一个简易的 `su -c` 替代品而存在，但是任何模块内都**不应该**通过 `sudo` 或 `su -c` 执行 Shell 命令！
 
