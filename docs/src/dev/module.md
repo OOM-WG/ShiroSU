@@ -86,7 +86,7 @@ descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e
 <mark>SakitinSU 是通过顺序解析来读取 `module.prop` 中的内容的，所以请确保包含 `Ansi` 后缀的值是靠后的。</mark>
 
 ::: details 展开查看渲染效果
-![module.prop 渲染效果](/assets/img/module_prop.jpg)
+![module.prop 渲染效果](/assets/img/module_prop.webp)
 :::
 
 ## 模块 WebUI
