@@ -1,0 +1,35 @@
+Global = {
+    NA = "不适用"
+    SUNA = "未获取到SU实现"
+}
+
+UI = {
+    Poweroff = "关机"
+    Reboot = "重启"
+    HotReboot = "热重启"
+    Reboot2 = "重启至%s"
+
+    ShowSysApp = "显示系统应用"
+    HideSysApp = "隐藏系统应用"
+
+    DisableAll = "全部禁用"
+    EnableAll = "全部启用"
+    NoCanUp = "暂无可更新模块"
+    UpdateAll = "全部更新"
+
+    Grant = "赋权"
+    Hide = "隐藏"
+
+    Home = "主页"
+    SUPower = "权能"
+    Modules = "模块"
+    Settings = "设置"
+    About = "关于"
+
+    SSUAction = "安装/卸载SakitinSU"
+}
+
+App = {
+    AuthTtl = "启动验证"
+    AuthCnt = "已开启启动验证，请在验证后使用"
+}
