@@ -1,0 +1,45 @@
+Modules = {
+    DlTtl = "正在下载: %s"
+    DlCnt = "下载完成后将会安装模块，请勿退出软件"
+    DlQueryErr = "查询下载失败"
+    DlFetchErr = "获取下载失败"
+    DlOk = "下载成功"
+    CopyErr = "复制失败"
+    DlErr = "下载失败"
+
+    InstMod = "安装模块"
+    InstModErr = "未选择模块"
+    NoMod = "未安装模块"
+    SearchMod = "搜索模块"
+    UnstarMod = "已取消收藏"
+    StarMod = "已收藏模块"
+
+    ModErrTtl = "为什么会提示此内容？"
+    ModErrCnt = "提示此内容，通常是因为模块信息损坏或模块信息不符合规范\n模块信息损坏的具体表现是模块信息中含有“%s”字样，通常是因为作者的误操作导致模块信息文件损坏，重装模块一般可解决此问题\n模块信息不符合规范一般是因为作者大小写误用或使用了错误的模块ID"
+    ModErr = "模块异常或劣质，请重装或联系作者"
+    CanUp = "可更新"
+    Updated = "已更新"
+    Stared = "已收藏"
+
+    EnableErr = "启用失败"
+    DisableErr = "禁用失败"
+
+    Version = "版本"
+    Author = "作者"
+    Action = "操作"
+    WebUI = "界面"
+
+    UpTtl = "更新 %s(%s) 版本"
+    UpCntGet = "获取日志中"
+    UpCntNull = "无法获取"
+    UpCntNoOk = "获取失败"
+    UpCntEmpty = "无更新日志"
+    UpCntErr = "获取出错"
+    UpDlNull = "无法下载"
+    Update = "更新"
+
+    Restore = "恢复"
+    Delete = "删除"
+    RestoreErr = "恢复失败"
+    DeleteErr = "删除失败"
+}

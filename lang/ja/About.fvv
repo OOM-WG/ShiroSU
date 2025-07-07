@@ -1,0 +1,8 @@
+About = {
+    Version = "バージョン: %s"
+    Copyright = "©️ 2023-現在 OOM. WG. 所有権を保留"
+    OOM_WG = "思い出の溢れ出し作業グループ"
+    Docs = "SakitinSUドキュメント"
+    DepsList = "依存リスト"
+    DepsList3Q = "以下のプロジェクトに感謝"
+}
