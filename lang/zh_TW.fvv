@@ -13,8 +13,6 @@ UI = {
     EnableAll = "全部啟用"
     NoCanUp = "暫無可更新模組"
     UpdateAll = "全部更新"
-    ExtModErr = "創建模組失敗"
-    ExtMod = "安裝命令集拓展模組"
 
     Home = "主頁"
     Modules = "模組"
@@ -66,9 +64,6 @@ Home = {
     SELinuxEnf = "強制模式"
     SELinuxPer = "寬容模式"
     SELinuxDis = "未啟用"
-
-    InstKS = "安裝SakitinSU"
-    InstKSErr = "暫未實現，請關注官方後續動態"
 
     JoinUsTtl = "加入我們"
     JoinUsCnt = "SakitinSU作為新興專案，在很多地方尚有欠缺，如有問題請向開發者反饋，您也可以與其他使用者交流討論\n我們建議優先加入我們的QQ群，需要注意的是群聊內會不定期清理不活躍成員"
@@ -133,6 +128,9 @@ Settings = {
 
     Module = "模組"
     WebUIDebug = "WebUI調試"
+
+    ExtModErr = "創建模組失敗"
+    ExtMod = "安裝命令集拓展模組"
 }
 
 About = {
@@ -147,9 +145,9 @@ About = {
 ShellUI = {
     InstMod = "安裝模組"
     Error = "錯誤頁面"
-    InstModOk = "安裝成功"
-    InstModErr = "安裝失敗"
-    InstModIng = "安裝中"
+    InstOk = "安裝成功"
+    InstErr = "安裝失敗"
+    InstIng = "安裝中"
     ActionOk = "操作成功"
     ActionErr = "操作失敗"
     ActionIng = "操作中"

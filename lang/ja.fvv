@@ -16,8 +16,6 @@ UI = {
     EnableAll = "すべて有効化"
     NoCanUp = "更新可能なモジュールはありません"
     UpdateAll = "すべて更新"
-    ExtModErr = "モジュールの作成に失敗しました"
-    ExtMod = "コマンドセット拡張モジュールをインストール"
 
     Grant = "権限付与"
     Hide = "隠す"
@@ -79,6 +77,7 @@ Home = {
 
     JoinUsTtl = "コミュニティに参加"
     JoinUsCnt = "SakitinSUは発展途上のプロジェクトであり、至らない点も多くあります。ご質問や問題点がございましたら、お気軽に開発者へフィードバックをお寄せください。他のユーザーとの交流の場としてもご活用いただけます。\nまずはQQグループへの参加をお勧めします。なお、グループチャットでは、長期間ご利用のないメンバーを整理させていただく場合がございますので、予めご了承ください。"
+
 }
 
 SUPower = {
@@ -143,7 +142,11 @@ Settings = {
     Auth = "起動認証"
 
     Module = "モジュール"
+
     WebUIDebug = "WebUIデバッグモード"
+
+    ExtModErr = "モジュールの作成に失敗しました"
+    ExtMod = "コマンドセット拡張モジュールをインストール"
 }
 
 About = {
@@ -158,9 +161,9 @@ About = {
 ShellUI = {
     InstMod = "モジュールをインストール"
     Error = "エラーページ"
-    InstModOk = "インストール成功"
-    InstModErr = "インストール失敗"
-    InstModIng = "インストール中"
+    InstOk = "インストール成功"
+    InstErr = "インストール失敗"
+    InstIng = "インストール中"
     ActionOk = "操作成功"
     ActionErr = "操作失敗"
     ActionIng = "操作中"

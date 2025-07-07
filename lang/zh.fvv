@@ -16,8 +16,6 @@ UI = {
     EnableAll = "全部启用"
     NoCanUp = "暂无可更新模块"
     UpdateAll = "全部更新"
-    ExtModErr = "创建模块失败"
-    ExtMod = "安装命令集拓展模块"
 
     Grant = "赋权"
     Hide = "隐藏"
@@ -27,6 +25,8 @@ UI = {
     Modules = "模块"
     Settings = "设置"
     About = "关于"
+
+    SSUAction = "安装/卸载SakitinSU"
 }
 
 App = {
@@ -74,11 +74,17 @@ Home = {
     SELinuxPer = "宽容模式"
     SELinuxDis = "未启用"
 
-    InstKS = "安装SakitinSU"
-    InstKSErr = "暂未实现，请关注官方后续动态"
-
     JoinUsTtl = "加入我们"
     JoinUsCnt = "SakitinSU作为新兴项目，在很多地方尚有欠缺，如有问题请向开发者反馈，您也可以与其他用户交流讨论\n我们建议优先加入我们的QQ群，需要注意的是群聊内会不定期清理不活跃成员"
+}
+
+SSUAction = {
+    SSUUS = "用户空间"
+    InstUS = "安装用户空间"
+    UninstUSTtl = "卸载用户空间"
+    UninstUSCnt = "卸载用户空间会卸载SakitinSU的用户空间文件及配置，包括授权列表、隐藏列表\n完整卸载目前与部分卸载行为一致，在未来的版本中会同时卸载模块"
+    UninstUS = "部分卸载"
+    UninstAllUS = "完整卸载"
 }
 
 SUPower = {
@@ -144,6 +150,11 @@ Settings = {
 
     Module = "模块"
     WebUIDebug = "WebUI调试"
+    PrintStderr = "Shell页面输出错误信息"
+
+    ExtModErr = "创建模块失败"
+    ExtMod = "安装命令集拓展模块"
+    ExtModDesc = "此模块用于将SakitinSU自带的命令集安装至系统中，仅作为自带模块而存在，不影响SakitinSU自身的运行"
 }
 
 About = {
@@ -157,10 +168,15 @@ About = {
 
 ShellUI = {
     InstMod = "安装模块"
+    InstSSU = "安装SakitinSU"
+    UninstSSU = "卸载SakitinSU"
     Error = "错误页面"
-    InstModOk = "安装成功"
-    InstModErr = "安装失败"
-    InstModIng = "安装中"
+    InstOk = "安装成功"
+    InstErr = "安装失败"
+    InstIng = "安装中"
+    UninstOk = "卸载成功"
+    UninstErr = "卸载失敗"
+    UninstIng = "卸载中"
     ActionOk = "操作成功"
     ActionErr = "操作失败"
     ActionIng = "操作中"
