@@ -1,0 +1,14 @@
+Settings = {
+    Custom = "Персонализация"
+    HDRMode = "Режим HDR"
+    HomeTip = "Подсказки на главном экране"
+    AppTheme = "Тема приложения"
+
+    Common = "Общие"
+    UpChannel = "Канал обновлений"
+    UpChannelTip = "Вступит в силу после перезапуска приложения."
+    Auth = "Проверка при запуске"
+
+    Module = "Модули"
+    WebUIDebug = "Отладка WebUI"
+}

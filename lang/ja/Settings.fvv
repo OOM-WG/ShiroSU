@@ -1,0 +1,18 @@
+Settings = {
+    Custom = "カスタマイズ"
+    HDRMode = "HDRモード"
+    HomeTip = "ホーム画面のヒント"
+    AppTheme = "アプリのテーマ"
+
+    Common = "基本"
+    UpChannel = "更新チャネル"
+    UpChannelTip = "ソフトウェアを再起動した後に有効になります"
+    Auth = "起動認証"
+
+    Module = "モジュール"
+
+    WebUIDebug = "WebUIデバッグモード"
+
+    ExtModErr = "モジュールの作成に失敗しました"
+    ExtMod = "コマンドセット拡張モジュールをインストール"
+}

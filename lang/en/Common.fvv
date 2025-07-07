@@ -1,0 +1,26 @@
+Global = {
+    NA = "Not applicable"
+    SUNA = "The SU implementation was not obtained"
+}
+
+UI = {
+    Poweroff = "Shutdown"
+    Reboot = "Reboot"
+    HotReboot = "Hot reboot"
+    Reboot2 = "Reboot to %s"
+
+    DisableAll = "Disable all"
+    EnableAll = "Enable all"
+    NoCanUp = "There are no modules to update at this time"
+    UpdateAll = "Update all"
+
+    Home = "Home"
+    Modules = "Modules"
+    Settings = "Settings"
+    About = "About"
+}
+
+App = {
+    AuthTtl = "Launch verification"
+    AuthCnt = "Launch verification has been turned on, so please use it after verification"
+}

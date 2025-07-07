@@ -1,0 +1,8 @@
+About = {
+    Version = "Sürüm: %s"
+    Copyright = "©️ 2023-günümüz OOM. WG. Tüm hakları saklıdır."
+    OOM_WG = "OOM. WG."
+    Docs = "SakitinSU Belgeleri"
+    DepsList = "Bağımlılık Listesi"
+    DepsList3Q = "Aşağıdaki projelere teşekkürler"
+}

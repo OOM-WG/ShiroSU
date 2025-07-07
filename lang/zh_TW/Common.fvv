@@ -1,0 +1,26 @@
+Global = {
+    NA = "不適用"
+    SUNA = "未獲取到SU實現"
+}
+
+UI = {
+    Poweroff = "關機"
+    Reboot = "重啟"
+    HotReboot = "熱重啟"
+    Reboot2 = "重啟至%s"
+
+    DisableAll = "全部禁用"
+    EnableAll = "全部啟用"
+    NoCanUp = "暫無可更新模組"
+    UpdateAll = "全部更新"
+
+    Home = "主頁"
+    Modules = "模組"
+    Settings = "設置"
+    About = "關於"
+}
+
+App = {
+    AuthTtl = "啟動驗證"
+    AuthCnt = "已開啟啟動驗證，請在驗證後使用"
+}

@@ -1,0 +1,45 @@
+Modules = {
+    DlTtl = "正在下載: %s"
+    DlCnt = "下載完成後將會安裝模組，請勿退出軟體"
+    DlQueryErr = "查詢下載失敗"
+    DlFetchErr = "獲取下載失敗"
+    DlOk = "下載成功"
+    CopyErr = "複製失敗"
+    DlErr = "下載失敗"
+
+    InstMod = "安裝模組"
+    InstModErr = "未選擇模組"
+    NoMod = "未安裝模組"
+    SearchMod = "搜索模組"
+    UnstarMod = "已取消收藏"
+    StarMod = "已收藏模組"
+
+    ModErrTtl = "為什麼會提示此內容？"
+    ModErrCnt = "提示此內容，通常是因為模組資訊損壞或模組資訊不符合規範\n模組資訊損壞的具體表現是模組資訊中含有“%s”字樣，通常是因為作者的誤操作導致模組資訊檔損壞，重裝模組一般可解決此問題\n模組資訊不符合規範一般是因為作者大小寫誤用或使用了錯誤的模組ID"
+    ModErr = "模組異常或劣質，請重裝或聯繫作者"
+    CanUp = "可更新"
+    Updated = "已更新"
+    Stared = "已收藏"
+
+    EnableErr = "啟用失敗"
+    DisableErr = "禁用失敗"
+
+    Version = "版本"
+    Author = "作者"
+    Action = "操作"
+    WebUI = "介面"
+
+    UpTtl = "更新 %s(%s) 版本"
+    UpCntGet = "獲取日誌中"
+    UpCntNull = "無法獲取"
+    UpCntNoOk = "獲取失敗"
+    UpCntEmpty = "無更新日誌"
+    UpCntErr = "獲取出錯"
+    UpDlNull = "無法下載"
+    Update = "更新"
+
+    Restore = "恢復"
+    Delete = "刪除"
+    RestoreErr = "恢復失敗"
+    DeleteErr = "刪除失敗"
+}
