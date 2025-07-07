@@ -11,7 +11,9 @@ Settings = {
 
     Module = "模組"
     WebUIDebug = "WebUI調試"
+    PrintStderr = "Shell页面输出错误信息"
 
     ExtModErr = "創建模組失敗"
     ExtMod = "安裝命令集拓展模組"
+    ExtModDesc = "此模块用于将SakitinSU自带的命令集安装至系统中，仅作为自带模块而存在，不影响SakitinSU自身的运行"
 }
