@@ -25,6 +25,8 @@ UI = {
     Modules = "モジュール"
     Settings = "設定"
     About = "について"
+
+    SSUAction = "SakitinSUのインストール/アンインストール"
 }
 
 App = {

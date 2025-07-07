@@ -11,4 +11,9 @@ Settings = {
 
     Module = "Modüller"
     WebUIDebug = "WebUI hata ayıklama"
+    PrintStderr = "Shell sayfasında hata bilgilerini çıktıla"
+
+    ExtModErr = "Modül oluşturulamadı"
+    ExtMod = "Komut seti uzantı modülünü yükle"
+    ExtModDesc = "Bu modül, SakitinSU'nun yerleşik komut setini sisteme yüklemek için kullanılır. Sadece yerleşik modül olarak var olur ve SakitinSU'nun kendi çalışmasını etkilemez"
 }
