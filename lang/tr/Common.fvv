@@ -1,0 +1,35 @@
+Global = {
+    NA = "Uygulanamaz"
+    SUNA = "SU uygulaması alınamadı"
+}
+
+UI = {
+    Poweroff = "Kapat"
+    Reboot = "Yeniden Başlat"
+    HotReboot = "Hızlı Yeniden Başlat"
+    Reboot2 = "%s modunda yeniden başlat"
+
+    ShowSysApp = "Sistem uygulamalarını göster"
+    HideSysApp = "Sistem uygulamalarını gizle"
+
+    DisableAll = "Tümünü devre dışı bırak"
+    EnableAll = "Tümünü etkinleştir"
+    NoCanUp = "Güncellenecek modül yok"
+    UpdateAll = "Tümünü güncelle"
+    ExtModErr = "Modül oluşturulamadı"
+    ExtMod = "Komut seti uzantı modülünü yükle"
+
+    Grant = "Yetki Ver"
+    Hide = "Gizle"
+
+    Home = "Anasayfa"
+    SUPower = "SU Yetkisi"
+    Modules = "Modüller"
+    Settings = "Ayarlar"
+    About = "Hakkında"
+}
+
+App = {
+    AuthTtl = "Başlatma doğrulaması"
+    AuthCnt = "Başlatma doğrulaması etkinleştirildi, lütfen kullanmadan önce doğrulama yapın."
+}

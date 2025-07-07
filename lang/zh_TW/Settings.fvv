@@ -1,0 +1,17 @@
+Settings = {
+    Custom = "客製化"
+    HDRMode = "HDR模式"
+    HomeTip = "主頁提示"
+    AppTheme = "軟體主題"
+
+    Common = "基本"
+    UpChannel = "更新渠道"
+    UpChannelTip = "重啟軟體後生效"
+    Auth = "啟動驗證"
+
+    Module = "模組"
+    WebUIDebug = "WebUI調試"
+
+    ExtModErr = "創建模組失敗"
+    ExtMod = "安裝命令集拓展模組"
+}

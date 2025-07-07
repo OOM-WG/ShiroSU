@@ -1,0 +1,15 @@
+ShellUI = {
+    InstMod = "Modül Yükle"
+    Error = "Hata sayfası"
+    InstModOk = "Kurulum başarılı"
+    InstModErr = "Kurulum başarısız"
+    InstModIng = "Kuruluyor"
+    ActionOk = "Eylem başarılı"
+    ActionErr = "Eylem başarısız"
+    ActionIng = "Yürütülüyor"
+
+    Saved2 = "Kaydedildi: %s"
+
+    Reboot = "Cihazı yeniden başlat"
+    Back = "Sayfadan çık"
+} 

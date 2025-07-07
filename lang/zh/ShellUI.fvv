@@ -1,0 +1,20 @@
+ShellUI = {
+    InstMod = "安装模块"
+    InstSSU = "安装SakitinSU"
+    UninstSSU = "卸载SakitinSU"
+    Error = "错误页面"
+    InstOk = "安装成功"
+    InstErr = "安装失败"
+    InstIng = "安装中"
+    UninstOk = "卸载成功"
+    UninstErr = "卸载失敗"
+    UninstIng = "卸载中"
+    ActionOk = "操作成功"
+    ActionErr = "操作失败"
+    ActionIng = "操作中"
+
+    Saved2 = "已保存至: %s"
+
+    Reboot = "重启设备"
+    Back = "退出页面"
+}

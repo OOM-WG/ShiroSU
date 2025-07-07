@@ -1,0 +1,15 @@
+ShellUI = {
+    InstMod = "Install module"
+    Error = "Error page"
+    InstOk = "Install succeeded"
+    InstErr = "Install failed"
+    InstIng = "Installing"
+    ActionOk = "Action succeeded"
+    ActionErr = "Action failed"
+    ActionIng = "Actioning"
+
+    Saved2 = "Saved to: %s"
+
+    Reboot = "Reboot device"
+    Back = "Exit page"
+}
