@@ -1,0 +1,45 @@
+Modules = {
+    DlTtl = "İndiriliyor: %s"
+    DlCnt = "Modül, indirme tamamlandıktan sonra kurulacaktır, lütfen uygulamadan çıkmayın."
+    DlQueryErr = "İndirme sorgulanamadı"
+    DlFetchErr = "İndirme alınamadı"
+    DlOk = "İndirme başarılı"
+    CopyErr = "Kopyalanamadı"
+    DlErr = "İndirme başarısız"
+
+    InstMod = "Modül Yükle"
+    InstModErr = "Modül seçilmedi"
+    NoMod = "Yüklü modül yok"
+    SearchMod = "Modül ara"
+    UnstarMod = "Favorilerden kaldırıldı"
+    StarMod = "Modül favorilere eklendi"
+
+    ModErrTtl = "Bu mesaj neden görüntüleniyor?"
+    ModErrCnt = "Bu mesaj genellikle modül bilgisi bozuksa veya belirtimlere uymuyorsa görüntülenir.\nModül bilgisi bozulmasının belirli bir belirtisi, içinde \\"%s\\" kelimesinin bulunmasıdır, bu genellikle yazarın bir hatasından kaynaklanır. Modülü yeniden yüklemek genellikle bu sorunu çözer.\nModül bilgisinin belirtimlere uymaması genellikle yazarın büyük/küçük harf kullanımı veya yanlış modül kimliği kullanmasından kaynaklanır."
+    ModErr = "Modül hatası veya düşük kalite, yeniden yükleyin veya yazarla iletişime geçin."
+    CanUp = "Güncellenebilir"
+    Updated = "Güncellendi"
+    Stared = "Favorilere eklendi"
+
+    EnableErr = "Etkinleştirilemedi"
+    DisableErr = "Devre dışı bırakılamadı"
+
+    Version = "Sürüm"
+    Author = "Yazar"
+    Action = "Eylem"
+    WebUI = "Arayüz"
+
+    UpTtl = "%s(%s) sürümünü güncelle"
+    UpCntGet = "Değişiklik günlüğü alınıyor"
+    UpCntNull = "Alınamıyor"
+    UpCntNoOk = "Alınamadı"
+    UpCntEmpty = "Değişiklik günlüğü yok"
+    UpCntErr = "Alınırken hata oluştu"
+    UpDlNull = "İndirilemiyor"
+    Update = "Güncelle"
+
+    Restore = "Geri Yükle"
+    Delete = "Sil"
+    RestoreErr = "Geri yüklenemedi"
+    DeleteErr = "Silinemedi"
+}

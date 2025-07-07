@@ -1,0 +1,15 @@
+ShellUI = {
+    InstMod = "安裝模組"
+    Error = "錯誤頁面"
+    InstOk = "安裝成功"
+    InstErr = "安裝失敗"
+    InstIng = "安裝中"
+    ActionOk = "操作成功"
+    ActionErr = "操作失敗"
+    ActionIng = "操作中"
+
+    Saved2 = "已保存至: %s"
+
+    Reboot = "重啟設備"
+    Back = "退出頁面"
+}

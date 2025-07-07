@@ -1,0 +1,8 @@
+About = {
+    Version = "Версия: %s"
+    Copyright = "©️ 2023-настоящее время OOM. WG. Все права защищены."
+    OOM_WG = "OOM. WG."
+    Docs = "Документация SakitinSU"
+    DepsList = "Список зависимостей"
+    DepsList3Q = "Спасибо следующим проектам"
+}

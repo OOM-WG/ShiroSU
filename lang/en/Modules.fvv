@@ -1,0 +1,45 @@
+Modules = {
+    DlTtl = "Downloading: %s"
+    DlCnt = "Once the download is complete, the module will be installed, please do not exit the app"
+    DlQueryErr = "Failed to query download"
+    DlFetchErr = "Failed to fetch download"
+    DlOk = "Download succeeded"
+    CopyErr = "Copy failed"
+    DlErr = "Download failed"
+
+    InstMod = "Install Module"
+    InstModErr = "No module selected"
+    NoMod = "No module installed"
+    SearchMod = "Search for modules"
+    UnstarMod = "The module has been removed from bookmarks"
+    StarMod = "The module has been bookmarked"
+
+    ModErrTtl = "Why is this prompted?"
+    ModErrCnt = "This is usually prompted because the module information is corrupted or the module information is not up to specification\nThe specific manifestation of module information corruption is that the module information contains the word \\"%s\\", which is usually caused by the author's misoperation, and reinstalling the module can generally solve this problem\nModule information is not up to specification, usually because the author has misused the case or used the wrong module ID"
+    ModErr = "Module Error – Reinstall or Contact Author"
+    CanUp = "Updatable"
+    Updated = "Updated"
+    Stared = "Bookmarked"
+
+    EnableErr = "Enable failed"
+    DisableErr = "Disable failed"
+
+    Version = "Version"
+    Author = "Author"
+    Action = "Action"
+    WebUI = "WebUI"
+
+    UpTtl = "Update the %s(%s) version"
+    UpCntGet = "Getting changelog"
+    UpCntNull = "Not available"
+    UpCntNoOk = "Failed to get"
+    UpCntEmpty = "No changelog"
+    UpCntErr = "Get error"
+    UpDlNull = "Unable to download"
+    Update = "Update"
+
+    Restore = "Restore"
+    Delete = "Delete"
+    RestoreErr = "Restore failed"
+    DeleteErr = "Delete failed"
+}

@@ -1,0 +1,47 @@
+Home = {
+    PreDl = "ダウンロードを開始しました"
+    DlOk = "ダウンロード完了"
+    DlErr = "ダウンロード失敗: %s"
+
+    Tip = "ヒント"
+    TipCnt = "SSUでは、今後のサービス向上のため、百度モバイル統計およびアリババクラウドEMASを通じてお客様の利用状況データを収集しております。\n現在、%sブランチをご利用中です。"
+    TipCntPre = "\nすべての内容は参考のためのものであり、公式の今後の動向に注目してください"
+
+    InstTtl = "%s バージョンをインストール"
+    InstCnt = "インストールパッケージのダウンロードが完了しました。クリックしてインストールしてください"
+    InstPmErr = "権限取得に失敗しました"
+
+    UpdateTtl = "%s バージョンの更新"
+    UpdateCnt = "- インストールパッケージサイズ: %s\n%s"
+
+    NewVerTtl = "新しい%sバージョンがリリースされました！"
+    NewVerCnt = "新バージョン %s が利用可能です。クリックして更新してください"
+
+    SUStatus = "SU状態"
+    SUSource = "ソース"
+    SUVersion = "バージョン"
+    SUCLI = "CLI "
+
+    ModStatus = "モジュール概要"
+    Calc = "計算中"
+    ModSum = "総数"
+    ModDisable = "無効化された"
+    ModCanUp = "更新可能"
+    ModUpdate = "更新済み"
+    ModDelete = "アンインストール待ち"
+
+    DevStatus = "デバイス情報"
+    AndroidVer = "Androidバージョン"
+    OSArch = "システムアーキテクチャ"
+    OSVersion = "カーネルバージョン"
+    SELinuxEnf = "強制モード"
+    SELinuxPer = "許容モード"
+    SELinuxDis = "無効"
+
+    InstKS = "SakitinSUをインストール"
+    InstKSErr = "未実装です。公式の今後の動向に注目してください"
+
+    JoinUsTtl = "コミュニティに参加"
+    JoinUsCnt = "SakitinSUは発展途上のプロジェクトであり、至らない点も多くあります。ご質問や問題点がございましたら、お気軽に開発者へフィードバックをお寄せください。他のユーザーとの交流の場としてもご活用いただけます。\nまずはQQグループへの参加をお勧めします。なお、グループチャットでは、長期間ご利用のないメンバーを整理させていただく場合がございますので、予めご了承ください。"
+
+}

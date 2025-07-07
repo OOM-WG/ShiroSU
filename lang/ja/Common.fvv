@@ -1,0 +1,33 @@
+Global = {
+    NA = "適用なし"
+    SUNA = "SU実装が取得できませんでした"
+}
+
+UI = {
+    Poweroff = "シャットダウン"
+    Reboot = "再起動"
+    HotReboot = "ホット再起動"
+    Reboot2 = "%sに再起動"
+
+    ShowSysApp = "システムアプリを表示"
+    HideSysApp = "システムアプリを隠す"
+
+    DisableAll = "すべて無効化"
+    EnableAll = "すべて有効化"
+    NoCanUp = "更新可能なモジュールはありません"
+    UpdateAll = "すべて更新"
+
+    Grant = "権限付与"
+    Hide = "隠す"
+
+    Home = "ホーム"
+    SUPower = "権能"
+    Modules = "モジュール"
+    Settings = "設定"
+    About = "について"
+}
+
+App = {
+    AuthTtl = "起動認証"
+    AuthCnt = "起動認証が有効になっています。認証後に使用してください"
+}
