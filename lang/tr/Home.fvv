@@ -20,7 +20,7 @@ Home = {
     SUStatus = "SU Durumu"
     SUSource = "Kaynak"
     SUVersion = "Sürüm"
-    SUCLI = "CLI "
+    SUCLI = "CLI"
 
     ModStatus = "Modül Genel Bakışı"
     Calc = "Hesaplanıyor"
