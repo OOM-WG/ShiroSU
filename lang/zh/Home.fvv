@@ -39,7 +39,7 @@ Home = {
     SELinuxPer = "宽容模式"
     SELinuxDis = "未启用"
     USBDebug = "USB调试"
-    ABUpdate = "A/B分区"
+    ABSlot = "A/B分区"
     AVBVerify = "AVB校验"
 
     Enabled = "已开启"
