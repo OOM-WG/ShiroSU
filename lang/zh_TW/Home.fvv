@@ -20,7 +20,7 @@ Home = {
     SUStatus = "SU狀態"
     SUSource = "來源"
     SUVersion = "版本"
-    SUCLI = "CLI "
+    SUCLI = "CLI"
 
     ModStatus = "模組總覽"
     Calc = "計算中"
@@ -32,11 +32,18 @@ Home = {
 
     DevStatus = "設備資訊"
     AndroidVer = "Android版本"
+    SecPatch = "安全补丁"
     OSArch = "系統架構"
     OSVersion = "內核版本"
     SELinuxEnf = "強制模式"
     SELinuxPer = "寬容模式"
     SELinuxDis = "未啟用"
+    ADB = "USB调试"
+    ABUpdate = "A/B分区"
+    AVB = "AVB校验"
+
+    Enabled = "已开启"
+    Disabled = "已关闭"
 
     JoinUsTtl = "加入我們"
     JoinUsCnt = "SakitinSU作為新興專案，在很多地方尚有欠缺，如有問題請向開發者反饋，您也可以與其他使用者交流討論\n我們建議優先加入我們的QQ群，需要注意的是群聊內會不定期清理不活躍成員"
