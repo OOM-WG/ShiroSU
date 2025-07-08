@@ -38,9 +38,9 @@ Home = {
     SELinuxEnf = "强制模式"
     SELinuxPer = "宽容模式"
     SELinuxDis = "未启用"
-    ADB = "USB调试"
+    USBDebug = "USB调试"
     ABUpdate = "A/B分区"
-    AVB = "AVB校验"
+    AVBVerify = "AVB校验"
 
     Enabled = "已开启"
     Disabled = "已关闭"
