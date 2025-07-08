@@ -20,7 +20,7 @@ Home = {
     SUStatus = "Статус SU"
     SUSource = "Источник"
     SUVersion = "Версия"
-    SUCLI = "CLI "
+    SUCLI = "CLI"
 
     ModStatus = "Обзор модулей"
     Calc = "Вычисление"

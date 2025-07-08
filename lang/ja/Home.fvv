@@ -20,7 +20,7 @@ Home = {
     SUStatus = "SU状態"
     SUSource = "ソース"
     SUVersion = "バージョン"
-    SUCLI = "CLI "
+    SUCLI = "CLI"
 
     ModStatus = "モジュール概要"
     Calc = "計算中"
