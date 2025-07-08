@@ -12,7 +12,7 @@ outline: deep
 ### 有没有人知道这个怎么用?
 
 > [!IMPORTANT]
-> 开发中,目前只能作为[模块管理器](installation.md)使用,敬请期待
+> 开发中,目前只能作为[模块管理器](install.md)使用,敬请期待
 
 ### 为什么选择了`RC/Release`等更新渠道收不到更新?
 
