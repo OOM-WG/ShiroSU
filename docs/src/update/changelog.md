@@ -6,8 +6,6 @@ outline: deep
 aside: true
 ---
 
-# 更新日志
-
 ::: tip
 
 未标注日期的版本，其更新日期与上一个版本相同
