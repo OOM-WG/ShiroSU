@@ -29,6 +29,9 @@ Modules = {
     Action = "操作"
     WebUI = "介面"
 
+    ShortcutOk = "已请求创建快捷方式"
+    ShortcutNA = "当前系统不支持创建快捷方式"
+
     UpTtl = "更新 %s(%s) 版本"
     UpCntGet = "獲取日誌中"
     UpCntNull = "無法獲取"
