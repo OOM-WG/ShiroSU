@@ -27,6 +27,8 @@ UI = {
     Modules = "Модули"
     Settings = "Настройки"
     About = "О приложении"
+
+    SSUAction = "Установить/удалить SakitinSU"
 }
 
 App = {

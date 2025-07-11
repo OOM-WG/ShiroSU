@@ -27,6 +27,8 @@ UI = {
     Modules = "Modüller"
     Settings = "Ayarlar"
     About = "Hakkında"
+
+    SSUAction = "SakitinSU'yu Yükle/Kaldır"
 }
 
 App = {
