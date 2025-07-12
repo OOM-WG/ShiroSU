@@ -1,22 +1,22 @@
 Settings = {
-    Custom = "客制化"
+    Custom = "客製化"
     HDRMode = "HDR模式"
-    HomeTip = "主页提示"
-    AppTheme = "软件主题"
+    HomeTip = "主頁提示"
+    AppTheme = "軟體主題"
 
     Common = "基本"
     UpChannel = "更新渠道"
-    UpChannelTip = "重启软件后生效"
-    Auth = "启动验证"
+    UpChannelTip = "重啟軟體後生效"
+    Auth = "啟動驗證"
 
-    Module = "模块"
-    WebUIDebug = "WebUI调试"
-    PrintStderr = "Shell页面输出错误信息"
+    Module = "模組"
+    WebUIDebug = "WebUI調試"
+    PrintStderr = "Shell頁面輸出錯誤資訊"
 
-    ExtModErr = "创建模块失败"
-    ExtMod = "安装命令集拓展模块"
-    ExtModDesc = "此模块用于将SakitinSU自带的命令集安装至系统中，仅作为自带模块而存在，不影响SakitinSU自身的运行"
+    ExtModErr = "創建模組失敗"
+    ExtMod = "安裝命令集拓展模組"
+    ExtModDesc = "此模組用於將SakitinSU自帶的命令集安裝至系統中，僅作為自帶模組而存在，不影響SakitinSU自身的運行"
 
-    DelSysCache = "清除系统缓存"
-    DelSysCacheDesc = "部分模块可能导致系统出现故障，清除系统缓存以可能解决此问题"
+    DelSysCache = "清除系統快取"
+    DelSysCacheDesc = "部分模組可能導致系統出現故障，清除系統緩存以可能解決此問題"
 }

@@ -1,8 +1,0 @@
-SSUAction = {
-    SSUUS = "用戶空間"
-    InstUS = "安裝用戶空間"
-    UninstUSTtl = "卸載用戶空間"
-    UninstUSCnt = "卸載用戶空間會卸載SakitinSU的用戶空間檔及配置，包括授權清單、隱藏清單\n完整卸載目前與部分卸載行為一致，在未來的版本中會同時卸載模組"
-    UninstUS = "部分卸載"
-    UninstAllUS = "完整卸載"
-}

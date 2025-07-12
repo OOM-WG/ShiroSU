@@ -1,8 +1,0 @@
-About = {
-    Version = "版本: %s"
-    Copyright = "©️ 2023-至今 OOM. WG. 版權所有 保留一切權利"
-    OOM_WG = "回憶溢出工作組"
-    Docs = "SakitinSU文檔"
-    DepsList = "依賴清單"
-    DepsList3Q = "感謝以下專案"
-}

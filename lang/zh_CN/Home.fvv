@@ -1,0 +1,50 @@
+Home = {
+    PreDl = "已开始下载"
+    DlOk = "下载完成"
+    DlErr = "下载失败: %s"
+
+    Tip = "提示"
+    TipCnt = "SSU使用百度移动统计以及阿里云EMAS收集您的使用数据，依此增强后续的使用体验\n您当前使用的是%s分支%s"
+    TipCntPre = "\n一切内容仅供参考，请关注官方后续动态"
+
+    InstTtl = "安装 %s 版本"
+    InstCnt = "安装包已下载完成，点击即可安装"
+    InstPmErr = "权限获取失败"
+
+    UpdateTtl = "更新 %s 版本"
+    UpdateCnt = "- 安装包大小: %s\n%s"
+
+    NewVerTtl = "新的%s版本现已推出！"
+    NewVerCnt = "新版本 %s 已可使用，点击即可更新"
+
+    SUStatus = "SU状态"
+    SUSource = "来源"
+    SUVersion = "版本"
+    SUCLI = "CLI"
+
+    ModStatus = "模块总览"
+    Calc = "计算中"
+    ModSum = "总数量"
+    ModDisable = "已禁用"
+    ModCanUp = "可更新"
+    ModUpdate = "已更新"
+    ModDelete = "待卸载"
+
+    DevStatus = "设备信息"
+    AndroidVer = "Android版本"
+    OSArch = "系统架构"
+    OSVersion = "内核版本"
+    ABSlot = "A/B槽位"
+    SecPatch = "安全补丁"
+    SELinuxEnf = "强制模式"
+    SELinuxPer = "宽容模式"
+    SELinuxDis = "未启用"
+    USBDebug = "USB调试"
+    AVBVerify = "AVB校验"
+
+    Enabled = "已开启"
+    Disabled = "已关闭"
+
+    JoinUsTtl = "加入我们"
+    JoinUsCnt = "SakitinSU作为新兴项目，在很多地方尚有欠缺，如有问题请向开发者反馈，您也可以与其他用户交流讨论\n我们建议优先加入我们的QQ群，需要注意的是群聊内会不定期清理不活跃成员"
+}
