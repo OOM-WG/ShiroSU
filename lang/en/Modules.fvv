@@ -29,6 +29,9 @@ Modules = {
     Action = "Action"
     WebUI = "WebUI"
 
+    ShortcutOk = "The creation of a shortcut has been requested"
+    ShortcutNA = "The current system does not support creating shortcuts"
+
     UpTtl = "Update the %s(%s) version"
     UpCntGet = "Getting changelog"
     UpCntNull = "Not available"
