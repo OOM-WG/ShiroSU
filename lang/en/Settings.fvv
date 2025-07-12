@@ -11,6 +11,7 @@ Settings = {
 
     Module = "Module"
     WebUIDebug = "WebUI debug mode"
+    PrintStderr = "Shell UI print error message"
 
     ExtModErr = "Failed to create the module"
     ExtMod = "Install the command set extension module"
