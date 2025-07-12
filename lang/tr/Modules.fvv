@@ -29,6 +29,9 @@ Modules = {
     Action = "Eylem"
     WebUI = "Arayüz"
 
+    ShortcutOk = "Kısayol oluşturma istendi"
+    ShortcutNA = "Mevcut sistem kısayol oluşturmayı desteklemiyor"
+
     UpTtl = "%s(%s) sürümünü güncelle"
     UpCntGet = "Değişiklik günlüğü alınıyor"
     UpCntNull = "Alınamıyor"

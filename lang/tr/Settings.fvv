@@ -16,4 +16,8 @@ Settings = {
     ExtModErr = "Modül oluşturulamadı"
     ExtMod = "Komut seti uzantı modülünü yükle"
     ExtModDesc = "Bu modül, SakitinSU'nun yerleşik komut setini sisteme yüklemek için kullanılır. Sadece yerleşik modül olarak var olur ve SakitinSU'nun kendi çalışmasını etkilemez"
+
+    ClnSysCch = "Sistem Önbelliğini Temizle"
+    ClnSysCchDesc = "Bazı modüller sistem arızalarına neden olabilir. Sistem önbelleğini temizlemek bu sorunu çözebilir.\nTemizledikten sonra en kısa sürede yeniden başlatmalısınız"
+    ClnSysCchOk = "Temizleme tamamlandı, lütfen en kısa sürede yeniden başlatın"
 }
