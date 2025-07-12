@@ -9,24 +9,24 @@ UI = {
     HotReboot = "熱重啟"
     Reboot2 = "重啟至%s"
 
-    ShowSysApp = "显示系统应用"
-    HideSysApp = "隐藏系统应用"
+    ShowSysApp = "顯示系統應用"
+    HideSysApp = "隱藏系統應用"
 
     DisableAll = "全部禁用"
     EnableAll = "全部啟用"
     NoCanUp = "暫無可更新模組"
     UpdateAll = "全部更新"
 
-    Grant = "赋权"
-    Hide = "隐藏"
+    Grant = "賦權"
+    Hide = "隱藏"
 
     Home = "主頁"
-    SUPower = "权能"
+    SUPower = "權能"
     Modules = "模組"
     Settings = "設置"
     About = "關於"
 
-    SSUAction = "安装/卸载SakitinSU"
+    SSUAction = "安裝/卸載SakitinSU"
 }
 
 App = {
