@@ -32,14 +32,14 @@ Home = {
 
     DevStatus = "设备信息"
     AndroidVer = "Android版本"
-    SecPatch = "安全补丁"
     OSArch = "系统架构"
     OSVersion = "内核版本"
+    ABSlot = "A/B槽位"
+    SecPatch = "安全补丁"
     SELinuxEnf = "强制模式"
     SELinuxPer = "宽容模式"
     SELinuxDis = "未启用"
     USBDebug = "USB调试"
-    ABSlot = "A/B分区"
     AVBVerify = "AVB校验"
 
     Enabled = "已开启"
