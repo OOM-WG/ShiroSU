@@ -11,6 +11,7 @@ Settings = {
 
     Module = "模組"
     WebUIDebug = "WebUI調試"
+    PrintStderr = "Shell頁面輸出錯誤資訊"
 
     ExtModErr = "創建模組失敗"
     ExtMod = "安裝命令集拓展模組"
