@@ -9,18 +9,27 @@ UI = {
     HotReboot = "Hot reboot"
     Reboot2 = "Reboot to %s"
 
+    ShowSysApp = "Show system apps"
+    HideSysApp = "Hide system apps"
+
     DisableAll = "Disable all"
     EnableAll = "Enable all"
     NoCanUp = "There are no modules to update at this time"
     UpdateAll = "Update all"
 
+    Grant = "Grant"
+    Hide = "Hide"
+
     Home = "Home"
+    SUPower = "SU Power"
     Modules = "Modules"
     Settings = "Settings"
     About = "About"
+
+    SSUAction = "(Un)Install SakitinSU"
 }
 
 App = {
-    AuthTtl = "Launch verification"
+    AuthTtl = "Launch Verification"
     AuthCnt = "Launch verification has been turned on, so please use it after verification"
 }
