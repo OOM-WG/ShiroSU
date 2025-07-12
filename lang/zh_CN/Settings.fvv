@@ -17,6 +17,7 @@ Settings = {
     ExtMod = "安装命令集拓展模块"
     ExtModDesc = "此模块用于将SakitinSU自带的命令集安装至系统中，仅作为自带模块而存在，不影响SakitinSU自身的运行"
 
-    DelSysCache = "清除系统缓存"
-    DelSysCacheDesc = "部分模块可能导致系统出现故障，清除系统缓存以可能解决此问题\n清除后应当尽快重启"
+    ClnSysCch = "清除系统缓存"
+    ClnSysCchDesc = "部分模块可能导致系统出现故障，清除系统缓存以可能解决此问题\n清除后应当尽快重启"
+    ClnSysCchOk = "清除完毕，请尽快重启"
 }
