@@ -15,5 +15,8 @@ Settings = {
 
     ExtModErr = "創建模組失敗"
     ExtMod = "安裝命令集拓展模組"
-    ExtModDesc = "此模块用于将SakitinSU自带的命令集安装至系统中，仅作为自带模块而存在，不影响SakitinSU自身的运行"
+    ExtModDesc = "此模組用於將SakitinSU自帶的命令集安裝至系統中，僅作為自帶模組而存在，不影響SakitinSU自身的運行"
+
+    DelSysCache = "清除系統快取"
+    DelSysCacheDesc = "部分模組可能導致系統出現故障，清除系統緩存以可能解決此問題"
 }
