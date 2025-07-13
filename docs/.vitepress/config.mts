@@ -19,6 +19,8 @@ import {
 } from "@nolebase/vitepress-plugin-page-properties/vite";
 import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
 import { withMermaid } from "vitepress-plugin-mermaid";
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
@@ -122,6 +124,7 @@ export default withMermaid({
             chunkSizeWarningLimit: 2000,
         },
         plugins: [
+            groupIconVitePlugin(),
             // RssPlugin(RSS),
             ThumbnailHashImages(),
             GitChangelog({

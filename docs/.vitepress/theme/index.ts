@@ -49,13 +49,15 @@ import UnderConstructionBanner from "./components/Width.vue";
 import Downloaded from "./attached/Downloaded.vue";
 import TeamPage from "./team/TeamPage.vue";
 import Music from "./components/Music.vue";
-import MouseToggle from "./components/MouseToggle.vue";
+// import MouseToggle from "./components/MouseToggle.vue";
 import Mouse from "./components/Mouse.vue";
 import Carousel from "./components/Carousel.vue";
-import backtotop from "./components/backtotop.vue";
+// import backtotop from "./components/backtotop.vue";
 import ArticleShare from "./components/ArticleShare.vue";
 import MyLayout from "./attached/MyLayout.vue";
 import WalletApp from "./home/WalletApp.vue";
+// import MouseClick from "./components/MouseClick.vue";
+// import MouseFollower from "./components/MouseFollower.vue";
 
 // ===== 样式文件 =====
 import "./styles/main.scss";
@@ -69,8 +71,10 @@ import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
 import "@nolebase/vitepress-plugin-page-properties/client/style.css";
-import vitepressNprogress from "vitepress-plugin-nprogress";
-import "vitepress-plugin-nprogress/lib/css/index.css";
+import 'virtual:group-icons.css'
+import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
+import 'nprogress-v2/dist/index.css'
+import { inBrowser } from "vitepress"; // 进度条样式
 
 let homePageStyle: HTMLStyleElement | undefined;
 
@@ -86,6 +90,8 @@ const CssRenderStyle = defineComponent({
         return h("css-render-style", { innerHTML: this.style });
     },
 });
+
+
 
 // VitepressPath 组件：用于 SSR 时输出当前路由路径。
 const VitepressPath = defineComponent({
@@ -114,9 +120,9 @@ export default {
                                 ),
                             ),
                             h(NolebaseHighlightTargetedHeading),
-                            h(Mouse),
+                            // h(Mouse),
                         ],
-                        "doc-footer-before": () => h(backtotop),
+                        // "doc-footer-before": () => h(backtotop),
                         // 在导航栏内容后面添加增强可读性菜单
                         "nav-bar-content-after": () => [
                             h(NolebaseEnhancedReadabilitiesMenu),
@@ -125,7 +131,7 @@ export default {
                         "nav-screen-content-after": () =>
                             h(NolebaseEnhancedReadabilitiesScreenMenu),
                         // 在侧边栏导航前面添加鼠标切换
-                        "sidebar-nav-before": () => h(MouseToggle),
+                        // "sidebar-nav-before": () => h(MouseToggle),
                         // 在侧边栏导航后面添加音乐播放器
                         "sidebar-nav-after": () => h(Music),
                         // 在侧边栏下方添加分享按钮（使用包装组件解决 SSR 问题）
@@ -146,7 +152,6 @@ export default {
     },
 
     enhanceApp({ app, router }) {
-        vitepressNprogress({ app, router });
 
         if (import.meta.env.SSR) {
             const { collect } = setup(app);
@@ -166,6 +171,8 @@ export default {
         });
 
         // 注册所有自定义全局组件
+        // app.component("MouseClick", MouseClick);
+        // app.component("MouseFollower", MouseFollower);
         app.component("WalletApp", WalletApp);
         app.component("RainbowAnimationSwitcher", RainbowAnimationSwitcher);
         app.component("Confetti", Confetti);
@@ -174,7 +181,7 @@ export default {
         app.component("ArticleMetadata", ArticleMetadata);
         app.component("SakuraLinkCard", SakuraLinkCard);
         app.component("Downloaded", Downloaded);
-        app.component("MouseToggle", MouseToggle);
+        // app.component("MouseToggle", MouseToggle);
         // app.component("ArticleShare", ArticleShare);
         app.component("NolebaseUnlazyImg", NolebaseUnlazyImg);
         app.component("NolebaseGitContributors", NolebaseGitContributors);
@@ -183,6 +190,7 @@ export default {
             NolebasePagePropertiesEditor,
         );
         app.component("NolebasePageProperties", NolebasePageProperties);
+
         // 客户端逻辑
         if (typeof window !== "undefined") {
             watch(
@@ -195,13 +203,23 @@ export default {
             watch(
                 () => router.route.path,
                 () => {
-                    // 路由变化时重置滚动位置，避免内容被截断
                     nextTick(() => {
                         window.scrollTo({ top: 0, behavior: "auto" });
                     });
                 },
                 { flush: "post" },
             );
+
+            // 页面进度条与访问统计
+            if (inBrowser) {
+                NProgress.configure({ showSpinner: false })
+                router.onBeforeRouteChange = () => {
+                    NProgress.start() // 开始进度条
+                }
+                router.onAfterRouteChange = () => {
+                    NProgress.done() // 停止进度条
+                }
+            }
         }
     },
 

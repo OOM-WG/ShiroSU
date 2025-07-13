@@ -6,6 +6,9 @@
 @use './hidden.scss';
 @use './font.scss';
 @use "./doc-fade-in.scss";
+@use "./vp-code.css";
+@use "./vp-code-group.css";
+
 
 html.dark {
   color-scheme: dark;

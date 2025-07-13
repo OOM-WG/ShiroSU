@@ -1,16 +1,20 @@
 <!-- .vitepress/theme/MyLayout.vue -->
+
 <script setup lang="ts">
-import DefaultTheme from 'vitepress/theme'
-import { useData } from 'vitepress'
-import { nextTick, provide } from 'vue'
+import DefaultTheme from "vitepress/theme"
+import { useData } from "vitepress"
+import { nextTick, provide } from "vue"
+import MouseClick from "../components/MouseClick.vue"
+import MouseFollower from "../components/MouseFollower.vue"
+import backtotop from "../components/backtotop.vue"
 
 const { isDark } = useData()
 
 const enableTransitions = () =>
-  'startViewTransition' in document &&
-  window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+  "startViewTransition" in document &&
+  window.matchMedia("(prefers-reduced-motion: no-preference)").matches
 
-provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
+provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
   if (!enableTransitions()) {
     isDark.value = !isDark.value
     return
@@ -20,8 +24,8 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     `circle(0px at ${x}px ${y}px)`,
     `circle(${Math.hypot(
       Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y)
-    )}px at ${x}px ${y}px)`
+      Math.max(y, innerHeight - y),
+    )}px at ${x}px ${y}px)`,
   ]
 
   await document.startViewTransition(async () => {
@@ -33,20 +37,23 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     { clipPath: isDark.value ? clipPath.reverse() : clipPath },
     {
       duration: 300,
-      easing: 'ease-in',
-      pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`
-    }
+      easing: "ease-in",
+      pseudoElement: `::view-transition-${isDark.value ? "old" : "new"}(root)`,
+    },
   )
 })
 </script>
 
 <template>
-  <DefaultTheme.Layout>
+  <DefaultTheme.Layout v-bind="$attrs">
     <template #layout-top>
       <slot name="layout-top"></slot>
+      <MouseFollower />
+      <MouseClick />
     </template>
     <template #doc-footer-before>
       <slot name="doc-footer-before"></slot>
+      <backtotop />
     </template>
     <template #nav-bar-content-after>
       <slot name="nav-bar-content-after"></slot>
@@ -65,6 +72,9 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     </template>
     <template #aside-top>
       <slot name="aside-top"></slot>
+    </template>
+    <template #layout-bottom>
+      <bsz />
     </template>
   </DefaultTheme.Layout>
 </template>
@@ -85,11 +95,6 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 .dark::view-transition-old(root) {
   z-index: 9999;
 }
-
-/* 恢复原始开关按钮 */
-/* .VPSwitchAppearance {
-  width: 22px !important;
-} */
 
 .VPSwitchAppearance .check {
   transform: none !important;

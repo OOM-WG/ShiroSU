@@ -1,8 +1,16 @@
 // .vitepress/theme/styles/font.scss
 
+
+//@font-face {
+//    font-family: 'MapleMono';
+//    src: url('https://sakitinsu.resource.sawahara.host/assets/font/MapleMono-Medium.ttf.woff2') format('woff2'),
+//    font-weight: normal;
+//    font-style: normal;
+//}
+
 :root {
     --vp-font-family-base: "Ubuntu", sans-serif; /* normal text font */
-    --vp-font-family-mono: "Ubuntu", monospace; /* code font */
+    --vp-font-family-mono: "MapleMono", "Ubuntu", monospace; /* code font */
 }
 
 /* 强制应用字体到所有元素 */

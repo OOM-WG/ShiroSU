@@ -2,6 +2,7 @@ import type { MarkdownOptions } from "vitepress";
 import mathjax3 from "markdown-it-mathjax3";
 import footnote from "markdown-it-footnote";
 import timeline from "vitepress-markdown-timeline";
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
 import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 
@@ -61,6 +62,7 @@ export const markdown: MarkdownOptions = {
             }),
         );
         md.use(InlineLinkPreviewElementTransform);
+        md.use(groupIconMdPlugin);
 
         // md.use(markdownItTaskCheckbox); //todo
 
