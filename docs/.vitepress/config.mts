@@ -70,24 +70,11 @@ export default withMermaid({
     transformHtml(code, id, { pageData }) {
         if (process.env.NODE_ENV !== "production") return;
 
-        const extra = [
-            '<link crossorigin="" href="https://sakitinsu.resource.sawahara.host/" rel="preconnect">',
-            '<link href="https://sakitinsu.resource.sawahara.host/" rel="dns-prefetch">',
-            '<link crossorigin="" href="https://d.alicdn.com/" rel="preconnect">',
-            '<link href="https://d.alicdn.com/" rel="dns-prefetch">',
-        ]
-            .map((line) => "    " + line)
-            .join("\n");
-
         const newCode = code
             .replace(
                 /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
                 (_, attr, path) =>
                     `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
-            )
-            .replace(
-                /(<meta\s+charset=["'][^"']*["']\s*?>)/i,
-                `$1\n\n${extra}`,
             );
 
         return newCode;

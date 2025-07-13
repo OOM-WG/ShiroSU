@@ -1,12 +1,17 @@
 import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
+    ["link", { rel: "preconnect", href: "https://sakitinsu.resource.sawahara.host", crossorigin: "" }],
+    ["link", { rel: "dns-prefetch", href: "https://sakitinsu.resource.sawahara.host" }],
+    ["link", { rel: "preconnect", href: "https://d.alicdn.com", crossorigin: "" }],
+    ["link", { rel: "dns-prefetch", href: "https://d.alicdn.com" }],
+
     // --- Google Fonts ---
-    ["link", { rel: "preconnect", href: "https://fonts.googleapis.com", crossorigin: "" }],
-    ["link", { rel: "dns-prefetch", href: "https://fonts.googleapis.com" }],
-    ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
-    ["link", { rel: "dns-prefetch", href: "https://fonts.gstatic.com" }],
-    ["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" }],
+    ["link", { rel: "preconnect", href: "https://fonts.googleapis.cn", crossorigin: "" }],
+    ["link", { rel: "dns-prefetch", href: "https://fonts.googleapis.cn" }],
+    ["link", { rel: "preconnect", href: "https://fonts.gstatic.cn", crossorigin: "" }],
+    ["link", { rel: "dns-prefetch", href: "https://fonts.gstatic.cn" }],
+    ["link", { rel: "stylesheet", href: "https://fonts.googleapis.cn/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" }],
 
     // --- 基础和SEO元数据 ---
     ["link", { rel: "icon", href: "https://sakitinsu.resource.sawahara.host/logo-round.webp" }],
