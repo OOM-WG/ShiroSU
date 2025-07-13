@@ -13,3 +13,15 @@
     --vp-font-family-mono: "MapleMono", monospace; /* code font */
 }
 
+/* 强制应用字体到所有元素 */
+html, body, #app, .VPDoc, .VPContent, .VPNav, .VPNavBar, .VPFooter,
+.VPSidebar, .VPDocAside, .VPTeamPage, .VPHomeHero, .VPFeatures,
+.custom-block, .main, .content, p, h1, h2, h3, h4, h5, h6, {
+    font-family: var(--vp-font-family-base) !important;
+}
+
+pre, code, kbd, samp,
+.VPDoc pre, .VPDoc code, .VPContent pre, .VPContent code,
+.VPDocAside pre, .VPDocAside code {
+    font-family: var(--vp-font-family-mono) !important;
+}
