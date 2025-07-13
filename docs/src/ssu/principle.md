@@ -46,7 +46,7 @@ flowchart TD
 
 #### 部分代码片段
 
-```c
+```c:no-line-numbers
 struct cred *cred = (struct cred *)__task_cred(current);
 
 // 1. 提权为 root
@@ -86,7 +86,7 @@ if (cred->group_info) {
 
 #### 部分代码片段
 
-```c
+```c:no-line-numbers
 // avc_denied kretprobe handler
 
 if (current->real_cred->uid.val == /* 白名单 UID */) {
@@ -109,7 +109,7 @@ if (current->real_cred->uid.val == /* 白名单 UID */) {
 
 #### 部分代码片段
 
-```c
+```c:no-line-numbers
 // cap_capable kretprobe handler
 
 if (current->real_cred->uid.val == /* 白名单 UID */) {
