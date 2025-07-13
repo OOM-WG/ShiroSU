@@ -3,12 +3,17 @@
 <script setup lang="ts">
 import DefaultTheme from "vitepress/theme"
 import { useData } from "vitepress"
-import { nextTick, provide } from "vue"
+import { nextTick, provide, ref, onMounted } from "vue"
 import MouseClick from "../components/MouseClick.vue"
 import MouseFollower from "../components/MouseFollower.vue"
 import backtotop from "../components/backtotop.vue"
 
 const { isDark } = useData()
+
+const isMobile = ref(false)
+onMounted(() => {
+  isMobile.value = window.matchMedia("(max-width: 768px)").matches
+})
 
 const enableTransitions = () =>
   "startViewTransition" in document &&
@@ -48,8 +53,8 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
   <DefaultTheme.Layout v-bind="$attrs">
     <template #layout-top>
       <slot name="layout-top"></slot>
-      <MouseFollower />
-      <MouseClick />
+      <MouseFollower v-if="!isMobile" />
+      <MouseClick v-if="!isMobile" />
     </template>
     <template #doc-footer-before>
       <slot name="doc-footer-before"></slot>
