@@ -13,7 +13,7 @@ outline: deep
 
 如果将 SakitinSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，SakitinSU **不会干涉**其他 root 实现的任何行为
 
-但模块的 **WebUI 需要考虑**到 SakitinSU 的 [模块 WebUI](./webui)
+但模块的 **WebUI 需要考虑**到 SakitinSU 的 [模块 WebUI](webui)
 
 :::
 
@@ -91,7 +91,7 @@ descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e
 
 ## 模块 WebUI
 
-SakitinSU 与 `KernelSU` 同样允许模块使用 WebUI 提供功能，详见 [模块 WebUI](./webui)。
+SakitinSU 与 `KernelSU` 同样允许模块使用 WebUI 提供功能，详见 [模块 WebUI](webui)。
 
 ## module.prop
 
