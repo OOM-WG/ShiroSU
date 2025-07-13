@@ -1,26 +1,15 @@
 // .vitepress/theme/styles/font.scss
 
 
-//@font-face {
-//    font-family: 'MapleMono';
-//    src: url('https://sakitinsu.resource.sawahara.host/assets/font/MapleMono-Medium.ttf.woff2') format('woff2'),
-//    font-weight: normal;
-//    font-style: normal;
-//}
+@font-face {
+    font-family: 'MapleMono';
+    src: url("https://sakitinsu.resource.sawahara.host/assets/font/MapleMono-Medium.ttf.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --vp-font-family-base: "Ubuntu", sans-serif; /* normal text font */
-    --vp-font-family-mono: "MapleMono", "Ubuntu", monospace; /* code font */
+    --vp-font-family-mono: "MapleMono", monospace; /* code font */
 }
 
-/* 强制应用字体到所有元素 */
-html, body, #app, .VPDoc, .VPContent, .VPNav, .VPNavBar, .VPFooter,
-.VPSidebar, .VPDocAside, .VPTeamPage, .VPHomeHero, .VPFeatures,
-.custom-block, .main, .content, p, h1, h2, h3, h4, h5, h6,
-span, a, button, input, textarea, select, option {
-    font-family: var(--vp-font-family-base) !important;
-}
-
-pre, code, kbd, samp {
-    font-family: var(--vp-font-family-mono) !important;
-}
