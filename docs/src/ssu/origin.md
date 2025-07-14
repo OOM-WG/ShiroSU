@@ -31,4 +31,4 @@ outline: deep
 
 ## 图标的由来
 
-图标由 @YumeYuka 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制。
+图标由 @YumeYuka 和 @悠栾 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制，由 @安音咲汀 人工修复。
