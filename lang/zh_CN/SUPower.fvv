@@ -1,3 +1,9 @@
 SUPower = {
     SearchApp = "搜索软件"
+
+    SSUSU = "root权能"
+    SSUSELinux = "SELinux宽容"
+
+    MagiskSU = "root权能"
+    MagiskDenyList = "排除列表"
 }
