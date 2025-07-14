@@ -14,7 +14,7 @@ export const head: HeadConfig[] = [
     ["link", { rel: "stylesheet", href: "https://fonts.googleapis.cn/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" }],
 
     // --- 基础和SEO元数据 ---
-    ["link", { rel: "icon", href: "https://sakitinsu.resource.sawahara.host/logo-round.webp" }],
+    ["link", { rel: "icon", href: "https://sakitinsu.resource.sawahara.host/logo.webp" }],
     [
         "meta",
         { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" },
