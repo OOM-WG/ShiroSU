@@ -1,7 +1,7 @@
 SUPower = {
     SearchApp = "搜索软件"
 
-    SUPM = "root权能"
+    SUPM = "SU权能"
 
     SSUSELinux = "SELinux宽容"
     SSUHide = "隐藏"
