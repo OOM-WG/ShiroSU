@@ -3,6 +3,7 @@ SUPower = {
 
     SSUSU = "root权能"
     SSUSELinux = "SELinux宽容"
+    SSUHide = "隐藏"
 
     MagiskSU = "root权能"
     MagiskDenyList = "排除列表"
