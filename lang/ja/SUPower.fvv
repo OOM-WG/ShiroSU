@@ -1,3 +1,10 @@
 SUPower = {
     SearchApp = "アプリを検索"
+
+    SUPM = "SU権能"
+
+    SSUSELinux = "SELinux許容"
+    SSUHide = "隠す"
+
+    MagiskDenyList = "除外リスト"
 }
