@@ -1,3 +1,10 @@
 SUPower = {
     SearchApp = "Uygulama ara"
+
+    SUPM = "SU Yetkisi"
+
+    SSUSELinux = "SELinux İzin Verici"
+    SSUHide = "Gizle"
+
+    MagiskDenyList = "Hariç Tutma Listesi"
 }

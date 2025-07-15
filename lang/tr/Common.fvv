@@ -16,8 +16,6 @@ UI = {
     EnableAll = "Tümünü etkinleştir"
     NoCanUp = "Güncellenecek modül yok"
     UpdateAll = "Tümünü güncelle"
-    ExtModErr = "Modül oluşturulamadı"
-    ExtMod = "Komut seti uzantı modülünü yükle"
 
     Grant = "Yetki Ver"
     Hide = "Gizle"
