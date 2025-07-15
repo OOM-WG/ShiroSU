@@ -1,3 +1,10 @@
 SUPower = {
     SearchApp = "Поиск приложений"
+
+    SUPM = "SU Права"
+
+    SSUSELinux = "SELinux в разрешающем режиме"
+    SSUHide = "Скрыть"
+
+    MagiskDenyList = "Список исключений"
 }
