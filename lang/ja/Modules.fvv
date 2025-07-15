@@ -29,6 +29,9 @@ Modules = {
     Action = "操作"
     WebUI = "インターフェース"
 
+    ShortcutOk = "ショートカットの作成をリクエストしました"
+    ShortcutNA = "現在のシステムではショートカットの作成はサポートされていません"
+
     UpTtl = "%s(%s) バージョンの更新"
     UpCntGet = "ログを取得中"
     UpCntNull = "取得できません"

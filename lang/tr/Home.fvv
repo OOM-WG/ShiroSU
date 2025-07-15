@@ -34,12 +34,16 @@ Home = {
     AndroidVer = "Android sürümü"
     OSArch = "Sistem mimarisi"
     OSVersion = "Çekirdek sürümü"
+    ABSlot = "A/B Yuvası"
+    SecPatch = "Güvenlik Yaması"
     SELinuxEnf = "Zorlayıcı mod"
     SELinuxPer = "İzin verici mod"
     SELinuxDis = "Devre dışı"
+    USBDebug = "USB Hata Ayıklama"
+    AVBVerify = "AVB Doğrulaması"
 
-    InstKS = "SakitinSU'yu Yükle"
-    InstKSErr = "Henüz uygulanmadı, lütfen resmi güncellemeleri takip edin."
+    Enabled = "Etkin"
+    Disabled = "Devre Dışı"
 
     JoinUsTtl = "Bize Katılın"
     JoinUsCnt = "Yeni bir proje olarak SakitinSU'nun hala birçok eksiği var. Herhangi bir sorunuz varsa, lütfen geliştiricilere geri bildirimde bulunun. Ayrıca diğer kullanıcılarla sohbet edebilir ve tartışabilirsiniz.\nÖncelikle QQ grubumuza katılmanızı öneririz. Lütfen aktif olmayan üyelerin sohbetten periyodik olarak çıkarılacağını unutmayın."
