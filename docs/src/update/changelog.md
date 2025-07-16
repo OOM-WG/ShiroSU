@@ -18,6 +18,12 @@ aside: true
 
 ## 0.2.2
 
+### preview5 (2025-07-16)
+
+- 常规代码维护
+- 支持通过 `zip` 文件关联来安装模块
+- 多语言更新，参见[GitHub](https://github.com/OOM-WG/SakitinSU/pull/8)
+
 ### preview4
 
 - 适配 Magisk 超级用户管理与排除列表管理
