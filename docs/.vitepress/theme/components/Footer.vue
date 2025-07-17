@@ -73,7 +73,7 @@ const isExpanded = (title: string) => {
         </svg>
         <div class="license-text">
           <p class="text-left m-0">
-            Licensed under the 
+            Licensed under the&nbsp;
             <a
               href="https://license.fileto.download"
               style="color: var(--vp-c-brand); text-decoration: none">
@@ -81,7 +81,7 @@ const isExpanded = (title: string) => {
             </a>
           </p>
           <p class="text-left m-0">
-            Copyright © 2023-present 
+            Copyright © 2023-present&nbsp;
             <a
               href="https://github.com/OOM-WG"
               style="color: var(--vp-c-brand); text-decoration: none">
