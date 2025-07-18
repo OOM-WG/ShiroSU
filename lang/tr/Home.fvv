@@ -24,11 +24,6 @@ Home = {
 
     ModStatus = "Modül Genel Bakışı"
     Calc = "Hesaplanıyor"
-    ModSum = "Toplam"
-    ModDisable = "Devre dışı"
-    ModCanUp = "Güncellenebilir"
-    ModUpdate = "Güncellendi"
-    ModDelete = "Kaldırma bekleniyor"
 
     DevStatus = "Cihaz Bilgileri"
     AndroidVer = "Android sürümü"

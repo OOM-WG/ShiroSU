@@ -24,11 +24,6 @@ Home = {
 
     ModStatus = "Обзор модулей"
     Calc = "Вычисление"
-    ModSum = "Всего"
-    ModDisable = "Отключено"
-    ModCanUp = "Можно обновить"
-    ModUpdate = "Обновлено"
-    ModDelete = "Ожидает удаления"
 
     DevStatus = "Информация об устройстве"
     AndroidVer = "Версия Android"

@@ -24,11 +24,6 @@ Home = {
 
     ModStatus = "モジュール概要"
     Calc = "計算中"
-    ModSum = "総数"
-    ModDisable = "無効化された"
-    ModCanUp = "更新可能"
-    ModUpdate = "更新済み"
-    ModDelete = "アンインストール待ち"
 
     DevStatus = "デバイス情報"
     AndroidVer = "Androidバージョン"
