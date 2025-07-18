@@ -24,11 +24,6 @@ Home = {
 
     ModStatus = "模块总览"
     Calc = "计算中"
-    ModSum = "总数量"
-    ModDisable = "已禁用"
-    ModCanUp = "可更新"
-    ModUpdate = "已更新"
-    ModDelete = "待卸载"
 
     DevStatus = "设备信息"
     AndroidVer = "Android版本"

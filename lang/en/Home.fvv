@@ -24,11 +24,6 @@ Home = {
 
     ModStatus = "Modules Overview"
     Calc = "Calculating"
-    ModSum = "Total"
-    ModDisable = "Disabled"
-    ModCanUp = "Updatable"
-    ModUpdate = "Updated"
-    ModDelete = "Pending Uninstall"
 
     DevStatus = "Device Information"
     AndroidVer = "Android version"
