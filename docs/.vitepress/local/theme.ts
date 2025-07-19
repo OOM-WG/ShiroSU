@@ -14,6 +14,11 @@ export const themeConfig: DefaultTheme.Config = {
         level: "deep", // 右侧大纲标题层级
         label: "目录", // 右侧大纲标题文本配置
     },
+    editLink: {
+        pattern:
+            `https://github.com/OOM-WG/SSU_Docs/edit/main/docs/:path`,
+        text: "在 GitHub 上编辑此页"
+    },
     darkModeSwitchLabel: "切换日光/暗黑模式",
     sidebarMenuLabel: "文章",
     returnToTopLabel: "返回顶部",
@@ -32,7 +37,7 @@ export const themeConfig: DefaultTheme.Config = {
     socialLinks: [
         {
             icon: "github",
-            link: "https://github.com/OOM-WG",
+            link: "https://github.com/OOM-WG/SSU_Docs",
         },
     ],
     // 自定义页脚配置

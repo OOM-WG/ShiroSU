@@ -75,24 +75,24 @@
 }
 
 /* info容器:流体边框 */
-.custom-block.info::before,
-.custom-block.info::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-info-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.info::before,
+// .custom-block.info::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-info-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* info容器:流体边框动画 */
-.custom-block.info::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.info::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
@@ -120,24 +120,24 @@
 }
 
 /* 建议容器:流体边框 */
-.custom-block.tip::before,
-.custom-block.tip::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-tip-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.tip::before,
+// .custom-block.tip::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-tip-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* 建议容器:流体边框动画 */
-.custom-block.tip::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.tip::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
@@ -164,24 +164,24 @@
 }
 
 /* 警告容器:流体边框 */
-.custom-block.warning::before,
-.custom-block.warning::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-warning-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.warning::before,
+// .custom-block.warning::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-warning-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* 警告容器:流体边框动画 */
-.custom-block.warning::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.warning::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
@@ -208,26 +208,25 @@
   top: -1px;
 }
 
-
 /* DANGER容器:流体边框 */
-.custom-block.danger::before,
-.custom-block.danger::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-danger-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.danger::before,
+// .custom-block.danger::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-danger-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* DANGER容器:流体边框动画 */
-.custom-block.danger::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.danger::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
@@ -263,24 +262,24 @@
 }
 
 /* 提醒容器:流体边框 */
-.custom-block.note.github-alert::before,
-.custom-block.note.github-alert::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-note-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.note.github-alert::before,
+// .custom-block.note.github-alert::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-note-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* 提醒容器:流体边框动画 */
-.custom-block.note.github-alert::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.note.github-alert::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
@@ -307,26 +306,25 @@
   top: -1px;
 }
 
-
 /* 重要容器:流体边框 */
-.custom-block.important.github-alert::before,
-.custom-block.important.github-alert::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-important-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.important.github-alert::before,
+// .custom-block.important.github-alert::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-important-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* 重要容器:流体边框动画 */
-.custom-block.important.github-alert::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.important.github-alert::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
@@ -354,45 +352,39 @@
 }
 
 /* 注意容器:流体边框 */
-.custom-block.caution.github-alert::before,
-.custom-block.caution.github-alert::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-caution-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
+// .custom-block.caution.github-alert::before,
+// .custom-block.caution.github-alert::after {
+//   content: "";
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   right: -2px;
+//   bottom: -2px;
+//   border: 2px solid var(--custom-block-caution-left);
+//   transition: all .5s;
+//   animation: clippath 6s infinite linear;
+//   border-radius: 10px;
+// }
 
 /* 注意容器:流体边框动画 */
-.custom-block.caution.github-alert::after {
-  animation: clippath 6s infinite -3s linear;
-}
+// .custom-block.caution.github-alert::after {
+//   animation: clippath 6s infinite -3s linear;
+// }
 
 
 
 /* 流光边框 - 跑马灯 */
 
-@keyframes clippath {
+// @keyframes clippath {
 
-  0%,
-  100% {
-    clip-path: inset(0 0 90% 0);
-  }
+//   0%,
+//   100% {
+//     clip-path: inset(0 0 90% 0);
+//   }
 
-  25% {
-    clip-path: inset(0 90% 0 0);
-  }
+//   25% {
+//     clip-path: inset(0 90% 0 0);
+//   }
 
-  50% {
-    clip-path: inset(90% 0 0 0);
-  }
+//   50% {
 
-  75% {
-    clip-path: inset(0 0 0 90%);
-  }
-}

@@ -184,7 +184,7 @@
               <span class="cta-text">开始使用</span>
             </a>
             <a
-              href="https://qm.qq.com/q/YoA4Fa4mY2"
+              href="https://qq.yumeyuka.plus"
               class="cta-secondary"
               target="_blank"
               rel="noopener">

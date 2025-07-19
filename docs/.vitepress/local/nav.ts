@@ -5,15 +5,19 @@ export const nav: DefaultTheme.Config["nav"] = [
         text: "关于 SSU",
         items: [
             {
-                text: "起源",
+                text: "特色功能",
+                link: "/base/feats"
+            },
+            {
+                text: "一切的起源",
                 link: "/ssu/origin",
             },
             {
-                text: "致谢",
+                text: "开发致谢",
                 link: "/ssu/3q",
             },
             {
-                text: "团队",
+                text: "了解团队",
                 link: "/ssu/team",
             },
         ],
@@ -32,20 +36,20 @@ export const nav: DefaultTheme.Config["nav"] = [
         ],
     },
     {
-        text: "多语言",
+        text: "更多",
         items: [
             {
-                text: "说明",
+                text: "许可证",
+                link: "/more/license",
+            },
+            {
+                text: "隐私政策",
+                link: "/more/privacy",
+            },
+            {
+                text: "翻译",
                 link: "/more/translation",
             },
-            {
-                text: "沉浸式翻译",
-                link: "https://immersivetranslate.com/",
-            },
-            {
-                text: "DeepL",
-                link: "https://www.deepl.com/ja/translator/",
-            },
         ],
-    },
+    }
 ];

@@ -13,11 +13,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
                 {
                     text: "更新日志",
                     link: "/update/changelog",
-                },
-                {
-                    text: "历史版本",
-                    link: "/update/history",
-                },
+                }
             ],
         },
         {
@@ -44,17 +40,21 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
                     text: "模块 WebUI",
                     link: "/dev/webui",
                 },
+                {
+                    text: "Scheme 调用",
+                    link: "/dev/scheme",
+                }
             ],
         },
         {
             text: "关于 SSU",
             items: [
                 {
-                    text: "SSU 的起源",
+                    text: "一切的起源",
                     link: "/ssu/origin",
                 },
                 {
-                    text: "SSU 的原理",
+                    text: "内核工作原理",
                     link: "/ssu/principle",
                 },
                 {
@@ -70,23 +70,6 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
                     link: "/ssu/team",
                 },
             ],
-        },
-        {
-            text: "更多",
-            items: [
-                {
-                    text: "许可证",
-                    link: "/more/license",
-                },
-                {
-                    text: "隐私政策",
-                    link: "/more/privacy",
-                },
-                {
-                    text: "翻译",
-                    link: "/more/translation",
-                },
-            ],
-        },
+        }
     ],
 };

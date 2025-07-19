@@ -19,7 +19,7 @@ import {
 // ===== 第三方库 =====
 import mediumZoom from "medium-zoom";
 import ElementPlus from "element-plus";
-import Teek from "vitepress-theme-teek";
+import Teek, { SpotlightStyle } from "vitepress-theme-teek";
 import "vitepress-theme-teek/index.css";
 import "@theojs/lumen";
 // ===== Nolebase 插件 =====
@@ -166,6 +166,7 @@ export default {
             spotlight: {
                 defaultToggle: true,
                 disableHelp: true,
+                defaultStyle: SpotlightStyle.Overlay,
                 hoverBlockColor: "rgb(240 197 52 / 10%)",
             },
         });
