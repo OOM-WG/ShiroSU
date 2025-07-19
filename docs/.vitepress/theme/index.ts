@@ -71,9 +71,9 @@ import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
 import "@nolebase/vitepress-plugin-page-properties/client/style.css";
-import 'virtual:group-icons.css'
-import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
-import 'nprogress-v2/dist/index.css'
+import "virtual:group-icons.css";
+import { NProgress } from "nprogress-v2/dist/index.js"; // 进度条组件
+import "nprogress-v2/dist/index.css";
 import { inBrowser } from "vitepress"; // 进度条样式
 
 let homePageStyle: HTMLStyleElement | undefined;
@@ -90,8 +90,6 @@ const CssRenderStyle = defineComponent({
         return h("css-render-style", { innerHTML: this.style });
     },
 });
-
-
 
 // VitepressPath 组件：用于 SSR 时输出当前路由路径。
 const VitepressPath = defineComponent({
@@ -152,7 +150,6 @@ export default {
     },
 
     enhanceApp({ app, router }) {
-
         if (import.meta.env.SSR) {
             const { collect } = setup(app);
             app.provide("css-render-collect", collect);
@@ -166,7 +163,7 @@ export default {
             spotlight: {
                 defaultToggle: true,
                 disableHelp: true,
-                defaultStyle: SpotlightStyle.Overlay,
+                defaultStyle: 2,
                 hoverBlockColor: "rgb(240 197 52 / 10%)",
             },
         });
@@ -213,13 +210,13 @@ export default {
 
             // 页面进度条与访问统计
             if (inBrowser) {
-                NProgress.configure({ showSpinner: false })
+                NProgress.configure({ showSpinner: false });
                 router.onBeforeRouteChange = () => {
-                    NProgress.start() // 开始进度条
-                }
+                    NProgress.start(); // 开始进度条
+                };
                 router.onAfterRouteChange = () => {
-                    NProgress.done() // 停止进度条
-                }
+                    NProgress.done(); // 停止进度条
+                };
             }
         }
     },
