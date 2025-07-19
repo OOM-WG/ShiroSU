@@ -2,6 +2,10 @@ import type { DefaultTheme } from "vitepress";
 
 export const nav: DefaultTheme.Config["nav"] = [
     {
+        text: "快速开始",
+        link: "/base/overview",
+    },
+    {
         text: "关于 SSU",
         items: [
             {
