@@ -3,8 +3,8 @@ layout: doc
 title: 常见问题
 description: SakitinSU 项目的常见问题解答
 showPageStats: false
-progress: 75
 outline: deep
+footer: false
 ---
 
 # 常见问题 (FAQ)

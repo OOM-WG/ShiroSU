@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: SakitinSU 内核提权部分讲解
+footer: false
 ---
 
 # SakitinSU 内核提权部分讲解

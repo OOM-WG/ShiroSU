@@ -3,7 +3,8 @@ layout: doc
 title: 更新日志
 description: SakitinSU 项目的版本更新记录和变更历史
 outline: deep
-aside: true
+sidebar: false
+aside: false
 ---
 
 ::: tip

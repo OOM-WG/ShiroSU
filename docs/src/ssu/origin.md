@@ -3,6 +3,7 @@ layout: doc
 title: 项目起源
 description: 了解 SakitinSU 项目的诞生背景、发展历程和设计理念
 outline: deep
+footer: false
 ---
 
 ## 项目起源

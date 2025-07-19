@@ -5,6 +5,10 @@ description: 了解 SakitinSU - 基于内核的 Android Root 解决方案
 showPageStats: true
 progress: 30
 outline: deep
+footer: false
+next:
+  text: "安装指南"
+  link: "/base/install"
 ---
 
 # 什么是 SakitinSU？

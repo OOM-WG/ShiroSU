@@ -3,6 +3,10 @@ layout: doc
 title: 安装指南
 description: 详细的 SakitinSU 安装步骤和配置说明
 outline: deep
+footer: false
+prev:
+  text: "什么是 SakitinSU？"
+  link: "/base/overview"
 ---
 
 # 下载 SakitinSU 管理器

@@ -1,5 +1,6 @@
 ---
 layout: doc
+footer: false
 ---
 
 # 针对 SakitinSU 负面声音

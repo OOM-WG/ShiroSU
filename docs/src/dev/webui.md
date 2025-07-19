@@ -3,6 +3,7 @@ layout: doc
 title: WebUI 模块开发
 description: 了解如何开发具有 Web 界面的 SakitinSU 模块
 outline: deep
+footer: false
 ---
 
 # **WebUI 模块开发**

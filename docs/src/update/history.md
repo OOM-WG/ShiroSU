@@ -3,6 +3,8 @@ layout: doc
 title: 历史版本
 description: SakitinSU 项目的历史版本记录
 outline: deep
+sidebar: false
+aside: false
 ---
 
 ::: tip [Preview 最新版](https://ssu.fileto.download/preview/latest)

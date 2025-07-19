@@ -3,6 +3,7 @@ layout: doc
 title: 管理器 Scheme
 description: 了解如何使用 SakitinSU 管理器的 Scheme 方式调用
 outline: deep
+footer: false
 ---
 
 # **管理器 Scheme**

@@ -2,3 +2,5 @@
 layout: home
 ---
 
+<Confetti />
+

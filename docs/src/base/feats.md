@@ -2,6 +2,9 @@
 layout: doc
 title: SakitinSU 的特色功能
 description: 了解 SakitinSU 有哪些实用功能
+sidebar: false
+aside: false
+footer: false
 outline: deep
 ---
 
