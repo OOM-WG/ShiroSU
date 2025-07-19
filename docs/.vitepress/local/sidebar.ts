@@ -62,10 +62,6 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
                     link: "/ssu/defense",
                 },
                 {
-                    text: "文档致谢",
-                    link: "/ssu/3q",
-                },
-                {
                     text: "关于团队",
                     link: "/ssu/team",
                 },

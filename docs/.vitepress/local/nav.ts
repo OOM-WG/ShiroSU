@@ -9,10 +9,6 @@ export const nav: DefaultTheme.Config["nav"] = [
                 link: "/base/feats"
             },
             {
-                text: "一切的起源",
-                link: "/ssu/origin",
-            },
-            {
                 text: "开发致谢",
                 link: "/ssu/3q",
             },

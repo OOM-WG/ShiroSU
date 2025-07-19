@@ -16,7 +16,7 @@ export const themeConfig: DefaultTheme.Config = {
     },
     editLink: {
         pattern:
-            `https://github.com/OOM-WG/SSU_Docs/edit/main/docs/:path`,
+            `https://github.com/OOM-WG/SSU_Docs/edit/master/docs/:path`,
         text: "在 GitHub 上编辑此页"
     },
     darkModeSwitchLabel: "切换日光/暗黑模式",
