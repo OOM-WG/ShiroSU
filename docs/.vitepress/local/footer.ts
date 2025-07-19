@@ -40,7 +40,7 @@ const footer: CustomConfig["footer"] = {
             items: [
                 {
                     text: "多语言",
-                    link: "/more/Translation",
+                    link: "/more/translation",
                 },
                 {
                     text: "Latest Module",
