@@ -1,5 +1,5 @@
-// .vitepress/theme/styles/custom-block.scss
-// 深浅色卡
+/* .vitepress/theme/style/custom-block.css */
+/* 深浅色卡 */
 :root {
   --custom-block-info-left: #cccccc;
   --custom-block-info-bg: #fafafa;
@@ -52,12 +52,10 @@
   font-size: 16px;
 }
 
-/* info容器:背景色、流体边框 */
+/* info容器:背景色、左侧 */
 .custom-block.info {
-  border-left: none;
+  border-left: 5px solid var(--custom-block-info-left);
   background-color: var(--custom-block-info-bg);
-  position: relative;
-  transition: all .3s;
 }
 
 /* info容器:svg图 */
@@ -74,38 +72,14 @@
   top: -1px;
 }
 
-/* info容器:流体边框 */
-// .custom-block.info::before,
-// .custom-block.info::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-info-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* info容器:流体边框动画 */
-// .custom-block.info::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-
-/* 建议容器::背景色、流体边框 */
+/* 提示容器:边框色、背景色、左侧 */
 .custom-block.tip {
-  border-left: none;
+  /* border-color: var(--custom-block-tip); */
+  border-left: 5px solid var(--custom-block-tip-left);
   background-color: var(--custom-block-tip-bg);
-  position: relative;
-  transition: all .3s;
 }
 
-/* 建议容器:svg图 */
+/* 提示容器:svg图 */
 .custom-block.tip [class*="custom-block-title"]::before {
   content: '';
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23009400' d='M7.941 18c-.297-1.273-1.637-2.314-2.187-3a8 8 0 1 1 12.49.002c-.55.685-1.888 1.726-2.185 2.998H7.94zM16 20v1a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-1h8zm-3-9.995V6l-4.5 6.005H11v4l4.5-6H13z'/%3E%3C/svg%3E");
@@ -119,38 +93,13 @@
   top: -2px;
 }
 
-/* 建议容器:流体边框 */
-// .custom-block.tip::before,
-// .custom-block.tip::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-tip-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* 建议容器:流体边框动画 */
-// .custom-block.tip::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-
-/* 警告:背景色、流体边框 */
+/* 警告容器:背景色、左侧 */
 .custom-block.warning {
-  border-left: none;
+  border-left: 5px solid var(--custom-block-warning-left);
   background-color: var(--custom-block-warning-bg);
-  position: relative;
-  transition: all .3s;
 }
 
-/* 警告:svg图 */
+/* 警告容器:svg图 */
 .custom-block.warning [class*="custom-block-title"]::before {
   content: '';
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M576.286 752.57v-95.425q0-7.031-4.771-11.802t-11.3-4.772h-96.43q-6.528 0-11.3 4.772t-4.77 11.802v95.424q0 7.031 4.77 11.803t11.3 4.77h96.43q6.528 0 11.3-4.77t4.77-11.803zm-1.005-187.836 9.04-230.524q0-6.027-5.022-9.543-6.529-5.524-12.053-5.524H456.754q-5.524 0-12.053 5.524-5.022 3.516-5.022 10.547l8.538 229.52q0 5.023 5.022 8.287t12.053 3.265h92.913q7.032 0 11.803-3.265t5.273-8.287zM568.25 95.65l385.714 707.142q17.578 31.641-1.004 63.282-8.538 14.564-23.354 23.102t-31.892 8.538H126.286q-17.076 0-31.892-8.538T71.04 866.074q-18.582-31.641-1.004-63.282L455.75 95.65q8.538-15.57 23.605-24.61T512 62t32.645 9.04 23.605 24.61z' fill='%23e6a700'/%3E%3C/svg%3E");
@@ -163,38 +112,13 @@
   left: -5px;
 }
 
-/* 警告容器:流体边框 */
-// .custom-block.warning::before,
-// .custom-block.warning::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-warning-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* 警告容器:流体边框动画 */
-// .custom-block.warning::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-
-/* DANGER容器:背景色、流体边框 */
+/* 危险容器:背景色、左侧 */
 .custom-block.danger {
-  border-left: none;
+  border-left: 5px solid var(--custom-block-danger-left);
   background-color: var(--custom-block-danger-bg);
-  position: relative;
-  transition: all .3s;
 }
 
-/* DANGER容器:svg图 */
+/* 危险容器:svg图 */
 .custom-block.danger [class*="custom-block-title"]::before {
   content: '';
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2c5.523 0 10 4.477 10 10v3.764a2 2 0 0 1-1.106 1.789L18 19v1a3 3 0 0 1-2.824 2.995L14.95 23a2.5 2.5 0 0 0 .044-.33L15 22.5V22a2 2 0 0 0-1.85-1.995L13 20h-2a2 2 0 0 0-1.995 1.85L9 22v.5c0 .171.017.339.05.5H9a3 3 0 0 1-3-3v-1l-2.894-1.447A2 2 0 0 1 2 15.763V12C2 6.477 6.477 2 12 2zm-4 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z' fill='%23e13238'/%3E%3C/svg%3E");
@@ -208,43 +132,10 @@
   top: -1px;
 }
 
-/* DANGER容器:流体边框 */
-// .custom-block.danger::before,
-// .custom-block.danger::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-danger-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* DANGER容器:流体边框动画 */
-// .custom-block.danger::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-
-
-
-
-
-/* GitHub风格警告 */
-
-
-
-/* 提醒容器:背景色、流体边框 */
+/* 提醒容器:背景色、左侧 */
 .custom-block.note {
-  border-left: none;
+  border-left: 5px solid var(--custom-block-note-left);
   background-color: var(--custom-block-note-bg);
-  position: relative;
-  transition: all .3s;
 }
 
 /* 提醒容器:svg图 */
@@ -261,35 +152,10 @@
   top: -1px;
 }
 
-/* 提醒容器:流体边框 */
-// .custom-block.note.github-alert::before,
-// .custom-block.note.github-alert::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-note-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* 提醒容器:流体边框动画 */
-// .custom-block.note.github-alert::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-
-/* 重要容器:背景色、流体边框 */
+/* 重要容器:背景色、左侧 */
 .custom-block.important {
-  border-left: none;
+  border-left: 5px solid var(--custom-block-important-left);
   background-color: var(--custom-block-important-bg);
-  position: relative;
-  transition: all .3s;
 }
 
 /* 重要容器:svg图 */
@@ -306,35 +172,10 @@
   top: -1px;
 }
 
-/* 重要容器:流体边框 */
-// .custom-block.important.github-alert::before,
-// .custom-block.important.github-alert::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-important-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* 重要容器:流体边框动画 */
-// .custom-block.important.github-alert::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-
-/* 注意容器:背景色、流体边框 */
+/* 注意容器:背景色、左侧 */
 .custom-block.caution {
-  border-left: none;
+  border-left: 5px solid var(--custom-block-caution-left);
   background-color: var(--custom-block-caution-bg);
-  position: relative;
-  transition: all .3s;
 }
 
 /* 注意容器:svg图 */
@@ -350,41 +191,3 @@
   left: -5px;
   top: -1px;
 }
-
-/* 注意容器:流体边框 */
-// .custom-block.caution.github-alert::before,
-// .custom-block.caution.github-alert::after {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   right: -2px;
-//   bottom: -2px;
-//   border: 2px solid var(--custom-block-caution-left);
-//   transition: all .5s;
-//   animation: clippath 6s infinite linear;
-//   border-radius: 10px;
-// }
-
-/* 注意容器:流体边框动画 */
-// .custom-block.caution.github-alert::after {
-//   animation: clippath 6s infinite -3s linear;
-// }
-
-
-
-/* 流光边框 - 跑马灯 */
-
-// @keyframes clippath {
-
-//   0%,
-//   100% {
-//     clip-path: inset(0 0 90% 0);
-//   }
-
-//   25% {
-//     clip-path: inset(0 90% 0 0);
-//   }
-
-//   50% {
-
