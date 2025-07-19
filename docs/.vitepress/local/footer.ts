@@ -9,12 +9,12 @@ const footer: CustomConfig["footer"] = {
             title: "关于 SSU",
             items: [
                 {
-                    text: "团队",
-                    link: "/ssu/team",
+                    text: "特色",
+                    link: "/base/feats"
                 },
                 {
-                    text: "起源",
-                    link: "/ssu/origin",
+                    text: "团队",
+                    link: "/ssu/team",
                 },
                 {
                     text: "致谢",
@@ -47,8 +47,8 @@ const footer: CustomConfig["footer"] = {
                     link: "https://www.mod.latestfile.zip",
                 },
                 {
-                    text: "YumeYuka",
-                    link: "https://YumeYuka.plus",
+                    text: "YumeYuka++",
+                    link: "https://yumeyuka.plus",
                 },
             ],
         },

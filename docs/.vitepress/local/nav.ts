@@ -9,21 +9,17 @@ export const nav: DefaultTheme.Config["nav"] = [
                 link: "/base/feats"
             },
             {
-                text: "一切的起源",
-                link: "/ssu/origin",
+                text: "了解团队",
+                link: "/ssu/team",
             },
             {
                 text: "开发致谢",
                 link: "/ssu/3q",
             },
-            {
-                text: "了解团队",
-                link: "/ssu/team",
-            },
         ],
     },
     {
-        text: "更新",
+        text: "版本更新",
         items: [
             {
                 text: "历史版本",
@@ -36,20 +32,7 @@ export const nav: DefaultTheme.Config["nav"] = [
         ],
     },
     {
-        text: "更多",
-        items: [
-            {
-                text: "许可证",
-                link: "/more/license",
-            },
-            {
-                text: "隐私政策",
-                link: "/more/privacy",
-            },
-            {
-                text: "翻译",
-                link: "/more/translation",
-            },
-        ],
-    }
+        text: "文档翻译",
+        link: "/more/translation",
+    },
 ];

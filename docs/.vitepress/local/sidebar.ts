@@ -4,21 +4,12 @@ import type { DefaultTheme } from "vitepress";
 export const sidebar: DefaultTheme.Config["sidebar"] = {
     "/": [
         {
-            text: "快速了解",
+            text: "使用指南",
             items: [
                 {
                     text: "什么是 SSU",
                     link: "/base/overview",
                 },
-                {
-                    text: "更新日志",
-                    link: "/update/changelog",
-                }
-            ],
-        },
-        {
-            text: "使用指南",
-            items: [
                 {
                     text: "安装指南",
                     link: "/base/install",
@@ -60,14 +51,6 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
                 {
                     text: "面对质疑",
                     link: "/ssu/defense",
-                },
-                {
-                    text: "文档致谢",
-                    link: "/ssu/3q",
-                },
-                {
-                    text: "关于团队",
-                    link: "/ssu/team",
                 },
             ],
         }
