@@ -4,7 +4,7 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "sakitinsu",
+  "name": "ssu-worker",
   "main": "src/index.js",
   "compatibility_date": "2025-06-19",
   "observability": {
