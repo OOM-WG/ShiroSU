@@ -2,6 +2,10 @@ import type { DefaultTheme } from "vitepress";
 
 export const nav: DefaultTheme.Config["nav"] = [
     {
+        text: "快速开始",
+        link: "/base/overview",
+    },
+    {
         text: "关于 SSU",
         items: [
             {
@@ -9,17 +13,17 @@ export const nav: DefaultTheme.Config["nav"] = [
                 link: "/base/feats"
             },
             {
-                text: "开发致谢",
-                link: "/ssu/3q",
-            },
-            {
                 text: "了解团队",
                 link: "/ssu/team",
+            },
+            {
+                text: "开发致谢",
+                link: "/ssu/3q",
             },
         ],
     },
     {
-        text: "更新",
+        text: "版本更新",
         items: [
             {
                 text: "历史版本",
@@ -32,20 +36,7 @@ export const nav: DefaultTheme.Config["nav"] = [
         ],
     },
     {
-        text: "更多",
-        items: [
-            {
-                text: "许可证",
-                link: "/more/license",
-            },
-            {
-                text: "隐私政策",
-                link: "/more/privacy",
-            },
-            {
-                text: "翻译",
-                link: "/more/translation",
-            },
-        ],
-    }
+        text: "文档翻译",
+        link: "/more/translation",
+    },
 ];
