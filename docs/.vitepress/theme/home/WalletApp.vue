@@ -184,7 +184,7 @@
               <span class="cta-text">开始使用</span>
             </a>
             <a
-              href="https://qq.yumeyuka.plus"
+              href="https://join.oom-wg.dev"
               class="cta-secondary"
               target="_blank"
               rel="noopener">
