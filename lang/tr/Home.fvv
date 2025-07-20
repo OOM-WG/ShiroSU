@@ -40,6 +40,5 @@ Home = {
     Enabled = "Etkin"
     Disabled = "Devre Dışı"
 
-    JoinUsTtl = "Bize Katılın"
-    JoinUsCnt = "Yeni bir proje olarak SakitinSU'nun hala birçok eksiği var. Herhangi bir sorunuz varsa, lütfen geliştiricilere geri bildirimde bulunun. Ayrıca diğer kullanıcılarla sohbet edebilir ve tartışabilirsiniz.\nÖncelikle QQ grubumuza katılmanızı öneririz. Lütfen aktif olmayan üyelerin sohbetten periyodik olarak çıkarılacağını unutmayın."
+    JoinUs = "Bize Katılın"
 }
