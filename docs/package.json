@@ -31,6 +31,7 @@
 		"element-plus": "^2.10.4",
 		"gsap": "^3.13.0",
 		"html-minifier-terser": "^7.2.0",
+		"node-fetch": "^3.3.2",
 		"vitepress": "2.0.0-alpha.8",
 		"vitepress-plugin-rss": "^0.3.1",
 		"vue-amazing-ui": "^2.4.14"
