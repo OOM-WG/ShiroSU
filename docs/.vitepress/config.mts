@@ -1,15 +1,17 @@
 import type { Plugin } from "vite";
-import { defineConfig } from "vitepress";
+import { defineConfig ,SiteConfig  } from "vitepress";
 // import { defineTeekConfig } from "vitepress-theme-teek/config";
 import path from "path";
 import { head } from "./local/head";
 import { markdown } from "./local/markdown";
 import { themeConfig } from "./local/theme";
+// 直接导入src目录下的语言配置
+import zhConfig from '../src/config'
+import enConfig from '../src/en/config'
+import jaConfig from '../src/ja/config'
+import { readdir, writeFile } from 'fs/promises'
+import { resolve } from 'path'
 import { fileURLToPath, URL } from "node:url";
-// 导入语言特定配置
-import zhConfig from "../src/config";
-import enConfig from "../src/en/config";
-import jaConfig from "../src/ja/config";
 import {
     GitChangelog,
     GitChangelogMarkdownSection,
@@ -23,8 +25,10 @@ import {
 } from "@nolebase/vitepress-plugin-page-properties/vite";
 import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
 import { withMermaid } from "vitepress-plugin-mermaid";
-import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-
+import {
+    groupIconMdPlugin,
+    groupIconVitePlugin,
+} from "vitepress-plugin-group-icons";
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
@@ -54,30 +58,29 @@ export default withMermaid({
     cleanUrls: true,
 
     rewrites: {
-        'zh/:rest*': ':rest*'
+        "zh/:rest*": ":rest*",
     },
     metaChunk: true,
 
     // 多语言配置
-    locales: {
+    locales: { // 多语言
         root: {
             label: '简体中文',
             lang: 'zh-CN',
-            link: '/',
             ...zhConfig
         },
         en: {
             label: 'English',
-            lang: 'en-US',
+            lang: 'en',
             link: '/en/',
             ...enConfig
         },
         ja: {
             label: '日本語',
-            lang: 'ja-JP',
+            lang: 'ja',
             link: '/ja/',
             ...jaConfig
-        }
+        },
     },
 
     sitemap: {
@@ -101,12 +104,11 @@ export default withMermaid({
     transformHtml(code, id, { pageData }) {
         if (process.env.NODE_ENV !== "production") return;
 
-        const newCode = code
-            .replace(
-                /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
-                (_, attr, path) =>
-                    `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
-            );
+        const newCode = code.replace(
+            /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
+            (_, attr, path) =>
+                `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
+        );
 
         return newCode;
     },
