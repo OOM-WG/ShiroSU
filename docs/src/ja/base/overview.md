@@ -6,9 +6,6 @@ showPageStats: true
 progress: 30
 outline: deep
 footer: false
-next: 
-text: インストールガイド
-link: /base/install
 ---
 # 什么是 SakitinSU？
 

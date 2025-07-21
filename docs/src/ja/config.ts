@@ -1,6 +1,7 @@
-import { defineAdditionalConfig, type DefaultTheme } from "vitepress";
+import { defineConfig, type DefaultTheme } from "vitepress";
 
-export default defineAdditionalConfig({
+
+export default defineConfig({
     lang: "ja-JP",
     description: "SakitinSU - カーネルベースの Android Root ソリューション",
 
@@ -95,15 +96,15 @@ function sidebar(): DefaultTheme.SidebarItem[] {
             items: [
                 {
                     text: "SSU とは",
-                    link: "/ja/base/overview",
+                    link: "/base/overview",
                 },
                 {
                     text: "インストールガイド",
-                    link: "/ja/base/install",
+                    link: "/base/install",
                 },
                 {
                     text: "よくある質問",
-                    link: "/ja/base/faq",
+                    link: "/base/faq",
                 },
             ],
         },
@@ -113,15 +114,15 @@ function sidebar(): DefaultTheme.SidebarItem[] {
             items: [
                 {
                     text: "モジュール開発",
-                    link: "/ja/dev/module",
+                    link: "/dev/module",
                 },
                 {
                     text: "モジュール WebUI",
-                    link: "/ja/dev/webui",
+                    link: "/dev/webui",
                 },
                 {
                     text: "Scheme 呼び出し",
-                    link: "/ja/dev/scheme",
+                    link: "/dev/scheme",
                 },
             ],
         },
@@ -131,15 +132,15 @@ function sidebar(): DefaultTheme.SidebarItem[] {
             items: [
                 {
                     text: "すべての始まり",
-                    link: "/ja/ssu/origin",
+                    link: "/ssu/origin",
                 },
                 {
                     text: "カーネル動作原理",
-                    link: "/ja/ssu/principle",
+                    link: "/ssu/principle",
                 },
                 {
                     text: "疑問への対応",
-                    link: "/ja/ssu/defense",
+                    link: "/ssu/defense",
                 },
             ],
         },

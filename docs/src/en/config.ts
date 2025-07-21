@@ -1,6 +1,8 @@
-import { defineAdditionalConfig, type DefaultTheme } from "vitepress";
+import { defineConfig, type DefaultTheme } from "vitepress";
 
-export default defineAdditionalConfig({
+
+export default defineConfig({
+
     lang: "en-US",
     description: "SakitinSU - Kernel-based Android Root Solution",
 
@@ -49,7 +51,7 @@ export default defineAdditionalConfig({
     },
 });
 
-function nav(): DefaultTheme.NavItem[] {
+    function nav(): DefaultTheme.NavItem[] {
     return [
         {
             text: "About SSU",

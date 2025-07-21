@@ -6,9 +6,6 @@ showPageStats: true
 progress: 30
 outline: deep
 footer: false
-next:
-text: Installation Guide
-link: /base/install
 ---
 # What is SakitinSU?
 

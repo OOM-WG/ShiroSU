@@ -4,9 +4,6 @@ title: Installation Guide
 description: Detailed SakitinSU Installation Steps and Configuration Instructions
 outline: deep
 footer: false
-prev: 
-text: What is SakitinSU?
-link: /base/overview
 ---
 # Download SakitinSU Manager
 

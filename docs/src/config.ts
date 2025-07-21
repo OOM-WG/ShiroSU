@@ -1,6 +1,7 @@
-import { defineAdditionalConfig, type DefaultTheme } from "vitepress";
+import { defineConfig, type DefaultTheme } from "vitepress";
 
-export default defineAdditionalConfig({
+
+export default defineConfig({
     lang: "zh-Hans",
     description: "SakitinSU - 基于内核的 Android Root 解决方案",
 
@@ -159,6 +160,7 @@ function searchOptions(): Partial<DefaultTheme.LocalSearchOptions> {
                 footer: {
                     selectText: "选择",
                     navigateText: "切换",
+                    closeText: "关闭",
                 },
             },
         },

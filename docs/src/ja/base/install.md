@@ -4,9 +4,6 @@ title: インストールガイド
 description: 詳細な SakitinSU インストール手順と設定説明
 outline: deep
 footer: false
-prev: 
-text: SakitinSU とは何ですか？
-link: /base/overview
 ---
 # SakitinSU マネージャーのダウンロード
 
