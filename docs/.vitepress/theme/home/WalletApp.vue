@@ -180,7 +180,7 @@
             带来的权能，繁琐的底层细节交给我们就好。
           </p>
           <div class="cta-group">
-            <a href="/base/overview" class="cta-primary">
+            <a href="/zh/base/overview" class="cta-primary">
               <span class="cta-text">开始使用</span>
             </a>
             <a

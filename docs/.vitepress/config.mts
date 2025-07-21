@@ -6,6 +6,10 @@ import { head } from "./local/head";
 import { markdown } from "./local/markdown";
 import { themeConfig } from "./local/theme";
 import { fileURLToPath, URL } from "node:url";
+// 导入语言特定配置
+import zhConfig from "../src/config";
+import enConfig from "../src/en/config";
+import jaConfig from "../src/ja/config";
 import {
     GitChangelog,
     GitChangelogMarkdownSection,
@@ -37,9 +41,9 @@ export default withMermaid({
     // export default defineConfig({
     // extends: teekConfig,
     title: "SakitinSU",
-    description: "",
+    // description: "",
 
-    base: "/",
+    // base: "/",
     lastUpdated: true,
     ignoreDeadLinks: true,
 
@@ -48,11 +52,38 @@ export default withMermaid({
     srcExclude: [],
     scrollOffset: "header",
     cleanUrls: true,
+
+    rewrites: {
+        'zh/:rest*': ':rest*'
+    },
+    metaChunk: true,
+
+    // 多语言配置
+    locales: {
+        root: {
+            label: '简体中文',
+            lang: 'zh-CN',
+            link: '/',
+            ...zhConfig
+        },
+        en: {
+            label: 'English',
+            lang: 'en-US',
+            link: '/en/',
+            ...enConfig
+        },
+        ja: {
+            label: '日本語',
+            lang: 'ja-JP',
+            link: '/ja/',
+            ...jaConfig
+        }
+    },
+
     sitemap: {
         hostname: "https://ssu.oom-wg.dev",
     },
     head: head,
-    lang: "zh-CN",
     markdown: markdown,
     themeConfig,
 

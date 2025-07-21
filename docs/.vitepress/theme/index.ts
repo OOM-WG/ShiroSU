@@ -112,11 +112,11 @@ export default {
                     h(MyLayout, null, {
                         "layout-top": () => [
                             h(UnderConstructionBanner),
-                            h(
-                                defineAsyncComponent(
-                                    () => import("./components/Banner.vue"),
-                                ),
-                            ),
+                            // h(
+                            //     defineAsyncComponent(
+                            //         () => import("./components/Banner.vue"),
+                            //     ),
+                            // ),
                             h(NolebaseHighlightTargetedHeading),
                             // h(Mouse),
                         ],
