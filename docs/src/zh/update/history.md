@@ -14,6 +14,8 @@ aside: false
 
 ### 0.2.x
 
+#### [0.2.3 p1](https://ssu.fileto.download/preview/0.2.3) <Badge type="tip" text="Preview" />
+
 #### [0.2.1 p0](https://ssu.fileto.download/preview/0.2.1) <Badge type="tip" text="Preview" />
 
 #### [0.2.0 p0](https://ssu.fileto.download/preview/0.2.0) <Badge type="tip" text="Preview" />
