@@ -1,3 +1,10 @@
 SUPower = {
     SearchApp = "搜索軟體"
+
+    SUPM = "SU權能"
+
+    SSUSELinux = "SELinux寬容"
+    SSUHide = "隱藏"
+
+    MagiskDenyList = "排除清單"
 }

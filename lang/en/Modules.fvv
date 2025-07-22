@@ -14,8 +14,6 @@ Modules = {
     UnstarMod = "The module has been removed from bookmarks"
     StarMod = "The module has been bookmarked"
 
-    ModErrTtl = "Why is this prompted?"
-    ModErrCnt = "This is usually prompted because the module information is corrupted or the module information is not up to specification\nThe specific manifestation of module information corruption is that the module information contains the word \\"%s\\", which is usually caused by the author's misoperation, and reinstalling the module can generally solve this problem\nModule information is not up to specification, usually because the author has misused the case or used the wrong module ID"
     ModErr = "Module Error – Reinstall or Contact Author"
     CanUp = "Updatable"
     Updated = "Updated"

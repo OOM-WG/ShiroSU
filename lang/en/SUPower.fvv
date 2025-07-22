@@ -1,3 +1,10 @@
 SUPower = {
     SearchApp = "Search for apps"
+
+    SUPM = "Super user"
+
+    SSUSELinux = "SELinux bypass"
+    SSUHide = "Hide"
+
+    MagiskDenyList = "Deny list"
 }
