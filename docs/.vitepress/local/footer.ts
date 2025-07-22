@@ -43,8 +43,8 @@ const footer: CustomConfig["footer"] = {
                     link: "/more/translation",
                 },
                 {
-                    text: "Latest Module",
-                    link: "https://www.mod.latestfile.zip",
+                    text: "Latest File",
+                    link: "https://latestfile.zip",
                 },
                 {
                     text: "YumeYuka++",
