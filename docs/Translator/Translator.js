@@ -1,7 +1,11 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const SOURCE_DIR = '../src';
+// 修改源目录路径 - 可以根据需要调整
+const SOURCE_DIR = '../src/zh';  // 或者改为其他路径，如 './source' 或 '../docs/zh'
+
+// 修改输出根目录 - 可以根据需要调整
+const OUTPUT_ROOT_DIR = '../src';  // 翻译后的文件将存放在 ../src/en, ../src/ja 等目录
 
 const TARGET_LANGUAGES = [
   'en',        // 英语
@@ -237,9 +241,9 @@ async function translateAndSaveFile(filePath, targetLang) {
   // 组合最终内容
   const finalContent = translatedFrontMatter + translatedContent;
 
-  // 生成输出路径
+  // 生成输出路径 - 修改这里以使用新的输出目录结构
   const relativePath = path.relative(SOURCE_DIR, filePath);
-  const outputPath = path.join('.', targetLang, relativePath);
+  const outputPath = path.join(OUTPUT_ROOT_DIR, targetLang, relativePath);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, finalContent, 'utf8');
   console.log(`✅ Saved: ${outputPath}`);
@@ -253,7 +257,7 @@ async function translateAndSaveFile(filePath, targetLang) {
  */
 async function targetFileExists(sourceFilePath, targetLang) {
   const relativePath = path.relative(SOURCE_DIR, sourceFilePath);
-  const outputPath = path.join('.', targetLang, relativePath);
+  const outputPath = path.join(OUTPUT_ROOT_DIR, targetLang, relativePath);
 
   try {
     await fs.access(outputPath);
@@ -269,6 +273,7 @@ async function targetFileExists(sourceFilePath, targetLang) {
 async function main() {
   console.log(`🚀 Starting multi-language translation of '${SOURCE_DIR}'...`);
   console.log(`📋 Target languages: ${TARGET_LANGUAGES.join(', ')}`);
+  console.log(`📂 Output directory: ${OUTPUT_ROOT_DIR}`);
   console.log(`📂 Checking existing files and translating only missing ones...\n`);
 
   try {
@@ -277,6 +282,13 @@ async function main() {
   } catch (error) {
     console.error(`❌ Error: Source directory '${SOURCE_DIR}' not found.`);
     return;
+  }
+
+  // 确保输出根目录存在
+  try {
+    await fs.mkdir(OUTPUT_ROOT_DIR, { recursive: true });
+  } catch (error) {
+    // 目录可能已存在，忽略错误
   }
 
   const startTime = Date.now();
