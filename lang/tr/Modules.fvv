@@ -14,8 +14,6 @@ Modules = {
     UnstarMod = "Favorilerden kaldırıldı"
     StarMod = "Modül favorilere eklendi"
 
-    ModErrTtl = "Bu mesaj neden görüntüleniyor?"
-    ModErrCnt = "Bu mesaj genellikle modül bilgisi bozuksa veya belirtimlere uymuyorsa görüntülenir.\nModül bilgisi bozulmasının belirli bir belirtisi, içinde \\"%s\\" kelimesinin bulunmasıdır, bu genellikle yazarın bir hatasından kaynaklanır. Modülü yeniden yüklemek genellikle bu sorunu çözer.\nModül bilgisinin belirtimlere uymaması genellikle yazarın büyük/küçük harf kullanımı veya yanlış modül kimliği kullanmasından kaynaklanır."
     ModErr = "Modül hatası veya düşük kalite, yeniden yükleyin veya yazarla iletişime geçin."
     CanUp = "Güncellenebilir"
     Updated = "Güncellendi"
