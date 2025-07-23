@@ -23,6 +23,10 @@ UI = {
     Home = "主页"
     SUPower = "权能"
     Modules = "模块"
+
+    ToolPages = "工具"
+
+    CommonPages = "基本"
     Settings = "设置"
     About = "关于"
 
