@@ -2,174 +2,11 @@
   <div class="VPHome">
     <div class="jetbrains-hero">
       <div class="hero-background">
-        <svg
-          class="animated-bg"
-          viewBox="0 0 1400 800"
-          preserveAspectRatio="xMidYMid slice">
-          <rect
-            x="1300"
-            y="400"
-            rx="40"
-            ry="40"
-            width="300"
-            height="300"
-            stroke="#5D67E8"
-            fill="#5D67E8">
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="15s"
-              type="rotate"
-              from="0 1450 550"
-              to="360 1450 550"
-              repeatCount="indefinite" />
-          </rect>
-
-          <path
-            d="M 100 350 A 150 150 0 1 1 400 350 Q400 370 380 370 L 250 370 L 120 370 Q100 370 100 350"
-            stroke="rgb(253, 214, 99)"
-            fill="rgb(253, 214, 99)">
-            <animateMotion
-              path="M 800 -200 L 800 -300 L 800 -200"
-              dur="8s"
-              begin="0s"
-              repeatCount="indefinite" />
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="12s"
-              type="rotate"
-              values="0 210 530 ; -30 210 530 ; 0 210 530"
-              keyTimes="0 ; 0.5 ; 1"
-              repeatCount="indefinite" />
-          </path>
-
-          <circle cx="200" cy="150" r="20" stroke="#5D67E8" fill="#5D67E8">
-            <animateMotion
-              path="M 0 0 L 40 20 Z"
-              dur="2s"
-              repeatCount="indefinite" />
-          </circle>
-
-          <path
-            d="M 165 580 L 270 580 Q275 578 270 570 L 223 483 Q220 480 217 483 L 165 570 Q160 578 165 580"
-            stroke="rgb(238, 103, 92)"
-            fill="rgb(238, 103, 92)">
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="18s"
-              type="rotate"
-              from="0 210 530"
-              to="360 210 530"
-              repeatCount="indefinite" />
-          </path>
-
-          <circle
-            cx="1200"
-            cy="600"
-            r="30"
-            stroke="rgb(241, 243, 244)"
-            fill="rgb(241, 243, 244)">
-            <animateMotion
-              path="M 0 0 L -20 40 Z"
-              dur="4s"
-              repeatCount="indefinite" />
-          </circle>
-
-          <path
-            d="M 100 350 A 40 40 0 1 1 180 350 L 180 430 A 40 40 0 1 1 100 430 Z"
-            stroke="rgb(241, 243, 244)"
-            fill="rgb(241, 243, 244)">
-            <animateMotion
-              path="M 140 390 L 180 360 L 140 390"
-              dur="10s"
-              begin="0s"
-              repeatCount="indefinite" />
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="15s"
-              type="rotate"
-              values="0 140 390; -60 140 390; 0 140 390"
-              keyTimes="0 ; 0.5 ; 1"
-              repeatCount="indefinite" />
-          </path>
-
-          <rect
-            x="400"
-            y="600"
-            rx="40"
-            ry="40"
-            width="100"
-            height="100"
-            stroke="rgb(129, 201, 149)"
-            fill="rgb(129, 201, 149)">
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="16s"
-              type="rotate"
-              from="-30 550 750"
-              to="330 550 750"
-              repeatCount="indefinite" />
-          </rect>
-
-          <!-- 五边形（圆角） -->
-          <rect
-            x="850"
-            y="150"
-            width="120"
-            height="120"
-            rx="25"
-            ry="25"
-            stroke="rgb(111, 134, 237)"
-            fill="rgb(111, 134, 237)">
-            <animateMotion
-              path="M 0 0 L 40 20 L 0 0"
-              dur="10s"
-              repeatCount="indefinite" />
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="14s"
-              type="rotate"
-              from="0 910 210"
-              to="360 910 210"
-              repeatCount="indefinite" />
-          </rect>
-
-          <!-- 圆角三角形 -->
-          <rect
-            x="700"
-            y="500"
-            width="80"
-            height="80"
-            rx="15"
-            ry="15"
-            stroke="rgb(248, 113, 113)"
-            fill="rgb(248, 113, 113)">
-            <animateMotion
-              path="M 0 0 L -20 30 L 0 0"
-              dur="7s"
-              repeatCount="indefinite" />
-            <animateTransform
-              attributeType="XML"
-              attributeName="transform"
-              begin="0s"
-              dur="12s"
-              type="rotate"
-              values="0 740 540; -30 740 540; 0 740 540"
-              keyTimes="0 ; 0.5 ; 1"
-              repeatCount="indefinite" />
-          </rect>
-        </svg>
+        <img
+          src="./img/bg.svg"
+          class="bg-image"
+          alt="背景图"
+          style="object-position: center" />
       </div>
       <div class="hero-content">
         <div class="content-wrapper">
@@ -194,7 +31,7 @@
         </div>
       </div>
     </div>
-    <!-- Notification Modal 插件集成 -->
+    <!-- Notification Modal -->
     <Teleport to="body">
       <Transition name="toast" appear>
         <div v-if="visible" class="toast-notification" @click="handleClose">
@@ -210,9 +47,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue"
-// NotificationModal 逻辑直接合并到本组件
 
-// 通知弹窗相关逻辑
 const content = ref("仅支持中文阅读 (Chinese Only)")
 const duration = 5000
 const storageKey = "toast-notification-dismissed"
@@ -221,7 +56,6 @@ const visible = ref(false)
 
 const handleClose = () => {
   visible.value = false
-  // 可在此处 emit("close")
 }
 
 const shouldShow = () => {
@@ -242,13 +76,9 @@ const show = () => {
   }
 }
 
-const hide = () => {
-  visible.value = false
-}
-
 onMounted(() => {
   if (autoShow) {
-    setTimeout(show, 1000) // 延迟1秒显示
+    setTimeout(show, 1000)
   }
 })
 </script>
@@ -258,14 +88,15 @@ onMounted(() => {
   margin: 0;
   width: 100%;
 }
+
 .jetbrains-hero {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   font-family: var(--vp-font-family-base);
 }
+
 .hero-background {
   position: absolute;
   top: 0;
@@ -275,17 +106,16 @@ onMounted(() => {
   background: #ffffff;
   z-index: 1;
 }
-.animated-bg {
+
+.bg-image {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  opacity: 1;
+  object-fit: cover;
 }
+
 .hero-content {
   position: relative;
   z-index: 3;
@@ -293,483 +123,147 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 0;
   width: 100%;
+  /* 将内容向上移动 */
+  padding-top: 10vh;
+  padding-bottom: 20vh;
 }
+
 .content-wrapper {
   max-width: 800px;
   width: 100%;
-  margin: 0;
-  align-items: flex-start;
-  text-align: left;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  text-align: left;
 }
+
 .hero-main-title {
   font-size: clamp(3.2rem, 9vw, 5rem);
   font-weight: 700;
   margin: 0 0 1.2rem 0;
-  letter-spacing: -0.02em;
-  color: #6366f1;
-  background: linear-gradient(90deg, #6366f1 0%, #f43f5e 100%);
+  /* 使用 VitePress 主题渐变色 */
+  background: linear-gradient(120deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-next, #bd34fe));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  white-space: normal;
-  text-align: left;
   line-height: 1.1;
-  display: block;
-  text-shadow: none;
 }
+
 .hero-subtitle {
   font-size: clamp(1.8rem, 5vw, 2.4rem);
-  color: #1e293b;
+  color: var(--vp-c-text-1);
   font-weight: 600;
   margin: 0 0 1.8rem 0;
   line-height: 1.3;
-  max-width: 100%;
-  text-align: left;
-  background: none;
-  animation: none;
 }
+
 .hero-description {
   font-size: 1.3rem;
-  color: #64748b;
-  font-weight: 400;
+  color: var(--vp-c-text-2);
   margin: 0 0 3rem 0;
   line-height: 1.6;
-  max-width: 100%;
-  text-align: left;
-  background: none;
-  animation: none;
 }
-.title-highlight {
-  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* text-fill-color: transparent; */
-  position: relative;
-  text-shadow: none;
-  display: inline-block;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-  white-space: nowrap;
-}
-.title-highlight:hover {
-  transform: scale(1.03);
-}
-.implementation-text {
-  display: inline-block;
-  white-space: nowrap;
-  color: #1e293b;
-}
-.platform-tag {
-  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* text-fill-color: transparent; */
-  position: relative;
-  display: inline-block;
-  padding: 0.2rem 0 0.2rem 1rem;
-  text-shadow: none;
-  font-size: 0.85em;
-}
+
 .cta-group {
-  margin-top: 0.5rem;
   display: flex;
   gap: 1rem;
-  align-items: center;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  max-width: 100%;
 }
+
 .cta-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: #4f46e5;
-  color: #ffffff;
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-white);
   padding: 0.95rem 2.1rem;
   border-radius: 1rem;
   font-weight: 700;
   font-size: 1.18rem;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  border: none;
-  outline: none;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
   min-width: 140px;
   justify-content: center;
-  letter-spacing: 0.04em;
-  overflow: hidden;
 }
-.cta-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.cta-primary:active,
-.cta-primary:focus {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4);
-}
+
 .cta-primary:hover {
-  background: #6366f1;
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+  background: var(--vp-c-brand-light);
   transform: translateY(-3px);
 }
-.cta-primary:hover::before {
-  opacity: 1;
-}
-.cta-icon {
-  transition: transform 0.3s ease;
-}
-.cta-primary:hover .cta-icon {
-  transform: translateX(4px);
-}
+
 .cta-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  color: #4f46e5;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand-1);
   padding: 0.95rem 2.1rem;
   border-radius: 1rem;
   font-weight: 700;
   font-size: 1.18rem;
   text-decoration: none;
-  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  border: 1.5px solid var(--vp-c-brand-light);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
+  transition: all 0.3s ease;
   min-width: 140px;
   justify-content: center;
-  letter-spacing: 0.04em;
-  backdrop-filter: blur(5px);
-}
-.cta-secondary:active,
-.cta-secondary:focus {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-}
-.cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.95);
-  color: #6366f1;
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
-}
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes scaleIn {
-  from {
-    transform: scale(0.95);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-:root.dark .hero-background {
-  background: #1b1b1f;
-}
-:root.dark .gradient-overlay {
-  display: block;
-  background: #1b1b1f;
-  backdrop-filter: none;
-}
-:root.dark .brand-tag {
-  background: rgba(99, 102, 241, 0.15);
-  border-color: rgba(99, 102, 241, 0.3);
-  color: #818cf8;
-}
-:root.dark .hero-main-title {
-  color: #f8fafc;
-}
-:root.dark .hero-subtitle {
-  color: #e2e8f0;
-}
-:root.dark .hero-description {
-  color: #cbd5e1;
-}
-:root.dark .title-highlight {
-  background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
-}
-:root.dark .implementation-text {
-  color: #f8fafc;
-}
-:root.dark .platform-tag {
-  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
-}
-:root.dark .hero-subtitle {
-  color: #cbd5e1;
-}
-:root.dark .cta-primary {
-  background: #6366f1;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
-}
-:root.dark .cta-primary:hover {
-  background: #818cf8;
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
-}
-:root.dark .cta-secondary {
-  background: rgba(30, 41, 59, 0.5);
-  color: #cbd5e1;
-  border-color: rgba(99, 102, 241, 0.4);
-}
-:root.dark .cta-secondary:hover {
-  background: rgba(30, 41, 59, 0.7);
-  border-color: rgba(99, 102, 241, 0.6);
-  color: #818cf8;
-}
-@media (max-width: 1200px) {
-  .VPHome {
-    padding-left: 0;
-  }
-  .content-wrapper {
-    max-width: 90vw;
-    padding: 0 5vw;
-  }
-  .hero-content {
-    justify-content: flex-start;
-  }
-  .hero-title {
-    font-size: clamp(2.2rem, 6vw, 3.5rem);
-  }
-}
-@media (max-width: 900px) {
-  .content-wrapper {
-    margin-left: 0;
-    max-width: 90vw;
-    padding: 0 5vw;
-  }
-}
-@media (max-width: 768px) {
-  .VPHome {
-    padding-left: 0;
-  }
-  .hero-content {
-    padding: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 15vh;
-  }
-  .content-wrapper {
-    max-width: 100%;
-    padding: 0 6vw;
-    text-align: left;
-    align-items: flex-start;
-  }
-  .hero-header {
-    display: none;
-  }
-  .brand-tag {
-    display: inline-flex;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-  .hero-title {
-    font-size: clamp(2rem, 6vw, 2.25rem);
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    white-space: normal;
-    max-width: 100%;
-    text-align: left;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .platform-tag {
-    padding: 0.2rem 0;
-    margin-top: 0.5rem;
-  }
-  .hero-subtitle {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-    max-width: 90%;
-    text-align: left;
-  }
-  .cta-group {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 100%;
-  }
-  .cta-primary,
-  .cta-secondary {
-    flex: 0 1 auto;
-    min-width: 0;
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .content-wrapper {
-    max-width: 100vw;
-    padding: 0 5vw;
-  }
-  .hero-title {
-    font-size: 2rem;
-    margin-top: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-  .cta-group {
-    margin-top: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .hero-content {
-    padding-top: 12vh;
-  }
-  .hero-title {
-    font-size: clamp(1.5rem, 6vw, 1.75rem);
-    line-height: 1.3;
-    margin-top: 1rem;
-    text-align: left;
-    display: block;
-  }
-  .title-highlight,
-  .implementation-text,
-  .platform-tag {
-    display: inline;
-  }
-  .platform-tag {
-    font-size: 0.8em;
-    padding-left: 0.5rem;
-  }
-  .brand-tag {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.9rem;
-    margin: 1rem 0;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.75rem;
-    max-width: 100%;
-    text-align: left;
-  }
-  .cta-group {
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    max-width: 100%;
-    justify-content: flex-start;
-  }
-  .cta-primary,
-  .cta-secondary {
-    font-size: 0.875rem;
-    padding: 0.75rem 1rem;
-    max-width: none;
-    width: auto;
-    min-width: 120px;
-  }
-}
-@media (max-width: 360px) {
-  .hero-content {
-    padding-top: 10vh;
-  }
-  .hero-title {
-    font-size: clamp(1.4rem, 7vw, 1.5rem);
-    margin-top: 0.5rem;
-    line-height: 1.3;
-    text-align: left;
-  }
-  .brand-tag {
-    margin: 0.75rem 0;
-  }
-  .content-wrapper {
-    padding: 0 5vw;
-  }
-  .cta-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .cta-primary,
-  .cta-secondary {
-    width: 100%;
-  }
 }
 
-/* Notification 弹窗样式 */
+.cta-secondary:hover {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-brand-light);
+  border-color: var(--vp-c-brand-light);
+  transform: translateY(-3px);
+}
+
+/* Dark mode */
+:root.dark .hero-background {
+  background: var(--vp-c-bg);
+}
+
+:root.dark .bg-image {
+  filter: brightness(0.85);
+}
+
+/* Toast notification */
 .toast-notification {
   position: fixed;
   top: 10%;
   right: 20px;
   z-index: 10000;
-  max-width: 500px; /* 桌面端更大 */
-  min-width: 360px; /* 桌面端更大 */
-  border-radius: 16px;
+  max-width: 500px;
+  min-width: 360px;
 }
+
 .toast-content {
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   border-radius: 16px;
-  padding: 18px 28px; /* 桌面端更大 */
+  padding: 18px 28px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px; /* 桌面端更大 */
+  gap: 16px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .toast-content:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
+
 .toast-text {
   flex: 1;
   font-size: 14px;
   line-height: 1.4;
   color: var(--vp-c-text-1);
   white-space: pre-line;
-  word-break: break-all;
 }
+
 .toast-close {
   background: none;
   border: none;
   font-size: 18px;
-  line-height: 1;
   color: var(--vp-c-text-2);
   cursor: pointer;
   padding: 0;
@@ -778,39 +272,76 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
   transition: all 0.2s ease;
-  flex-shrink: 0;
 }
+
 .toast-close:hover {
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
 }
-@media (max-width: 640px) {
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 5vh;
+    padding-bottom: 25vh;
+  }
+
+  .content-wrapper {
+    padding: 0 6vw;
+  }
+
+  .cta-group {
+    gap: 0.75rem;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding-top: 2vh;
+    padding-bottom: 30vh;
+  }
+
+  .cta-group {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    min-width: 120px;
+  }
+
   .toast-notification {
     top: 70px;
     right: 10px;
-    left: auto;
     max-width: 90vw;
     min-width: 0;
-    border-radius: 14px;
   }
 }
+
 .toast-enter-active,
 .toast-leave-active {
   transition: all 0.3s ease;
 }
-.toast-enter-from {
-  transform: translateX(100%);
-  opacity: 0;
-}
+
+.toast-enter-from,
 .toast-leave-to {
   transform: translateX(100%);
   opacity: 0;
 }
+
 :root.dark .toast-content {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 :root.dark .toast-content:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }

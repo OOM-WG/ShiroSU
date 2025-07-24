@@ -5,7 +5,6 @@ import path from "path";
 import { head } from "./local/head";
 import { markdown } from "./local/markdown";
 import { themeConfig } from "./local/theme";
-// 直接导入src目录下的语言配置
 import zhConfig from '../src/config'
 import enConfig from '../src/en/config'
 import jaConfig from '../src/ja/config'
