@@ -1,4 +1,0 @@
-[submodule ".vitepress"]
-path = .vitepress
-url = https://github.com/OOM-WG/SSU_Docs_Config.git
-branch = master
