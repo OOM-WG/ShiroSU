@@ -7,7 +7,7 @@ sidebar: false
 aside: false
 ---
 
-::: tip [Preview 最新版](https://ssu.fileto.download/preview/latest)
+::: tip [最新预览版](https://ssu.fileto.download/preview/latest)
 :::
 
 ::: timeline
