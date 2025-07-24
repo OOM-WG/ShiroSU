@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Ark's
 /tmp/
 
@@ -8,17 +7,9 @@ node_modules/
 package-lock.json
 dist/
 /.vitepress/cache
-/.vitepress/cache
-/.vitepress/cache
-/.vitepress/cache
 /.idea
 /.fleet
-=======
 node_modules
 /.idea
-/.vitepress
->>>>>>> Stashed changes
 /dist
-/dist
-/dist
-/dist
+
