@@ -14,7 +14,7 @@ UI = {
 
     DisableAll = "すべて無効化"
     EnableAll = "すべて有効化"
-    NoCanUp = "更新可能なモジュールはありません"
+    NoUpdatable = "更新可能なモジュールはありません"
     UpdateAll = "すべて更新"
 
     Grant = "権限付与"

@@ -15,7 +15,7 @@ Modules = {
     StarMod = "Modül favorilere eklendi"
 
     ModErr = "Modül hatası veya düşük kalite, yeniden yükleyin veya yazarla iletişime geçin."
-    CanUp = "Güncellenebilir"
+    Updatable = "Güncellenebilir"
     Updated = "Güncellendi"
     Stared = "Favorilere eklendi"
 

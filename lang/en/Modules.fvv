@@ -15,7 +15,7 @@ Modules = {
     StarMod = "The module has been bookmarked"
 
     ModErr = "Module Error – Reinstall or Contact Author"
-    CanUp = "Updatable"
+    Updatable = "Updatable"
     Updated = "Updated"
     Stared = "Bookmarked"
 

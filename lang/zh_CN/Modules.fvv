@@ -15,7 +15,7 @@ Modules = {
     StarMod = "已收藏模块"
 
     ModErr = "模块故障，请重装或联系作者"
-    CanUp = "可更新"
+    Updatable = "可更新"
     Updated = "已更新"
     Stared = "已收藏"
 

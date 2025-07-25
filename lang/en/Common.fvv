@@ -14,7 +14,7 @@ UI = {
 
     DisableAll = "Disable all"
     EnableAll = "Enable all"
-    NoCanUp = "There are no modules to update at this time"
+    NoUpdatable = "There are no modules to update at this time"
     UpdateAll = "Update all"
 
     Grant = "Grant"
