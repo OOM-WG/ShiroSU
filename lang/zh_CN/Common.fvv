@@ -25,6 +25,8 @@ UI = {
     Modules = "模块"
 
     ToolPages = "工具"
+    System = "系统"
+    Module = "模块"
 
     CommonPages = "基本"
     Settings = "设置"

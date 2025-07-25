@@ -1,0 +1,5 @@
+System = {
+    ClnSysCch = "清除系统缓存"
+    ClnSysCchDesc = "部分模块可能导致系统出现故障，清除系统缓存以可能解决此问题\n清除后应当尽快重启"
+    ClnSysCchOk = "清除完毕，请尽快重启"
+}
