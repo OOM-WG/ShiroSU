@@ -1,0 +1,5 @@
+Module = {
+    ExtModErr = "Failed to create the module"
+    ExtMod = "Install the command set extension module"
+    ExtModDesc = "This module is used to install the command set that comes with SakitinSU into the system, and only exists as a built-in module and does not affect the running of SakitinSU"
+}

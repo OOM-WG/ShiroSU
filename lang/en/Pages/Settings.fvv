@@ -1,0 +1,15 @@
+Settings = {
+    Custom = "Customization"
+    HDRMode = "HDR mode"
+    HomeTip = "Homepage tip"
+    AppTheme = "App Theme"
+
+    Common = "Common"
+    UpChannel = "Update channel"
+    UpChannelTip = "It takes effect after restarting the app"
+    Auth = "Launch verification"
+
+    Module = "Module"
+    WebUIDebug = "WebUI debug mode"
+    PrintStderr = "Shell UI print error message"
+}

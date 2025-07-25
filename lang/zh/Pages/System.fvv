@@ -1,0 +1,5 @@
+System = {
+    ClnSysCch = "清除系統快取"
+    ClnSysCchDesc = "部分模組可能導致系統出現故障，清除系統緩存以可能解決此問題\n清除后應當儘快重啟"
+    ClnSysCchOk = "清除完畢，請儘快重啟"
+}

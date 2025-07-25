@@ -1,0 +1,5 @@
+System = {
+    ClnSysCch = "Clean system cache"
+    ClnSysCchDesc = "Some modules may cause the system to malfunction, cleaning the system cache may resolve this issue\nIt should be restarted as soon as possible after cleaning"
+    ClnSysCchOk = "The cleanup is complete, please restart as soon as possible"
+}
