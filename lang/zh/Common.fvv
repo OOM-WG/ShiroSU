@@ -14,7 +14,7 @@ UI = {
 
     DisableAll = "全部禁用"
     EnableAll = "全部啟用"
-    NoCanUp = "暫無可更新模組"
+    NoUpdatable = "暫無可更新模組"
     UpdateAll = "全部更新"
 
     Grant = "賦權"

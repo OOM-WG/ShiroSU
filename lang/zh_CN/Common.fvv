@@ -14,7 +14,7 @@ UI = {
 
     DisableAll = "全部禁用"
     EnableAll = "全部启用"
-    NoCanUp = "暂无可更新模块"
+    NoUpdatable = "暂无可更新模块"
     UpdateAll = "全部更新"
 
     Grant = "赋权"

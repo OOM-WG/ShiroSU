@@ -14,7 +14,7 @@ UI = {
 
     DisableAll = "Tümünü devre dışı bırak"
     EnableAll = "Tümünü etkinleştir"
-    NoCanUp = "Güncellenecek modül yok"
+    NoUpdatable = "Güncellenecek modül yok"
     UpdateAll = "Tümünü güncelle"
 
     Grant = "Yetki Ver"
