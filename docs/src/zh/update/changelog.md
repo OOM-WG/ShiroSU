@@ -19,6 +19,11 @@ aside: false
 
 ## 0.2.3
 
+### preview5 (2025-07-25)
+
+- 常规代码维护
+- 支持在 `module.prop` 中定义 `action`、`actionAnsi` 以支持 “操作” 提示
+
 ### preview4 (2025-07-24)
 
 - 常规代码维护
@@ -122,7 +127,7 @@ aside: false
 ### preview2
 
 - 常规代码维护
-- 支持在`module.prop`中定义`nameAnsi`、`versionAnsi`、`authorAnsi`、`descriptionAnsi`以单独支持 ANSI 转义码
+- 支持在 `module.prop` 中定义 `nameAnsi`、`versionAnsi`、`authorAnsi`、`descriptionAnsi` 以单独支持 ANSI 转义码
 
 ### preview1 (2025-07-02)
 

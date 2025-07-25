@@ -80,7 +80,7 @@ descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e
 
 使用如上 `module.prop` 后，模块在 SakitinSU 管理器中显示时 `Auto-generated`、`coreutils, busybox, and bash` 以及 `/system/bin` 均会被加粗。
 
-在 `module.prop` 中，可使用 `nameAnsi`、`versionAnsi`、`authorAnsi` 以及 `descriptionAnsi` 来显示包含 ANSI 转义码的文本。
+在 `module.prop` 中，可使用 `nameAnsi`、`versionAnsi`、`authorAnsi`、`descriptionAnsi`、`actionAnsi` 来显示包含 ANSI 转义码的文本。
 
 虽然不包含 `Ansi` 后缀同样可以使用，但是为了确保兼容性，请这么做。
 
@@ -113,6 +113,12 @@ SakitinSU 管理器具体会检测如下内容:
 - `module.prop` 内是否存在大小写不规范的情况 (SakitinSU 管理器会正常解析，但仍会显示标签)
 
 <mark>如果只是 `module.prop` 损坏，重装模块通常可解决此问题，如果不符合规范，则需要开发者自行修复以解决此问题。</mark>
+
+### 其他内容
+
+除了 **ANSI 转义码** 相关内容之外，SakitinSU 管理器还会解析如下内容:
+
+- `action`: 定义此内容，会在执行操作前显示弹窗，此内容用于描述操作有何作用
 
 ## 内核接口
 
