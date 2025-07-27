@@ -1,15 +1,15 @@
 import type { Plugin } from "vite";
-import { defineConfig ,SiteConfig  } from "vitepress";
+import { defineConfig, SiteConfig } from "vitepress";
 // import { defineTeekConfig } from "vitepress-theme-teek/config";
 import path from "path";
 import { head } from "./local/head";
 import { markdown } from "./local/markdown";
 import { themeConfig } from "./local/theme";
-import zhConfig from '../src/config'
-import enConfig from '../src/en/config'
-import jaConfig from '../src/ja/config'
-import { readdir, writeFile } from 'fs/promises'
-import { resolve } from 'path'
+import zhConfig from "../src/config";
+import enConfig from "../src/en/config";
+import jaConfig from "../src/ja/config";
+import { readdir, writeFile } from "fs/promises";
+import { resolve } from "path";
 import { fileURLToPath, URL } from "node:url";
 import {
     GitChangelog,
@@ -62,23 +62,24 @@ export default withMermaid({
     metaChunk: true,
 
     // 多语言配置
-    locales: { // 多语言
+    locales: {
+        // 多语言
         root: {
-            label: '简体中文',
-            lang: 'zh-CN',
-            ...zhConfig
+            label: "简体中文",
+            lang: "zh-CN",
+            ...zhConfig,
         },
         en: {
-            label: 'English',
-            lang: 'en',
-            link: '/en/',
-            ...enConfig
+            label: "English",
+            lang: "en",
+            link: "/en/",
+            ...enConfig,
         },
         ja: {
-            label: '日本語',
-            lang: 'ja',
-            link: '/ja/',
-            ...jaConfig
+            label: "日本語",
+            lang: "ja",
+            link: "/ja/",
+            ...jaConfig,
         },
     },
 
@@ -100,23 +101,23 @@ export default withMermaid({
     transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context);
     },
-    transformHtml(code, id, { pageData }) {
-        if (process.env.NODE_ENV !== "production") return;
-
-        const newCode = code.replace(
-            /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
-            (_, attr, path) =>
-                `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
-        );
-
-        return newCode;
-    },
+    // transformHtml(code, id, { pageData }) {
+    //     if (process.env.NODE_ENV !== "production") return;
+    //
+    //     const newCode = code.replace(
+    //         /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
+    //         (_, attr, path) =>
+    //             `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
+    //     );
+    //
+    //     return newCode;
+    // },
     vite: {
-        experimental: {
-            renderBuiltUrl(filename, { hostType, type, hostId }) {
-                return "https://sakitinsu.resource.sawahara.host/" + filename;
-            },
-        },
+        // experimental: {
+        //     renderBuiltUrl(filename, { hostType, type, hostId }) {
+        //         return "https://sakitinsu.resource.sawahara.host/" + filename;
+        //     },
+        // },
         define: {
             __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true",
         },
