@@ -37,7 +37,7 @@ export const head: HeadConfig[] = [
         "meta",
         {
             property: "og:image",
-            content: "https://sakitinsu.resource.sawahara.host/og-template.png",
+            content: "https://sakitinsu.resource.sawahara.host/og-template.webp",
         },
     ],
     [
@@ -46,7 +46,7 @@ export const head: HeadConfig[] = [
     ],
     ["meta", { property: "og:image:width", content: "1200" }],
     ["meta", { property: "og:image:height", content: "630" }],
-    ["meta", { property: "og:image:type", content: "image/png" }],
+    ["meta", { property: "og:image:type", content: "image/webp" }],
 
     // --- Twitter Card 元数据 ---
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
