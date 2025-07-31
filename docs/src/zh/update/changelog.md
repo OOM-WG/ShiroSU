@@ -17,6 +17,13 @@ aside: false
 
 :::timeline 0.2.x
 
+## 0.2.4
+
+### preview0 (2025-07-31)
+
+- 常规代码维护
+- 适配 KernelSU (KernelSU Next、SukiSU Ultra) 超级用户管理与卸载模块管理
+
 ## 0.2.3
 
 ### preview6 (2025-07-26)
