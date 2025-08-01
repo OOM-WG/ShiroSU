@@ -1,7 +1,0 @@
-runner:
-  golint:
-    cmd: golint ./...
-    format: golint
-  govet:
-    cmd: go vet ./...
-    format: govet
