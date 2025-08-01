@@ -3,6 +3,8 @@ name: Code Review
 permissions:
   contents: read
   pull-requests: write
+  issues: write  # 添加这一行
+  repository-projects: read  # 可选，但建议添加
 
 on:
   pull_request:
@@ -20,4 +22,4 @@ jobs:
           # Optional
           LANGUAGE: Chinese
           OPENAI_API_ENDPOINT: http://api.miao520.xyz/v1
-          MODEL: gemini-2.5-flash # https://platform.openai.com/docs/models
+          MODEL: gemini-2.5-flash # https://platform.openai.com/docs/models-flash # https://platform.openai.com/docs/models
