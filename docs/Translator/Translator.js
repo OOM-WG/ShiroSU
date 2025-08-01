@@ -15,7 +15,7 @@ const TARGET_LANGUAGES = [
 const API_BASE_URL = 'https://api.mokita.fun/v1';
 const MODEL_NAME = 'gemini-1.5-flash';
 const API_KEYS = [
-  'sk-K26PYCgvlW2pI8mJKwYNVw4YXRLpYLGq0yeBStXDFlMzr89u',
+  '',
   // 添加更多 API Key
 ];
 
