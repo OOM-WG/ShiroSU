@@ -1,7 +1,7 @@
 ShellUI = {
     InstMod = "Установить модуль"
-    InstSSU = "Установить SakitinSU"
-    UninstSSU = "Удалить SakitinSU"
+    InstSSU = "Установить ShiroSU"
+    UninstSSU = "Удалить ShiroSU"
     Error = "Страница ошибки"
     InstOk = "Установка успешна"
     InstErr = "Ошибка установки"

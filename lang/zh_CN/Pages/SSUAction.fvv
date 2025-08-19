@@ -2,7 +2,7 @@ SSUAction = {
     SSUUS = "用户空间"
     InstUS = "安装用户空间"
     UninstUSTtl = "卸载用户空间"
-    UninstUSCnt = "卸载用户空间会卸载SakitinSU的用户空间文件及配置，包括授权列表、隐藏列表\n完整卸载目前与部分卸载行为一致，在未来的版本中会同时卸载模块"
+    UninstUSCnt = "卸载用户空间会卸载ShiroSU的用户空间文件及配置，包括授权列表、隐藏列表\n完整卸载目前与部分卸载行为一致，在未来的版本中会同时卸载模块"
     UninstUS = "部分卸载"
     UninstAllUS = "完整卸载"
 }

@@ -1,7 +1,7 @@
 ShellUI = {
     InstMod = "安裝模組"
-    InstSSU = "安裝SakitinSU"
-    UninstSSU = "卸載SakitinSU"
+    InstSSU = "安裝ShiroSU"
+    UninstSSU = "卸載ShiroSU"
     Error = "錯誤頁面"
     InstOk = "安裝成功"
     InstErr = "安裝失敗"

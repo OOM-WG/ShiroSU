@@ -32,7 +32,7 @@ UI = {
     Settings = "设置"
     About = "关于"
 
-    SSUAction = "安装/卸载SakitinSU"
+    SSUAction = "安装/卸载ShiroSU"
 }
 
 App = {

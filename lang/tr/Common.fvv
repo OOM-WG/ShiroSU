@@ -26,7 +26,7 @@ UI = {
     Settings = "Ayarlar"
     About = "Hakkında"
 
-    SSUAction = "SakitinSU'yu Yükle/Kaldır"
+    SSUAction = "ShiroSU'yu Yükle/Kaldır"
 }
 
 App = {

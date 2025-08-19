@@ -2,7 +2,7 @@ SSUAction = {
     SSUUS = "User Space"
     InstUS = "Install user space"
     UninstUSTtl = "Uninstall user space"
-    UninstUSCnt = "Uninstalling user space uninstalls SakitinSU user space files and configurations, including the authorization list and hidden list\nA full uninstall currently behaves in line with a partial uninstall, and modules will be uninstalled at the same time in a future release"
+    UninstUSCnt = "Uninstalling user space uninstalls ShiroSU user space files and configurations, including the authorization list and hidden list\nA full uninstall currently behaves in line with a partial uninstall, and modules will be uninstalled at the same time in a future release"
     UninstUS = "Uninstall portion"
     UninstAllUS = "Uninstall all"
 }

@@ -1,5 +1,5 @@
 Module = {
     ExtModErr = "Modül oluşturulamadı"
     ExtMod = "Komut seti uzantı modülünü yükle"
-    ExtModDesc = "Bu modül, SakitinSU'nun yerleşik komut setini sisteme yüklemek için kullanılır. Sadece yerleşik modül olarak var olur ve SakitinSU'nun kendi çalışmasını etkilemez"
+    ExtModDesc = "Bu modül, ShiroSU'nun yerleşik komut setini sisteme yüklemek için kullanılır. Sadece yerleşik modül olarak var olur ve ShiroSU'nun kendi çalışmasını etkilemez"
 }

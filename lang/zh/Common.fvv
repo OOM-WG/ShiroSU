@@ -26,7 +26,7 @@ UI = {
     Settings = "設置"
     About = "關於"
 
-    SSUAction = "安裝/卸載SakitinSU"
+    SSUAction = "安裝/卸載ShiroSU"
 }
 
 App = {

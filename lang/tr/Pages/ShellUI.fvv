@@ -1,7 +1,7 @@
 ShellUI = {
     InstMod = "Modül Yükle"
-    InstSSU = "SakitinSU'yu Yükle"
-    UninstSSU = "SakitinSU'yu Kaldır"
+    InstSSU = "ShiroSU'yu Yükle"
+    UninstSSU = "ShiroSU'yu Kaldır"
     Error = "Hata sayfası"
     InstOk = "Kurulum başarılı"
     InstErr = "Kurulum başarısız"

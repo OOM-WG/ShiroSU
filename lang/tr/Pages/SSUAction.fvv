@@ -2,7 +2,7 @@ SSUAction = {
     SSUUS = "Kullanıcı Alanı"
     InstUS = "Kullanıcı Alanını Yükle"
     UninstUSTtl = "Kullanıcı Alanını Kaldır"
-    UninstUSCnt = "Kullanıcı alanının kaldırılması, SakitinSU'nun kullanıcı alanı dosyalarını ve yapılandırmasını kaldıracaktır. Bu, yetki listelerini ve gizleme listelerini içerir.\nTam kaldırma şu anda kısmi kaldırma ile aynı şekilde çalışır, ancak gelecekteki sürümlerde modüller de kaldırılacaktır"
+    UninstUSCnt = "Kullanıcı alanının kaldırılması, ShiroSU'nun kullanıcı alanı dosyalarını ve yapılandırmasını kaldıracaktır. Bu, yetki listelerini ve gizleme listelerini içerir.\nTam kaldırma şu anda kısmi kaldırma ile aynı şekilde çalışır, ancak gelecekteki sürümlerde modüller de kaldırılacaktır"
     UninstUS = "Kısmi Kaldırma"
     UninstAllUS = "Tam Kaldırma"
 }
