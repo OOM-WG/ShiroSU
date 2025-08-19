@@ -11,7 +11,7 @@ footer: false
 # 什么是 SakitinSU？
 
 <mark>SakitinSU</mark>（简称 <mark>SakiSU/SKTSU/SSU</mark>
-）是由回忆溢出工作组 <mark>[(OOM. WG.)](https://oom-wg.dev)</mark> 以核心成员 [@安音咲汀](https://github.com/TianwanTW)
+）是由回忆溢出工作组 <mark>[(O.O.M. W.G.)](https://oom-wg.dev)</mark> 以核心成员 [@安音咲汀](https://github.com/TianwanTW)
 的名字命名的内核级 Root 解决方案。
 
 SakitinSU 致力于为 Android 设备提供一套简单易用的内核级 Root 权限管理工具。它是继 `Magisk`、`KernelSU` 和 `APatch` 之后的新
