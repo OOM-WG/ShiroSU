@@ -4,7 +4,7 @@ layout: doc
 sidebar: false
 aside: false
 underConstruction: true
-description: SakitinSU License - This is the license for SakitinSU
+description: ShiroSU License - This is the license for ShiroSU
 ---
 
 ## License
@@ -14,7 +14,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 # File to Download Public Resource License (F2DLPRL or F2DLPR License)
 
 ::: tip
-SakitinSU's distributions use the F2DLPRL license, and its related open-source code also uses the F2DLPRL license
+ShiroSU's distributions use the F2DLPRL license, and its related open-source code also uses the F2DLPRL license
 :::
 
 > This license applies to source code, distributions, textual works, and other forms of original works.

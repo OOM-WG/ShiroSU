@@ -1,15 +1,15 @@
 ---
 layout: doc
 title: WebUI Module Development
-description: Learn how to develop SakitinSU modules with a web interface
+description: Learn how to develop ShiroSU modules with a web interface
 outline: deep
 footer: false
 ---
 # **WebUI Module Development**
 
-SakitinSU's WebUI standard adheres to KerenlSU, please refer to the [KerenlSU Module WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html) for detailed specifications.
+ShiroSU's WebUI standard adheres to KerenlSU, please refer to the [KerenlSU Module WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html) for detailed specifications.
 
-In addition, SakitinSU's WebUI JavaScript interface's `moduleInfo` function provides an extra `updatable` value, which will be affected by the user's network environment.
+In addition, ShiroSU's WebUI JavaScript interface's `moduleInfo` function provides an extra `updatable` value, which will be affected by the user's network environment.
 
 ### **Module Directory Structure**
 

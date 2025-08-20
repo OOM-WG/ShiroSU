@@ -1,13 +1,13 @@
 ---
 layout: doc
-title: SakitinSU Kernel Privilege Escalation Explained
+title: ShiroSU Kernel Privilege Escalation Explained
 footer: false
 ---
-# SakitinSU Kernel Privilege Escalation Explained
+# ShiroSU Kernel Privilege Escalation Explained
 
 ## 1. Overview
 
-The SakitinSU kernel component is a module for privilege escalation and SELinux manipulation on the Android kernel:
+The ShiroSU kernel component is a module for privilege escalation and SELinux manipulation on the Android kernel:
 
 - **Root privilege elevation**: Automatically elevates a specified process to root.
 - **Capability bypass**: Bypasses Linux capability restrictions by hooking the capability checking functions.
@@ -100,7 +100,7 @@ if (current->real_cred->uid.val == /* Whitelisted UID */) {
 
 - **SELinux Mechanism**: `SELinux` uses access control decision functions (like `avc_denied`) to restrict process resource access.
 - **kretprobe Hook**: The module hooks `avc_denied` using a kretprobe, intercepting the return value.
-- **UID Check**: Only applies to specific `UIDs` (such as the SakitinSU manager and any whitelisted UID), or `root`.
+- **UID Check**: Only applies to specific `UIDs` (such as the ShiroSU manager and any whitelisted UID), or `root`.
 - **Force Allow**: Sets the return value to 0, indicating access permission, bypassing SELinux security policies.
 
 ---
@@ -154,7 +154,7 @@ if (!strcmp(buf, "/system/bin/su")) {
 
 ### 3.1 Document Description
 
-- The code examples in this document are test code or pseudocode from SakitinSU kernel parts, potentially with limitations in quality and completeness, used for testing purposes. Please handle with caution.
+- The code examples in this document are test code or pseudocode from ShiroSU kernel parts, potentially with limitations in quality and completeness, used for testing purposes. Please handle with caution.
 - This document aims to demonstrate ongoing kernel code evolution and illustrate its functionality rather than providing complete, production-ready code.
 
 ### 3.2 Other Disclaimers

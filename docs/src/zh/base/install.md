@@ -1,12 +1,12 @@
 ---
 layout: doc
 title: 安装指南
-description: 详细的 SakitinSU 安装步骤和配置说明
+description: 详细的 ShiroSU 安装步骤和配置说明
 outline: deep
 footer: false
 ---
 
-# 下载 SakitinSU 管理器
+# 下载 ShiroSU 管理器
 
 <Downloaded />
 
@@ -14,15 +14,15 @@ footer: false
 
 ### 通过其他管理器授权
 
-将 `SakitinSU` 作为模块管理器使用时，需要预先安装 `Magisk` 或 `KernelSU` 等 Root 方案。
+将 `ShiroSU` 作为模块管理器使用时，需要预先安装 `Magisk` 或 `KernelSU` 等 Root 方案。
 
-1.  在 `Magisk` 或 `KernelSU` 管理器中，授予 `SakitinSU` 应用 Root 权限。
-2.  授权后，`SakitinSU` 将自动识别并加载模块列表，以进行后续管理。
+1.  在 `Magisk` 或 `KernelSU` 管理器中，授予 `ShiroSU` 应用 Root 权限。
+2.  授权后，`ShiroSU` 将自动识别并加载模块列表，以进行后续管理。
 
-### 通过 SakitinSU （开发中）
+### 通过 ShiroSU （开发中）
 
 > [!NOTE]
-> `SakitinSU` 的原生 Root 实现功能正在开发中，当前版本暂不支持。
+> `ShiroSU` 的原生 Root 实现功能正在开发中，当前版本暂不支持。
 
 ---
 
@@ -62,6 +62,6 @@ footer: false
 - **可用扩展模块**：`coreutils`、`busybox`、`sush`
 
 > [!WARNING]
-> 上述扩展模块未来计划直接集成至 `SakitinSU` 主程序中。
+> 上述扩展模块未来计划直接集成至 `ShiroSU` 主程序中。
 
 ---

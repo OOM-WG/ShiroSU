@@ -31,7 +31,7 @@ import {
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
-//     title: "SakitinSU",
+//     title: "ShiroSU",
 //     baseUrl,
 //     copyright: "Copyright © 2023-present SSU Developers (OOM. WG.)",
 // };
@@ -43,7 +43,7 @@ import {
 export default withMermaid({
     // export default defineConfig({
     // extends: teekConfig,
-    title: "SakitinSU",
+    title: "ShiroSU",
     // description: "",
 
     // base: "/",
@@ -107,7 +107,7 @@ export default withMermaid({
     //     const newCode = code.replace(
     //         /(?<!<a\b[^>]*)(src|href)=["']\/([^"']+)["']/gi,
     //         (_, attr, path) =>
-    //             `${attr}="https://sakitinsu.resource.sawahara.host/${path}"`,
+    //             `${attr}="https://ssu.noidx.sawahara.host/${path}"`,
     //     );
     //
     //     return newCode;
@@ -115,7 +115,7 @@ export default withMermaid({
     vite: {
         // experimental: {
         //     renderBuiltUrl(filename, { hostType, type, hostId }) {
-        //         return "https://sakitinsu.resource.sawahara.host/" + filename;
+        //         return "https://ssu.noidx.sawahara.host/" + filename;
         //     },
         // },
         define: {

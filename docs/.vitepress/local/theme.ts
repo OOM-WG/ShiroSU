@@ -5,7 +5,7 @@ export const themeConfig: DefaultTheme.Config = {
     // nav,
     // sidebar,
 
-    logo: "https://sakitinsu.resource.sawahara.host/logo.webp",
+    logo: "https://ssu.noidx.sawahara.host/logo.webp",
     siteTitle: "SSU",
     socialLinks: [
         {

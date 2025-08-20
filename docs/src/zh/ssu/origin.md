@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 项目起源
-description: 了解 SakitinSU 项目的诞生背景、发展历程和设计理念
+description: 了解 ShiroSU 项目的诞生背景、发展历程和设计理念
 outline: deep
 footer: false
 ---
@@ -12,7 +12,7 @@ footer: false
 >
 > （这里指内核部分）
 >
-> （实际上 SakitinSU 是为了解决 realme GT Neo 不能很好地使用内核级 root 而存在的）
+> （实际上 ShiroSU 是为了解决 realme GT Neo 不能很好地使用内核级 root 而存在的）
 
 ---
 
@@ -20,7 +20,7 @@ footer: false
 
 > @安音咲汀：
 >
-> "你觉得 SSU 是 SakitinSU 还是 SimpleSU 还是什么，或者改其他名字？"
+> "你觉得 SSU 是 ShiroSU 还是 SimpleSU 还是什么，或者改其他名字？"
 >
 > @YumeYuka：
 >

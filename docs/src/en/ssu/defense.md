@@ -2,14 +2,14 @@
 layout: doc
 footer: false
 ---
-# Negative Voices Regarding SakitinSU
+# Negative Voices Regarding ShiroSU
 
 ## Disclaimer
 
 We do not compete with other `ROOT implementations`, and we are not interested in interpersonal conflicts.
 So no matter what others say, we hope you won't mind, and just choose what you want, use what you think is useful.
 
-> `SUU` and `SSU` are sister projects, please distinguish them. `SUU` is named `SuYu`, and SSU is an abbreviation of `SakitinSU`.
+> `SUU` and `SSU` are sister projects, please distinguish them. `SUU` is named `SuYu`, and SSU is an abbreviation of `ShiroSU`.
 > Hereafter referred to as `SSU`.
 
 ## Too Many Negative Voices Since SSU Project's Inception
@@ -27,7 +27,7 @@ And a series of negative comments. Furthermore, any detailed criticism of a proj
 
 The `SSU` project is a subsidiary of `OOM. WG.`. @AnYinSaiTing is the developer for the user space implementation, and @Linso is the developer for the kernel space implementation. The SSU documentation was written by @YumeYuka and optimized collaboratively with other members. As of the end of June, the `SSU` manager has been developed to be usable as a `module manager`. The kernel space implementation's progress is slow due to @Linso's personal reasons.
 
-`SSU` has opened source code for some [configurations](https://github.com/OOM-WG/SakitinSU) and [core components](https://github.com/OOM-WG/WMLang), see <https://github.com/OOM-WG>. The manager's entire code was written by @AnYinSaiTing, and @YumeYuka participated in optimizing a small part of the page. The user space code has completely avoided the `GPL` protocol, including the `WebUI` implementation. The kernel space code was completed by @Linso, and the openness degree is determined by the completeness of @Linso's work. For the documentation part, the documentation uses `vitepress`, and currently only considers opening the article part.
+`SSU` has opened source code for some [configurations](https://github.com/OOM-WG/ShiroSU) and [core components](https://github.com/OOM-WG/WMLang), see <https://github.com/OOM-WG>. The manager's entire code was written by @AnYinSaiTing, and @YumeYuka participated in optimizing a small part of the page. The user space code has completely avoided the `GPL` protocol, including the `WebUI` implementation. The kernel space code was completed by @Linso, and the openness degree is determined by the completeness of @Linso's work. For the documentation part, the documentation uses `vitepress`, and currently only considers opening the article part.
 
 For specific open-source directions, the `SSU` project will mainly open-source more mature frameworks/tools developed during the development process, and opening the core source code is not the primary goal.
 

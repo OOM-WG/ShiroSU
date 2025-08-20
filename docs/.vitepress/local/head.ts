@@ -1,8 +1,8 @@
 import type { HeadConfig } from "vitepress";
 
 export const head: HeadConfig[] = [
-    ["link", { rel: "preconnect", href: "https://sakitinsu.resource.sawahara.host", crossorigin: "" }],
-    ["link", { rel: "dns-prefetch", href: "https://sakitinsu.resource.sawahara.host" }],
+    ["link", { rel: "preconnect", href: "https://ssu.noidx.sawahara.host", crossorigin: "" }],
+    ["link", { rel: "dns-prefetch", href: "https://ssu.noidx.sawahara.host" }],
     ["link", { rel: "preconnect", href: "https://d.alicdn.com", crossorigin: "" }],
     ["link", { rel: "dns-prefetch", href: "https://d.alicdn.com" }],
 
@@ -14,7 +14,7 @@ export const head: HeadConfig[] = [
     ["link", { rel: "stylesheet", href: "https://fonts.googleapis.cn/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" }],
 
     // --- 基础和SEO元数据 ---
-    ["link", { rel: "icon", href: "https://sakitinsu.resource.sawahara.host/logo.webp" }],
+    ["link", { rel: "icon", href: "https://ssu.noidx.sawahara.host/logo.webp" }],
     [
         "meta",
         { name: "author", content: "安音咲汀, YumeYuka, Linso, 悠栾, 枫莹" },
@@ -37,7 +37,7 @@ export const head: HeadConfig[] = [
         "meta",
         {
             property: "og:image",
-            content: "https://sakitinsu.resource.sawahara.host/og-template.webp",
+            content: "https://ssu.noidx.sawahara.host/og-template.webp",
         },
     ],
     [

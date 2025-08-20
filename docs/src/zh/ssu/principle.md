@@ -1,14 +1,14 @@
 ---
 layout: doc
-title: SakitinSU 内核提权部分讲解
+title: ShiroSU 内核提权部分讲解
 footer: false
 ---
 
-# SakitinSU 内核提权部分讲解
+# ShiroSU 内核提权部分讲解
 
 ## 1. 概述
 
-SakitinSU 内核部分 是一个针对 Android 内核的提权与 Selinux 处理的部分：
+ShiroSU 内核部分 是一个针对 Android 内核的提权与 Selinux 处理的部分：
 
 - **root 权限提升**：自动将指定进程提权为 root。
 - **能力管理绕过**：通过 hook 能力检查函数，绕过 Linux 能力限制。
@@ -101,7 +101,7 @@ if (current->real_cred->uid.val == /* 白名单 UID */) {
 
 - **SELinux 机制**：`SELinux` 通过访问控制决策函数（如 `avc_denied`）限制进程访问资源。
 - **kretprobe hook**：模块通过 kretprobe hook `avc_denied`，在该函数返回时劫持返回值。
-- **UID 检查**：仅对特定 `UID`（如 `SakitinSU 管理器` 以及由用户设置的白名单 UID）或 `root` 生效。
+- **UID 检查**：仅对特定 `UID`（如 `ShiroSU 管理器` 以及由用户设置的白名单 UID）或 `root` 生效。
 - **强制放行**：将返回值设为 0，表示访问被允许，从而绕过 SELinux 的安全策略。
 
 ---
@@ -155,7 +155,7 @@ if (!strcmp(buf, "/system/bin/su")) {
 
 ### 3.1 文档说明
 
-- 本文档所展示的代码为 SakitinSU 内核的部分测试代码或伪代码，部分为测试用例，代码质量和完整性可能有限，请嘴下留情。
+- 本文档所展示的代码为 ShiroSU 内核的部分测试代码或伪代码，部分为测试用例，代码质量和完整性可能有限，请嘴下留情。
 - 本文档主要目的是展示内核代码的持续进步，证明这些并非空壳代码
 
 ### 3.2 其他声明

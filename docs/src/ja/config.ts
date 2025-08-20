@@ -3,7 +3,7 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 
 export default defineConfig({
     lang: "ja-JP",
-    description: "SakitinSU - カーネルベースの Android Root ソリューション",
+    description: "ShiroSU - カーネルベースの Android Root ソリューション",
 
     themeConfig: {
         nav: nav(),

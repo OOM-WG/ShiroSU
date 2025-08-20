@@ -1,11 +1,11 @@
 ---
 layout: doc
 title: インストールガイド
-description: 詳細な SakitinSU インストール手順と設定説明
+description: 詳細な ShiroSU インストール手順と設定説明
 outline: deep
 footer: false
 ---
-# SakitinSU マネージャーのダウンロード
+# ShiroSU マネージャーのダウンロード
 
 <Downloaded />
 
@@ -13,15 +13,15 @@ footer: false
 
 ### その他のマネージャーによる権限付与
 
-`SakitinSU` をモジュールマネージャーとして使用する場合、`Magisk` や `KernelSU` などのRootソリューションを事前にインストールする必要があります。
+`ShiroSU` をモジュールマネージャーとして使用する場合、`Magisk` や `KernelSU` などのRootソリューションを事前にインストールする必要があります。
 
-1. `Magisk` または `KernelSU` マネージャーで、`SakitinSU` アプリにRoot権限を付与します。
-2. 権限付与後、`SakitinSU` は自動的にモジュールリストを認識してロードし、以降の管理を行います。
+1. `Magisk` または `KernelSU` マネージャーで、`ShiroSU` アプリにRoot権限を付与します。
+2. 権限付与後、`ShiroSU` は自動的にモジュールリストを認識してロードし、以降の管理を行います。
 
-### SakitinSUによる方法（開発中）
+### ShiroSUによる方法（開発中）
 
 > [!NOTE]
-> `SakitinSU` のネイティブRoot実装機能は開発中です。現時点ではサポートされていません。
+> `ShiroSU` のネイティブRoot実装機能は開発中です。現時点ではサポートされていません。
 
 ---
 
@@ -61,6 +61,6 @@ footer: false
 - **利用可能な拡張モジュール**：`coreutils`、`busybox`、`sush`
 
 > [!WARNING]
-> 上記の拡張モジュールは、今後`SakitinSU`メインプログラムに直接統合される予定です。
+> 上記の拡張モジュールは、今後`ShiroSU`メインプログラムに直接統合される予定です。
 
 ---

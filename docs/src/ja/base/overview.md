@@ -1,19 +1,19 @@
 ---
 layout: doc
-title: SakitinSU とは何ですか？
-description: SakitinSU について - カーネルベースの Android Root ソリューションを理解する
+title: ShiroSU とは何ですか？
+description: ShiroSU について - カーネルベースの Android Root ソリューションを理解する
 showPageStats: true
 progress: 30
 outline: deep
 footer: false
 ---
-# 什么是 SakitinSU？
+# 什么是 ShiroSU？
 
-<mark>SakitinSU</mark>（简称 <mark>SakiSU/SKTSU/SSU</mark>
+<mark>ShiroSU</mark>（简称 <mark>SakiSU/SKTSU/SSU</mark>
 ）是由回忆溢出工作组 <mark>[(OOM. WG.)](https://oom-wg.dev)</mark> 以核心成员 [@安音咲汀](https://github.com/TianwanTW)
 的名字命名的内核级 Root 解决方案。
 
-SakitinSU 致力于为 Android 设备提供一套简单易用的内核级 Root 权限管理工具。它是继 `Magisk`、`KernelSU` 和 `APatch` 之后的新
+ShiroSU 致力于为 Android 设备提供一套简单易用的内核级 Root 权限管理工具。它是继 `Magisk`、`KernelSU` 和 `APatch` 之后的新
 Root 方案，与 `KernelSU` 一样在内核模式下运行，能够直接在内核空间为用户空间应用程序授予 Root 权限。
 
 ## 避嫌声明
@@ -36,4 +36,4 @@ Root 方案，与 `KernelSU` 一样在内核模式下运行，能够直接在内
 
 ## 了解更多
 
-想了解 SakitinSU 的项目背景与发展历程？请参阅 [项目起源](../ssu/origin)
+想了解 ShiroSU 的项目背景与发展历程？请参阅 [项目起源](../ssu/origin)

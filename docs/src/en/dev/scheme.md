@@ -1,15 +1,15 @@
 ---
 layout: doc
 title: Manager Scheme
-description: Understanding how to call SakitinSU manager using Scheme.
+description: Understanding how to call ShiroSU manager using Scheme.
 outline: deep
 footer: false
 ---
 # **Manager Scheme**
 
-SakitinSU Manager registers two schemes, `ssu` and `sakitinsu`.  You can invoke them using `ssu://...` or `sakitinsu://...`
+ShiroSU Manager registers two schemes, `ssu` and `shirosu`.  You can invoke them using `ssu://...` or `shirosu://...`
 
-If no content or incorrect content is provided, the SakitinSU Manager's home page will open. Supported hosts are as follows:
+If no content or incorrect content is provided, the ShiroSU Manager's home page will open. Supported hosts are as follows:
 
 ## module
 
@@ -23,7 +23,7 @@ To invoke this `path`, you need to provide the following `query`:
 
 Example: `ssu://module/action?id=xxx`
 
-After invocation, the module's `operation` will be executed. If the module does not exist, the SakitinSU Manager's home page will open.
+After invocation, the module's `operation` will be executed. If the module does not exist, the ShiroSU Manager's home page will open.
 
 ### webui
 
@@ -33,7 +33,7 @@ To invoke this `path`, you need to provide the following `query`:
 
 Example: `ssu://module/webui?id=xxx`
 
-After invocation, it will redirect to the module's `WebUI`. If the module does not exist, the SakitinSU Manager's home page will open.
+After invocation, it will redirect to the module's `WebUI`. If the module does not exist, the ShiroSU Manager's home page will open.
 
 ### install
 

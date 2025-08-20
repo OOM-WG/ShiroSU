@@ -1,7 +1,7 @@
 ---
 layout: "doc"
 title: "更新ログ"
-description: "SakitinSU プロジェクトのバージョン更新記録と変更履歴"
+description: "ShiroSU プロジェクトのバージョン更新記録と変更履歴"
 outline: "deep"
 sidebar: "false"
 aside: "false"
@@ -38,7 +38,7 @@ aside: "false"
 
 - 一般的なコードメンテナンス
 - `zip` ファイルの関連付けによるモジュールのインストールに対応
-- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/SakitinSU/pull/8)を参照
+- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/ShiroSU/pull/8)を参照
 
 ### preview4
 
@@ -50,7 +50,7 @@ aside: "false"
 - モジュールページのモジュール情報カードのボタンを最適化
 - 権限ページに複数ユーザーサポートを追加
 - 複数のページの表示方法を最適化
-- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/SakitinSU/pull/6)を参照
+- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/ShiroSU/pull/6)を参照
 
 ### preview2 (2025-07-14)
 
@@ -79,14 +79,14 @@ aside: "false"
 
 - 一般的なコードメンテナンス
 - 一部の色を最適化
-- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/SakitinSU/pull/2)を参照
+- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/ShiroSU/pull/2)を参照
 
 ### preview6 (2025-07-06)
 
 - 一般的なコードメンテナンス
 - 一部のレイアウトを最適化
 - Shellページにエラー情報出力を追加
-- SakitinSUユーザー空間のインストール/アンインストールを追加
+- ShiroSUユーザー空間のインストール/アンインストールを追加
 
 ### preview5 (2025-07-05)
 
@@ -121,7 +121,7 @@ aside: "false"
 > 権限付与/非表示は現時点では参考情報であり、関連ロジックはまだ実装されていません
 
 - 独立した多言語フレームワークをオープンソース化
-- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/SakitinSU/pull/1)を参照
+- 多言語更新、詳細は[GitHub](https://github.com/OOM-WG/ShiroSU/pull/1)を参照
 
 ## 0.2.0
 

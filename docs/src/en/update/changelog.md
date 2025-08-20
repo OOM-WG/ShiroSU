@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: # 更新日志
-description: # SakitinSU 项目的版本更新记录和变更历史
+description: # ShiroSU 项目的版本更新记录和变更历史
 outline: deep
 sidebar: false
 aside: false
@@ -34,7 +34,7 @@ For versions without a specified date, the update date is the same as the previo
 
 - Regular code maintenance
 - Support installing modules through `zip` file association
-- Multilingual updates, see [GitHub](https://github.com/OOM-WG/SakitinSU/pull/8)
+- Multilingual updates, see [GitHub](https://github.com/OOM-WG/ShiroSU/pull/8)
 
 ### preview4
 
@@ -46,7 +46,7 @@ For versions without a specified date, the update date is the same as the previo
 - Optimized module information card buttons on the module page
 - Added multi-user support to the permissions page
 - Optimized the display of more pages
-- Multilingual updates, see [GitHub](https://github.com/OOM-WG/SakitinSU/pull/6)
+- Multilingual updates, see [GitHub](https://github.com/OOM-WG/ShiroSU/pull/6)
 
 ### preview2 (2025-07-14)
 
@@ -75,14 +75,14 @@ For versions without a specified date, the update date is the same as the previo
 
 - Regular code maintenance
 - Optimized some colors
-- Multilingual updates, see [GitHub](https://github.com/OOM-WG/SakitinSU/pull/2)
+- Multilingual updates, see [GitHub](https://github.com/OOM-WG/ShiroSU/pull/2)
 
 ### preview6 (2025-07-06)
 
 - Regular code maintenance
 - Optimized some layouts
 - Added error message output for the Shell page
-- Added SakitinSU user space installation/uninstallation
+- Added ShiroSU user space installation/uninstallation
 
 ### preview5 (2025-07-05)
 
@@ -117,7 +117,7 @@ For versions without a specified date, the update date is the same as the previo
 > Granting permissions/hiding parts is currently for reference only, and related logic has not yet been implemented
 
 - Independently open-sourced the multilingual framework
-- Multilingual updates, see [GitHub](https://github.com/OOM-WG/SakitinSU/pull/1)
+- Multilingual updates, see [GitHub](https://github.com/OOM-WG/ShiroSU/pull/1)
 
 ## 0.2.0
 

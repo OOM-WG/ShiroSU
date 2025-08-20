@@ -52,7 +52,7 @@ function dismiss() {
   <div class="banner" v-if="open && isHomePage">
     <p class="vt-banner-text">
       <span class="vt-tagline"> 针对 </span>
-      <span class="vt-text-primary"> SakitinSU </span>
+      <span class="vt-text-primary"> ShiroSU </span>
       <span class="vt-place"> 负面声音</span>
       <span class="vt-date"> · 详见</span>
       <a target="_blank" class="vt-primary-action" href="/ssu/defense">

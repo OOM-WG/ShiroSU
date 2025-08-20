@@ -1,15 +1,15 @@
 ---
 layout: doc
 title: WebUI モジュール開発
-description: Webインターフェースを持つSakitinSUモジュールを開発する方法を学びましょう
+description: Webインターフェースを持つShiroSUモジュールを開発する方法を学びましょう
 outline: deep
 footer: false
 ---
 # **WebUI 模块开发**
 
-SakitinSU の WebUI 標準は KerenlSU と一致しています。詳細な仕様については、[KerenlSU 模块 WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html) を参照してください。
+ShiroSU の WebUI 標準は KerenlSU と一致しています。詳細な仕様については、[KerenlSU 模块 WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html) を参照してください。
 
-それに加えて、SakitinSU の WebUI JavaScript インターフェースの `moduleInfo` 関数は、追加で `updatable` 値を提供します。この値はユーザーのネットワーク環境の影響を受けます。
+それに加えて、ShiroSU の WebUI JavaScript インターフェースの `moduleInfo` 関数は、追加で `updatable` 値を提供します。この値はユーザーのネットワーク環境の影響を受けます。
 
 ### **モジュールディレクトリ構造**
 

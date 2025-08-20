@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Historical Versions
-description: SakitinSU Project Version History
+description: ShiroSU Project Version History
 outline: deep
 sidebar: false
 aside: false

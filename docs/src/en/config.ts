@@ -4,7 +4,7 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 export default defineConfig({
 
     lang: "en-US",
-    description: "SakitinSU - Kernel-based Android Root Solution",
+    description: "ShiroSU - Kernel-based Android Root Solution",
 
     themeConfig: {
         nav: nav(),

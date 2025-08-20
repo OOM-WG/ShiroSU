@@ -41,9 +41,9 @@ const textEffects = ref([])
 // 配置选项
 const config = {
   texts: [
-    "SakitinSU是个PPT项目",
+    "ShiroSU是个PPT项目",
     "永远年轻，永远在“即将发布”",
-    "别问 SakitinSU 的进展，问就是“在写了”",
+    "别问 ShiroSU 的进展，问就是“在写了”",
     "还没写好就出来造势",
     "Copy Copy Copy",
     "从哪复制的的页面没改",

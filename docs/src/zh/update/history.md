@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 历史版本
-description: SakitinSU 项目的历史版本记录
+description: ShiroSU 项目的历史版本记录
 outline: deep
 sidebar: false
 aside: false

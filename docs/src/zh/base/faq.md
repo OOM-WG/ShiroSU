@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 常见问题
-description: SakitinSU 项目的常见问题解答
+description: ShiroSU 项目的常见问题解答
 showPageStats: false
 outline: deep
 footer: false

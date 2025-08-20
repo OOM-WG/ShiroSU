@@ -10,10 +10,10 @@
       </div>
       <div class="hero-content">
         <div class="content-wrapper">
-          <h1 class="hero-main-title">SakitinSU / SSU</h1>
+          <h1 class="hero-main-title">ShiroSU / SSU</h1>
           <h2 class="hero-subtitle">Android root 实现：简易上手的开始</h2>
           <p class="hero-description">
-            SakitinSU 将继续坚持 NGA 和 CU 一贯的简洁设计理念， 您只需要享受 SSU
+            ShiroSU 将继续坚持 NGA 和 CU 一贯的简洁设计理念， 您只需要享受 SSU
             带来的权能，繁琐的底层细节交给我们就好。
           </p>
           <div class="cta-group">

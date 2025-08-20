@@ -1,20 +1,20 @@
 ---
 layout: doc
 title: 模块开发
-description: 学习如何为 SakitinSU 开发和构建自定义模块
+description: 学习如何为 ShiroSU 开发和构建自定义模块
 outline: deep
 footer: false
 ---
 
 # 模块开发指南
 
-对于大部分内容，SakitinSU 与 **`Magisk` 和 `KernelSU`** 基本保持一致，此处仅介绍不同之处。
+对于大部分内容，ShiroSU 与 **`Magisk` 和 `KernelSU`** 基本保持一致，此处仅介绍不同之处。
 
 ::: tip
 
-如果将 SakitinSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，SakitinSU **不会干涉**其他 root 实现的任何行为
+如果将 ShiroSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，ShiroSU **不会干涉**其他 root 实现的任何行为
 
-但模块的 **WebUI 需要考虑**到 SakitinSU 的 [模块 WebUI](webui)
+但模块的 **WebUI 需要考虑**到 ShiroSU 的 [模块 WebUI](webui)
 
 :::
 
@@ -23,41 +23,41 @@ footer: false
 
 ## Systemless [^1]
 
-SakitinSU 的 Systemless 是一种类似于 Magisk 的挂载机制，其接口完全兼容 Magisk，例如 `.replace` 用法。但 SakitinSU 的挂载机制兼容性更强。是基于动态识别分区实现的。也就是说，模块可以直接通过 Systemless 挂载例如 `odm` 以及其他 root 实现无法挂载的分区，无需为此而付出额外的心血。
+ShiroSU 的 Systemless 是一种类似于 Magisk 的挂载机制，其接口完全兼容 Magisk，例如 `.replace` 用法。但 ShiroSU 的挂载机制兼容性更强。是基于动态识别分区实现的。也就是说，模块可以直接通过 Systemless 挂载例如 `odm` 以及其他 root 实现无法挂载的分区，无需为此而付出额外的心血。
 
-并且，为了保证更强的安全性，SakitinSU 的 Systemless 会无视模块挂载的 **文件/目录的 SELinux 上下文**、**目录的权限**以及**文件/目录的用户/组**，如果文件挂载到了不存在的目录，那么其 **SELinux 上下文**、**权限**、**用户/组**均会继承自父目录。通常来说，这些行为不会影响模块的运行，反而有助于提高稳定性。
+并且，为了保证更强的安全性，ShiroSU 的 Systemless 会无视模块挂载的 **文件/目录的 SELinux 上下文**、**目录的权限**以及**文件/目录的用户/组**，如果文件挂载到了不存在的目录，那么其 **SELinux 上下文**、**权限**、**用户/组**均会继承自父目录。通常来说，这些行为不会影响模块的运行，反而有助于提高稳定性。
 
 ::: tip
 
-SakitinSU 的 Systemless 会使用模块目录中的 `systemless` 文件夹执行挂载，如果模块通过 `system` 文件夹使用 Systemless，那么 `systemless` 文件夹会被**自动创建**
+ShiroSU 的 Systemless 会使用模块目录中的 `systemless` 文件夹执行挂载，如果模块通过 `system` 文件夹使用 Systemless，那么 `systemless` 文件夹会被**自动创建**
 
-如果模块仅适配 SakitinSU，那么可以直接通过 `systemless` 文件夹使用 Systemless
+如果模块仅适配 ShiroSU，那么可以直接通过 `systemless` 文件夹使用 Systemless
 
 :::
 
 ## Shell
 
-SakitinSU 在此处与其他 root 实现有较大差异，SakitinSU 运行的 Shell 脚本默认**并不**在 `BusyBox` 中以 “独立模式” 运行。
+ShiroSU 在此处与其他 root 实现有较大差异，ShiroSU 运行的 Shell 脚本默认**并不**在 `BusyBox` 中以 “独立模式” 运行。
 
-为了提升 Shell 脚本开发的便利性，SakitinSU 使用 [sush](https://github.com/shellgei/rusty_bash) (用 Rust 编写的 `Bash`) 运行 Shell 脚本，并且优先使用 [uutils](https://github.com/uutils/coreutils) (用 Rust 编写的 `coreutils`) 的命令集，以 Magisk 的 BusyBox 作为替补。也就是说，命令**优先从 uutils 获取**，没有的命令才会从 BusyBox 获取。
+为了提升 Shell 脚本开发的便利性，ShiroSU 使用 [sush](https://github.com/shellgei/rusty_bash) (用 Rust 编写的 `Bash`) 运行 Shell 脚本，并且优先使用 [uutils](https://github.com/uutils/coreutils) (用 Rust 编写的 `coreutils`) 的命令集，以 Magisk 的 BusyBox 作为替补。也就是说，命令**优先从 uutils 获取**，没有的命令才会从 BusyBox 获取。
 
 由于并不在 BusyBox 中以 “独立模式” 运行，命令都是通过 `PATH` 环境变量注入的，请勿在模块的 Shell 脚本内硬编码修改 `PATH`！
 
 ### 环境变量
 
-为了便于区分，SakitinSU 在模块运行时注入以下变量:
+为了便于区分，ShiroSU 在模块运行时注入以下变量:
 
-- `SSU` (布尔值): 在 SakitinSU 环境下运行时，此值将为 `true`。但这并不能代表可以通过 `$SSU && # code ...` 来执行代码，应当始终使用 `[ "$SSU" = true ]` 或类似方法来检测 SakitinSU
-- `SSU_VER` (字符串): SakitinSU 的版本号 (不包括补丁号)
-- `SSU_VER_CODE` (整数值): SakitinSU 的纯数字版本号 (包括补丁号)
+- `SSU` (布尔值): 在 ShiroSU 环境下运行时，此值将为 `true`。但这并不能代表可以通过 `$SSU && # code ...` 来执行代码，应当始终使用 `[ "$SSU" = true ]` 或类似方法来检测 ShiroSU
+- `SSU_VER` (字符串): ShiroSU 的版本号 (不包括补丁号)
+- `SSU_VER_CODE` (整数值): ShiroSU 的纯数字版本号 (包括补丁号)
 
 ### Recovery
 
-SakitinSU 不支持通过 Recovery 安装模块，并且在模块安装时 `META-INF/com/google/android/update-binary` 中的代码不会被执行。
+ShiroSU 不支持通过 Recovery 安装模块，并且在模块安装时 `META-INF/com/google/android/update-binary` 中的代码不会被执行。
 
 ### SU 调用
 
-SakitinSU 的 SU 实现默认附带了一个仅能用于直接执行 Shell 命令的 `sudo`，可以直接通过 `sudo` 来执行例如 `sudo ls /`。
+ShiroSU 的 SU 实现默认附带了一个仅能用于直接执行 Shell 命令的 `sudo`，可以直接通过 `sudo` 来执行例如 `sudo ls /`。
 
 `sudo` 仅作为一个简易的 `su -c` 替代品而存在，但是任何模块内都**不应该**通过 `sudo` 或 `su -c` 执行 Shell 命令！
 
@@ -65,7 +65,7 @@ SakitinSU 的 SU 实现默认附带了一个仅能用于直接执行 Shell 命�
 
 ## ANSI 转义码 [^2]
 
-SakitinSU 允许在 `module.prop` 或 Shell 脚本中使用 `ANSI 转义码` 来丰富文本的显示，例如可在 `module.prop` 使用如下代码:
+ShiroSU 允许在 `module.prop` 或 Shell 脚本中使用 `ANSI 转义码` 来丰富文本的显示，例如可在 `module.prop` 使用如下代码:
 
 ```properties {4,8}
 id=ssu_cmd_ext
@@ -78,13 +78,13 @@ description=Add coreutils, busybox, and bash to /system/bin.
 descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e[0m.
 ```
 
-使用如上 `module.prop` 后，模块在 SakitinSU 管理器中显示时 `Auto-generated`、`coreutils, busybox, and bash` 以及 `/system/bin` 均会被加粗。
+使用如上 `module.prop` 后，模块在 ShiroSU 管理器中显示时 `Auto-generated`、`coreutils, busybox, and bash` 以及 `/system/bin` 均会被加粗。
 
 在 `module.prop` 中，可使用 `nameAnsi`、`versionAnsi`、`authorAnsi`、`descriptionAnsi`、`actionAnsi` 来显示包含 ANSI 转义码的文本。
 
 虽然不包含 `Ansi` 后缀同样可以使用，但是为了确保兼容性，请这么做。
 
-<mark>SakitinSU 是通过顺序解析来读取 `module.prop` 中的内容的，所以请确保包含 `Ansi` 后缀的值是靠后的。</mark>
+<mark>ShiroSU 是通过顺序解析来读取 `module.prop` 中的内容的，所以请确保包含 `Ansi` 后缀的值是靠后的。</mark>
 
 ::: details 展开查看渲染效果
 ![module.prop 渲染效果](/assets/img/module_prop.webp)
@@ -92,11 +92,11 @@ descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e
 
 ## 模块 WebUI
 
-SakitinSU 与 `KernelSU` 同样允许模块使用 WebUI 提供功能，详见 [模块 WebUI](webui)。
+ShiroSU 与 `KernelSU` 同样允许模块使用 WebUI 提供功能，详见 [模块 WebUI](webui)。
 
 ## module.prop
 
-SakitinSU 管理器有一个机制用来检测 `module.prop` 是否损坏或符合规范，如果损坏或不符合规范，SakitinSU 管理器会在该模块的上方显示一个标签。
+ShiroSU 管理器有一个机制用来检测 `module.prop` 是否损坏或符合规范，如果损坏或不符合规范，ShiroSU 管理器会在该模块的上方显示一个标签。
 
 ::: warning
 
@@ -104,28 +104,28 @@ SakitinSU 管理器有一个机制用来检测 `module.prop` 是否损坏或符�
 
 :::
 
-SakitinSU 管理器具体会检测如下内容:
+ShiroSU 管理器具体会检测如下内容:
 
 - `module.prop` 内是否包含不符合语法的内容
 - `id`、`name`、`version`、`author`、`description` 是否为空 (如有带有 `Ansi` 后缀的同样检测)
 - `id` 是否符合此正则表达式: `^[a-zA-Z][a-zA-Z0-9._-]+$`
 - `versionCode` 是否大于 **0**
-- `module.prop` 内是否存在大小写不规范的情况 (SakitinSU 管理器会正常解析，但仍会显示标签)
+- `module.prop` 内是否存在大小写不规范的情况 (ShiroSU 管理器会正常解析，但仍会显示标签)
 
 <mark>如果只是 `module.prop` 损坏，重装模块通常可解决此问题，如果不符合规范，则需要开发者自行修复以解决此问题。</mark>
 
 ### 其他内容
 
-除了 **ANSI 转义码** 相关内容之外，SakitinSU 管理器还会解析如下内容:
+除了 **ANSI 转义码** 相关内容之外，ShiroSU 管理器还会解析如下内容:
 
 - `action`: 定义此内容，会在执行操作前显示弹窗，此内容用于描述操作有何作用
 - `runtimeInfo`: 定义此内容，会在模块名称旁边显示可点击图标，此内容为文本文件的 **模块相对路径/绝对路径**，用于描述模块运行时的信息
 
-SakitinSU 管理器还会自动搜索模块目录内是否有符合正则表达式 `(?i)^(?:license|licence)(?:[-_][A-Za-z0-9]+)?(?:\.(?:txt|md|mkd))?$` 的文件。如有，则会在模块信息卡片中显示一个许可证标签，点击则会显示模块的许可证内容
+ShiroSU 管理器还会自动搜索模块目录内是否有符合正则表达式 `(?i)^(?:license|licence)(?:[-_][A-Za-z0-9]+)?(?:\.(?:txt|md|mkd))?$` 的文件。如有，则会在模块信息卡片中显示一个许可证标签，点击则会显示模块的许可证内容
 
 ## 内核接口
 
-SakitinSU 使用 `/data/adb/ssu/._settings` 作为内核设置目录，通常包含以下文件:
+ShiroSU 使用 `/data/adb/ssu/._settings` 作为内核设置目录，通常包含以下文件:
 
 - `._su_list`: 授权使用超级用户权限的列表
 - `._bypass_list`: 绕过 SELinux 限制的列表
@@ -134,13 +134,13 @@ SakitinSU 使用 `/data/adb/ssu/._settings` 作为内核设置目录，通常包
 <mark>以上文件均采用 `二进制 UID`(32 位整数) + `\0` + `软件包名` 格式存储，多个值之间以 `\n` 间隔</mark>
 
 > [!IMPORTANT]
-> 以上文件均为只读，任何模块/软件都不应该修改 SakitinSU 的内核配置文件，**仅 SakitinSU 管理器**有修改权限！
+> 以上文件均为只读，任何模块/软件都不应该修改 ShiroSU 的内核配置文件，**仅 ShiroSU 管理器**有修改权限！
 >
-> 其他模块/软件修改理应无效，SakitinSU 会在后续更新中逐步添加对内核配置文件写入的限制
+> 其他模块/软件修改理应无效，ShiroSU 会在后续更新中逐步添加对内核配置文件写入的限制
 
 ## 其他差异
 
-SakitinSU 会在后续更新中提供**模块备份接口**、**模块更新接口 (在更新时执行原本模块的代码)**、**模块存储接口**等功能，这些内容尚在规划中，会在后续更新中推出。
+ShiroSU 会在后续更新中提供**模块备份接口**、**模块更新接口 (在更新时执行原本模块的代码)**、**模块存储接口**等功能，这些内容尚在规划中，会在后续更新中推出。
 
 [^1]: Systemless 机制是一种无需直接修改系统分区即可实现修改系统文件的方法，为模块提供了便利性。
 

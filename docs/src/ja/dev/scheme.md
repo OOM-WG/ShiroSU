@@ -1,15 +1,15 @@
 ---
 layout: doc
 title: マネージャー Scheme
-description: SakitinSU マネージャーを Scheme 方式で呼び出す方法について学びます。
+description: ShiroSU マネージャーを Scheme 方式で呼び出す方法について学びます。
 outline: deep
 footer: false
 ---
 # **管理器 Scheme**
 
-SakitinSU 管理器会注册 `ssu` 和 `sakitinsu` 两个 `scheme`，只需要通过 `ssu://...` 或 `sakitinsu://...` 即可调用
+ShiroSU 管理器会注册 `ssu` 和 `shirosu` 两个 `scheme`，只需要通过 `ssu://...` 或 `shirosu://...` 即可调用
 
-如果没有传入或传入错误的内容，只会打开 SakitinSU 管理器的主页，支持的 `host` 如下:
+如果没有传入或传入错误的内容，只会打开 ShiroSU 管理器的主页，支持的 `host` 如下:
 
 ## module
 
@@ -23,7 +23,7 @@ SakitinSU 管理器会注册 `ssu` 和 `sakitinsu` 两个 `scheme`，只需要�
 
 示例: `ssu://module/action?id=xxx`
 
-调用后，会执行该模块的 `操作`，如果不存在该模块，则只会打开 SakitinSU 管理器的主页
+调用后，会执行该模块的 `操作`，如果不存在该模块，则只会打开 ShiroSU 管理器的主页
 
 ### webui
 
@@ -33,7 +33,7 @@ SakitinSU 管理器会注册 `ssu` 和 `sakitinsu` 两个 `scheme`，只需要�
 
 示例: `ssu://module/webui?id=xxx`
 
-调用后，会跳转该模块的 `WebUI`，如果不存在该模块，则只会打开 SakitinSU 管理器的主页
+调用后，会跳转该模块的 `WebUI`，如果不存在该模块，则只会打开 ShiroSU 管理器的主页
 
 ### install
 

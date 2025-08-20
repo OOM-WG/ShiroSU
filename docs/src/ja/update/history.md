@@ -1,7 +1,7 @@
 ---
 layout: "doc"
 title: "履歴バージョン"
-description: "SakitinSU プロジェクトの履歴記録"
+description: "ShiroSU プロジェクトの履歴記録"
 outline: "deep"
 sidebar: "false"
 aside: "false"

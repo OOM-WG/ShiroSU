@@ -4,15 +4,15 @@ layout: doc
 sidebar: false
 aside: false
 underConstruction: true
-description: SakitinSU's Privacy Policy
+description: ShiroSU's Privacy Policy
 ---
 # Privacy Policy
 
-SakitinSU uses Baidu Mobile Statistics and Alibaba Cloud EMAS to collect user usage data, thereby enhancing future user experience.
+ShiroSU uses Baidu Mobile Statistics and Alibaba Cloud EMAS to collect user usage data, thereby enhancing future user experience.
 
-SakitinSU respects and protects user privacy. User usage data is used solely for error analysis, performance optimization, and other legitimate purposes; it will never be misused.
+ShiroSU respects and protects user privacy. User usage data is used solely for error analysis, performance optimization, and other legitimate purposes; it will never be misused.
 
-The SakitinSU software only uses Baidu Mobile Statistics and Alibaba Cloud EMAS SDKs for data collection.  There are no other first-party/third-party data collection activities.  The software's first-party binary files do not contain any data collection activity.
+The ShiroSU software only uses Baidu Mobile Statistics and Alibaba Cloud EMAS SDKs for data collection.  There are no other first-party/third-party data collection activities.  The software's first-party binary files do not contain any data collection activity.
 
 ## Third-Party SDK Links
 

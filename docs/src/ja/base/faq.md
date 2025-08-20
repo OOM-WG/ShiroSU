@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: よくある質問
-description: SakitinSU プロジェクトのよくある質問
+description: ShiroSU プロジェクトのよくある質問
 showPageStats: false
 outline: deep
 footer: false

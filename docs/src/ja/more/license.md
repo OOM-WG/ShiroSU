@@ -4,12 +4,12 @@ layout: doc
 sidebar: false
 aside: false
 underConstruction: true
-description: SakitinSU のライセンス契約
+description: ShiroSU のライセンス契約
 ---
 # File to Download 公共资源许可证 (F2DLPRL または F2DLPR 许可证)
 
 ::: tip
-SakitinSU の分发物使用 F2DLPRL 许可，其相关开源代码同样使用 F2DLPRL 许可
+ShiroSU の分发物使用 F2DLPRL 许可，其相关开源代码同样使用 F2DLPRL 许可
 :::
 
 > 本许可适用于源代码、分发物、文字作品及其他形式作品原件。

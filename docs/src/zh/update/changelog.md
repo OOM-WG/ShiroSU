@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 更新日志
-description: SakitinSU 项目的版本更新记录和变更历史
+description: ShiroSU 项目的版本更新记录和变更历史
 outline: deep
 sidebar: false
 aside: false
@@ -88,7 +88,7 @@ aside: false
 
 - 常规代码维护
 - 支持通过 `zip` 文件关联来安装模块
-- 多语言更新，参见[GitHub](https://github.com/OOM-WG/SakitinSU/pull/8)
+- 多语言更新，参见[GitHub](https://github.com/OOM-WG/ShiroSU/pull/8)
 
 ### preview4
 
@@ -100,7 +100,7 @@ aside: false
 - 优化模块页面模块信息卡片按钮
 - 新增权能页面多用户支持
 - 优化更多页面展现方式
-- 多语言更新，参见[GitHub](https://github.com/OOM-WG/SakitinSU/pull/6)
+- 多语言更新，参见[GitHub](https://github.com/OOM-WG/ShiroSU/pull/6)
 
 ### preview2 (2025-07-14)
 
@@ -129,14 +129,14 @@ aside: false
 
 - 常规代码维护
 - 优化部分颜色
-- 多语言更新，参见[GitHub](https://github.com/OOM-WG/SakitinSU/pull/2)
+- 多语言更新，参见[GitHub](https://github.com/OOM-WG/ShiroSU/pull/2)
 
 ### preview6 (2025-07-06)
 
 - 常规代码维护
 - 优化部分布局
 - 新增 Shell 页面错误信息输出
-- 新增 SakitinSU 用户空间安装/卸载
+- 新增 ShiroSU 用户空间安装/卸载
 
 ### preview5 (2025-07-05)
 
@@ -171,7 +171,7 @@ aside: false
 > 赋权/隐藏部分目前仅供参考，相关逻辑暂未实现
 
 - 独立并开源多语言框架
-- 多语言更新，参见[GitHub](https://github.com/OOM-WG/SakitinSU/pull/1)
+- 多语言更新，参见[GitHub](https://github.com/OOM-WG/ShiroSU/pull/1)
 
 ## 0.2.0
 

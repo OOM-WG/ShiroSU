@@ -3,14 +3,14 @@ layout: doc
 footer: false
 ---
 
-# 针对 SakitinSU 负面声音
+# 针对 ShiroSU 负面声音
 
 ## 避嫌声明
 
 我们不与其他 `ROOT实现` 竞争，人际关系那点破事我们也懒得搅和
 所以不管别人说什么，我们希望你不要在意，只是选择你想要的就好，你觉得什么好用就用什么
 
-> `SUU` 和 `SSU` 为姊妹项目，请注意区分 `SUU` 名为`苏柚`，SSU 为 `SakitinSU` 的缩写。
+> `SUU` 和 `SSU` 为姊妹项目，请注意区分 `SUU` 名为`苏柚`，SSU 为 `ShiroSU` 的缩写。
 > 以下简称 `SSU`。
 
 ## 对于 `SSU` 项目诞生以来，听到太多负面声音了
@@ -30,7 +30,7 @@ footer: false
 @YumeYuka 编写并与其他成员协作优化。截至项目成立到目前六月底，`SSU` 管理器已经开发至可作为`模块管理器`使用，内核空间实现由于
 @Linso 私人原因开发进度缓慢。
 
-`SSU` 已开源部分[配置](https://github.com/OOM-WG/SakitinSU)以及[核心组件](https://github.com/OOM-WG/WMLang)
+`SSU` 已开源部分[配置](https://github.com/OOM-WG/ShiroSU)以及[核心组件](https://github.com/OOM-WG/WMLang)
 ，详见 <https://github.com/OOM-WG>。管理器全部代码由 @安音咲汀 编写，@YumeYuka 参与优化一小部分页面，用户空间代码已全部规避
 `GPL`协议，包括`WebUI`实现。对于内核空间代码由 @Linso 完成，开源程度由 @Linso 完善度决定。对于文档部分，文档使用 `vitepress`
 驱动，目前只考虑开放文章部分。

@@ -1,11 +1,11 @@
 ---
 layout: doc
 title: Installation Guide
-description: Detailed SakitinSU Installation Steps and Configuration Instructions
+description: Detailed ShiroSU Installation Steps and Configuration Instructions
 outline: deep
 footer: false
 ---
-# Download SakitinSU Manager
+# Download ShiroSU Manager
 
 <Downloaded />
 
@@ -13,15 +13,15 @@ footer: false
 
 ### Authorizing through other managers
 
-When using `SakitinSU` as a module manager, you need to pre-install a Root solution like `Magisk` or `KernelSU`.
+When using `ShiroSU` as a module manager, you need to pre-install a Root solution like `Magisk` or `KernelSU`.
 
-1.  Grant Root permissions to the `SakitinSU` application in the `Magisk` or `KernelSU` manager.
-2.  After authorization, `SakitinSU` will automatically detect and load the module list for subsequent management.
+1.  Grant Root permissions to the `ShiroSU` application in the `Magisk` or `KernelSU` manager.
+2.  After authorization, `ShiroSU` will automatically detect and load the module list for subsequent management.
 
-### Through SakitinSU (Under Development)
+### Through ShiroSU (Under Development)
 
 > [!NOTE]
-> The native Root implementation of `SakitinSU` is under development and is not currently supported in this version.
+> The native Root implementation of `ShiroSU` is under development and is not currently supported in this version.
 
 ---
 
@@ -61,6 +61,6 @@ The system supports loading additional command-line toolsets by installing indep
 - **Available Extension Modules**: `coreutils`, `busybox`, `sush`
 
 > [!WARNING]
-> These extension modules are planned to be directly integrated into the `SakitinSU` main program in the future.
+> These extension modules are planned to be directly integrated into the `ShiroSU` main program in the future.
 
 ---

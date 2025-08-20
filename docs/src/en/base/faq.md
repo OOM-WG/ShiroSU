@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Frequently Asked Questions
-description: FAQ for the SakitinSU Project
+description: FAQ for the ShiroSU Project
 showPageStats: false
 outline: deep
 footer: false

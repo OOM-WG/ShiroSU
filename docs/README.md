@@ -1,6 +1,6 @@
-# SakitinSU Documentation
+# ShiroSU Documentation
 
-这是一个基于 VitePress 构建的 SakitinSU 项目文档网站。
+这是一个基于 VitePress 构建的 ShiroSU 项目文档网站。
 
 ## 贡献指南
 

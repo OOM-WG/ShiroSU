@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: プロジェクトの起源
-description: SakitinSU プロジェクトの誕生背景、発展歷程、および設計理念を理解する
+description: ShiroSU プロジェクトの誕生背景、発展歷程、および設計理念を理解する
 outline: deep
 footer: false
 ---
@@ -11,7 +11,7 @@ footer: false
 >
 > （ここはカーネル部分についてです）
 >
-> （実際、SakitinSU は realme GT Neo でカーネルレベルの root をうまく使用できない問題を解決するために存在します）
+> （実際、ShiroSU は realme GT Neo でカーネルレベルの root をうまく使用できない問題を解決するために存在します）
 
 ---
 
@@ -19,7 +19,7 @@ footer: false
 
 > @安音咲汀：
 >
-> 「SSU って SakitinSU だと思う？SimpleSU だと思う？それとも他の名前がいい？ 」
+> 「SSU って ShiroSU だと思う？SimpleSU だと思う？それとも他の名前がいい？ 」
 >
 > @YumeYuka：
 >

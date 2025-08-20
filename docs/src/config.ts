@@ -3,7 +3,7 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 
 export default defineConfig({
     lang: "zh-Hans",
-    description: "SakitinSU - 基于内核的 Android Root 解决方案",
+    description: "ShiroSU - 基于内核的 Android Root 解决方案",
 
     themeConfig: {
         nav: nav(),

@@ -1,19 +1,19 @@
 ---
 layout: doc
 title: Module Development
-description: Learning how to develop and build custom modules for SakitinSU
+description: Learning how to develop and build custom modules for ShiroSU
 outline: deep
 footer: false
 ---
 # Module Development Guide
 
-For most aspects, SakitinSU is largely consistent with **`Magisk` and `KernelSU`**. This document only describes the differences.
+For most aspects, ShiroSU is largely consistent with **`Magisk` and `KernelSU`**. This document only describes the differences.
 
 ::: tip
 
-If SakitinSU is only used as a module manager for other root implementations, the module standard should follow the current root implementation. SakitinSU **will not interfere** with any behavior of other root implementations.
+If ShiroSU is only used as a module manager for other root implementations, the module standard should follow the current root implementation. ShiroSU **will not interfere** with any behavior of other root implementations.
 
-However, modules' **WebUI needs to consider** SakitinSU's [module WebUI](webui).
+However, modules' **WebUI needs to consider** ShiroSU's [module WebUI](webui).
 
 :::
 
@@ -22,41 +22,41 @@ However, modules' **WebUI needs to consider** SakitinSU's [module WebUI](webui).
 
 ## Systemless [^1]
 
-SakitinSU's Systemless is a mount mechanism similar to Magisk, with fully compatible interfaces, such as the `.replace` usage. However, SakitinSU's mount mechanism has stronger compatibility. It is based on dynamic partition identification. This means modules can directly mount partitions like `odm`, and other root implementations cannot mount, without extra effort.
+ShiroSU's Systemless is a mount mechanism similar to Magisk, with fully compatible interfaces, such as the `.replace` usage. However, ShiroSU's mount mechanism has stronger compatibility. It is based on dynamic partition identification. This means modules can directly mount partitions like `odm`, and other root implementations cannot mount, without extra effort.
 
-Furthermore, to ensure stronger security, SakitinSU's Systemless ignores the **SELinux context** of mounted **files/directories**, **directory permissions**, and **file/directory user/group ownership**. If a file is mounted to a non-existent directory, its **SELinux context**, **permissions**, and **user/group** will inherit from the parent directory. Generally, these actions do not affect module operation and instead help improve stability.
+Furthermore, to ensure stronger security, ShiroSU's Systemless ignores the **SELinux context** of mounted **files/directories**, **directory permissions**, and **file/directory user/group ownership**. If a file is mounted to a non-existent directory, its **SELinux context**, **permissions**, and **user/group** will inherit from the parent directory. Generally, these actions do not affect module operation and instead help improve stability.
 
 ::: tip
 
-SakitinSU's Systemless uses the `systemless` folder within the module directory for mounting. If a module uses the `system` folder for Systemless, the `systemless` folder will be **automatically created**.
+ShiroSU's Systemless uses the `systemless` folder within the module directory for mounting. If a module uses the `system` folder for Systemless, the `systemless` folder will be **automatically created**.
 
-If a module is only compatible with SakitinSU, it can directly use the `systemless` folder for Systemless.
+If a module is only compatible with ShiroSU, it can directly use the `systemless` folder for Systemless.
 
 :::
 
 ## Shell
 
-SakitinSU differs significantly from other root implementations here. SakitinSU's running shell scripts are **not** run in "standalone mode" within `BusyBox`.
+ShiroSU differs significantly from other root implementations here. ShiroSU's running shell scripts are **not** run in "standalone mode" within `BusyBox`.
 
-To improve the convenience of shell script development, SakitinSU uses [sush](https://github.com/shellgei/rusty_bash) (Bash written in Rust) to run shell scripts and prioritizes the command set of [uutils](https://github.com/uutils/coreutils) (coreutils written in Rust) over Magisk's BusyBox.  Commands are **first retrieved from uutils**, and only if not found are they retrieved from BusyBox.
+To improve the convenience of shell script development, ShiroSU uses [sush](https://github.com/shellgei/rusty_bash) (Bash written in Rust) to run shell scripts and prioritizes the command set of [uutils](https://github.com/uutils/coreutils) (coreutils written in Rust) over Magisk's BusyBox.  Commands are **first retrieved from uutils**, and only if not found are they retrieved from BusyBox.
 
 Since it's not run in "standalone mode" within BusyBox, commands are injected through the `PATH` environment variable. Do not hardcode modifications to `PATH` within module shell scripts!
 
 ### Environment Variables
 
-To aid in differentiation, SakitinSU injects the following variables during module execution:
+To aid in differentiation, ShiroSU injects the following variables during module execution:
 
-- `SSU` (boolean): When running in the SakitinSU environment, this value will be `true`. However, this does not mean you can execute code with `$SSU && # code ...`. Always use `[ "$SSU" = true ]` or a similar method to detect SakitinSU.
-- `SSU_VER` (string): SakitinSU's version number (excluding patch number).
-- `SSU_VER_CODE` (integer): SakitinSU's pure numerical version number (including patch number).
+- `SSU` (boolean): When running in the ShiroSU environment, this value will be `true`. However, this does not mean you can execute code with `$SSU && # code ...`. Always use `[ "$SSU" = true ]` or a similar method to detect ShiroSU.
+- `SSU_VER` (string): ShiroSU's version number (excluding patch number).
+- `SSU_VER_CODE` (integer): ShiroSU's pure numerical version number (including patch number).
 
 ### Recovery
 
-SakitinSU does not support installing modules via Recovery, and code within `META-INF/com/google/android/update-binary` will not be executed during module installation.
+ShiroSU does not support installing modules via Recovery, and code within `META-INF/com/google/android/update-binary` will not be executed during module installation.
 
 ### SU Calls
 
-SakitinSU's SU implementation defaults to a `sudo` that can only be used to directly execute shell commands, allowing direct execution of commands like `sudo ls /`.
+ShiroSU's SU implementation defaults to a `sudo` that can only be used to directly execute shell commands, allowing direct execution of commands like `sudo ls /`.
 
 `sudo` exists only as a simple `su -c` alternative, but **no** module should use `sudo` or `su -c` to execute shell commands!
 
@@ -64,7 +64,7 @@ SakitinSU's SU implementation defaults to a `sudo` that can only be used to dire
 
 ## ANSI Escape Codes [^2]
 
-SakitinSU allows the use of `ANSI escape codes` in `module.prop` or shell scripts to enhance text display. For example, in `module.prop`:
+ShiroSU allows the use of `ANSI escape codes` in `module.prop` or shell scripts to enhance text display. For example, in `module.prop`:
 
 ```properties {4,8}
 id=ssu_cmd_ext
@@ -77,13 +77,13 @@ description=Add coreutils, busybox, and bash to /system/bin.
 descriptionAnsi=Add \e[1mcoreutils, busybox, and bash\e[0m to \e[1m/system/bin\e[0m.
 ```
 
-Using the above `module.prop`, the module will display `Auto-generated`, `coreutils, busybox, and bash`, and `/system/bin` in bold within the SakitinSU manager.
+Using the above `module.prop`, the module will display `Auto-generated`, `coreutils, busybox, and bash`, and `/system/bin` in bold within the ShiroSU manager.
 
 In `module.prop`, you can use `nameAnsi`, `versionAnsi`, `authorAnsi`, and `descriptionAnsi` to display text containing ANSI escape codes.
 
 While omitting the `Ansi` suffix is possible, for compatibility, use the `Ansi` suffix.
 
-<mark>SakitinSU parses `module.prop` sequentially, so ensure values with the `Ansi` suffix are placed later in the file.</mark>
+<mark>ShiroSU parses `module.prop` sequentially, so ensure values with the `Ansi` suffix are placed later in the file.</mark>
 
 ::: details Expand to view rendering effect
 ![module.prop rendering effect](/assets/img/module_prop.webp)
@@ -91,11 +91,11 @@ While omitting the `Ansi` suffix is possible, for compatibility, use the `Ansi` 
 
 ## Module WebUI
 
-SakitinSU, like `KernelSU`, allows modules to use WebUI for functionality, see [Module WebUI](webui).
+ShiroSU, like `KernelSU`, allows modules to use WebUI for functionality, see [Module WebUI](webui).
 
 ## module.prop
 
-The SakitinSU manager has a mechanism to detect if `module.prop` is corrupted or conforms to the standard. If corrupted or non-compliant, the manager will display a tag above the module.
+The ShiroSU manager has a mechanism to detect if `module.prop` is corrupted or conforms to the standard. If corrupted or non-compliant, the manager will display a tag above the module.
 
 ::: warning
 
@@ -103,7 +103,7 @@ Some modules use `sed` commands to modify `module.prop` for real-time content up
 
 :::
 
-The SakitinSU manager checks the following:
+The ShiroSU manager checks the following:
 
 - Whether `module.prop` contains non-compliant syntax.
 - Whether `id`, `name`, `version`, `author`, `description` (and their `Ansi` counterparts) are empty.
@@ -115,7 +115,7 @@ The SakitinSU manager checks the following:
 
 ## Kernel Interface
 
-SakitinSU uses `/data/adb/ssu/._settings` as the kernel settings directory, typically containing the following files:
+ShiroSU uses `/data/adb/ssu/._settings` as the kernel settings directory, typically containing the following files:
 
 - `._su_list`: List of packages authorized to use superuser privileges.
 - `._bypass_list`: List of entries bypassing SELinux restrictions.
@@ -124,13 +124,13 @@ SakitinSU uses `/data/adb/ssu/._settings` as the kernel settings directory, typi
 <mark>These files store `binary UID` (32-bit integer) + `\0` + `package name` format, with multiple values separated by `\n`.</mark>
 
 > [!IMPORTANT]
-> These files are read-only. No modules/applications should modify SakitinSU's kernel configuration files. **Only the SakitinSU manager** has modification rights!
+> These files are read-only. No modules/applications should modify ShiroSU's kernel configuration files. **Only the ShiroSU manager** has modification rights!
 >
-> Modifications by other modules/applications are expected to be ineffective. SakitinSU will progressively add restrictions on kernel configuration file writing in future updates.
+> Modifications by other modules/applications are expected to be ineffective. ShiroSU will progressively add restrictions on kernel configuration file writing in future updates.
 
 ## Other Differences
 
-SakitinSU will provide **module backup interface**, **module update interface (executing original module code during updates)**, and **module storage interface** in future updates. These features are still under development and will be released in future updates.
+ShiroSU will provide **module backup interface**, **module update interface (executing original module code during updates)**, and **module storage interface** in future updates. These features are still under development and will be released in future updates.
 
 [^1]: The Systemless mechanism is a method for modifying system files without directly modifying system partitions, providing convenience for modules.
 

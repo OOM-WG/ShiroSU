@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Project Origin
-description: Understanding the background, development process, and design philosophy of the SakitinSU project
+description: Understanding the background, development process, and design philosophy of the ShiroSU project
 outline: deep
 footer: false
 ---
@@ -11,7 +11,7 @@ footer: false
 >
 > (This refers to the kernel part)
 >
-> (Actually, SakitinSU was created to solve the problem that realme GT Neo couldn't be rooted well at the kernel level)
+> (Actually, ShiroSU was created to solve the problem that realme GT Neo couldn't be rooted well at the kernel level)
 
 ---
 
@@ -19,7 +19,7 @@ footer: false
 
 > @AnYinSa汀:
 >
-> "Do you think SSU is SakitinSU or SimpleSU or something else, or should we change the name?"
+> "Do you think SSU is ShiroSU or SimpleSU or something else, or should we change the name?"
 >
 > @YumeYuka:
 >
