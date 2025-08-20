@@ -166,9 +166,9 @@ export default withMermaid({
                         mapByEmailAliases: ["ark@oom-wg.dev"],
                     },
                     {
-                        name: "安音咲汀",
-                        username: "TianwanTW",
-                        mapByEmailAliases: ["tianwan@oom-wg.dev"],
+                        name: "白彩恋",
+                        username: "ShIroRRen",
+                        mapByEmailAliases: ["shiro@oom-wg.dev"],
                     },
                     {
                         name: "Linso",
