@@ -7,4 +7,6 @@ SUPower = {
     SSUHide = "Hide"
 
     MagiskDenyList = "Deny list"
+
+    KernelSUUmount = "Umount modules"
 }

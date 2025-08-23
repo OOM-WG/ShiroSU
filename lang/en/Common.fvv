@@ -20,9 +20,11 @@ UI = {
     Grant = "Grant"
     Hide = "Hide"
 
-    Home = "Home"
-    SUPower = "SU Power"
-    Modules = "Modules"
+    ToolPages = "Tool"
+    System = "System"
+    Module = "Module"
+
+    CommonPages = "Common"
     Settings = "Settings"
     About = "About"
 

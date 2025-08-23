@@ -20,9 +20,8 @@ UI = {
     Grant = "権限付与"
     Hide = "隠す"
 
-    Home = "ホーム"
-    SUPower = "権能"
-    Modules = "モジュール"
+    Module = "モジュール"
+
     Settings = "設定"
     About = "について"
 

@@ -20,10 +20,6 @@ UI = {
     Grant = "赋权"
     Hide = "隐藏"
 
-    Home = "主页"
-    SUPower = "权能"
-    Modules = "模块"
-
     ToolPages = "工具"
     System = "系统"
     Module = "模块"

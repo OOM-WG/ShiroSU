@@ -22,6 +22,8 @@ Modules = {
     EnableErr = "啟用失敗"
     DisableErr = "禁用失敗"
 
+    License = "許可證"
+
     Version = "版本"
     Author = "作者"
     Action = "操作"

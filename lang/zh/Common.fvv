@@ -20,9 +20,11 @@ UI = {
     Grant = "賦權"
     Hide = "隱藏"
 
-    Home = "主頁"
-    SUPower = "權能"
-    Modules = "模組"
+    ToolPages = "系統"
+    System = "系统"
+    Module = "模組"
+
+    CommonPages = "基本"
     Settings = "設置"
     About = "關於"
 

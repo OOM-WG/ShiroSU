@@ -20,9 +20,8 @@ UI = {
     Grant = "Предоставить права"
     Hide = "Скрыть"
 
-    Home = "Главная"
-    SUPower = "Права SU"
-    Modules = "Модули"
+    Module = "Модули"
+
     Settings = "Настройки"
     About = "О приложении"
 

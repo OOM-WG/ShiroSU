@@ -20,9 +20,8 @@ UI = {
     Grant = "Yetki Ver"
     Hide = "Gizle"
 
-    Home = "Anasayfa"
-    SUPower = "SU Yetkisi"
-    Modules = "Modüller"
+    Module = "Modüller"
+
     Settings = "Ayarlar"
     About = "Hakkında"
 

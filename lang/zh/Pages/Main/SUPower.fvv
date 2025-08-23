@@ -7,4 +7,6 @@ SUPower = {
     SSUHide = "隱藏"
 
     MagiskDenyList = "排除清單"
+
+    KernelSUUmount = "卸載模組"
 }

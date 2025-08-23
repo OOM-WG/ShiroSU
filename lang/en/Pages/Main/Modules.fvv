@@ -22,6 +22,8 @@ Modules = {
     EnableErr = "Enable failed"
     DisableErr = "Disable failed"
 
+    License = "License"
+
     Version = "Version"
     Author = "Author"
     Action = "Action"
