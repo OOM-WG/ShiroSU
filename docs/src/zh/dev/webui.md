@@ -10,8 +10,6 @@ footer: false
 
 ShiroSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [KerenlSU 模块 WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html)。
 
-除此之外，ShiroSU 的 WebUI JavaScript 接口的 `moduleInfo` 函数额外提供一个`updatable`值，此值会受到用户网络环境影响。
-
 ### **模块目录结构**
 
 模块目录应遵循以下结构：
