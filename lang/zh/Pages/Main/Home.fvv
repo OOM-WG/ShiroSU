@@ -7,15 +7,15 @@ Home = {
     TipCnt = "SSU使用百度移動統計以及阿里雲EMAS收集您的使用數據，依此增強後續的使用體驗\n您目前使用的是%s分支%s"
     TipCntPre = "\n一切內容僅供參考，請關注官方後續動態"
 
-    InstTtl = "安裝 %s 版本"
+    InstTtl = "安裝%s版本"
     InstCnt = "安裝包已下載完成，點擊即可安裝"
     InstPmErr = "許可權獲取失敗"
 
-    UpdateTtl = "更新 %s 版本"
+    UpdateTtl = "更新%s版本"
     UpdateCnt = "- 安裝包大小: %s\n%s"
 
     NewVerTtl = "新的%s版本現已推出！"
-    NewVerCnt = "新版本 %s 已可使用，點擊即可更新"
+    NewVerCnt = "新版本%s已可使用，點擊即可更新"
 
     SUStatus = "SU狀態"
     SUSource = "來源"
