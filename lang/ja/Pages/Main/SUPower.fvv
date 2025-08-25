@@ -1,4 +1,7 @@
 SUPower = {
+    Grant = "権限付与"
+    Hide = "隠す"
+
     SearchApp = "アプリを検索"
 
     SUPM = "SU権能"

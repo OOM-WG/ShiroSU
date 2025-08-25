@@ -1,4 +1,7 @@
 SUPower = {
+    Grant = "赋权"
+    Hide = "隐藏"
+
     SearchApp = "搜索软件"
 
     SUPM = "SU权能"

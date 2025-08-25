@@ -17,8 +17,9 @@ UI = {
     NoUpdatable = "Нет модулей для обновления"
     UpdateAll = "Обновить все"
 
-    Grant = "Предоставить права"
-    Hide = "Скрыть"
+    Home = "Главная"
+    SUPower = "Права SU"
+    Modules = "Модули"
 
     Module = "Модули"
 

@@ -17,12 +17,14 @@ UI = {
     NoUpdatable = "暫無可更新模組"
     UpdateAll = "全部更新"
 
-    Grant = "賦權"
-    Hide = "隱藏"
+    Home = "主頁"
+    SUPower = "權能"
+    Modules = "模組"
 
     ToolPages = "系統"
     System = "系统"
     Module = "模組"
+    More = "更多"
 
     CommonPages = "基本"
     Settings = "設置"

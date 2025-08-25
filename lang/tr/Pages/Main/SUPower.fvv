@@ -1,4 +1,7 @@
 SUPower = {
+    Grant = "Yetki Ver"
+    Hide = "Gizle"
+
     SearchApp = "Uygulama ara"
 
     SUPM = "SU Yetkisi"

@@ -1,4 +1,7 @@
 SUPower = {
+    Grant = "Grant"
+    Hide = "Hide"
+
     SearchApp = "Search for apps"
 
     SUPM = "Super user"

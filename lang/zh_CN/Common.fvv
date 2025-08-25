@@ -17,8 +17,10 @@ UI = {
     NoUpdatable = "暂无可更新模块"
     UpdateAll = "全部更新"
 
-    Grant = "赋权"
-    Hide = "隐藏"
+    Home = "主页"
+    SUPower = "权能"
+    Modules = "模块"
+    More = "更多"
 
     ToolPages = "工具"
     System = "系统"

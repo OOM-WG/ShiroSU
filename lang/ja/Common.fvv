@@ -17,8 +17,9 @@ UI = {
     NoUpdatable = "更新可能なモジュールはありません"
     UpdateAll = "すべて更新"
 
-    Grant = "権限付与"
-    Hide = "隠す"
+    Home = "ホーム"
+    SUPower = "権能"
+    Modules = "モジュール"
 
     Module = "モジュール"
 

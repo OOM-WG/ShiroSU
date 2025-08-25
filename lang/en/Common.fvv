@@ -17,8 +17,10 @@ UI = {
     NoUpdatable = "There are no modules to update at this time"
     UpdateAll = "Update all"
 
-    Grant = "Grant"
-    Hide = "Hide"
+    Home = "Home"
+    SUPower = "SU Power"
+    Modules = "Modules"
+    More = "More"
 
     ToolPages = "Tool"
     System = "System"

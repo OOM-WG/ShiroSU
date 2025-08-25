@@ -17,8 +17,9 @@ UI = {
     NoUpdatable = "Güncellenecek modül yok"
     UpdateAll = "Tümünü güncelle"
 
-    Grant = "Yetki Ver"
-    Hide = "Gizle"
+    Home = "Anasayfa"
+    SUPower = "SU Yetkisi"
+    Modules = "Modüller"
 
     Module = "Modüller"
 
