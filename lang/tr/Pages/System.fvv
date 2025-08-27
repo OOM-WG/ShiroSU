@@ -1,5 +1,6 @@
 System = {
     ClnSysCch = "Sistem Önbelliğini Temizle"
-    ClnSysCchDesc = "Bazı modüller sistem arızalarına neden olabilir. Sistem önbelleğini temizlemek bu sorunu çözebilir.\nTemizledikten sonra en kısa sürede yeniden başlatmalısınız"
+    ClnSysCchDesc = "Bazı modüller sistem arızalarına neden olabilir. Sistem önbelleğini temizlemek bu sorunu çözebilir."
+    ClnSysCchCnt = "Temizledikten sonra en kısa sürede yeniden başlatmalısınız"
     ClnSysCchOk = "Temizleme tamamlandı, lütfen en kısa sürede yeniden başlatın"
 }
