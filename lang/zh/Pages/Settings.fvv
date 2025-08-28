@@ -1,13 +1,13 @@
 Settings = {
     Custom = "客製化"
     HDRMode = "HDR模式"
-    HomeTip = "主頁提示"
     AppTheme = "軟體主題"
+    HomeTip = "主頁提示"
 
     Common = "基本"
+    Auth = "啟動驗證"
     UpChannel = "更新渠道"
     UpChannelTip = "重啟軟體後生效"
-    Auth = "啟動驗證"
 
     Module = "模組"
     WebUIDebug = "WebUI調試"

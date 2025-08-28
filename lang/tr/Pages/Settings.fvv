@@ -1,13 +1,13 @@
 Settings = {
     Custom = "Özelleştirme"
     HDRMode = "HDR modu"
-    HomeTip = "Anasayfa ipuçları"
     AppTheme = "Uygulama teması"
+    HomeTip = "Anasayfa ipuçları"
 
     Common = "Genel"
+    Auth = "Başlatma doğrulaması"
     UpChannel = "Güncelleme kanalı"
     UpChannelTip = "Uygulamayı yeniden başlattıktan sonra etkili olur."
-    Auth = "Başlatma doğrulaması"
 
     Module = "Modüller"
     WebUIDebug = "WebUI hata ayıklama"

@@ -1,13 +1,13 @@
 Settings = {
     Custom = "Customization"
     HDRMode = "HDR mode"
-    HomeTip = "Homepage tip"
     AppTheme = "App Theme"
+    HomeTip = "Homepage tip"
 
     Common = "Common"
+    Auth = "Launch verification"
     UpChannel = "Update channel"
     UpChannelTip = "It takes effect after restarting the app"
-    Auth = "Launch verification"
 
     Module = "Module"
     WebUIDebug = "WebUI debug mode"
