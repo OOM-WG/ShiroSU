@@ -8,7 +8,7 @@ footer: false
 
 # **管理器 Scheme**
 
-ShiroSU 管理器会注册 `ssu` 和 `shirosu` 两个 `scheme`，只需要通过 `ssu://...` 或 `shirosu://...` 即可调用
+ShiroSU 管理器会注册 `ssu` 的 `scheme` ，只需要通过 `ssu://...` 即可调用
 
 如果没有传入或传入错误的内容，只会打开 ShiroSU 管理器的主页，支持的 `host` 如下:
 
