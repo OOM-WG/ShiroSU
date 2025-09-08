@@ -26,12 +26,12 @@ footer: false
 
 ## 对于 SSU 项目开源说明
 
-`SSU` 项目为 `O.O.M. W.G.` 的隶属项目，其 @安音咲汀 为用户空间实现的开发者，@Linso 为内核空间实现的开发者，对于 SSU 文档内容为
+`SSU` 项目为 `O.O.M. W.G.` 的隶属项目，其 @白彩恋 为用户空间实现的开发者，@Linso 为内核空间实现的开发者，对于 SSU 文档内容为
 @YumeYuka 编写并与其他成员协作优化。截至项目成立到目前六月底，`SSU` 管理器已经开发至可作为`模块管理器`使用，内核空间实现由于
 @Linso 私人原因开发进度缓慢。
 
 `SSU` 已开源部分[配置](https://github.com/OOM-WG/ShiroSU)以及[核心组件](https://github.com/OOM-WG/WMLang)
-，详见 <https://github.com/OOM-WG>。管理器全部代码由 @安音咲汀 编写，@YumeYuka 参与优化一小部分页面，用户空间代码已全部规避
+，详见 <https://github.com/OOM-WG>。管理器全部代码由 @白彩恋 编写，@YumeYuka 参与优化一小部分页面，用户空间代码已全部规避
 `GPL`协议，包括`WebUI`实现。对于内核空间代码由 @Linso 完成，开源程度由 @Linso 完善度决定。对于文档部分，文档使用 `vitepress`
 驱动，目前只考虑开放文章部分。
 

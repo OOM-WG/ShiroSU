@@ -13,7 +13,8 @@ description: 关于多语言
 如果文档中不是目标语言,我们建议使用外置浏览器翻译,或者使用浏览器插件等, 使用 `Google` ,`微软` 翻译等服务进行阅读本文档
 
 推荐使用翻译插件 :
-* [沉浸式翻译](https://immersivetranslate.com/)
-* [DeepL](https://www.deepl.com/ja/translator)
+
+- [沉浸式翻译](https://immersivetranslate.com/)
+- [DeepL](https://www.deepl.com/ja/translator)
 
 ## English

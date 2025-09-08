@@ -14,7 +14,7 @@ ShiroSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [Keren
 
 模块目录应遵循以下结构：
 
-```
+```plaintext
 .
 ├── module.prop
 └── webroot

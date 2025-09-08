@@ -2,4 +2,4 @@
 layout: home
 ---
 
-<Confetti />
+<Confetti/>

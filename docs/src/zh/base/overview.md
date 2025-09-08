@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 什么是 ShiroSU？
-description: 了解 ShiroSU - 基于内核的 Android Root 解决方案
+description: 了解 ShiroSU - 致力于畅享 root 的先进工具
 showPageStats: true
 progress: 30
 outline: deep
@@ -10,12 +10,9 @@ footer: false
 
 # 什么是 ShiroSU？
 
-<mark>ShiroSU</mark>（简称 <mark>SakiSU/SKTSU/SSU</mark>
-）是由回忆溢出工作组 <mark>[(O.O.M. W.G.)](https://oom-wg.dev)</mark> 以核心成员 [@安音咲汀](https://github.com/TianwanTW)
-的名字命名的内核级 Root 解决方案。
+<mark>ShiroSU</mark>（简称 <mark>SSU</mark>）是由回忆溢出工作组 <mark>[(O.O.M. W.G.)](https://oom-wg.dev)</mark> 以核心成员 [@白彩恋](https://github.com/ShIroRRen) 的名字命名的项目
 
-ShiroSU 致力于为 Android 设备提供一套简单易用的内核级 Root 权限管理工具。它是继 `Magisk`、`KernelSU` 和 `APatch` 之后的新
-Root 方案，与 `KernelSU` 一样在内核模式下运行，能够直接在内核空间为用户空间应用程序授予 Root 权限。
+ShiroSU 致力于为用户提供更易上手的 root 使用方式，用各种功能完整地使用 root
 
 ## 避嫌声明
 

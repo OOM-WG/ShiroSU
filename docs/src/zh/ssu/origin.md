@@ -8,7 +8,7 @@ footer: false
 
 ## 项目起源
 
-> @安音咲汀 说：没有什么起源，他说："让 Linso 去写，然后他就写了。"
+> @白彩恋 说：没有什么起源，他说："让 Linso 去写，然后他就写了。"
 >
 > （这里指内核部分）
 >
@@ -18,7 +18,7 @@ footer: false
 
 ## 名称的由来
 
-> @安音咲汀：
+> @白彩恋：
 >
 > "你觉得 SSU 是 ShiroSU 还是 SimpleSU 还是什么，或者改其他名字？"
 >
@@ -32,4 +32,4 @@ footer: false
 
 ## 图标的由来
 
-图标由 @YumeYuka 和 @悠栾 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制，由 @安音咲汀 人工修复。
+图标由 @YumeYuka 和 @悠栾 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制，由 @白彩恋 人工修复。
