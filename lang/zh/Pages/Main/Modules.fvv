@@ -27,6 +27,7 @@ Modules = {
     Version = "版本"
     Author = "作者"
     Action = "操作"
+    ConfigUI = "配置"
     WebUI = "介面"
 
     ShortcutOk = "已請求創建快捷方式"

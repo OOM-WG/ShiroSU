@@ -27,6 +27,7 @@ Modules = {
     Version = "Version"
     Author = "Author"
     Action = "Action"
+    ConfigUI = "Config"
     WebUI = "WebUI"
 
     ShortcutOk = "The creation of a shortcut has been requested"
