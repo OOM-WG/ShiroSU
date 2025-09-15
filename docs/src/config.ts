@@ -11,7 +11,7 @@ export default defineConfig({
 
 		search: {options: searchOptions()},
 		editLink: {
-			pattern: 'https://github.com/OOM-WG/SSU_Docs/edit/nga/src/:path',
+			pattern: 'https://github.com/OOM-WG/ShiroSU/edit/nga/docs/src/:path',
 			text: '在 GitHub 上编辑此页面'
 		},
 
@@ -44,7 +44,7 @@ function nav(): DefaultTheme.NavItem[] {
 			text: '关于 SSU',
 			items: [
 				{text: '特色功能', link: '/base/feats'},
-				{text: '了解团队', link: '/ssu/team'},
+				{text: '交流反馈', link: 'https://oom-wg.dev/join'},
 				{text: '开发致谢', link: '/ssu/3q'}
 			]
 		},

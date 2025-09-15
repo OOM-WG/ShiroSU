@@ -135,22 +135,12 @@ export default withMermaid({
 			// RssPlugin(RSS),
 			ThumbnailHashImages(),
 			GitChangelog({
-				repoURL: () => 'https://github.com/OOM-WG/SSU_Docs',
+				repoURL: () => 'https://github.com/OOM-WG/ShiroSU',
 				mapAuthors: [
 					{
 						name: 'YumeYuka',
 						username: 'YumeYuka',
 						mapByEmailAliases: ['yumeyuka@oom-wg.dev']
-					},
-					{
-						name: '枫莹',
-						username: 'FengYing1314',
-						mapByEmailAliases: ['fengying@oom-wg.dev']
-					},
-					{
-						name: '悠栾',
-						username: 'NuoFang6',
-						mapByEmailAliases: ['ark@oom-wg.dev']
 					},
 					{
 						name: '白彩恋',
@@ -161,6 +151,16 @@ export default withMermaid({
 						name: 'Linso',
 						username: 'Linso05',
 						mapByEmailAliases: ['linso@oom-wg.dev']
+					},
+					{
+						name: '枫莹',
+						username: 'FengYing1314',
+						mapByEmailAliases: ['fengying@oom-wg.dev']
+					},
+					{
+						name: '悠栾',
+						username: 'NuoFang6',
+						mapByEmailAliases: ['ark@oom-wg.dev']
 					}
 				]
 			}),

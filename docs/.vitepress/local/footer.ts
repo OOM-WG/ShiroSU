@@ -1,9 +1,9 @@
 import type {CustomConfig} from './types'
 
 const footer: CustomConfig['footer'] = {
-	qrcodeTitle: '开发反馈渠道',
-	qrcodeMessage: '欢迎QQ扫码联系我们',
-	qrcodeLink: 'https://qm.qq.com/q/YoA4Fa4mY2',
+	qrcodeTitle: '交流反馈渠道',
+	qrcodeMessage: '欢迎扫码联系我们',
+	qrcodeLink: 'https://oom-wg.dev/join',
 	navigation: [
 		{
 			title: '关于 SSU',
@@ -13,8 +13,16 @@ const footer: CustomConfig['footer'] = {
 					link: '/base/feats'
 				},
 				{
+					text: '交流',
+					link: 'https://oom-wg.dev/join'
+				},
+				{
 					text: '团队',
-					link: '/ssu/team'
+					link: 'https://oom-wg.dev/about'
+				},
+				{
+					text: '成员',
+					link: 'https://oom-wg.dev/developers'
 				},
 				{
 					text: '致谢',
