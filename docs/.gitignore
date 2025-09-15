@@ -1,0 +1,15 @@
+# Ark's
+/tmp/
+
+# End of https://www.gitignore.io/api/visualstudiocode
+.DS_Store
+node_modules/
+package-lock.json
+dist/
+/.vitepress/cache
+/.idea
+/.fleet
+node_modules
+/.idea
+/dist
+.vscode

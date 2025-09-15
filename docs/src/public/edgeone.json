@@ -1,0 +1,26 @@
+{
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/assets/*",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "max-age=31536000"
+        },
+        {
+          "key": "cache-control",
+          "value": "immutable"
+        }
+      ]
+    }
+  ]
+}
