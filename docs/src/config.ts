@@ -84,7 +84,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 			collapsed: false,
 			items: [
 				{text: '一切的起源', link: '/ssu/origin'},
-				{text: '内核工作原理', link: '/ssu/principle'},
+				{text: '内核工作原理', link: 'https://oom-wg.dev/posts/ssu-kernel-principle'},
 				{text: '面对质疑', link: '/ssu/defense'}
 			]
 		}
