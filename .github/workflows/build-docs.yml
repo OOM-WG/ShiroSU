@@ -16,6 +16,11 @@ on:
   # 可手动执行
   workflow_dispatch:
 
+# 确保同时只有一个部署在运行
+concurrency:
+  group: docs-builder
+  cancel-in-progress: true
+
 jobs:
   # 任务: 部署 Pages
   build-docs:
@@ -73,14 +78,14 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs-html
-          folder: dist_html
+          folder: docs/dist_html
           clean: true
           single-commit: true
       - name: Deploy Resource
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs-res
-          folder: dist
+          folder: docs/dist
           clean: true
           single-commit: true
       # 8、部署 Pages
@@ -88,6 +93,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs-pages
-          folder: output
+          folder: docs/output
           clean: true
           single-commit: true
