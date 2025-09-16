@@ -75,6 +75,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 			collapsed: false,
 			items: [
 				{text: '模块开发', link: '/dev/module'},
+				{text: '模块 ConfigUI', link: '/dev/cfgui'},
 				{text: '模块 WebUI', link: '/dev/webui'},
 				{text: 'Scheme 调用', link: '/dev/scheme'}
 			]
