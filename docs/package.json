@@ -50,7 +50,7 @@
 		"@nolebase/vitepress-plugin-page-properties": "^2.18.2",
 		"@nolebase/vitepress-plugin-thumbnail-hash": "^2.18.2",
 		"@types/animejs": "^3.1.13",
-		"@types/node": "^24.4.0",
+		"@types/node": "^24.5.0",
 		"@vitejs/plugin-legacy": "^7.2.1",
 		"animejs": "4.1.1",
 		"cross-env": "^10.0.0",

@@ -6,11 +6,11 @@ outline: deep
 footer: false
 ---
 
-## 项目起源
+# **项目起源**
+
+## 内核起源
 
 > @白彩恋 说：没有什么起源，他说："让 Linso 去写，然后他就写了。"
->
-> （这里指内核部分）
 >
 > （实际上 ShiroSU 是为了解决 realme GT Neo 不能很好地使用内核级 root 而存在的）
 
@@ -26,10 +26,11 @@ footer: false
 >
 > "前者……"
 
-然后就没有然后了。
+然后就没有然后了
 
 ---
 
 ## 图标的由来
 
-图标由 @YumeYuka 和 @悠栾 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制，由 @白彩恋 人工修复。
+图标由 @YumeYuka 和 @悠栾 使用 [`ConfyUI`](https://github.com/comfyanonymous/ComfyUI) 绘制，
+由 @白彩恋 人工修复

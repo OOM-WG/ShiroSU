@@ -6,7 +6,7 @@ aside: false
 description: 关于多语言
 ---
 
-# 文档多语言
+# **文档多语言**
 
 文档支持部分多语言，但是，很遗憾，除中文外的语言均来自 LLM 的机翻，我们没有过度的精力去纠正这些翻译错误，如果
 遇到阅读错误等问题，请以中文为准
@@ -16,5 +16,3 @@ description: 关于多语言
 
 - [沉浸式翻译](https://immersivetranslate.com/)
 - [DeepL](https://www.deepl.com/ja/translator)
-
-## English

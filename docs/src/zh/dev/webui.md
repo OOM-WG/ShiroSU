@@ -8,25 +8,27 @@ footer: false
 
 # **WebUI 模块开发**
 
-ShiroSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [KerenlSU 模块 WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html)。
+ShiroSU 的 WebUI 标准与 KerenlSU 保持一致，详细规范请参考 [KerenlSU 模块 WebUI](https://kernelsu.org/zh_CN/guide/module-webui.html)
 
-### **模块目录结构**
+## 模块目录结构
 
-模块目录应遵循以下结构：
+模块目录应遵循以下结构:
 
 ```plaintext
 .
 ├── module.prop
 └── webroot
-  ├── index.html
-  └── 其他Web资源...
+  ├── index.html (仅可为 index.html！不可为 index.htm 等)
+  └── 其他网页资源...
 ```
 
-**`webroot`** 目录是 WebUI 的根目录，包含所有前端资源。
+- **`webroot`** 目录是 WebUI 的根目录，包含所有前端资源
+- **`module.prop`** 为模块描述文件
 
-## **开发 Demo**
+## 开发 Demo
 
-我们提供了一个简单的 WebUI Demo，它使用 **`vite`** 进行打包，并基于 **`vue3`** 开发，同时集成了 **`KernelSU`** 包，以帮助您快速入门。
+我们提供了一个简单的 WebUI Demo，它使用 **`vite`** 进行打包，并基于 **`vue3`** 开发，
+同时集成了 **`KernelSU`** 包，以帮助您快速入门
 
 - **WebUI Demo 仓库**: <https://github.com/OOM-WG/WebUI_Demo>
 - **WebUI Demo 截图**: [WebUI Demo 截图](/assets/img/webui.webp)

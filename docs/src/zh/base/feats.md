@@ -7,7 +7,7 @@ aside: false
 outline: deep
 ---
 
-# 特色功能
+# **特色功能**
 
 ShiroSU 致力于在各个方面提供提升使用体验的功能，包括但不限于如下内容:
 
