@@ -57,12 +57,12 @@ export default withMermaid({
 
 	// 多语言配置
 	locales: {
-		// 多语言
+		// 默认简中
 		root: {
 			label: '简体中文',
-			lang: 'zh-CN',
+			lang: 'zh-Hans',
 			...zhConfig
-		},
+		} /*,
 		en: {
 			label: 'English',
 			lang: 'en',
@@ -74,7 +74,7 @@ export default withMermaid({
 			lang: 'ja',
 			link: '/ja/',
 			...jaConfig
-		}
+		}*/
 	},
 
 	sitemap: {
