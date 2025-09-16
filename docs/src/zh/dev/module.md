@@ -10,6 +10,9 @@ footer: false
 
 对于大部分内容，ShiroSU 与 **`Magisk` 和 `KernelSU`** 基本保持一致，此处仅介绍不同之处。
 
+如果想要快速生成一个支持 SSU 功能的通用模块，
+可前往 [SSU 模块构建工具](https://github.com/OOM-WG/ShiroSU-Modules-Builder) 查看
+
 ::: tip
 
 如果将 ShiroSU 仅用于其他 root 实现的模块管理器，那么模块标准应当以当前 root 实现为准，ShiroSU **不会干涉**其他 root 实现的任何行为
