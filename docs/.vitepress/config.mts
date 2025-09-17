@@ -6,8 +6,8 @@ import {head} from './local/head'
 import {markdown} from './local/markdown'
 import {themeConfig} from './local/theme'
 import zhConfig from '../src/config'
-import enConfig from '../src/en/config'
-import jaConfig from '../src/ja/config'
+//import enConfig from '../src/en/config'
+//import jaConfig from '../src/ja/config'
 import {readdir, writeFile} from 'fs/promises'
 import {resolve} from 'path'
 import {fileURLToPath, URL} from 'node:url'
@@ -22,6 +22,7 @@ import {
 import {RSSOptions, RssPlugin} from 'vitepress-plugin-rss'
 import {withMermaid} from 'vitepress-plugin-mermaid'
 import {groupIconMdPlugin, groupIconVitePlugin} from 'vitepress-plugin-group-icons'
+import autoprefixer from 'autoprefixer'
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
@@ -107,6 +108,11 @@ export default withMermaid({
 	//     return newCode;
 	// },
 	vite: {
+		css: {
+			postcss: {
+				plugins: [autoprefixer()]
+			}
+		},
 		// experimental: {
 		//     renderBuiltUrl(filename, { hostType, type, hostId }) {
 		//         return "https://ssu.noidx.sawahara.host/" + filename;

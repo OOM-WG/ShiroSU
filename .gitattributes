@@ -4,3 +4,6 @@
 *.fww text eol=lf
 
 *.md text eol=lf
+
+*.css text eol=lf
+*.scss text eol=lf

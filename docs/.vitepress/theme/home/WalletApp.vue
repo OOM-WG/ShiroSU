@@ -91,11 +91,8 @@ onMounted(() => {
 
 .hero-background {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: #ffffff;
+	inset: 0;
+	background: #fff;
 	z-index: 1;
 }
 
@@ -116,6 +113,7 @@ onMounted(() => {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+
 	/* 将内容向上移动 */
 	padding-top: 10vh;
 	padding-bottom: 20vh;
@@ -132,7 +130,7 @@ onMounted(() => {
 .hero-main-title {
 	font-size: clamp(3.2rem, 9vw, 5rem);
 	font-weight: 700;
-	margin: 0 0 1.2rem 0;
+	margin: 0 0 1.2rem;
 	/* 使用 VitePress 主题渐变色 */
 	background: linear-gradient(120deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-next, #bd34fe));
 	-webkit-background-clip: text;
@@ -145,14 +143,14 @@ onMounted(() => {
 	font-size: clamp(1.8rem, 5vw, 2.4rem);
 	color: var(--vp-c-text-1);
 	font-weight: 600;
-	margin: 0 0 1.8rem 0;
+	margin: 0 0 1.8rem;
 	line-height: 1.3;
 }
 
 .hero-description {
 	font-size: 1.3rem;
 	color: var(--vp-c-text-2);
-	margin: 0 0 3rem 0;
+	margin: 0 0 3rem;
 	line-height: 1.6;
 }
 
@@ -172,7 +170,7 @@ onMounted(() => {
 	font-weight: 700;
 	font-size: 1.18rem;
 	text-decoration: none;
-	box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+	box-shadow: 0 4px 14px rgb(99 102 241 / 30%);
 	transition: all 0.3s ease;
 	min-width: 140px;
 	justify-content: center;
@@ -194,7 +192,7 @@ onMounted(() => {
 	font-size: 1.18rem;
 	text-decoration: none;
 	border: 1.5px solid var(--vp-c-brand-light);
-	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+	box-shadow: 0 4px 14px rgb(0 0 0 / 3%);
 	transition: all 0.3s ease;
 	min-width: 140px;
 	justify-content: center;
@@ -231,7 +229,7 @@ onMounted(() => {
 	border: 1px solid var(--vp-c-divider);
 	border-radius: 16px;
 	padding: 18px 28px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
