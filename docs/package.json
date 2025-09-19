@@ -11,7 +11,7 @@
 		"clean": "rimraf .vitepress/.temp .vitepress/cache node_modules/.cache dist .temp",
 		"dev": "vitepress dev --port 25527 --host",
 		"lint": "prettier --write .",
-		"minify": "node minify.js",
+		"minify": "node minify.mjs",
 		"preview": "vitepress preview",
 		"termux:dev": "vitepress dev --port 25527"
 	},

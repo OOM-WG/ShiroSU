@@ -1,10 +1,14 @@
 {
-	"name": "worker",
-	"version": "0.0.0",
+	"name": "ssu-worker",
 	"private": true,
+	"description": "SSU Worker",
+	"license": "F2DLPRL",
+	"author": "SSU Developers (O.O.M. W.G.)",
+	"type": "module",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
+		"lint": "prettier --write .",
 		"start": "wrangler dev",
 		"test": "vitest"
 	},
@@ -12,6 +16,6 @@
 		"@cloudflare/vitest-pool-workers": "^0.8.71",
 		"prettier": "^3.6.2",
 		"vitest": "~3.2.4",
-		"wrangler": "^4.36.0"
+		"wrangler": "^4.38.0"
 	}
 }
