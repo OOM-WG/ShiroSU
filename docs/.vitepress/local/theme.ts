@@ -1,4 +1,5 @@
 import type {DefaultTheme} from 'vitepress'
+
 import footer from './footer'
 
 export const themeConfig: DefaultTheme.Config = {

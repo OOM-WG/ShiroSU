@@ -1,6 +1,6 @@
-import {minify} from 'html-minifier-terser'
-import {glob} from 'glob'
 import {promises as fs} from 'fs'
+import {glob} from 'glob'
+import {minify} from 'html-minifier-terser'
 
 const distDir = 'dist'
 const minifyOptions = {

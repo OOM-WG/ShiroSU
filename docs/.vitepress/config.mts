@@ -1,28 +1,29 @@
-import type {Plugin} from 'vite'
-import {defineConfig, SiteConfig} from 'vitepress'
-// import { defineTeekConfig } from "vitepress-theme-teek/config";
-import path from 'path'
-import {head} from './local/head'
-import {markdown} from './local/markdown'
-import {themeConfig} from './local/theme'
-import zhConfig from '../src/config'
+import autoprefixer from 'autoprefixer'
 //import enConfig from '../src/en/config'
 //import jaConfig from '../src/ja/config'
 import {readdir, writeFile} from 'fs/promises'
+import {URL, fileURLToPath} from 'node:url'
+// import { defineTeekConfig } from "vitepress-theme-teek/config";
+import path from 'path'
 import {resolve} from 'path'
-import {fileURLToPath, URL} from 'node:url'
-import {GitChangelog, GitChangelogMarkdownSection} from '@nolebase/vitepress-plugin-git-changelog/vite'
-import {ThumbnailHashImages} from '@nolebase/vitepress-plugin-thumbnail-hash/vite'
-import {generateBreadcrumbsData} from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
 import {visualizer} from 'rollup-plugin-visualizer'
+import type {Plugin} from 'vite'
+import {SiteConfig, defineConfig} from 'vitepress'
+import {groupIconMdPlugin, groupIconVitePlugin} from 'vitepress-plugin-group-icons'
+import {RSSOptions, RssPlugin} from 'vitepress-plugin-rss'
+
+import {generateBreadcrumbsData} from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
+import {GitChangelog, GitChangelogMarkdownSection} from '@nolebase/vitepress-plugin-git-changelog/vite'
 import {
 	PageProperties,
 	PagePropertiesMarkdownSection
 } from '@nolebase/vitepress-plugin-page-properties/vite'
-import {RSSOptions, RssPlugin} from 'vitepress-plugin-rss'
-import {withMermaid} from 'vitepress-plugin-mermaid'
-import {groupIconMdPlugin, groupIconVitePlugin} from 'vitepress-plugin-group-icons'
-import autoprefixer from 'autoprefixer'
+import {ThumbnailHashImages} from '@nolebase/vitepress-plugin-thumbnail-hash/vite'
+
+import zhConfig from '../src/config'
+import {head} from './local/head'
+import {markdown} from './local/markdown'
+import {themeConfig} from './local/theme'
 
 // const baseUrl = "https://ssu.oom-wg.dev";
 // const RSS: RSSOptions = {
@@ -35,7 +36,7 @@ import autoprefixer from 'autoprefixer'
 // const teekConfig = defineTeekConfig({});
 
 // VitePress 配置
-export default withMermaid({
+export default defineConfig({
 	// export default defineConfig({
 	// extends: teekConfig,
 	title: 'ShiroSU',
@@ -84,14 +85,6 @@ export default withMermaid({
 	head: head,
 	markdown: markdown,
 	themeConfig,
-
-	mermaid: {
-		// 配置参考： https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults
-	},
-	// 可选地使用MermaidPluginConfig为插件本身设置额外的配置
-	mermaidPlugin: {
-		class: 'mermaid my-class' // 为父容器设置额外的CSS类
-	},
 
 	transformPageData(pageData, context) {
 		generateBreadcrumbsData(pageData, context)
