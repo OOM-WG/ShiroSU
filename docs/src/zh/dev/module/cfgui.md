@@ -68,15 +68,15 @@ ConfigUI 的 FWW 界面均使用 **FVV 列表** 作为页面，
 
 ConfigUI 会将页面的注释设置为该页面的标题:
 
-```fww
-UI.PageA = [
+```fvv
+UI.PageA = <页面A> [
     <...>
-] <页面A>
+]
 <直接命名>
 
-UI.PageB = [
+UI.PageB = <Lang.PageB> [
     <...>
-] <Lang.PageB>
+]
 <通过多语言命名>
 ```
 
@@ -85,8 +85,8 @@ UI.PageB = [
 
 每个页面的除 `UI.` 外的内容是其路由名称，并且 ConfigUI **不支持**多级定义！请确保所有页面定义均为 `UI` 的顶级定义！
 
-[^1]: [FVV](https://github.com/OOM-WG/FVV) 是一种简单易上手的语言，主要目的是实现一种自由方便的配置文件格式
+[^1]: [FVV](https://app.niggergo.work/docs/fw/) 是一种简单易上手的语言，主要目的是实现一种自由方便的配置文件格式
 
-[^2]: FWW (FVV Widget) 是 FVV 的图形化实现，尽管 FVV 本身并不是一种独立语言，但是 FWW 通过其他语言解析 FWW 的配置文件从而生成界面
+[^2]: [FWW (FVV Widget)](https://app.niggergo.work/docs/fw/fww) 是 FVV 的图形化实现，尽管 FVV 本身并不是一种独立语言，但是 FWW 通过其他语言解析 FWW 的配置文件从而生成界面
 
 [^3]: CU NGA 风格 是基于 [Chenzyadb](https://github.com/chenzyadb) 的 [CU 风格](https://github.com/chenzyadb/CuprumTurbo-Scheduler) 的 [MD3 风格](https://m3.material.io/) 界面而设计的一种类似于它的界面风格，但是 CU NGA 风格 也可以基于 [FlexiUI](https://github.com/BetterAndroid/FlexiUI) 或 [Miuix](https://miuix-kotlin-multiplatform.github.io/miuix/zh_CN/) 实现

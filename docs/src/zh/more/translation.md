@@ -3,7 +3,7 @@ title: 关于多语言
 layout: doc
 sidebar: false
 aside: false
-description: 关于多语言
+description: ShiroSU 的文档多语言
 ---
 
 # **文档多语言**

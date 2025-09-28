@@ -11,7 +11,7 @@ export const themeConfig: DefaultTheme.Config = {
 	socialLinks: [
 		{
 			icon: 'github',
-			link: 'https://github.com/OOM-WG/SSU_Docs'
+			link: 'https://github.com/OOM-WG/ShiroSU'
 		}
 	],
 	// 自定义页脚配置

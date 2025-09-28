@@ -74,9 +74,19 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 			text: '面向开发者',
 			collapsed: false,
 			items: [
-				{text: '模块开发', link: '/dev/module'},
-				{text: '模块 ConfigUI', link: '/dev/cfgui'},
-				{text: '模块 WebUI', link: '/dev/webui'},
+				{
+					text: '模块开发',
+					collapsed: true,
+					link: '/dev/module/',
+					items: [
+						{text: '管理器特性开发', link: '/dev/module/manager'},
+						{text: 'ConfigUI', link: '/dev/module/cfgui'},
+						{text: 'WebUI', link: '/dev/module/webui'},
+						{text: '原生特性开发', link: '/dev/module/root'},
+						{text: '内核接口开发', link: '/dev/module/kernel'},
+						{text: '模块构建工具', link: '/dev/module/builder'}
+					]
+				},
 				{text: 'Scheme 调用', link: '/dev/scheme'}
 			]
 		},
@@ -84,6 +94,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 			text: '关于 SSU',
 			collapsed: false,
 			items: [
+				{text: 'root 实现适配', link: '/ssu/compat'},
 				{text: '一切的起源', link: '/ssu/origin'},
 				{text: '内核工作原理', link: '/ssu/principle'},
 				{text: '面对质疑', link: '/ssu/defense'}

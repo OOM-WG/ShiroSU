@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 安装指南
-description: 详细的 ShiroSU 安装步骤和配置说明
+description: ShiroSU 的安装步骤和配置说明
 outline: deep
 footer: false
 ---
