@@ -11,13 +11,13 @@ Modules = {
     InstModErr = "未選擇模組"
     NoMod = "未安裝模組"
     SearchMod = "搜索模組"
-    UnstarMod = "已取消收藏"
-    StarMod = "已收藏模組"
+    UnpinMod = "已取消置頂"
+    PinMod = "已置頂模組"
 
     ModErr = "模組故障，請重裝或聯繫作者"
     Updatable = "可更新"
     Updated = "已更新"
-    Stared = "已收藏"
+    Pinned = "已置頂"
 
     EnableErr = "啟用失敗"
     DisableErr = "禁用失敗"

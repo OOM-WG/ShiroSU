@@ -11,13 +11,13 @@ Modules = {
     InstModErr = "モジュールが選択されていません"
     NoMod = "インストールされたモジュールはありません"
     SearchMod = "モジュールを検索"
-    UnstarMod = "お気に入りを解除しました"
-    StarMod = "モジュールをお気に入りに追加しました"
+    UnpinMod = "お気に入りを解除しました"
+    PinMod = "モジュールをお気に入りに追加しました"
 
     ModErr = "モジュールエラー：再インストールするか、開発者にお問い合わせください"
     Updatable = "更新可能"
     Updated = "更新済み"
-    Stared = "お気に入りに追加済み"
+    Pinned = "お気に入りに追加済み"
 
     EnableErr = "有効化に失敗しました"
     DisableErr = "無効化に失敗しました"

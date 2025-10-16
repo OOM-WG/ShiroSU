@@ -11,13 +11,13 @@ Modules = {
     InstModErr = "No module selected"
     NoMod = "No module installed"
     SearchMod = "Search for modules"
-    UnstarMod = "The module has been removed from bookmarks"
-    StarMod = "The module has been bookmarked"
+    UnpinMod = "Module unpinned"
+    PinMod = "Module pinned"
 
     ModErr = "Module Error – Reinstall or Contact Author"
     Updatable = "Updatable"
     Updated = "Updated"
-    Stared = "Bookmarked"
+    Pinned = "Pinned"
 
     EnableErr = "Enable failed"
     DisableErr = "Disable failed"

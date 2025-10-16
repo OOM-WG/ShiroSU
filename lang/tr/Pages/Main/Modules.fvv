@@ -11,13 +11,13 @@ Modules = {
     InstModErr = "Modül seçilmedi"
     NoMod = "Yüklü modül yok"
     SearchMod = "Modül ara"
-    UnstarMod = "Favorilerden kaldırıldı"
-    StarMod = "Modül favorilere eklendi"
+    UnpinMod = "Favorilerden kaldırıldı"
+    PinMod = "Modül favorilere eklendi"
 
     ModErr = "Modül hatası veya düşük kalite, yeniden yükleyin veya yazarla iletişime geçin."
     Updatable = "Güncellenebilir"
     Updated = "Güncellendi"
-    Stared = "Favorilere eklendi"
+    Pinned = "Favorilere eklendi"
 
     EnableErr = "Etkinleştirilemedi"
     DisableErr = "Devre dışı bırakılamadı"
