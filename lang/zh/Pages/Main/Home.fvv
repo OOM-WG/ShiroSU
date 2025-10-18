@@ -35,7 +35,7 @@ Home = {
     SELinuxPer = "寬容模式"
     SELinuxDis = "未啟用"
     USBDebug = "USB調試"
-    AVBVerify = "AVB校驗"
+    AVBVerify = "AVB驗證"
 
     Enabled = "已開啟"
     Disabled = "已關閉"
