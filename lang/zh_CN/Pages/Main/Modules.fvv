@@ -22,6 +22,7 @@ Modules = {
     EnableErr = "启用失败"
     DisableErr = "禁用失败"
 
+    Changelog = "更新日志"
     License = "许可证"
 
     Version = "版本"
