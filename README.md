@@ -21,3 +21,5 @@ SSU 是一款兼容多种 root 实现并且有自己 root 实现的第三方 roo
 ## 许可证
 
 SSU 使用 [F2DLPR 许可证](https://license.fileto.download) 作为分发与相关源代码的许可证
+
+> SSU 的 **所有相关权利** 归 白彩恋 **个人所有**
