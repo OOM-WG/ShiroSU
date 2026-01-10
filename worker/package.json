@@ -3,7 +3,7 @@
 	"private": true,
 	"description": "SSU Worker",
 	"license": "F2DLPRL",
-	"author": "SSU Developers (O.O.M. W.G.)",
+	"author": "SSU Developers (OOM WG)",
 	"type": "module",
 	"scripts": {
 		"deploy": "wrangler deploy",

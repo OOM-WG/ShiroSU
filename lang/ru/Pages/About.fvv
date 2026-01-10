@@ -1,7 +1,7 @@
 About = {
     Version = "Версия: %s"
-    Copyright = "©️ 2023-настоящее время O.O.M. W.G. Все права защищены."
-    OOM_WG = "O.O.M. W.G."
+    Copyright = "©️ 2023-настоящее время OOM WG Все права защищены."
+    OOM_WG = "OOM WG"
     Docs = "Документация ShiroSU"
     DepsList = "Список зависимостей"
     DepsList3Q = "Спасибо следующим проектам"
