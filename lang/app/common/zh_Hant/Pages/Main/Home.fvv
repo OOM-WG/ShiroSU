@@ -4,7 +4,7 @@ Home = {
     DlErr = "下載失敗: %s"
 
     Tip = "提示"
-    TipCnt = "SSU使用百度移動統計以及阿里雲EMAS收集您的使用數據，依此增強後續的使用體驗\n您目前使用的是%s分支%s"
+    TipCnt = "SSU使用百度移動統計、微軟Clarity、阿里雲EMAS收集您的使用數據，依此增強後續的使用體驗\n您目前使用的是%s分支%s"
     TipCntPre = "\n一切內容僅供參考，請關注官方後續動態"
 
     InstTtl = "安裝%s版本"

@@ -4,7 +4,7 @@ Home = {
     DlErr = "Download failed: %s"
 
     Tip = "Tip"
-    TipCnt = "SSU uses Baidu Mobile TongJi and Alibaba Cloud EMAS to collect your usage data to enhance your subsequent user experience\nYou are currently using the %s branch%s"
+    TipCnt = "SSU uses Baidu Mobile TongJi, Microsoft Clarity, Alibaba Cloud EMAS to collect your usage data to enhance your subsequent user experience\nYou are currently using the %s branch%s"
     TipCntPre = "\nAll content is for reference only, please pay attention to the official follow-up news"
 
     InstTtl = "Install the %s version"
