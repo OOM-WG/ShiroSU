@@ -1,5 +1,6 @@
 * text=auto
 worker/** linguist-vendored
+worker/src/** linguist-vendored=false
 
 *.fvv text eol=lf linguist-language=FVV linguist-detectable
 *.fw text eol=lf linguist-language=FVV linguist-detectable
