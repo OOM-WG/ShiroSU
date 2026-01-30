@@ -1,6 +1,8 @@
 * text=auto
 worker/** linguist-vendored
 worker/src/** linguist-vendored=false
+*.config.*js linguist-vendored
+*.config.*ts linguist-vendored
 
 *.fvv text eol=lf linguist-language=FVV linguist-detectable
 *.fw text eol=lf linguist-language=FVV linguist-detectable
