@@ -8,7 +8,7 @@
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
-		"lint": "prettier --write .",
+		"format": "prettier --write .",
 		"start": "wrangler dev",
 		"test": "vitest"
 	},
