@@ -36,8 +36,7 @@ export default {
 		} else {
 			const target = spec + '_' + branch
 			for (const line of lines)
-				if (line.startsWith(target))
-					return Response.redirect(line.split('=')[1].trim().replace(/^"|"$/g, ''), 301)
+				if (line.startsWith(target)) return Response.redirect(line.split('=')[1].trim().replace(/^"|"$/g, ''), 301)
 			return new Response(null, {status: 404})
 		}
 	}

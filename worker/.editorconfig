@@ -2,7 +2,7 @@
 indent_size = 4
 indent_style = tab
 insert_final_newline = false
-max_line_length = 106
+max_line_length = 127
 trim_trailing_whitespace = true
 ij_continuation_indent_size = 8
 
