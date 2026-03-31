@@ -1,10 +1,22 @@
 # [SSU / ShiroSU](https://ssu.oom-wg.dev)
 
-SSU 有一款拓展软件 [苏柚](https://suu.oom-wg.dev)，
-对于 Android，支持 普通/adb/root 权限，
-并且支持 Windows 平台
+> SSU 有一款拓展软件 [苏柚](https://suu.oom-wg.dev)，
+> 对于 Android，支持 普通/adb/root 权限，
+> 并且支持 Windows 平台
 
-SSU 是一款兼容多种 root 实现并且有自己 root 实现的第三方 root 管理器。
+SSU 是一款兼容多种 root 实现并且有自己 root 实现的 root 实现
+
+## 开发方向
+
+### ShiroSU NewTech
+
+**SSU NT** (又称 _SSU ROOT_) 是基于 `ramdisk` 注入实现的纯用户态 root 实现，采用 **WebUI** 实现 root 管理
+
+目前支持 Android **10**`+` 设备，可在 <https://su.shiror.ren> 刷入与管理
+
+### ShiroSU Compat
+
+**SSU Compat** (又称 _SSU 管理器_) 是兼容多种 root 实现的 root 管理器，可以管理模块与权能
 
 ## 文档
 
