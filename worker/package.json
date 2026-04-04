@@ -13,9 +13,9 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.14.0",
+		"@cloudflare/vitest-pool-workers": "^0.14.1",
 		"prettier": "^3.8.1",
 		"vitest": "^4.1.2",
-		"wrangler": "^4.79.0"
+		"wrangler": "^4.80.0"
 	}
 }
