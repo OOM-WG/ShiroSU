@@ -29,7 +29,7 @@ export default {
 							.slice(idx + 1)
 							.trim()
 							.replace(/^"|"$/g, ''),
-						301,
+						301
 					)
 			}
 			return new Response(null, { status: 404 })
@@ -39,5 +39,5 @@ export default {
 				if (line.startsWith(target)) return Response.redirect(line.split('=')[1].trim().replace(/^"|"$/g, ''), 301)
 			return new Response(null, { status: 404 })
 		}
-	},
+	}
 }

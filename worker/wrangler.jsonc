@@ -8,12 +8,12 @@
 	"main": "src/index.js",
 	"compatibility_date": "2026-01-27",
 	"observability": {
-		"enabled": true,
+		"enabled": true
 	},
 
 	/**
 	 * Static Assets
 	 * https://developers.cloudflare.com/workers/static-assets/binding/
 	 */
-	"assets": { "directory": "./dat", "binding": "ASSETS" },
+	"assets": { "directory": "./dat", "binding": "ASSETS" }
 }

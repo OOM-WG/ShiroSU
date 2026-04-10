@@ -10,7 +10,7 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"prettier": "^3.8.1",
-		"wrangler": "^4.81.0"
+		"prettier": "^3.8.2",
+		"wrangler": "^4.81.1"
 	}
 }
