@@ -13,7 +13,7 @@
 
 ### 快速开始
 
-[![Start Install](./img/start.webp)](https://su.shiror.ren/patch)
+[![Start Install](./img/start.svg)](https://su.shiror.ren/patch)
 
 - [安装](https://su.shiror.ren)
 - [文档](https://oom-wg.dev/ssu)
