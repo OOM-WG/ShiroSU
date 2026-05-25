@@ -1,37 +1,41 @@
-# [SSU / ShiroSU](https://ssu.oom-wg.dev)
+## ShiroSU / SSU
 
-> SSU 有一款拓展软件 [苏柚](https://suu.oom-wg.dev)，
-> 对于 Android，支持 普通/adb/root 权限，
-> 并且支持 Windows 平台
+ Android root 方案与管理工具   
+`A Comprehensive Android Root Solution & Manager.`  
 
-SSU 是一款兼容多种 root 实现并且有自己 root 实现的 root 实现
+[Releases](https://github.com/OOM-WG/ShiroSU/releases/latest) [License](/LICENSE) Downloads
 
-## 开发方向
+### 项目介绍
 
-### ShiroSU NewTech
+- **SSU NT** (又称 *SSU ROOT*) 是基于 `ramdisk` 注入实现的纯用户态 root 实现，采用 **WebUI** 实现 root 管理
+目前支持 Android **10+** 设备，可在 [su.shiror.ren](https://su.shiror.ren) 刷入与管理
+- **SSU Compat** (又称 *SSU 管理器*) 是兼容多种 root 实现的 root 管理器，可以管理模块与权能
 
-**SSU NT** (又称 _SSU ROOT_) 是基于 `ramdisk` 注入实现的纯用户态 root 实现，采用 **WebUI** 实现 root 管理
+### 快速开始
 
-目前支持 Android **10**`+` 设备，可在 <https://su.shiror.ren> 刷入与管理
+[![Start Install](./img/start.webp)](https://su.shiror.ren/patch)
 
-### ShiroSU Compat
+- [安装](https://su.shiror.ren)
+- [文档](https://oom-wg.dev/ssu)
 
-**SSU Compat** (又称 _SSU 管理器_) 是兼容多种 root 实现的 root 管理器，可以管理模块与权能
+### 关于
 
-## 文档
+ShiroSU 目前开发重点在 **SSU NT** ，但 **SSU Compat** 并非不可用，未来会逐步跟进开发.
+在开发实现过程中逐步完善一些扩展工具 详见 [主导项目](https://oom-wg.dev/projects)
 
-SSU 的独立文档已弃用，目前已合并至 <https://github.com/OOM-WG/OOM-Website>
+### 许可证
 
-## 多语言
+```
+Copyright (C) 2023-2026 OutOfMemories WorkGroup <https://oom-wg.dev>
+SPDX-License-Identifier: LicenseRef-F2DLPR-License
 
-多语言相关文件已存放至 [lang 文件夹](lang)，其基于 [FVV](https://github.com/OOM-WG/FVV) 实现并通过 [欢愉多语言框架](https://github.com/OOM-WG/PureJoy-MultiLang) 使用
+This source code is licensed under the File to Download Public Resources License (F2DLPR License).
+You may obtain a copy of the License at:
 
-官方开发成员无力进行多语言维护，仅能维护简中并机翻部分语言，如想为 SSU 的多语言事业出一份力，可为本仓库发出拉取请求
+    http://license.fileto.download
 
-> 需要注意的一件事情是，[百度统计-移动统计](https://mtj.baidu.com/web/welcome/login) 的英文名称应为 “Mobile Tong Ji”，这个是从其域名分析而来的，但是其 SDK 的包名为 `mobstat`，所以实际上怎么写都是可以的，也没有英文站来参考具体叫什么
+YOU MAY NOT USE THIS FILE EXCEPT IN COMPLIANCE WITH THE LICENSE.
+Provided "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+unless required by applicable law or agreed to in writing.
+```
 
-## 许可证
-
-SSU 使用 [F2DLPR 许可证](https://license.fileto.download) 作为分发与相关源代码的许可证
-
-> SSU 的 **所有相关权利** 归 白彩恋 **个人所有**
