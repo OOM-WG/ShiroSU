@@ -3,7 +3,7 @@
  Android root 方案与管理工具   
 `A Comprehensive Android Root Solution & Manager.`  
 
-[Releases](https://github.com/OOM-WG/ShiroSU/releases/latest) [License](/LICENSE) Downloads
+[![Releases](https://img.shields.io/github/v/release/OOM-WG/ShiroSU?label=Release&logo=github)](https://github.com/OOM-WG/ShiroSU/releases/latest) [![License](https://img.shields.io/github/license/OOM-WG/ShiroSU?logo=bsd)](/LICENSE) ![Downloads](https://img.shields.io/github/downloads/OOM-WG/ShiroSU/total)
 
 ### 项目介绍
 
@@ -11,9 +11,7 @@
 目前支持 Android **10+** 设备，可在 [su.shiror.ren](https://su.shiror.ren) 刷入与管理
 - **SSU Compat** (又称 *SSU 管理器*) 是兼容多种 root 实现的 root 管理器，可以管理模块与权能
 
-### 快速开始
-
-[![Start Install](./img/start.svg)](https://su.shiror.ren/patch)
+### 快速开始 
 
 - [安装](https://su.shiror.ren)
 - [文档](https://oom-wg.dev/ssu)
