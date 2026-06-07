@@ -3,6 +3,7 @@ indent_size = 4
 indent_style = tab
 insert_final_newline = false
 max_line_length = 127
+quote_type = single
 trim_trailing_whitespace = true
 ij_continuation_indent_size = 8
 
@@ -10,6 +11,6 @@ ij_continuation_indent_size = 8
 indent_size = 2
 indent_style = space
 
-[{*.md,*.mkd,*.mdx}]
+[{*.MD,*.md,*.mkd,*.mdx}]
 indent_size = 2
 indent_style = space

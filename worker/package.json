@@ -7,10 +7,10 @@
 	"scripts": {
 		"dev": "wrangler dev",
 		"deploy": "wrangler deploy",
-		"format": "prettier --write ."
+		"format": "vp fmt"
 	},
 	"devDependencies": {
-		"prettier": "^3.8.3",
-		"wrangler": "^4.91.0"
+		"vite-plus": "^0.1.24",
+		"wrangler": "^4.98.0"
 	}
 }

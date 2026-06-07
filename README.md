@@ -1,17 +1,17 @@
 ## ShiroSU / SSU
 
- Android root 方案与管理工具   
-`A Comprehensive Android Root Solution & Manager.`  
+Android root 方案与管理工具  
+`A Comprehensive Android Root Solution & Manager.`
 
 [![Releases](https://img.shields.io/github/v/release/OOM-WG/ShiroSU?label=Release&logo=github)](https://github.com/OOM-WG/ShiroSU/releases/latest) [![License](https://img.shields.io/github/license/OOM-WG/ShiroSU?logo=bsd)](/LICENSE) ![Downloads](https://img.shields.io/github/downloads/OOM-WG/ShiroSU/total)
 
 ### 项目介绍
 
-- **SSU NT** (又称 *SSU ROOT*) 是基于 `ramdisk` 注入实现的纯用户态 root 实现，采用 **WebUI** 实现 root 管理
-目前支持 Android **10+** 设备，可在 [su.shiror.ren](https://su.shiror.ren) 刷入与管理
-- **SSU Compat** (又称 *SSU 管理器*) 是兼容多种 root 实现的 root 管理器，可以管理模块与权能
+- **SSU NT** (又称 _SSU ROOT_) 是基于 `ramdisk` 注入实现的纯用户态 root 实现，采用 **WebUI** 实现 root 管理
+  目前支持 Android **10+** 设备，可在 [su.shiror.ren](https://su.shiror.ren) 刷入与管理
+- **SSU Compat** (又称 _SSU 管理器_) 是兼容多种 root 实现的 root 管理器，可以管理模块与权能
 
-### 快速开始 
+### 快速开始
 
 - [安装](https://su.shiror.ren)
 - [文档](https://oom-wg.dev/ssu)
@@ -36,4 +36,3 @@ YOU MAY NOT USE THIS FILE EXCEPT IN COMPLIANCE WITH THE LICENSE.
 Provided "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 unless required by applicable law or agreed to in writing.
 ```
-
