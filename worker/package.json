@@ -1,7 +1,7 @@
 {
 	"name": "ssu-worker",
 	"private": true,
-	"license": "F2DLPRL",
+	"license": "File-to-Downloader",
 	"author": "SSU Developers (OOM WG)",
 	"type": "module",
 	"scripts": {
